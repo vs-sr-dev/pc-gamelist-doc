@@ -1,6 +1,6 @@
 # pc-gamelist-doc
 
-**Index of the PC and portable-C game documentation** — 17 titles, one
+**Index of the PC and portable-C game documentation** — 18 titles, one
 repository each. This family has no shared platform checklist: a DOS game from
 1987 and a PhyreEngine remaster from 2018 have almost nothing in common except
 the machine they end up on, which is exactly why the index is per platform and
@@ -22,6 +22,14 @@ at a Square Enix cluster that is one title away from deserving its own repo.
 entirely: *HeroQuest II: Legacy of Sorasil* sits in the CD32 list as
 [cd32-heroquest2-doc](https://github.com/vs-sr-dev/cd32-heroquest2-doc). Two
 titles across two families is not yet an index of its own.
+**Baron Baldric** is the second saga of two, and the mirror image of that
+arrangement: both halves are on this machine and in this list, *Baron Baldric:
+A Grave Adventure* and its sequel *Mystic Towers*. Its Saga cell was empty
+until the sequel arrived, because a saga of one is not a saga; two titles in
+one family is a column entry and still not an index of its own. What the two
+have in common turns out to be a protagonist, a Borland runtime and three
+asset files — different studio, different publisher, different engine, and a
+different machine underneath.
 
 | Title | Year | Studio | Saga | What it is |
 |---|---|---|---|---|
@@ -42,7 +50,8 @@ titles across two families is not yet an index of its own.
 | [**Infinite Undiscovery**](https://github.com/vs-sr-dev/pc-infiniteundiscovery) | 2008 | tri-Ace |  | The ASKA engine, which turns up again twelve years later under *Tales of Crestoria* |
 | [**Tales of Berseria**](https://github.com/vs-sr-dev/pc-talesofberseria-doc) | 2017 | Bandai Namco Studios | Tales | Container format and obfuscation. **Crosslink** — its primary index is [tales-gamelist-doc](https://github.com/vs-sr-dev/tales-gamelist-doc), because the format is the saga's, not the platform's |
 | [**HeroQuest**](https://github.com/vs-sr-dev/pc-heroquest-doc) | 1991–92 | Gremlin Graphics | HeroQuest | The board game on three floppies: the whole 26 × 19 board rebuilt from twenty-four quest files, accents remapped onto the lower-case ASCII row, and one 1980 timestamp in eighty-four files |
-| [**Baron Baldric: A Grave Adventure**](https://github.com/vs-sr-dev/pc-baronbaldric-doc) | 1992–93 | CTV-Link / Manaccom |  | A house container with no directory at all, the Turbo Pascal linker map that shipped inside it by accident, and thirteen timestamps forty-eight years in the future |
+| [**Baron Baldric: A Grave Adventure**](https://github.com/vs-sr-dev/pc-baronbaldric-doc) | 1992–93 | CTV-Link / Manaccom | Baron Baldric | A house container with no directory at all, the Turbo Pascal linker map that shipped inside it by accident, and thirteen timestamps forty-eight years in the future |
+| [**Mystic Towers**](https://github.com/vs-sr-dev/pc-mystictowers-doc) | 1994 | Animation FX / Apogee | Baron Baldric | The Baldric sequel, and an Amiga game underneath: AMOS memory and sprite banks shipped whole inside the DOS container, ten of them source art the game cannot display |
 
 ## The write-ups
 
@@ -120,3 +129,47 @@ a plain `|`, because these are no longer table cells.
 ### [Baron Baldric: A Grave Adventure](https://github.com/vs-sr-dev/pc-baronbaldric-doc)
 
 *Baron Baldric: A Grave Adventure* (CTV-Link / Manaccom, 1992–93) — an Australian DOS platformer surviving as somebody's installed `C:\BARON` directory: thirteen files, 2,036,866 bytes, and **every single date forty-eight years in the future**. Twelve files are stamped 2040–41 and one is stamped 2050, all of them legal values in the seven-bit MS-DOS year field; subtracting 48 puts the build at **1992-11-29 → 1993-02-07**, and the number is pinned not by the dates but by two strings — a Borland runtime copyright reading `1983,92`, which forbids anything earlier, and the game's own banner reading `(ver 1.0  Nov 1992)`. The lone 2050 outlier looked like noise and turned out to be **the only file that can distinguish an addition from a stuck bit**, because 12 and 13 share no bits with 48 and 22 does. The three `.BNK` containers have **no directory whatsoever**: a five-byte `-ID-` marker precedes every member and the chain *is* the index, which makes the walk self-proving — eighty-eight members, three walks, all three landing exactly on the file length. Inside one of them sits `BALDRIC.MAP`, which is not a level but **the Turbo Pascal linker's own map file, packed into the shipping game by a build script that globbed for `*.MAP`**: it names seven `.PAS` sources, 178 public symbols and the entire global state (`ENERGY`, `LIVES`, `FLINTS`, `TREASURE`, `LIGHTREMAINING`), and because Pascal lays globals out consecutively, the gap between one symbol and the next yields **thirty animations with their frame counts** — `AWALKL` 8, `ADIE` 8, and `AFART`, `APICKNOSE` and `ASCRATCHBALLS` for the idle loop. Its `LEV` variable is 3,516 bytes and every level file is 3,520 with a four-byte header; its `DIGITS` is 640 and `DIGIT.FNT` is 640. It also describes a build **half the size of the one that shipped**, twenty-six days earlier. Nothing is packed, the 4,096-byte launcher sets `e_maxalloc == e_minalloc` so it can `EXEC` the game (which is what the underscore in `_BALDRIC.EXE` is for), the 165-frame sprite codec encodes against a **256-byte row pitch unrelated to the frames' declared widths**, ten of the eleven levels ship a compiled 8086 trigger table whose 255 case labels all fall inside the 3,500-cell grid, and one audio member turns out to be **twelve complete Creative VOC files concatenated head to tail**. Two extension collisions are closed by measurement (`.BNK` is not an AdLib bank, `.HSC` is not an HSC-Tracker module) — and the eleven members that genuinely hold FM music open with a magic, `AmBk`, that remains unidentified
+
+> *Added after the fact, because the write-ups above are otherwise reproduced
+> verbatim and this one ends on a claim that is no longer true:* `AmBk` **has
+> since been identified** as the AMOS memory-bank magic, from the sequel below.
+> See [pc-mystictowers-doc, docs/07](https://github.com/vs-sr-dev/pc-mystictowers-doc/blob/main/docs/07-the-amiga-inside.md).
+
+### [Mystic Towers](https://github.com/vs-sr-dev/pc-mystictowers-doc)
+
+*Mystic Towers* (Animation FX / Apogee, 1994) — *A Baron Baldric Adventure*,
+and the sequel turns out to share a protagonist, a Borland runtime and three
+asset files with its predecessor and **nothing else at all**. Forty-six members
+of its single 3.4 MB container open with `AmBk` and ten with `AmSp`: these are
+**AMOS memory banks and AMOS sprite banks**, and all fifty-six parse to
+completion — 46 of 46 once the top bit of the length long is read as AMOS's
+chip-memory flag and the length is counted from offset 12, and 10 of 10 sprite
+banks closing on their frame chain plus a 64-byte palette. Every one of the 231
+frames is five bitplanes deep and a whole number of **16-pixel words** wide,
+the palettes are 32 entries of Amiga `$0RGB` with no bit above bit 11, the
+eight music members are ProTracker `M.K.` modules and 90 of 93 digitised
+samples are **signed**. The credits, XOR'd with 0x55 inside a container member,
+say it in words: *Amiga Programming — Steve Hovelroud / PC conversion — Darren
+Baker*. That identifies the `AmBk` magic
+[pc-baronbaldric-doc](https://github.com/vs-sr-dev/pc-baronbaldric-doc) left
+unidentified, and answers its question about why a little-endian shop wrote
+big-endian words — here the seam is visible **inside single structs**: the AMOS
+sprite header and the DOS one are the same five fields in opposite byte orders
+for the same artwork, and a sound entry carries a big-endian sample rate four
+bytes in front of a little-endian length. Ten AMOS sprite banks shipped in the
+retail data **by accident**, 170,520 bytes and 231 frames the DOS game cannot
+open, nine of the ten matching their converted twin's frame count exactly — the
+same class of mistake as the linker map that shipped inside the previous game,
+ten times larger and at a different studio. Elsewhere: the ZIP's seven
+identical 1996 timestamps are a **TorrentZip constant**, proved by recomputing
+`CRC32` of the archive's own 448-byte central directory and getting the
+`3E1FE61E` in the comment; the only surviving real date is the ISO 9660 volume
+descriptor's **1994-07-26 11:03:34**, under which the mastering tool had
+already flattened all 307 file records to one second; the disc labelled as the
+game's CD edition is a **German CDV Software shareware compilation**, 60 % of
+it two promotional slideshows, and the "installed" folder beside it is a
+byte-identical copy of one directory off it; `MT-HELP.EXE` has **no MZ header
+at all**, so it is a `.COM` image that turns out to be an Apogee help text run
+through TXT2COM and then PKLITE; and the predecessor's sprite codec's signature
+256-byte row pitch holds on **0 of 2,002** frames here, because this codec
+restarts at every scanline
