@@ -1,13 +1,14 @@
 # pc-gamelist-doc
 
-**Index of the PC and portable-C game documentation** — 18 titles, one
+**Index of the PC and portable-C game documentation** — 19 titles, one
 repository each. This family has no shared platform checklist: a DOS game from
 1987 and a PhyreEngine remaster from 2018 have almost nothing in common except
 the machine they end up on, which is exactly why the index is per platform and
 not per engine.
 
-Two strands run through it. The first is DOS-era format archaeology — containers,
-sprite codecs, map formats and the editor work files that shipped by accident.
+Two strands run through it. The first is format archaeology from the DOS and
+early-Windows era — containers, sprite codecs, map formats and the editor work
+files that shipped by accident.
 The second is modern remasters and PC ports, where the interesting layer is the
 older console the build is still pretending to be. No repository here contains
 game assets or executables — only measurements and the code to reproduce them.
@@ -52,6 +53,7 @@ different machine underneath.
 | [**HeroQuest**](https://github.com/vs-sr-dev/pc-heroquest-doc) | 1991–92 | Gremlin Graphics | HeroQuest | The board game on three floppies: the whole 26 × 19 board rebuilt from twenty-four quest files, accents remapped onto the lower-case ASCII row, and one 1980 timestamp in eighty-four files |
 | [**Baron Baldric: A Grave Adventure**](https://github.com/vs-sr-dev/pc-baronbaldric-doc) | 1992–93 | CTV-Link / Manaccom | Baron Baldric | A house container with no directory at all, the Turbo Pascal linker map that shipped inside it by accident, and thirteen timestamps forty-eight years in the future |
 | [**Mystic Towers**](https://github.com/vs-sr-dev/pc-mystictowers-doc) | 1994 | Animation FX / Apogee | Baron Baldric | The Baldric sequel, and an Amiga game underneath: AMOS memory and sprite banks shipped whole inside the DOS container, ten of them source art the game cannot display |
+| [**Zero Comico**](https://github.com/vs-sr-dev/pc-zerocomico-doc) | 2001 | GMM Entertainment / Medusa Games |  | An Italian TV tie-in that is 69.49 % Indeo video for thirteen minutes of it, two in-house containers wrapping a 1989 LZHUF stream, and an engine still carrying the cancelled game it was written for |
 
 ## The write-ups
 
@@ -173,3 +175,57 @@ at all**, so it is a `.COM` image that turns out to be an Apogee help text run
 through TXT2COM and then PKLITE; and the predecessor's sprite codec's signature
 256-byte row pitch holds on **0 of 2,002** frames here, because this codec
 restarts at every scanline
+
+
+### [Zero Comico](https://github.com/vs-sr-dev/pc-zerocomico-doc)
+
+*Zero Comico* (GMM Entertainment / Medusa Games, 2001) — an Italian
+television tie-in for the comedy trio Aldo, Giovanni e Giacomo, documented
+twice: from a 506,378,240-byte **WinISO image made in 2003** and from the
+**pressed CD**. All 2,862 files hash identically between them and **every one
+of the 2,862 recorded timestamps differs**, because the converter discarded
+660 real dates and wrote eleven values, three of which are not dates at all
+(month 230, day 0, hour 192) — so the image's `WinISO software` publisher,
+its 2003 creation date, its ISO 9660 violations and its **four duplicate
+paths** are artefacts of the copy, while the original reads
+`NERO___BURNING_ROM`, `2001-10-08 15:00:00` at **GMT+2**, and is conformant.
+The real dates then agree with the PE linker timestamps **to within one
+second** and date the build to the afternoon of 28 September 2001, on which
+**2,191 of 2,862 files** were re-exported. **69.49 % of the disc is thirteen
+minutes and forty-nine seconds of video**: seven Indeo 5 files at 320×240
+averaging 3,370 kbit/s, six of them encoded with *every frame a keyframe* —
+9,539 video chunks and 9,539 keyframe flags in `intro.avi` alone — and the
+seventh, encoded four days later at 23:08, with sixteen in 1,206. The seven
+are **2.86 times the size of the entire game**, and 7.22 % of the disc is
+uncompressed PCM inside them on a CD that also ships 558 MP3s and an MP3
+decoder. 2,188 files sit inside two in-house containers, `JFX1` and `JGF5`,
+both wrapping an **LZHUF** stream — Okumura 1989, LZSS under an *adaptive*
+Huffman coder, which is why 503 documented attempts against it failed — and
+all 2,188 decode to their exact declared length, turning 72.8 MB into
+**214.4 MB**. Nothing on the disc is what its extension says: the 1,433
+`.tga` are not Targa (**0 of 1,433** pass the header arithmetic, they are
+32-bit `JGF5`, 96.4 % power-of-two), the 25 `.flc` are not FLIC, and the 82
+`.bsp` are plain CRLF text holding a verified **two-dimensional** BSP over
+the walkable floor — the preorder walk closes on all 80, N internal nodes and
+exactly N+1 nulls, over 1,948 convex cells and a 53,518-arc pathfinding graph
+with **exactly one node per room-outline vertex**. The engine is not this
+game's: `Lucifer 3D Interface`, source headers from **1998-08-20**, four
+hard-coded paths including `d:\motore\japotek3d.dll`, a DirectPlay lobby,
+twelve directional hit-reaction slots, `obj_spada`, `combat.mp3` and the
+title string **`Silver Raven On-line`** — and the three protagonists joke,
+across three chapters, that the studio never made them a fighting animation,
+which the executable's own symbol table confirms. The retail executable's
+version resource reads `Playable Demo`, version **`0.8.0.0`**,
+`OriginalFilename: game_engine.exe`, `Copyright © 1999 GMM Entertainment
+S.r.l.`, naming a developer that appears nowhere on the packaging or in the
+readme. Elsewhere: **400 lines of the shipped scripts are 56-byte runs of
+`0xCD`**, the Microsoft C runtime's *debug-build* fill for uninitialised
+heap, and they are all 400 of the game's `sound:` lines, none of them valid;
+3.2 MB of English MSI transform ships registered and unreachable because
+`EnableLangDlg=N`; twenty-three script files are signed
+`//Puzzle Files Created by Game Editor by PietruZ&DariuZ`, the only place on
+the disc where a person who made this game is named; and the 49,163
+characters of dialogue hold Monkey Island's **insult sword-fighting** with 65
+hand-written lines across five opponents, a plumber whose **surname is
+Mario** and whose brother Gigi lives upstairs, and Pac-Man introducing
+himself under his 1980 Japanese trade name, **`Puck Man`**
