@@ -1,6 +1,6 @@
 # pc-gamelist-doc
 
-**Index of the PC and portable-C game documentation** — 15 titles, one
+**Index of the PC and portable-C game documentation** — 16 titles, one
 repository each. This family has no shared platform checklist: a DOS game from
 1987 and a PhyreEngine remaster from 2018 have almost nothing in common except
 the machine they end up on, which is exactly why the index is per platform and
@@ -18,6 +18,10 @@ Listed in the order they were documented. The **Saga** column is filled in where
 the title belongs to a series that may one day earn its own index; it is empty
 where it does not. Three of them — Final Fantasy twice, and Mana — already point
 at a Square Enix cluster that is one title away from deserving its own repo.
+**HeroQuest** is a saga of two, and its other half is on a different machine
+entirely: *HeroQuest II: Legacy of Sorasil* sits in the CD32 list as
+[cd32-heroquest2-doc](https://github.com/vs-sr-dev/cd32-heroquest2-doc). Two
+titles across two families is not yet an index of its own.
 
 | Title | Year | Studio | Saga | What it is |
 |---|---|---|---|---|
@@ -37,6 +41,7 @@ at a Square Enix cluster that is one title away from deserving its own repo.
 | [**FINAL FANTASY TYPE-0 HD**](https://github.com/vs-sr-dev/pc-fftype0-doc) | 2015 | Square Enix / HexaDrive | Final Fantasy | PSP heritage and the HexaDrive render layer |
 | [**Infinite Undiscovery**](https://github.com/vs-sr-dev/pc-infiniteundiscovery) | 2008 | tri-Ace |  | The ASKA engine, which turns up again twelve years later under *Tales of Crestoria* |
 | [**Tales of Berseria**](https://github.com/vs-sr-dev/pc-talesofberseria-doc) | 2017 | Bandai Namco Studios | Tales | Container format and obfuscation. **Crosslink** — its primary index is [tales-gamelist-doc](https://github.com/vs-sr-dev/tales-gamelist-doc), because the format is the saga's, not the platform's |
+| [**HeroQuest**](https://github.com/vs-sr-dev/pc-heroquest-doc) | 1991–92 | Gremlin Graphics | HeroQuest | The board game on three floppies: the whole 26 × 19 board rebuilt from twenty-four quest files, accents remapped onto the lower-case ASCII row, and one 1980 timestamp in eighty-four files |
 
 ## The write-ups
 
@@ -106,4 +111,8 @@ a plain `|`, because these are no longer table cells.
 ### [Infinite Undiscovery](https://github.com/vs-sr-dev/pc-infiniteundiscovery)
 
 *Infinite Undiscovery* (tri-Ace, Xbox 360) and the ASKA engine
+
+### [HeroQuest](https://github.com/vs-sr-dev/pc-heroquest-doc)
+
+*HeroQuest* (Gremlin Graphics, 1991–92) — the licensed board game on three DOS floppies, documented from somebody's installed directory zipped up in 2008. All three executables are **EXEPACK**-packed by the same linker flag and only one of them, `QUEST.EXE`, carries a **1980-01-06 19:48:46** timestamp, which exonerates the packer and hands the CD32 checklist's long-standing "sixth epoch" question its first DOS sample. The twenty-four quest files each open with a 26 × 19 byte grid, and because every square is either zero or one fixed region id, the union of all twenty-four **reconstructs the entire board**: 42 regions, 494 squares, zero unassigned, one square where the quests disagree. Accented letters are remapped onto the **lower-case ASCII row** — `a` = Ä, `e` = È, `n` = Ñ, `u` = Ü — because the 87-glyph font has no lower case to displace, which is a different answer from the CD32 sequel's `( ) * +` and for a reason visible in the two fonts. The interface is in five languages and the quest prose is in English only. The copyright notice is **plain text** here and pixels-only on CD32, so that finding was never a house policy; Imagitec supplied the audio to both games and is credited on screen here and hidden in a linked binary there. And the tempting 1.945 ratio between all the VGA and all the EGA art collapses to **1.123** once the ten VGA-only intro pictures are excluded — the number was measuring the intro, not the colour depth
 
