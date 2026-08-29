@@ -1,6 +1,6 @@
 # pc-gamelist-doc
 
-**Index of the PC and portable-C game documentation** — 19 titles, one
+**Index of the PC and portable-C game documentation** — 20 titles, one
 repository each. This family has no shared platform checklist: a DOS game from
 1987 and a PhyreEngine remaster from 2018 have almost nothing in common except
 the machine they end up on, which is exactly why the index is per platform and
@@ -32,6 +32,18 @@ have in common turns out to be a protagonist, a Borland runtime and three
 asset files — different studio, different publisher, different engine, and a
 different machine underneath.
 
+The newest pair in the list is the first to share an **engine**, and its Saga
+cells are deliberately **empty**. *Blood & Lace* and *Zero Comico* are both
+GMM Entertainment, both running `japotek3d.dll`, seven months apart — and
+they have no characters, setting or fiction in common, which is what the Saga
+column is for. The Studio column already carries the link that exists. What
+the two discs say about each other is a great deal, and it is said in prose,
+in [pc-bloodandlace-doc chapter
+11](https://github.com/vs-sr-dev/pc-bloodandlace-doc/blob/master/docs/11-two-discs-one-engine-seven-months.md),
+which is the first side-by-side comparison in this family: the engine *lost*
+237,568 bytes of code between them, and three claims in the older repository
+are corrected by the newer one.
+
 | Title | Year | Studio | Saga | What it is |
 |---|---|---|---|---|
 | [**Prince of Qin**](https://github.com/vs-sr-dev/pc-princeofqin-doc) | 2002 | Object Software |  | The Chinese action RPG and Object Software's "EasyRPG" engine |
@@ -54,6 +66,7 @@ different machine underneath.
 | [**Baron Baldric: A Grave Adventure**](https://github.com/vs-sr-dev/pc-baronbaldric-doc) | 1992–93 | CTV-Link / Manaccom | Baron Baldric | A house container with no directory at all, the Turbo Pascal linker map that shipped inside it by accident, and thirteen timestamps forty-eight years in the future |
 | [**Mystic Towers**](https://github.com/vs-sr-dev/pc-mystictowers-doc) | 1994 | Animation FX / Apogee | Baron Baldric | The Baldric sequel, and an Amiga game underneath: AMOS memory and sprite banks shipped whole inside the DOS container, ten of them source art the game cannot display |
 | [**Zero Comico**](https://github.com/vs-sr-dev/pc-zerocomico-doc) | 2001 | GMM Entertainment / Medusa Games |  | An Italian TV tie-in that is 69.49 % Indeo video for thirteen minutes of it, two in-house containers wrapping a 1989 LZHUF stream, and an engine still carrying the cancelled game it was written for |
+| [**Blood & Lace**](https://github.com/vs-sr-dev/pc-bloodandlace-doc) | 2001 | GMM Entertainment |  | The game that engine was built for, seven months earlier: a signed licence notice from its author inside `japotek3d.dll`, 237,568 bytes of code the later disc no longer has, and a combat system the comedy could not use |
 
 ## The write-ups
 
@@ -229,3 +242,68 @@ characters of dialogue hold Monkey Island's **insult sword-fighting** with 65
 hand-written lines across five opponents, a plumber whose **surname is
 Mario** and whose brother Gigi lives upstairs, and Pac-Man introducing
 himself under his 1980 Japanese trade name, **`Puck Man`**
+
+### [Blood & Lace](https://github.com/vs-sr-dev/pc-bloodandlace-doc)
+
+*Blood & Lace* (GMM Entertainment, Tortona, mastered 2 March 2001) — the
+game the Zero Comico engine was **built for**, seven months earlier, and the
+title whose `JGF5` files were reported as holding "LZH-compressed data",
+which is the tip that opened that disc. A 519,358,464-byte image with
+`NERO - BURNING ROM` in its application identifier, `BLOODLACEMASTER` as its
+volume label, and — unlike its sibling — **no retail disc in the session to
+check it against**, which is stated in every chapter that depends on
+filesystem metadata. Its 215 unclaimed sectors account for themselves
+exactly: two root directory records, **56 zero-length `.bsp` files** (24.7 %
+of its floor plans, 41 of them camera maps, against two of 82 on the other
+disc), and 157 zero sectors at the end of which **155 sit inside the declared
+volume — the same 155 Nero wrote on Zero Comico's pressed disc**, a burner
+signature neither disc states about itself. **Two thirds of the disc has one
+date**: 4,624 of 6,918 files stamped 30 December 2000 between 04:47 and 04:53,
+after `japotek3d.dll` linked at 04:44:31 and `blood&lace.exe` at 04:45:20 —
+the whole product assembled in nine minutes at a quarter to five in the
+morning, while the executable's version resource claims, in Italian and with
+an exclamation mark, `Compilata il 6 dicembre 2000 alle 6 del mattino!`, which
+is twenty-four days wrong. Eight shipped `SpeechTracer` dumps carry the
+compiler's `__DATE__` of the build that wrote them, so the disc records
+**nine builds over six weeks** from a binary with one timestamp of its own,
+three of them after 9 p.m. The engine DLL contains **3,576 bytes of signed
+Italian**: a licence notice in the first person stating that `japotek3d.dll`
+was developed entirely by **Dario Pelella of Genoa** from **1996**, licensed
+per compiled version to Giunti Multimedia Entertainment of Tortona, dated
+*29 dicembre 2000* — four hours and forty-four minutes before its own COFF
+timestamp, both correct if you have not been to bed — plus a four-person team
+credit that gives `PietruZ&DariuZ` their surnames, and greetings to
+**JapoTek, a demo group since 1993**, which is where every `J` in `JFX1`,
+`JGF5` and `japotek3d` comes from. **None of that block survives into Zero
+Comico's copy of the same DLL.** Nor does a third of the code: `.text` is
+704,512 bytes here against 466,944 there, so **237,568 bytes and 31 C++
+translation units were removed**, including a named software rasteriser,
+`JapoTek SimPlus`, with 8-bit and 32-bit back ends — and the 262,144-byte
+difference in file size is five section alignments summing coincidentally to
+2^18. `Silver Raven On-line`, the cancelled project fossilised in the 2001
+binary, is **absent** here on four independent measures, so it was linked in
+*after* this game rather than carried since 1999. The combat that Zero
+Comico's characters joke about never having is **real**: 32 sword animation
+sets, 26 collision-sensor files declaring 99 hit zones, 76 combat sounds
+named *attacco* / *subita* / *morte*, five weapons wired to the inventory and
+a heartbeat that speeds up as energy drops. 4,622 of 4,622 LZHUF containers
+decode to their exact declared length, turning 209.8 MB into **389.6 MB**;
+the 2,824 `.tga` are 32-bit `JGF5` again, 96.8 % power-of-two, and their
+channel order turns out to be **BGRA** — five textures named `*pelle`, skin,
+are blue as RGBA, and the other disc's own `azzurro.tga` is orange. The nine
+Indeo films are **640×480**, four times the sibling's pixels, at **0.0663
+bytes per pixel against 0.1961**, and seven of the nine use interframe
+prediction properly; there are **85 minutes 30 seconds of recorded speech**
+against six, and — on both discs, across 2,598 files — not one MP3 tag of any
+kind. The model format finally parses: record type `0xF044` is a group with a
+`u32` length at `+4`, which closes the walk on **1,029 of 1,030 files here
+and 526 of 526 on Zero Comico**, up from 520, and still yields no vertex
+count, because 675 distinct `0xF003` body lengths with a gcd of 1 is not a
+stride. And `char.esc`, which the older repository called a one-letter typo,
+is **108 files, fifteen of them called `char.esc`** — an earlier name for the
+same format, renamed to `.isc` during this game's production, with the
+diagnostic string left behind. Also on the master: `Stanzarossa`, a 538 KB
+test level that is one four-point square room with 62 characters and all five
+weapons in it; a directory named `SUPERFLUI` holding more speech than the
+chapter above it kept; a script called `Copia di char.isc`; and a licence
+that asks for **ten pounds sterling** to replace a defective CD
