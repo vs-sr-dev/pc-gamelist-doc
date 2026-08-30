@@ -890,7 +890,7 @@ say **671,663**. Windows mounts the UDF, whose partition ends one sector early â
 and at LBA 671,663, outside that partition, sits the closing **Anchor Volume
 Descriptor Pointer** that UDF requires to be at the last recorded sector.
 Reading it needed `IOCTL_SCSI_PASS_THROUGH_DIRECT` and a raw `READ(10)`, which
-five earlier repositories in this family had carried as an open question and
+four earlier repositories in this family had carried as an open question and
 never attempted. The sector above it returns ILLEGAL REQUEST, and the disc ends
 exactly where the physical format information said.
 
