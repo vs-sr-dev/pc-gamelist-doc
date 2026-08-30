@@ -1,6 +1,6 @@
 # pc-gamelist-doc
 
-**Index of the PC and portable-C game documentation** — 24 titles, one
+**Index of the PC and portable-C game documentation** — 25 titles, one
 repository each. This family has no shared platform checklist: a DOS game from
 1987 and a PhyreEngine remaster from 2018 have almost nothing in common except
 the machine they end up on, which is exactly why the index is per platform and
@@ -102,6 +102,7 @@ is between the two discs that share a studio.
 | [**Lucignolo Il Videogioco**](https://github.com/vs-sr-dev/pc-lucignolo-doc) | 2007–08 | 7Th Sense s.r.l. |  | An eight-file DVD of which one file is 96.79 %: the copy protection is a six-byte file containing the word `codice`, every file's sector padding is a verbatim echo of the data 65,536 bytes earlier, and the engine names itself in a log the developers shipped by accident |
 | [**Viaggio al centro del Mondo** (883 CD Extra)](https://github.com/vs-sr-dev/pc-883d-doc) | 1999 | Moltimedia |  | **Not a game** — the multimedia session of a music CD Extra, holding a slot-machine minigame that is 2.7 % of the data track and an installer for **883D**, an Activeworlds chat world whose object-path server survived in a cache directory name: `http://vrml.moltimedia.it/aw` |
 | [**1000 Miglia**](https://github.com/vs-sr-dev/pc-1000miglia-doc) | 1991–92 | Simulmondo *(attributed externally; the material names no studio)* | | The Brescia–Rome–Brescia road race, whose sixteen route files are named for the city at each end and whose sixteen filenames are therefore a graph — one closed circuit through fifteen towns with Bologna visited twice. **What survives is not the product**: it is one installation, made on 9 November 1992, of a March 1992 bulletin-board distribution, and 37.93 % of it is PowerPacker with the bits in an order the standard depacker cannot read |
+| [**Harry Potter and the Philosopher's Stone**](https://github.com/vs-sr-dev/pc-harrypotter1-doc) | 2001 | KnowWonder / Electronic Arts *(the game's own credits name no studio, only "PC Team"; `KnowWonder` appears once in 540 files, as a Windows domain inside a developer's path, and on the printed case)* |  | The first object here measured from the disc itself rather than a copy. A **table hidden in the primary volume descriptor**, in 344 bytes ISO 9660 requires to be zero, naming six boundaries of the disc including both edges of a 9,280-sector unreadable region — whose near border **a binary search cannot find**, because the drive reads 64 sectors at a time. 249 Unreal Engine 1 packages in seven format versions, 91 music files with no tracker module in them, and 31 levels in a single line recovered twice from two independent sources |
 
 ## The write-ups
 
@@ -767,3 +768,93 @@ ProTracker `M.K.` module are all shared with *Mystic Towers*. Three unrelated
 DOS games reaching into the same small box of tools, and only this one reaching
 as far as an Amiga compressor.
 
+### [Harry Potter and the Philosopher's Stone](https://github.com/vs-sr-dev/pc-harrypotter1-doc)
+
+*Harry Potter e la Pietra Filosofale* (Windows, Electronic Arts, October 2001) —
+**540 files, 577,088,559 bytes, 292,173 sectors, Unreal Engine 1, SafeDisc
+2.40.010.** The seventh object in this list and the first that is not a copy:
+the retail disc, in a drive, readable as many times as needed. That inverts the
+provenance chapter every previous entry opened with, and it makes three
+measurements possible that no image and no file tree could support.
+
+The first is arithmetic. The lead-out sits at LBA **292,323** and the volume
+declares **292,173**; the difference is **150 exactly**, and four independent
+sources — the ISO descriptor, the mounted filesystem, `IOCTL_CDROM_READ_TOC` and
+`IOCTL_DISK_GET_LENGTH_INFO` — split two against two across that gap. Three
+earlier discs in this collection carried a tail of **155**; those five extra
+sectors were never on a disc, and the question closes here.
+
+The second is a place nobody had looked. This disc has **two primary volume
+descriptors**, at sectors 16 and 17, and they are not identical: **344 of 2,048
+bytes differ**, every one of them inside the application-use and reserved fields
+that ECMA-119 requires to be zero. Sector 17 is clean. Sector 16 carries a run
+of twelve 32-bit integers of which **six are exact boundaries of this disc** —
+the LBA of `00000001.TMP`, the end of the unallocated hole, the extent of
+`00000002.TMP`, and both edges of a region that no filesystem describes at all.
+The copy protection wrote a map of itself into the descriptor and left a clean
+shadow next to it.
+
+The third is the region those numbers describe, and it is where the session made
+its largest mistake. A binary search with cold seeks put the first unreadable
+sector at **755**, confirmed three times, stable. It is wrong. An inherited tool
+run only to check whether it still applied died on sector **818** instead —
+which was one of the integers in the descriptor that nothing had explained.
+Fifteen sequential reads from eight starting points then had exactly one
+solution: **the drive fetches 64 sectors per request and fails the whole request
+if any of them is bad**, so the lowest failing cold seek is 818 − 63 = 755. The
+true region is **818 to 10,097, 9,280 sectors, 19,005,440 bytes**, both ends of
+it written on the disc by whoever made it unreadable, and the near edge is
+invisible to any instrument that only probes one sector at a time.
+
+Inside the 10,000 sectors the layout reserves, 720 read: 745,472 bytes of
+high-entropy content that no directory record claims, arranged as nine blocks
+of **one sector stored ten times over** at a stride of forty, then a 265-sector
+run that stops of its own accord seven sectors before the damage begins.
+
+The content is Epic's format and this studio's decisions. All **249 packages**
+parse and five of six oracles pass on every one; the sixth fails eight times and
+each failure is a finding, including the two largest files on the disc —
+`HPSounds.u`, 29.7 MB of sound effects, and `HPModels.u`, 17 MB of meshes and
+textures — wearing Unreal's extension for *code*. The package version field is
+Epic's, but its **distribution is this build's**: seven distinct values sorting
+the 249 files into layers by when anyone last touched them, from six stock
+texture packages fifteen format revisions behind the game down to the 208 built
+in the fortnight before the master. The 91 music packages contain **no tracker
+module at all** — every one is MPEG-2 Layer II — and of 87 distinct streams,
+three of the four duplicate pairs are one cue shipped twice under two spellings
+of an apostrophe.
+
+The narrative is measured twice and agrees with itself. `ChangeLevel` strings
+inside the map packages give **31 maps in one line**, from `Lev_Tut1` to
+`Snapes_Office` to `startup`, with the nine Quidditch maps reachable from code
+and nothing else. `System/Dobby.int` — a localisation file for a module that is
+not on the disc, named after a character who is not in this book — turns out to
+hold a numbering of the same maps, and the two sources agree at **30 of 30 with
+zero contradictions**, including the one place the filenames lie: `Lev2_Fire2`
+is played before `Lev2_fire1`, and the two stems differ in the case of one
+letter.
+
+Twenty-five language tags across fifteen axes and **not one language on all
+fifteen**: four dialogue tracks, five menu-art sets, three readmes with no
+English among them, five help files in languages the game does not speak, and
+one Hungarian texture pack that exists on exactly one axis and in no numbered
+directory. `autorun.cfg` settles what the disc is in five lines —
+`NumLanguages=3`, Italian, Spanish and standard Portuguese, `English=0` — and
+the index behind `System/0`, `1`, `2` is written on the disc four times over as
+Windows locale identifiers in sort order, with the three `Default.ini` copies
+differing **in three bytes**: `Language=spa`, `ita`, `por`.
+
+**89.09 % of the file bytes were written for this disc**, against 33 % on the
+883 CD Extra and 0 % on 1000 Miglia — because by 2001 the licensed engine was
+4.25 % of the object and DirectX alone was bigger than all of it. `discdiff.py`
+against the eight previously measured trees returns **zero over 16,434 files**,
+the seventh zero in seven sessions, including against the DirectX
+redistributable that was the first concrete reason in this collection to expect
+otherwise.
+
+And the studio's name survives inside the software exactly once, in 540 files:
+not in the 6,779-byte credits roll that names a hundred and eighty people and
+attributes the work to *"PC Team"*, but at offset 0x25B5C of `System/HPModels.u`,
+in a 3ds Max exporter comment recording where it found a bitmap —
+`C:\Documents and Settings\dhunt.KNOWWONDER\Desktop\Dhunt\work\Harry Potter` —
+attached to the texture of the Golden Snitch.
