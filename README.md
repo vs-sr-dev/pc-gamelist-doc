@@ -1,6 +1,6 @@
 # pc-gamelist-doc
 
-**Index of the PC and portable-C game documentation** — 25 titles, one
+**Index of the PC and portable-C game documentation** — 26 titles, one
 repository each. This family has no shared platform checklist: a DOS game from
 1987 and a PhyreEngine remaster from 2018 have almost nothing in common except
 the machine they end up on, which is exactly why the index is per platform and
@@ -103,6 +103,7 @@ is between the two discs that share a studio.
 | [**Viaggio al centro del Mondo** (883 CD Extra)](https://github.com/vs-sr-dev/pc-883d-doc) | 1999 | Moltimedia |  | **Not a game** — the multimedia session of a music CD Extra, holding a slot-machine minigame that is 2.7 % of the data track and an installer for **883D**, an Activeworlds chat world whose object-path server survived in a cache directory name: `http://vrml.moltimedia.it/aw` |
 | [**1000 Miglia**](https://github.com/vs-sr-dev/pc-1000miglia-doc) | 1991–92 | Simulmondo *(attributed externally; the material names no studio)* | | The Brescia–Rome–Brescia road race, whose sixteen route files are named for the city at each end and whose sixteen filenames are therefore a graph — one closed circuit through fifteen towns with Bologna visited twice. **What survives is not the product**: it is one installation, made on 9 November 1992, of a March 1992 bulletin-board distribution, and 37.93 % of it is PowerPacker with the bits in an order the standard depacker cannot read |
 | [**Harry Potter and the Philosopher's Stone**](https://github.com/vs-sr-dev/pc-harrypotter1-doc) | 2001 | KnowWonder / Electronic Arts *(the game's own credits name no studio, only "PC Team"; `KnowWonder` appears once in 540 files, as a Windows domain inside a developer's path, and on the printed case)* | Harry Potter | The first object here measured from the disc itself rather than a copy. A **table hidden in the primary volume descriptor**, in 344 bytes ISO 9660 requires to be zero, naming six boundaries of the disc including both edges of a 9,280-sector unreadable region — whose near border **a binary search cannot find**, because the drive reads 64 sectors at a time. 249 Unreal Engine 1 packages in seven format versions, 91 music files with no tracker module in them, and 31 levels in a single line recovered twice from two independent sources |
+| [**Harry Potter and the Goblet of Fire**](https://github.com/vs-sr-dev/pc-harrypotter4-doc) | 2005 | Electronic Arts *(publisher; the disc names no development studio at all — it names RenderWare, RealCore 6.27.01, RealGraph 6 and Havok, and one Perforce path, `d:\P4\Eauk\HPGoF\`)* | Harry Potter | A DVD that is **93.98 % one file**, and whose 126 unallocated gaps are not gaps: 79 of them are exactly 20 sectors, one every twenty files, and they hold a complete **second filesystem** — UDF File Entries, one per file, agreeing with ISO 9660 on all 1,659 of them. Six sources disagree by one sector about how long the disc is, and the sector in dispute is **UDF's closing anchor**: unreachable through Windows, read with a SCSI `READ(10)`. SafeDisc 4.50.000, whose version is written a second time as two integers in a descriptor field ISO 9660 requires to be zero |
 
 ## The write-ups
 
@@ -858,3 +859,76 @@ attributes the work to *"PC Team"*, but at offset 0x25B5C of `System/HPModels.u`
 in a 3ds Max exporter comment recording where it found a bitmap —
 `C:\Documents and Settings\dhunt.KNOWWONDER\Desktop\Dhunt\work\Harry Potter` —
 attached to the texture of the Golden Snitch.
+
+### [Harry Potter and the Goblet of Fire](https://github.com/vs-sr-dev/pc-harrypotter4-doc)
+
+*Harry Potter e il Calice di Fuoco* (Windows, Electronic Arts, October 2005) —
+**1,659 files, 1,369,393,885 bytes, 671,664 sectors, RenderWare on EA's RealCore
+6.27.01, SafeDisc 4.50.000.** The second Harry Potter disc in this index and the
+second object measured in a drive rather than from a copy. It is also the most
+opaque thing here: **93.98 % of it is a single file**, `0compressed.zip`, and
+the other 6.02 % is an installer, a technical-support booklet in ten languages,
+and a copy protection.
+
+So the session measured the 6 %, and the 6 % turned out to contain a second
+filesystem nobody had asked about.
+
+`isodev.py` reports 126 unallocated gaps totalling 2,096 sectors, **79 of them
+exactly 20 sectors long**, and a counter shows one appearing after every twenty
+files in layout order — 71 times out of 79 at exactly twenty. Reading them
+instead of assuming they were empty found descriptor tag `05 01`: a **UDF File
+Entry**. The disc carries ISO 9660, Joliet *and* a complete **UDF 1.02**
+filesystem, and 1,740 of the 2,096 "unclaimed" sectors are its metadata — one
+sector per file, emitted in batches of twenty. Both filesystems describe 1,659
+files in 40 folders totalling 1,369,393,885 bytes and agree on every total. The
+genuinely spare space on this DVD is 92 sectors.
+
+The second finding is one sector long. The DVD's physical format information,
+the drive's `READ CAPACITY(10)`, the Windows device length and the ISO
+descriptor all say **671,664** sectors; the mounted volume and every `ReadFile`
+say **671,663**. Windows mounts the UDF, whose partition ends one sector early —
+and at LBA 671,663, outside that partition, sits the closing **Anchor Volume
+Descriptor Pointer** that UDF requires to be at the last recorded sector.
+Reading it needed `IOCTL_SCSI_PASS_THROUGH_DIRECT` and a raw `READ(10)`, which
+five earlier repositories in this family had carried as an open question and
+never attempted. The sector above it returns ILLEGAL REQUEST, and the disc ends
+exactly where the physical format information said.
+
+The protection names itself twice. `DIAG.EXE` carries SafeDisc's `BoG_` marker
+at file offset **0xFD4** — the same offset as on the 2001 disc — with the
+version triple at `+0x20` reading **4.50.000**, against that disc's 2.40.010.
+And the primary volume descriptor carries a 267-byte payload beginning exactly
+256 bytes into the application-use field, in the same place the 2001 disc put
+its own: there, twelve integers of which six were that disc's boundaries; here,
+ten of the twelve are zero and the two that survive are **`4` and `50`**.
+Meanwhile `00000001.TMP` is 10,001 sectors of high-entropy data whose eight
+16-sector blocks fall on **absolute DVD ECC-block boundaries, 18 of 19 run
+edges** — placed first and written second — while the 2001 disc's equivalent was
+a 10,000-sector hole that could not be read at all.
+
+Nobody signs the disc except the company that cut it. `KnowWonder` appears zero
+times in either ASCII or UTF-16; no development studio appears anywhere; the ISO
+publisher, application and copyright fields are empty. `*GEAR UDF` appears in
+the implementation-identifier field of **every one of the 1,699 File Entries** —
+1,717 occurrences in all. What the game executable does name is its middleware:
+`RenderWare::AttrHandler::Packet`, `Havok::hkPoolMemory`, and compiler paths to
+`C:\packages\realcore\6.27.01\source\file\cmn\big_vfs.cpp` — the virtual
+filesystem that reads the four EA `BIGF` archives inside the zip. The only human
+being named on the disc is in a Visual Studio home-directory path inside a
+support utility, which is the same accident that gave the 2001 disc its studio.
+
+The whole master was assembled in **fourteen minutes and thirty-seven seconds**
+on 18 October 2005, from the first `.big` at 20:43:26 to the volume descriptor
+at 20:56:09 — and the ISO and UDF filesystems, written by the same program in
+the same pass, disagree about the timezone of every file by exactly one hour.
+`autorun.cfg` settles what the edition is in one line, `NumLanguages=5`, with
+English switched off in both of its variants; the disc names 27 language codes
+across ten separate lists, four of which appear on all ten. `discdiff.py`
+against the eight previously measured trees returns **zero over 17,553 files**,
+the eighth zero in eight sessions.
+
+And the file the previous disc shares a name and a length with — `00000002.TMP`,
+317,440 bytes on both — is **73.99 % different**. That comparison needed no
+second drive: the 2001 session published enough about its copy (entropy
+−0.0000, one byte value in 256) to reconstruct it exactly, which is the one
+thing in that repository that can still be compared against anything.
