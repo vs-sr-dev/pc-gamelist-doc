@@ -1,6 +1,6 @@
 # pc-gamelist-doc
 
-**Index of the PC and portable-C game documentation** — 21 titles, one
+**Index of the PC and portable-C game documentation** — 22 titles, one
 repository each. This family has no shared platform checklist: a DOS game from
 1987 and a PhyreEngine remaster from 2018 have almost nothing in common except
 the machine they end up on, which is exactly why the index is per platform and
@@ -54,6 +54,16 @@ say is that the differences are almost all differences of *year* rather than
 of place, and that the third disc, by arriving with its subchannel, was able
 to correct the other two rather than merely be compared with them.
 
+*Lucignolo Il Videogioco* is the fourth Italian disc and the first that could
+be set against a genuine like-for-like — two tie-ins to Mediaset television
+programmes, four years apart. It closes the question rather than extending
+it: **not one file on it is byte-identical to any file on the other three,
+and the set of filenames common to all four is empty.** `fmod.dll`, the one
+thing the first three shared, does not survive; this game uses Audiere. Four
+discs and three studios are no more a national school than three were, and
+the useful result is the negative one: the only crossing anywhere in the four
+is between the two discs that share a studio.
+
 | Title | Year | Studio | Saga | What it is |
 |---|---|---|---|---|
 | [**Prince of Qin**](https://github.com/vs-sr-dev/pc-princeofqin-doc) | 2002 | Object Software |  | The Chinese action RPG and Object Software's "EasyRPG" engine |
@@ -78,6 +88,7 @@ to correct the other two rather than merely be compared with them.
 | [**Zero Comico**](https://github.com/vs-sr-dev/pc-zerocomico-doc) | 2001 | GMM Entertainment / Medusa Games |  | An Italian TV tie-in that is 69.49 % Indeo video for thirteen minutes of it, two in-house containers wrapping a 1989 LZHUF stream, and an engine still carrying the cancelled game it was written for |
 | [**Blood & Lace**](https://github.com/vs-sr-dev/pc-bloodandlace-doc) | 2001 | GMM Entertainment |  | The game that engine was built for, seven months earlier: a signed licence notice from its author inside `japotek3d.dll`, 237,568 bytes of code the later disc no longer has, and a combat system the comedy could not use |
 | [**Grande Fratello Il Gioco**](https://github.com/vs-sr-dev/pc-grandefratello-doc) | 2003 | Trecision |  | The official Big Brother tie-in, and the first disc here dumped with its subchannel: 43 wrong bits in 12 MB of Q prove the read, the 155-sector tail three discs share turns out to be 150 of Red Book, and 2,934 files come out of one cabinet |
+| [**Lucignolo Il Videogioco**](https://github.com/vs-sr-dev/pc-lucignolo-doc) | 2007–08 | 7Th Sense s.r.l. |  | An eight-file DVD of which one file is 96.79 %: the copy protection is a six-byte file containing the word `codice`, every file's sector padding is a verbatim echo of the data 65,536 bytes earlier, and the engine names itself in a log the developers shipped by accident |
 
 ## The write-ups
 
@@ -396,3 +407,75 @@ much of the disc is a PlayStation port; the executable's credits answer it the
 other way, naming **`conversione per playstation a cura di`** with no
 reciprocal PC credit, and there is not one Sony toolchain string, asset magic
 or sector alignment anywhere on the disc.
+
+### [Lucignolo Il Videogioco](https://github.com/vs-sr-dev/pc-lucignolo-doc)
+
+*Lucignolo Il Videogioco* (7Th Sense s.r.l., content finished 22 November
+2007, published 30 January 2008) is the tie-in to a late-night Italia 1 magazine programme and the fourth
+Italian disc in this list. It arrives as a **cooked ISO with no pressed
+original behind it**, and the volume says who made the image and nobody else:
+application identifier `WWW.BURN4FREE.COM`, volume label `DISC 13 291107`,
+publisher and data preparer blank. Every volume-level figure in that
+repository therefore describes a stranger's home re-master, which is a
+regression from the previous disc's CloneCD dump and is on its first page
+rather than in a footnote. **Eight files, of which one is 96.7857 %** of a
+1.11 GB disc.
+
+The copy protection is the headline and it is a measurement rather than a
+joke: `Installer\Installer.spf` is **six bytes containing the ASCII word
+`codice`**, and the game's executable holds `LUCIGNOLO CD CHECK`,
+`%c:\Installer\Installer.spf`, three Italian *insert the DVD* messages and
+the literal `codice` — which is the entire disc check, and the word occurs
+exactly twice in everything extracted. The second finding closes a question
+three other discs left open in a different form: **the padding after every one
+of the eight files, and the sector past the declared volume, is a byte-exact
+copy of the data 65,536 bytes earlier in the image**, eight files out of eight,
+bounded exactly by the padding and not one byte further. The image is 17,010
+whole 64 KiB buffers, which is the whole explanation — and it says nothing
+about the 155-sector tail on the other three, which stays open for a third
+session because Burn4Free is not the program that wrote them.
+
+The third finding settles a time zone by subtraction instead of inference. The
+ISO declares GMT+0 in its volume descriptor and UTC+1 in its directory records
+for the same instant; Inno Setup records 2,440 source timestamps in local time
+and sets a flag saying so; the game's PE COFF header is UTC by definition.
+**Inno minus COFF is 59 minutes 59 seconds** — one hour of zone and one
+second of link-to-close lag — which makes the directory records truthful, the
+descriptor's zero an unfilled default, and the installer's build time
+computable at 54 minutes 10 seconds. The note sent back to
+`pc-grandefratello-doc` is that its InstallShield timezone inference is sound
+and does not generalise: three programs wrote timestamps into this one image
+and used three conventions.
+
+Inside, both executables are **Inno Setup 5.2.1** from the same compiler, and
+`setup.exe` has no payload at all — its header block begins where its data
+area begins, and the four areas sum to the file size exactly. The 1.03 GB one
+is a single solid LZMA chunk holding **2,440 files, 1,411,108,085 bytes**, a
+ratio of 1.3083×, which open out to a **2.14 GB tree of which 51.028 % is DDS
+texture**. The engine is **OGRE 1.2.4 "Dagon"** with Newton, CEGUI, Cg, DevIL
+and Audiere, and it names itself because the developers shipped a 475-line
+`Ogre.log` from a laptop with an ATI Mobility Radeon X1600 — along with
+`ogre.cfg`, `Crash.log`, `OgrePlatform.dll.backup` and a `resources.cfg` still
+carrying `D:/VGData`. OGRE was built from source in **one twenty-minute run on
+12 November 2006**. CEGUI ships, 2,281,472 bytes, and appears in neither the
+import table, nor `Plugins.cfg`, nor the log, nor the strings; the entire
+customisation of the middleware stack is **one bitmap and two dialog templates**
+in the configuration DLL, with the original next to it. The eight video files
+are **6 minutes 37.5 seconds of Cinepak** — a 1991 codec — at 512 × 512, with
+uncompressed PCM that is 22.041 % of their bytes: the later Mediaset tie-in has
+**56 % as much television in it** as *Grande Fratello* had, on a disc four and a
+third times the size. Nothing is hidden anywhere: 1,609 images with 1,609
+correct magic numbers, `.sgi` and `.ssd` that are XML, a `levels.db` that is
+flat text, 1,387 written lines of dialogue across 353 chains and 69 speakers of
+which 81.3 % are voiced, 102 minutes 29 seconds of Ogg Vorbis, and a 49-verb
+scripting language in 1,002 XML steps. The whole of it is run by a **492,032-byte
+executable, one part in 4,340 of the tree it manages**, and no file on the disc
+outside `credits.avi` names a publisher, a distributor or a broadcaster.
+
+The Year cell straddles because the disc and the world disagree: **every clock
+on the image is 2007** — the newest file is 29 November, the newest file inside
+the installer 21 November — while the stated publication date is 30 January
+2008. Nothing in the image distinguishes a pre-release burn from an ordinary
+two-month gap between gold and shelf, and the repository says so rather than
+choosing. The publisher (2lite) and distributor (Halifax) are external
+knowledge and appear nowhere in the 2,440 installed files.
