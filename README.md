@@ -1,6 +1,6 @@
 # pc-gamelist-doc
 
-**Index of the PC and portable-C game documentation** — 28 titles, one
+**Index of the PC and portable-C game documentation** — 29 titles, one
 repository each. This family has no shared platform checklist: a DOS game from
 1987 and a PhyreEngine remaster from 2018 have almost nothing in common except
 the machine they end up on, which is exactly why the index is per platform and
@@ -106,6 +106,7 @@ is between the two discs that share a studio.
 | [**Harry Potter and the Goblet of Fire**](https://github.com/vs-sr-dev/pc-harrypotter4-doc) | 2005 | Electronic Arts *(publisher; the disc names no development studio at all — it names RenderWare, RealCore 6.27.01, RealGraph 6 and Havok, and one Perforce path, `d:\P4\Eauk\HPGoF\`)* | Harry Potter | A DVD that is **93.98 % one file**, and whose 126 unallocated gaps are not gaps: 79 of them are exactly 20 sectors, one every twenty files, and they hold a complete **second filesystem** — UDF File Entries, one per file, agreeing with ISO 9660 on all 1,659 of them. Six sources disagree by one sector about how long the disc is, and the sector in dispute is **UDF's closing anchor**: unreachable through Windows, read with a SCSI `READ(10)`. SafeDisc 4.50.000, whose version is written a second time as two integers in a descriptor field ISO 9660 requires to be zero |
 | [**Harry Potter and the Order of the Phoenix**](https://github.com/vs-sr-dev/pc-harrypotter5-doc) | 2007 | Electronic Arts *(publisher; the disc names no development studio as a company, but `hp.exe`'s Authenticode certificate reads `O=Electronic Arts, OU=UK Studio, L=Guildford, ST=Surrey, C=GB` and eleven source paths sit under `z:\phoenix\code`)* | Harry Potter | A **pressed** DVD whose image was assembled with a desktop ISO editor — `UltraISO V8.5`, signed 1,222 times where the 2005 disc said `GEAR` 1,717 times — and whose ISO 9660 primary namespace is **not ISO 9660**: zero `;1` version suffixes, 1,185 lower-case names, 67 with spaces, which is exactly why it carries no Joliet. A lead-out reported **674,807 sectors before the end of the disc**, proved to be a one-byte MSF field saturating. SecuROM instead of SafeDisc, with **no version string anywhere in 10,329,160 bytes** and four PE sections named `ars` / `est` / `artem` / `celare`. And the eight-disc run of zero shared files **ends**: 500 files here are byte-identical to files on the 2005 disc |
 | [**Age of Wonders II: The Wizard's Throne**](https://github.com/vs-sr-dev/pc-ageofwonders2-doc) | 2002 | Triumph Studios *(the disc names it in `AoW2.~ex`'s version resource and four times in a plaintext credits block; the publisher, Gathering of Developers, holds the copyright in the English readme)* |  | The first disc here whose **unallocated space is the subject**: 23.91 % of it belongs to no file, and 143,595,520 bytes of that are reproduced from two integers. A volume descriptor that writes down the disc's own first and last unreadable sector. A Delphi 5 game, and two files shared with a 2001 disc from a different publisher |
+| [**Il cane di terracotta**](https://github.com/vs-sr-dev/pc-canediterracotta-doc) | 2000 | IM*MEDIA (software), Sellerio (publisher) |  | **Not a game** — an interactive cartoon from Camilleri's novel, and the first hybrid in this list: Windows mounts 2,374 files in 4 folders, the HFS volume on the same sectors holds 2,401 in 11, and 2,372 of the 2,373 they share begin on the **same sector**. Macromedia Director 7.0.2, a 10,240-byte grid whose padding has a closed form at 100.0000 %, and 517 Macintosh audio files each leaking the same Windows 95 `KERNEL32.DLL` return address |
 
 ## The write-ups
 
@@ -1130,3 +1131,94 @@ list holds one of it; the rule this collection has applied twice — to Harry
 Potter until the fourth disc arrived, and to Baron Baldric until *Mystic Towers*
 did — is that a saga of one is not a saga. The cell fills in when a second Age of
 Wonders disc is measured, and not before.
+
+### [Il cane di terracotta](https://github.com/vs-sr-dev/pc-canediterracotta-doc)
+
+*Il cane di terracotta* (November 2000) — **the second entry in this index that
+is not a game**, after *Viaggio al centro del Mondo*, and the two are close
+relatives: both Italian, both Macromedia Director, both either side of 2000. It
+is an interactive cartoon of Andrea Camilleri's Montalbano novel, and it is the
+**first hybrid disc in this family** — the first whose answer to "how many files
+are on it" depends on which operating system you ask.
+
+Windows mounts the ISO 9660 volume and reports **2,374 files in four folders**.
+The HFS volume that lives on the same sectors reports **2,401 in eleven**. The
+briefing that opened the session called that a difference of 27 files and 6
+folders; counted consistently it is **28 files the PC cannot see, 1 the Mac
+cannot see, and 7 folders**, because the HFS header excludes the root and the
+ISO count includes it. Nothing inherited into this collection reads HFS, so the
+partition map, the Master Directory Block and the catalog B-tree were read from
+the structures up, addressed and never scanned.
+
+**The two catalogues describe one disc, not two.** 2,372 of the 2,373 shared
+paths begin on **exactly the same sector**, and the reason is one line of the
+volume header: the HFS allocation block is 10,240 bytes — five sectors — and the
+first one lands on **LBA 1610 = 5 × 322**. Every file therefore sits on a
+multiple of five, and the padding after each one follows
+`gap = (-ceil(size/2048)) mod 5` at **100.0000 % over 2,370 files, with no free
+parameters**. The ISO volume was not built beside the Macintosh one; it was built
+over it, on a grid that already existed.
+
+**One file breaks it, and breaks it four ways.** `Data/Varie.cst` is `XFIR` at
+LBA 1,558 and `RIFX` at LBA 110,175 — two addresses 108,617 sectors apart, two
+lengths ten bytes apart, two timestamps 3 m 45 s apart, and the two byte orders
+of a Motorola and an Intel processor. It is the **only Intel-order container
+among 139**, and those ten bytes are the only quantity that does not cancel when
+the two filesystems' totals are reconciled. The disc's other off-grid file is
+`Installa.exe`, and the pair of them are exactly the two files the Macintosh
+volume does not place.
+
+**What Windows cannot see is the whole Macintosh half**: a Director projector
+with the movie welded into its tail, five `.dxr`, two `.cst`, ten PowerPC Xtras —
+three of which name Shockwave Audio, so the audio format is identified by the
+decoder the disc ships rather than by a file extension — plus four files whose
+*names* ISO 9660 cannot express, because they end in a carriage return. Under it
+all sits the debris of the machine that built it: the Finder's desktop database,
+an AppleShare index, an empty SimpleText document called *Copiami sull'Hard
+Disk* whose entire content is its own name, and **a Norton AntiVirus 6.0 scan
+cache** that somebody's Mac left in the folder and Toast pressed onto the disc.
+
+**And there is a Windows machine in it.** Every one of the 517 Shockwave Audio
+files carries a few hundred bytes of uninitialised memory in its header. Read
+little-endian, the address `0xBFF713EE` appears in **510 of the 517** and three
+neighbours in 509 each — 39 distinct values in the 64 KB window where Windows 95
+and 98 map `KERNEL32.DLL`, **enriched 1,423 times over chance**. The disc is
+Macintosh in its filesystem, its partition map, its byte order, its build paths
+and its executable format; its three hours of audio were encoded somewhere else,
+and each file leaks the same four stack frames of the machine that did it.
+
+Those three hours are the other arithmetic. The sales blurb promised "over 40
+minutes of original music"; the measurement is **3 h 00 m 45 s** by sample count
+and 3 h 02 m 05 s by file size, two calculations from disjoint header fields
+agreeing to 0.74 %. It promised fifteen games and the disc has **fourteen**,
+numbered `Gio01` to `Gio15` with a hole at fourteen that occurs in no byte of the
+medium. And it promised a Vigatese dictionary of over 750 entries, which cannot
+be counted at all: **the entire text content of this disc is 1,620 bytes in 46
+chunks, and every one of them is a number** — the games' clocks, and empty
+save-name boxes. `Camilleri`, `Vigàta`, `perché` and `città` each occur **zero**
+times across seven encodings. The words were set in Photoshop and shipped as
+pixels, 397 MB of them.
+
+**The Saga cell is deliberately empty.** *Il cane di terracotta* belongs to one of
+the longest series in Italian fiction, but this list measures **software**, and
+of Montalbano software there is exactly one. The rule this collection has applied
+three times — to Harry Potter until the fourth disc, to Baron Baldric until
+*Mystic Towers*, and to *Age of Wonders II* which is still waiting — is that a
+saga of one is not a saga.
+
+**The Studio cell names two parties because the disc does.** `Installa.exe`
+carries `CompanyName` `IM*MEDIA`; the volume label is `SELLERIO`, which is the
+publisher of the novel and the first time in this collection that the name on the
+box and the name in the descriptor are the same name. They are different things
+and the cell keeps them apart. The Year is **2000** from the ISO descriptor
+(2000-11-25), which is the date the object in hand was made; the HFS volume is
+five days older and the one executable was linked in April.
+
+It is also the first disc of this family with **no protection at all**, and the
+first whose `application use` and `reserved` descriptor fields are genuinely
+zero after four discs that all carried something there. And it shares **nothing**
+with anything else here: 0 files in common over **19,458 records**, four
+published hash lists and nine working trees — including against `pc-883d-doc`,
+which shares a vendor with it and not one component, because Macromedia's runtime
+is PowerPC code on one disc and Win32 PE on the other.
+
