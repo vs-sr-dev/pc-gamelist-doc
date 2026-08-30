@@ -1,6 +1,6 @@
 # pc-gamelist-doc
 
-**Index of the PC and portable-C game documentation** — 22 titles, one
+**Index of the PC and portable-C game documentation** — 23 titles, one
 repository each. This family has no shared platform checklist: a DOS game from
 1987 and a PhyreEngine remaster from 2018 have almost nothing in common except
 the machine they end up on, which is exactly why the index is per platform and
@@ -32,8 +32,19 @@ have in common turns out to be a protagonist, a Borland runtime and three
 asset files — different studio, different publisher, different engine, and a
 different machine underneath.
 
-The newest pair in the list is the first to share an **engine**, and its Saga
-cells are deliberately **empty**. *Blood & Lace* and *Zero Comico* are both
+The newest entry is the first that **is not a game**, and it is in the list on
+purpose. *Viaggio al centro del Mondo* is the data session of an 883 CD Extra:
+put the disc in a stereo and it plays an album, put it in a computer and it
+opens a Macromedia Director program with a slot machine inside it. The slot
+machine is 2.7 % of the data track and the rest is a hypertext menu, nineteen
+QuickTime movies and an installer for a 3D avatar chat world. An index that
+admits its edge cases is more useful than one that hides them, and the What-it-is
+cell says plainly that this is not a game — because leaving it out would lose
+the fact that an Italian record label shipped an Activeworlds client in every
+copy of an album in 1999.
+
+The newest pair of *games* in the list is the first to share an **engine**, and
+its Saga cells are deliberately **empty**. *Blood & Lace* and *Zero Comico* are both
 GMM Entertainment, both running `japotek3d.dll`, seven months apart — and
 they have no characters, setting or fiction in common, which is what the Saga
 column is for. The Studio column already carries the link that exists. What
@@ -89,6 +100,7 @@ is between the two discs that share a studio.
 | [**Blood & Lace**](https://github.com/vs-sr-dev/pc-bloodandlace-doc) | 2001 | GMM Entertainment |  | The game that engine was built for, seven months earlier: a signed licence notice from its author inside `japotek3d.dll`, 237,568 bytes of code the later disc no longer has, and a combat system the comedy could not use |
 | [**Grande Fratello Il Gioco**](https://github.com/vs-sr-dev/pc-grandefratello-doc) | 2003 | Trecision |  | The official Big Brother tie-in, and the first disc here dumped with its subchannel: 43 wrong bits in 12 MB of Q prove the read, the 155-sector tail three discs share turns out to be 150 of Red Book, and 2,934 files come out of one cabinet |
 | [**Lucignolo Il Videogioco**](https://github.com/vs-sr-dev/pc-lucignolo-doc) | 2007–08 | 7Th Sense s.r.l. |  | An eight-file DVD of which one file is 96.79 %: the copy protection is a six-byte file containing the word `codice`, every file's sector padding is a verbatim echo of the data 65,536 bytes earlier, and the engine names itself in a log the developers shipped by accident |
+| [**Viaggio al centro del Mondo** (883 CD Extra)](https://github.com/vs-sr-dev/pc-883d-doc) | 1999 | Moltimedia |  | **Not a game** — the multimedia session of a music CD Extra, holding a slot-machine minigame that is 2.7 % of the data track and an installer for **883D**, an Activeworlds chat world whose object-path server survived in a cache directory name: `http://vrml.moltimedia.it/aw` |
 
 ## The write-ups
 
@@ -479,3 +491,154 @@ the installer 21 November — while the stated publication date is 30 January
 two-month gap between gold and shelf, and the repository says so rather than
 choosing. The publisher (2lite) and distributor (Halifax) are external
 knowledge and appear nowhere in the 2,440 installed files.
+
+
+### [Viaggio al centro del Mondo — the 883 "Grazie mille" CD Extra](https://github.com/vs-sr-dev/pc-883d-doc)
+
+*Viaggio al centro del Mondo* (Moltimedia, October 1999) — **the one entry in
+this index that is not a game, and it says so in its own What-it-is cell.** It
+is the data session of a CD Extra: session one is ten audio tracks of the 883
+album *Grazie mille*, session two is a Macromedia Director 7 program. The disc
+names itself twice, in two files written 44 minutes apart by two different
+machines, and the name it gives is **not the album's** — it is track 6's. There
+is a game inside: a slot machine that unlocks the songs, which is `SLOT.DXR`,
+6,053,234 bytes, **2.723 % of the data track**. The other 97.277 % is a menu,
+nineteen QuickTime movies, five spherical panoramas, eleven Flash banners, two
+web browsers, two copies of QuickTime, and a network client for a 3D chat world.
+
+**The material is a regression on every disc before it**: not an image but a
+copied folder, 142 files and 222,271,591 bytes, with no volume descriptor, no
+directory records, no extent map, no padding, no unclaimed sectors and **no
+audio session**. Twenty of the thirty inherited tools do not apply and each is
+listed with its verdict. Two things came back that should not have.
+
+**The first is twenty-four raw CD sectors.** Three of the four files in
+`PICTURES/` are `RIFF/CDXA` containers, which hold Mode 2 Form 2 sectors
+*complete* — 2,352 bytes each, sync pattern and absolute MSF address included.
+Seven sectors, then fourteen, then three: **LBA 204,602 to 204,625,
+contiguous, ascending, in file order**, every sync correct and every 8-byte XA
+subheader present twice and identical. It is the only physical geometry that
+survived the copy, and because MSF 45:30:02 is 45½ minutes into the disc it
+puts a ceiling on the audio session that is not there. Inside them are three
+MPEG-1 stills of the album sleeve at 176×144, 352×288 and 704×576 — a clean
+1:2:4 ladder, 25 fps, PAL geometry, muxed at exactly CD audio's 1,411,200
+bit/s — beside a fourth file that is an 800×600 JPEG carrying Apple's
+`AppleMark` comment.
+
+**The second is that the filesystem mtimes survived, and lie.** Read at face
+value they describe a product authored in September 1998 and finished in
+September 1999, with a year of nothing between. They are wrong, and the proof
+is a subtraction: eighty-nine files carry a second timestamp inside themselves
+— PE COFF, QuickTime `mvhd`, MS-CAB file tables — and **seven of them disagree
+with their own mtime by exactly one year and by nothing else**. The month
+agrees, the day agrees, the hour, minute and second agree once the +2:00 CEST
+correction is applied that works on the thirteen control files. `BRANDING.CAB`
+settles it: the Internet Explorer branding cabinet that Tiscali's IEAK run
+produced was **built 1999-09-21 09:37:36 UTC** and carries an mtime of
+1998-09-21 **11:37:38** — two seconds later, one tick of FAT granularity, one
+year early. Eleven binaries have an mtime that precedes their own link
+timestamp, which is impossible; forty-nine of fifty-one cabinets contain files
+dated after their own mtime; and the product in that directory is Internet
+Explorer **5**, which the disc states itself (`pver=5.0`) and which did not
+exist in September 1998. **One workstation in the build chain had its system
+year set to 1998 while the year was 1999**, and the corrected calendar puts the
+entire authored production between **18 September and 4 October 1999** —
+seventeen days. There was no September 1998.
+
+**The Director container had never been opened by this family of repositories**,
+and it cost four bugs, all the same bug. The `XFIR` byte-swap applies to the
+chunk *framing* only — the four-character tags and the lengths inside `imap`
+and `mmap` — while **every chunk body stays big-endian**. Breaking that never
+crashes; it yields plausible positive integers. `Lnam` reported 17,152 names
+(`0x4300`, which is 67). `Lscr` reported 65,535 handlers per script, because
+offset 0x30 is `factoryNameID` and an ordinary script stores −1 there — the
+tool printed **5,767,080 handlers across 88 scripts** without complaint. `CASt`
+reported cast type 16,777,216 (`0x01000000`, which is 1, bitmap). `STXT`
+reported a text length of 301,989,888 for the eighteen characters `INSTALLA
+QUICKTIME`. Each was fixed by finding a falsifier rather than a better guess:
+`literalsOffset + 8 × count == literalsDataOffset` holds on 88 of 88 scripts,
+and the number of type-1 cast members equals the number of `BITD` chunks
+exactly on all five containers — 158, 230, 42, 42 and 1 — as sounds equal
+`sndS` and palettes equal `CLUT`. A fifth error was not a parser bug at all:
+the first census counted `mmap` entry 0, the outer container whose declared
+length is the whole file, and so halved every share it printed.
+
+What the containers hold is small and Italian. **216 handlers, 744 names and
+6,184 bytes of string literal for the entire product**, against 14.9 MB of
+bitmaps in the menu movie alone — `menuDir7.dxr` is **97.45 % `BITD`**, and its
+106 scripts are 0.19 % of it. Three-quarters of its memory map is `free` or
+`junk`, the fossil record of an incremental save. The `VWFI` movie-info chunk
+names the studio in a field nobody clears: `Alessandro ciao - Moltimedia`,
+`Emanuele Belloni`, and the authoring machine's own path, `E:\883\CD\dati\`.
+It also names **`Eric Blanpied - Apple Computer`** as the *creator* of two of
+the movies, because both were started from Apple's QuickTime VR Director sample
+and the field was inherited along with sixty `QTVR…` handler names, six
+`Test…`/`Sample…` pairs and a complete English diagnostic dialog referring the
+user to a section called 'Display' that does not exist on this disc. **The
+Italian menu of an 883 CD-ROM is descended from an Apple demo file, and the
+provenance is still in it.**
+
+**The slot machine writes twenty-one characters to a text file.** The Lingo
+names are `RitornoLeva`, `percentualeLeva`, `proceduraVittoria`,
+`DefinisciVincite`, `gLampeggio`, `culoRand`, `bloccaPalliniIntervista` and
+`gCanzone0` through `gCanzone9`; the FileIO vocabulary is `initFilePreferenze`,
+`getOSDirectory`, `createFile`, `writeString`, `decodevinti`. The file is
+**`pref883CD.txt`**, in the operating system's own directory — which is the
+only choice that works from a CD — and its content is `X`, two digits, six
+digits and ten digits, shipping as three separate literals (`11`, `111111`,
+`1111111111`) with an all-zero default and an all-one target. Ten is the
+songs. **The program contains no music at all**: it drives the album's *other
+session* through `CDPRO.X32`, a commercial Xtra from **Penworks Corporation**
+at version 0.1.0.0, with `playTrack`, `TrackTimeElapsed`, `NumTracks` and
+`Eject`. That is why the readme insists on a multi-session drive, and why the
+word `karaoke` is in the name table and there is no karaoke file.
+
+**And the reason this entry is in the index at all is a directory name.**
+`dati/install/883d.exe` is a 16-bit New Executable on a CD mastered in October
+1999 — module `VISESTUB`, **MindVision Installer VISE**, 2.66 % code and
+98.28 % payload — and it installs the **Activeworlds** browser: `AWORLD.EXE`,
+`Aworld.ini`, eleven `.awm` language files (one of them called **`Copy of
+Italiano.awm`**), `TELEGRAM.DAT`, `TELEPORT.TXT`, `CONTACTS.TXT`, and five DLLs
+named `Rw…21` which are **RenderWare 2.1**. It ships the world's art cache
+**already populated**, and Activeworlds names that cache after the world's
+object-path server with the URL's slashes flattened to hyphens. Two other
+entries in the same cache — `www.ccc.nottingham.ac.uk-pub-sat-images-d2m.awb`
+and `194.121.52.190-video-grabs-cnn.awb`, neither of which has anything to do
+with an Italian pop record — independently confirm the rule, and applying it to
+the third gives **`http://vrml.moltimedia.it/aw`**, on the same domain as the
+studio, with a property cache for a world called **`city`**. Inside: four
+objects (`panel883.rwx`, `panelbustina.rwx`, `tv2bs.rwx`, `insegnatele.rwx`),
+one avatar, one sky, four sounds including `comemai.wav`, and **twenty-nine
+avatar animations of which fourteen have Italian names** — `balla`, `wave`,
+`disperato`, `esultare` among them, which are precisely the four actions the
+menu's Italian help text lists by name, written by different people in a
+different format in a different file. **Thirty-nine art assets, out of a
+world.** The client is here and it works; the server is not. `Tribumatta`, the
+name 883D is said to have taken later, occurs **zero times** in 1,569,177
+printable runs.
+
+Three smaller things the measurements settled. **The disc ships four separate
+3D technologies** and uses one and a half: Activeworlds on RenderWare,
+RealVR (a 1996 Xtra with twenty-four Winsock imports it does not need, driving
+five Photoshop-on-a-Mac panoramas that are all exactly 2000 × 1000), Apple's
+QuickTime VR as inherited scaffolding, and — entirely by accident, inside the
+Internet Explorer distribution — **Microsoft's VRML 2.0 Viewer**, 3.3 MB and
+never touched. **Nothing on the disc names `VIDEO_01.mov` or `VIDEO_02.mov`**,
+which are 55,648,873 bytes and 25.036 % of the data track; two scripts name
+`video1.mov` and `video2.mov`, which are not there. And the `.mov` share of
+53.293 % that makes this look like a video disc is mostly not video: **21.589 %
+of the whole data track is lossless Apple Animation `rle` of the user
+interface**, eleven files at 427 KB per second, and the six actual interviews
+are 6.667 % and four minutes fifty-two seconds.
+
+The Studio cell says **Moltimedia** because the disc says so three times inside
+its binaries and never once in a document written for the buyer — `LEGGIMI.TXT`
+names Microsoft, Apple and Tiscali and nobody else, and the record label is not
+named anywhere on the disc at all. The Year cell says 1999 because the last
+file written to the disc, the CD Extra directory itself, is stamped
+**1999-10-04 21:13:54**; the studio's own present-day description says 883D
+came about "in 2000", and the repository records the disagreement in a labelled
+external-context section rather than resolving it in either direction. Whether
+883D was among the first 3D avatar chat worlds is a census of everything else
+that existed in 1999, and a folder cannot answer it — which is stated in the
+README rather than left implied.
