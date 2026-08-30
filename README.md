@@ -1,6 +1,6 @@
 # pc-gamelist-doc
 
-**Index of the PC and portable-C game documentation** — 23 titles, one
+**Index of the PC and portable-C game documentation** — 24 titles, one
 repository each. This family has no shared platform checklist: a DOS game from
 1987 and a PhyreEngine remaster from 2018 have almost nothing in common except
 the machine they end up on, which is exactly why the index is per platform and
@@ -101,6 +101,7 @@ is between the two discs that share a studio.
 | [**Grande Fratello Il Gioco**](https://github.com/vs-sr-dev/pc-grandefratello-doc) | 2003 | Trecision |  | The official Big Brother tie-in, and the first disc here dumped with its subchannel: 43 wrong bits in 12 MB of Q prove the read, the 155-sector tail three discs share turns out to be 150 of Red Book, and 2,934 files come out of one cabinet |
 | [**Lucignolo Il Videogioco**](https://github.com/vs-sr-dev/pc-lucignolo-doc) | 2007–08 | 7Th Sense s.r.l. |  | An eight-file DVD of which one file is 96.79 %: the copy protection is a six-byte file containing the word `codice`, every file's sector padding is a verbatim echo of the data 65,536 bytes earlier, and the engine names itself in a log the developers shipped by accident |
 | [**Viaggio al centro del Mondo** (883 CD Extra)](https://github.com/vs-sr-dev/pc-883d-doc) | 1999 | Moltimedia |  | **Not a game** — the multimedia session of a music CD Extra, holding a slot-machine minigame that is 2.7 % of the data track and an installer for **883D**, an Activeworlds chat world whose object-path server survived in a cache directory name: `http://vrml.moltimedia.it/aw` |
+| [**1000 Miglia**](https://github.com/vs-sr-dev/pc-1000miglia-doc) | 1991–92 | Simulmondo *(attributed externally; the material names no studio)* | | The Brescia–Rome–Brescia road race, whose sixteen route files are named for the city at each end and whose sixteen filenames are therefore a graph — one closed circuit through fifteen towns with Bologna visited twice. **What survives is not the product**: it is one installation, made on 9 November 1992, of a March 1992 bulletin-board distribution, and 37.93 % of it is PowerPacker with the bits in an order the standard depacker cannot read |
 
 ## The write-ups
 
@@ -642,3 +643,127 @@ external-context section rather than resolving it in either direction. Whether
 883D was among the first 3D avatar chat worlds is a census of everything else
 that existed in 1999, and a folder cannot answer it — which is stated in the
 README rather than left implied.
+
+### [1000 Miglia](https://github.com/vs-sr-dev/pc-1000miglia-doc)
+
+*1000 Miglia* (MS-DOS, 1991–92) — **124 files, 1,588,227 bytes, one flat
+directory, no subfolders.** The sixth Italian object in this list and the first
+that is not a disc at all: what survives is a directory as it sat on somebody's
+hard disk, and the largest single finding is that **it is not the product**. The
+game was finished on **1992-02-11 19:38:50**, when `MIGLIA.EXE` and `MM.OVR`
+were written in the same second. Six files are newer, and three of them are not
+the studio's: `LEGAL.NFO`, 659 bytes of United States Code boilerplate in
+English written at **04:17 in the morning** on 23 March 1992; `MUSIC`, an Amiga
+**ProTracker** module whose sample names read *"composed by morph of ***-dual
+crew-***"* and give a phone number in **Dundee**; and `EXPLO.EXE`, run *first*
+by `RUNME.BAT`, packed with a packer no signature matches, and carrying the
+fragment ` intro by Hard C`…`ore.` at offset 0x48C inside its own compressed
+stream. The last two files are eight months later still — `MM.CNF` at
+1992-11-09 15:51:52 and `RUNME.BAT` sixteen minutes after it, one person
+installing a game and typing a batch file. **This folder is one installation of
+a March 1992 BBS distribution**, which is a third answer to a question that had
+been asked as *floppy or CD*.
+
+The provenance is measurable at the modern end too, and it is the first time
+this collection can say so with a number. The original GamesNostalgia package
+was supplied alongside the delivered folder: **124 of 124 files identical by
+SHA-1 and 124 of 124 identical by mtime to the second, delta zero.** The eleven
+wrapper files removed are all outside the game folder, and the briefing's claim
+that they are all from 2019 except one is wrong in a way worth recording — two
+are from March 2015, because they are the SDL runtime of the DOSBox 0.74-3
+build. And `7z l` cannot be quoted for dates: its listing applies today's UTC
+offset to every entry while extraction applies the per-date one, so **31 files
+list identically and 104 list an hour late**, split at the last Sunday of
+October 1991.
+
+**The sixteen filenames are the title of the game.** Sixty-four of the 124 files
+are sixteen groups of four — `ANRI`, `BLRO`, `BOFI`, `BOPA`, `BSPR`, `FISI`,
+`FLVE`, `GUTL`, `PAFL`, `PRBO`, `RIBO`, `ROSP`, `SIBL`, `SPGU`, `TLAN`, `VEBS` —
+each with a `.CT4`, a `.POS`, a `0.PTS` and a `2.PTS`. Read two letters at a
+time they are pairs of city codes; the set of first halves equals the set of
+second halves and has fifteen members; and the sixteen directed edges form
+**exactly one closed circuit**, with `BO` the only node of degree two:
+`BS→PR→BO→FI→SI→BL→RO→SP→GU→TL→AN→RI→BO→PA→FL→VE→BS`. Brescia, Parma,
+Bologna, Firenze, Siena, Bolsena, Roma, Spoleto, Gubbio, Tolentino, Ancona,
+Rimini, Bologna again, Padova, **Feltre**, Verona, Brescia — confirmed word for
+word by sixteen Pascal strings at `MIGLIA.EXE+0xB001`. Bologna is named twice
+because the route passes it going out and coming back, which is precisely why
+the legs are named by their two ends instead of by a destination.
+
+Three of the four size columns are one integer times a record size, and **the
+division has two answers**: `CT4 = 64n`, `POS = 386n`, `PTS0 = 122n + 18` with
+`n` in {44, 49, 54, 59, 68}, and an exactly-half rival `32n` / `193n` /
+`61n + 18` that fits the arithmetic equally well. Opening a file kills it in one
+line: a `.POS` record is a two-byte header followed by **64 (x, y, z) `int16`
+triples**, and 193 − 2 is not divisible by six. The sixteen `n` values sum to
+**892** and are drawn from five sizes, so the route was not modelled leg by leg;
+it was modelled out of five lengths and each leg was given one. The fourth file
+of each group has no formula because it holds variable blocks — the roadside
+scenery, capped at sixteen objects per road segment, and the rank correlation
+between leg length and scenery weight is 0.87.
+
+**37.93 % of the folder is an Amiga compressor with the bits the wrong way
+round.** The seven `.FL` files are containers: a fixed 128-slot directory of
+`[u32 offset][int8 type][u24 length]`, where the type byte is **signed** —
+positive means stored, negative means packed, and the magnitude is the format
+(1 = raw image, 2 = RLE image, 3 = MIDI). 235 of the 328 members carry the
+signature `PP20`, which is **PowerPacker 2.0**, an Amiga compressor, in a DOS
+game in 1992 — and the count of `PP20` strings found by a scan that knows
+nothing about the directory is 235 exactly. The textbook PP20 depacker fails on
+every one of them on the first match. What found the fix was an oracle rather
+than a structural test: a packed member of `MUSICHE.FL` had to be a MIDI file,
+a MIDI file has to end `ff 2f 00`, and what came out ended `ff f4 00` — and
+**0xF4 is 0x2F with its bits reversed**. These streams assemble a multi-bit
+field with the first bit read as the *most* significant, which is the 68000
+order; the C depacker everyone copies uses the other one. One line changed, and
+all 328 members read: **1,245,538 bytes out of 602,478.** Inside them: 206 raw
+images, 104 RLE images, and **eighteen MIDI files**, which are the game's entire
+soundtrack in 18,072 bytes.
+
+The rest is Borland. Six of the nine executables carry `Portions Copyright (c)
+1983,90 Borland` — **Turbo Pascal 6.0**, a 1990 compiler in a 1992 game — and
+`MM.OVR` is a Borland overlay whose `FBOV` header declares 105,071 bytes and
+closes on 105,079 exactly. The overlay is **more than twice the size of the
+program that loads it** and `MIGLIA.EXE` calls into it through 32 `INT 3Fh`
+stubs. `MIDI3DRV.EXE` is Borland C++ 1991 with its symbol table intact
+(`ADLIB.C`, `AdLib_Specific`) and 12,345 bytes of instrument data appended past
+the end of its MZ image. And the briefing's claim that `CHELINGU.EXE` carries
+the Borland Pascal `MZP` marker is wrong for an arithmetic reason: `e_cblp` is
+the file length modulo 512, `CHELINGU.EXE` is 4,176 bytes, 4,176 mod 512 is 80,
+and 80 is `P`. **There is no `MZP` in this folder**, and the one file with a
+`P` that matters, `MIGLIA.EXE`, has 0xD0.
+
+Everything the game declares about the race lives in 4,917 bytes — 0.31 % of
+the folder, half of what its fourteen palettes weigh. Ten built-in scores
+(Nuvolari and Guidotti at 7,500, down to Taruffi and Pellegrini at 250), 35
+cars with cylinder counts, top speeds and displacements matched to a 35-entry
+name array at `MIGLIA.EXE+0x0A732`, 77 driver pairings with six ability numbers
+each, and the sixteen route polylines drawn on a 256×256 map of Italy. No two
+of the four tables share a record stride — 27, 33, 14, 101 — so the dialect is
+not a format; it is one language feature reused. **That feature leaves a
+fingerprint.** Turbo Pascal does not clear a fixed-length string past its
+length, so `Nuvolari` is followed by `rco`, which is the end of `Castelbarco`,
+and `Minoja` by `chini`, which is the end of `Borzacchini`. The same habit shows
+up in three other places: the first directory slot of all seven containers has
+one stale length byte, `TRATTI.COR` writes fifty map points per leg where no
+leg exceeds **thirty-nine** and all sixteen blocks are byte-identical from index
+39 onward, and five bytes of 8086 (`pop di; pop si; sub ax,ax; push ax`) are
+stuck to the end of `MONTI.IMV`. Every closure test in the repository passed —
+and underneath every one of them is the same decision not to tidy what nobody
+was going to read.
+
+Two smaller results. **`Simulmondo` occurs zero times in 1,588,227 bytes**, and
+so does every name the game is credited to; the Studio cell says so rather than
+importing the attribution. And the overlay contains the sentence *"Programma non
+installato, usare INSTALL per l'installazione"* — while no `INSTALL` exists in
+this folder, and five Turbo Pascal utilities (`CHELINGU`, *which language*;
+`GUARDA65`, holding the string `SOUND-DRIVER-AD-LIB`; `NUMPARAM`; `SPAZIO`;
+`WRITEAT`) sit here with nothing calling them. **The product contained at least
+one file this copy does not, and the program says so itself.** Against the seven
+other trees `discdiff.py` returns zero over 15,238 files, as it has five times
+before — but the comparison *by form* does not return zero for the first time:
+Turbo Pascal 6.0 is shared with *Baron Baldric*, and PKLITE, an IFF `FORM` and a
+ProTracker `M.K.` module are all shared with *Mystic Towers*. Three unrelated
+DOS games reaching into the same small box of tools, and only this one reaching
+as far as an Amiga compressor.
+
