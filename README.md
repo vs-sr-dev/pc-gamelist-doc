@@ -1,6 +1,6 @@
 # pc-gamelist-doc
 
-**Index of the PC and portable-C game documentation** — 27 titles, one
+**Index of the PC and portable-C game documentation** — 28 titles, one
 repository each. This family has no shared platform checklist: a DOS game from
 1987 and a PhyreEngine remaster from 2018 have almost nothing in common except
 the machine they end up on, which is exactly why the index is per platform and
@@ -105,6 +105,7 @@ is between the two discs that share a studio.
 | [**Harry Potter and the Philosopher's Stone**](https://github.com/vs-sr-dev/pc-harrypotter1-doc) | 2001 | KnowWonder / Electronic Arts *(the game's own credits name no studio, only "PC Team"; `KnowWonder` appears once in 540 files, as a Windows domain inside a developer's path, and on the printed case)* | Harry Potter | The first object here measured from the disc itself rather than a copy. A **table hidden in the primary volume descriptor**, in 344 bytes ISO 9660 requires to be zero, naming six boundaries of the disc including both edges of a 9,280-sector unreadable region — whose near border **a binary search cannot find**, because the drive reads 64 sectors at a time. 249 Unreal Engine 1 packages in seven format versions, 91 music files with no tracker module in them, and 31 levels in a single line recovered twice from two independent sources |
 | [**Harry Potter and the Goblet of Fire**](https://github.com/vs-sr-dev/pc-harrypotter4-doc) | 2005 | Electronic Arts *(publisher; the disc names no development studio at all — it names RenderWare, RealCore 6.27.01, RealGraph 6 and Havok, and one Perforce path, `d:\P4\Eauk\HPGoF\`)* | Harry Potter | A DVD that is **93.98 % one file**, and whose 126 unallocated gaps are not gaps: 79 of them are exactly 20 sectors, one every twenty files, and they hold a complete **second filesystem** — UDF File Entries, one per file, agreeing with ISO 9660 on all 1,659 of them. Six sources disagree by one sector about how long the disc is, and the sector in dispute is **UDF's closing anchor**: unreachable through Windows, read with a SCSI `READ(10)`. SafeDisc 4.50.000, whose version is written a second time as two integers in a descriptor field ISO 9660 requires to be zero |
 | [**Harry Potter and the Order of the Phoenix**](https://github.com/vs-sr-dev/pc-harrypotter5-doc) | 2007 | Electronic Arts *(publisher; the disc names no development studio as a company, but `hp.exe`'s Authenticode certificate reads `O=Electronic Arts, OU=UK Studio, L=Guildford, ST=Surrey, C=GB` and eleven source paths sit under `z:\phoenix\code`)* | Harry Potter | A **pressed** DVD whose image was assembled with a desktop ISO editor — `UltraISO V8.5`, signed 1,222 times where the 2005 disc said `GEAR` 1,717 times — and whose ISO 9660 primary namespace is **not ISO 9660**: zero `;1` version suffixes, 1,185 lower-case names, 67 with spaces, which is exactly why it carries no Joliet. A lead-out reported **674,807 sectors before the end of the disc**, proved to be a one-byte MSF field saturating. SecuROM instead of SafeDisc, with **no version string anywhere in 10,329,160 bytes** and four PE sections named `ars` / `est` / `artem` / `celare`. And the eight-disc run of zero shared files **ends**: 500 files here are byte-identical to files on the 2005 disc |
+| [**Age of Wonders II: The Wizard's Throne**](https://github.com/vs-sr-dev/pc-ageofwonders2-doc) | 2002 | Triumph Studios *(the disc names it in `AoW2.~ex`'s version resource and four times in a plaintext credits block; the publisher, Gathering of Developers, holds the copyright in the English readme)* |  | The first disc here whose **unallocated space is the subject**: 23.91 % of it belongs to no file, and 143,595,520 bytes of that are reproduced from two integers. A volume descriptor that writes down the disc's own first and last unreadable sector. A Delphi 5 game, and two files shared with a 2001 disc from a different publisher |
 
 ## The write-ups
 
@@ -1033,3 +1034,99 @@ whole reason there are two rather than one. Forty-three signed Microsoft
 cabinets, each with a bare PKCS#7 appended and **no** `WIN_CERTIFICATE`
 header — an eight-byte difference from a PE, and the reason the reader written
 for them called all forty-three unrecognisable on its first run.
+
+### [Age of Wonders II: The Wizard's Throne](https://github.com/vs-sr-dev/pc-ageofwonders2-doc)
+
+*Age of Wonders II: The Wizard's Throne*, PC CD-ROM, June 2002. Volume `AOW2`,
+335,261 sectors, 686,614,528 bytes, **thirty-six files in thirteen folders** —
+one twentieth of the file count of the disc measured before it, and the first
+title in this list that is not a tie-in of anything.
+
+**The subject is the space no file claims.** 80,163 sectors, **23.91 % of the
+volume**, in four gaps. The largest is 70,125 sectors sitting between the last
+file and the root directory, and it is not filler in the sense that word usually
+means: every sector of it is an arithmetic progression modulo 256, and the whole
+region is one formula.
+
+```
+    byte[i] of the sector at LBA  =  ((LBA + 82) * (i + 77)) mod 256
+```
+
+Checked against **all 2,048 bytes of 70,115 of the 70,125 sectors** — 143,595,520
+bytes, 99.9857 %. The ten that do not match are the last ten before the root
+directory and they are zeros. The formula was written as a prediction, derived
+from five eight-byte samples, before the region was read; it agreed with 69,842
+of 69,842 sectors on the first pass. The sectors that come out all-zero are not
+an exception to it: they are the sectors where `LBA ≡ 174 (mod 256)`, the step is
+zero, and the pattern degenerates.
+
+**The other gap contains damage, and the disc knows where it is.** Like the 2001
+*Philosopher's Stone* CD, this one has two primary volume descriptors where
+ISO 9660 expects one, identical in every defined field and differing in **305
+bytes** the standard requires to be zero. Four little-endian integers sit inside
+those bytes. Two are ordinary layout — the LBA of a protection file, the end of a
+gap. The other two are **807** and **10,265**, and they are the first and the
+last physically unreadable sector on the medium: `key 3 MEDIUM ERROR, asc 11
+ascq 00`, with 806, 808, 10,264 and 10,266 all reading in the same pass. Neither
+number is a boundary of the filesystem; the only way to find them from outside is
+to ask the drive one sector at a time and wait seven seconds for each refusal.
+The damage is not a contiguous region, as it was on the 2001 disc — it is
+**isolated single sectors**, sampled at 6.17 % of a 9,476-sector region.
+
+Getting there cost four hours and produced a result about the *reading* before
+any about the disc. The inherited full-pass tool reads 1,024 sectors at a time;
+this drive refuses anything over **707** through the volume device and over **32**
+through SCSI pass-through, and refuses the first kind by timing out for 8.7
+seconds. A full pass would have taken about **ten hours on an undamaged disc**.
+Worse, a multi-sector read fails whenever *any* sector inside it is bad, so a
+32-sector scan reports thirty-two dead sectors where there is one. And a drive
+that has absorbed some sixty unrecoverable errors starts failing on sectors it
+read correctly minutes earlier — which this session discovered by concluding,
+reproducibly and wrongly, that 143 MB of perfectly good padding was unreadable.
+Opening and closing the tray fixed it. Every damage figure in the repository
+comes from a run with known-good control sectors interleaved.
+
+**A Delphi game.** `AoW2.~ex` and `aow2Installer.exe` both begin `MZP`, both
+declare linker 2.25, and both carry COFF timestamp `0x2A425E19` — 1992-06-19
+22:22:17, which is not a date but the constant Borland's linker writes into
+everything. The executable has sections named `CODE`, `DATA` and `BSS`, no Rich
+header, and imports `Vcl50.bpl` and `Vclx50.bpl`; the only build paths that
+survive anywhere end in `.pas`, under `d:\aow2\engine\`. The eleven ZIP archives
+that are 92.07 % of the disc are ZIPs because the installer was built around
+**VCLZip**, a Delphi component whose unregistered-version nag string ships in the
+retail installer.
+
+SafeDisc **2.60.052**, with `BoG_` at **0x3D4** rather than the 0xFD4 of the two
+Harry Potter discs — and the wrapper is not opaque. It encrypts one section of
+eight and leaves `.rsrc` alone, so the disc names, in plaintext and with offsets,
+**Triumph Studios**, **PopTop Software**, **Take Two** in five offices, **Miles
+Sound System**, **Bink Video** and — in the Italian readme and licence —
+**Cidiverte**. `Gathering of Developers, Inc.` holds the copyright in the English
+readme and is thanked in the credits for its *ex*-Dallas staff, in the same
+binary, in June 2002. Every claim on the case lid, confirmed from the software:
+the first time that has happened in this list.
+
+Two more measurements worth the space. The two files with the strangest names on
+the disc, `00000000.016` and `00000000.256`, are **bitmaps** — the same 640 × 480
+protection dialog at 16 and at 256 colours, and the file names are the palette
+sizes. Decoded and compared, **not one pixel of 307,200 is the same colour in
+both**, because the two quantisations share exactly one palette entry of sixteen.
+And there are **seven** language folders, four of them completely empty, against
+six languages in an undocumented `MLD` dictionary that this repository wrote a
+reader for — a dictionary in which Spanish does not appear, though the disc ships
+a Spanish licence for a Spanish build it does not contain.
+
+**And the collection's first crossing between two publishers.** Two of the
+thirty-six files are byte-identical to files on the 2001 *Philosopher's Stone*
+disc: `cfgmgr32.dll` and `setupapi.dll`, 383,248 bytes, the only two of nine
+DirectX files whose sizes agree to the byte and the only two Microsoft linked in
+**1997**. Zero against the 2005 and 2007 DVDs and zero against eight trees on
+disk — 19,314 other file records. The eight-disc run of zeros that ended twenty
+months and one building apart now has a second exception, and this one crosses
+two companies. It is a measurement about Microsoft, not about either game.
+
+The **Saga** cell is deliberately empty. *Age of Wonders* is a series and this
+list holds one of it; the rule this collection has applied twice — to Harry
+Potter until the fourth disc arrived, and to Baron Baldric until *Mystic Towers*
+did — is that a saga of one is not a saga. The cell fills in when a second Age of
+Wonders disc is measured, and not before.
