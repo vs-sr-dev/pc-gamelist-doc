@@ -1,6 +1,6 @@
 # pc-gamelist-doc
 
-**Index of the PC and portable-C game documentation** — 20 titles, one
+**Index of the PC and portable-C game documentation** — 21 titles, one
 repository each. This family has no shared platform checklist: a DOS game from
 1987 and a PhyreEngine remaster from 2018 have almost nothing in common except
 the machine they end up on, which is exactly why the index is per platform and
@@ -44,6 +44,16 @@ which is the first side-by-side comparison in this family: the engine *lost*
 237,568 bytes of code between them, and three claims in the older repository
 are corrected by the newer one.
 
+*Grande Fratello Il Gioco* makes it three Italian discs in the list and is
+**not** a third member of that pair: different studio, different city, two
+years later, and — measured file by file by content hash — **not one byte in
+common** with either of them. The only thing all three share is somebody
+else's: `fmod.dll`, in two different versions. Three discs from one country
+are not a national school, and the comparison chapter says so; what it does
+say is that the differences are almost all differences of *year* rather than
+of place, and that the third disc, by arriving with its subchannel, was able
+to correct the other two rather than merely be compared with them.
+
 | Title | Year | Studio | Saga | What it is |
 |---|---|---|---|---|
 | [**Prince of Qin**](https://github.com/vs-sr-dev/pc-princeofqin-doc) | 2002 | Object Software |  | The Chinese action RPG and Object Software's "EasyRPG" engine |
@@ -67,6 +77,7 @@ are corrected by the newer one.
 | [**Mystic Towers**](https://github.com/vs-sr-dev/pc-mystictowers-doc) | 1994 | Animation FX / Apogee | Baron Baldric | The Baldric sequel, and an Amiga game underneath: AMOS memory and sprite banks shipped whole inside the DOS container, ten of them source art the game cannot display |
 | [**Zero Comico**](https://github.com/vs-sr-dev/pc-zerocomico-doc) | 2001 | GMM Entertainment / Medusa Games |  | An Italian TV tie-in that is 69.49 % Indeo video for thirteen minutes of it, two in-house containers wrapping a 1989 LZHUF stream, and an engine still carrying the cancelled game it was written for |
 | [**Blood & Lace**](https://github.com/vs-sr-dev/pc-bloodandlace-doc) | 2001 | GMM Entertainment |  | The game that engine was built for, seven months earlier: a signed licence notice from its author inside `japotek3d.dll`, 237,568 bytes of code the later disc no longer has, and a combat system the comedy could not use |
+| [**Grande Fratello Il Gioco**](https://github.com/vs-sr-dev/pc-grandefratello-doc) | 2003 | Trecision |  | The official Big Brother tie-in, and the first disc here dumped with its subchannel: 43 wrong bits in 12 MB of Q prove the read, the 155-sector tail three discs share turns out to be 150 of Red Book, and 2,934 files come out of one cabinet |
 
 ## The write-ups
 
@@ -256,8 +267,10 @@ filesystem metadata. Its 215 unclaimed sectors account for themselves
 exactly: two root directory records, **56 zero-length `.bsp` files** (24.7 %
 of its floor plans, 41 of them camera maps, against two of 82 on the other
 disc), and 157 zero sectors at the end of which **155 sit inside the declared
-volume — the same 155 Nero wrote on Zero Comico's pressed disc**, a burner
-signature neither disc states about itself. **Two thirds of the disc has one
+volume**, the same 155 as on Zero Comico's pressed disc — which that repository
+read as a Nero signature and which the *Grande Fratello* disc has since taken
+apart: **150 of the 155 are the Red Book post-gap**, present after every burned
+data track whoever built the image, and only five belong to the image. **Two thirds of the disc has one
 date**: 4,624 of 6,918 files stamped 30 December 2000 between 04:47 and 04:53,
 after `japotek3d.dll` linked at 04:44:31 and `blood&lace.exe` at 04:45:20 —
 the whole product assembled in nine minutes at a quarter to five in the
@@ -307,3 +320,79 @@ test level that is one four-point square room with 62 characters and all five
 weapons in it; a directory named `SUPERFLUI` holding more speech than the
 chapter above it kept; a script called `Copia di char.isc`; and a licence
 that asks for **ten pounds sterling** to replace a defective CD
+
+
+---
+
+### [Grande Fratello Il Gioco](https://github.com/vs-sr-dev/pc-grandefratello-doc)
+
+*Grande Fratello Il Gioco* (Trecision S.p.A., Genoa, mastered 20 February
+2003) — the official PC game of the Italian *Big Brother*, made under licence
+from **Endemol Italia** and covering the show's first three editions. It is
+the **smallest disc in this list and the first that arrived as a CloneCD set
+rather than an image**, which is the whole difference: the `.ccd` brings a
+table of contents and the `.sub` brings 12,017,088 bytes of subchannel, so for
+the first time here something can be said about a disc *as a disc*. The dump
+is somebody else's, made 69 days after the disc, and its 69-byte cue sheet
+still reads `FILE "fifa2.img" BINARY` — a rip of a football game's sheet,
+reused and never edited, which is why every figure in that repository says
+whose numbers they are on the first page. **125,178 sectors close three ways**
+(× 2,352 = the image, × 96 = the subchannel, = the lead-out in the TOC, which
+also declares the disc CD-ROM XA); all of them are Mode 2, 125,176 Form 1 and
+**two Form 2**, with zero bad sync, zero bad headers and **zero EDC failures**.
+The subchannel is the opposite: **125,136 of 125,178 Q entries are
+byte-identical to the entry the TOC predicts, 42 differ, and 41 of those by
+exactly one bit** — 43 wrong bits in 12,017,088, a rate of 3.578 × 10⁻⁶.
+A byte-perfect main channel and a damaged subchannel from the same read is
+precisely what 276 bytes of Reed–Solomon per sector against 16 bits of CRC
+looks like, and it is the proof that the dump is a physical read rather than a
+synthesis — **the session predicted the subchannel would be too clean to prove
+anything, and nine of its ten subchannel predictions are wrong for that one
+reason.** The same layer settles a question standing across two repositories:
+the P channel flags pause on **exactly 150 blocks**, so **150 of the 155
+trailing zero sectors that all three Italian discs share are the Red Book
+post-gap** and only five are anybody's convention. The volume says `GF` three
+times, `TRECISION` twice, and **`ABELLONDI`** in the data preparer field —
+the first time a person's name has turned up in that field here, and he is
+credited twice in the game. All twenty files carry **one** timestamp, 37
+minutes after the volume that contains them, and stacking every clock on the
+disc puts compile, master and burn inside **84 minutes of one Thursday
+morning**. **62.02 % of the disc is nine MPEG-1 program streams** whose GOP
+time codes are not zero-based: they span **17 hours 29 minutes of one
+continuous recording** of which 1.13 % was kept, and two of the nine are
+**frame-adjacent** — television, cut from a house feed, with nine buttons in
+the menu to match. Each carries **two** 384 kbit/s Layer II audio tracks, and
+the second alone is 13.39 % of the CD. The game is **20.76 %** of its own
+disc and the redistributables are **17.21 %**: four DirectX 8.1 packages in
+two languages and two Windows flavours, plus a `setup.exe` hiding three more
+cabinets and 38 files nobody sees. Inside `Data1.cab` are **2,934 files in one
+flat heap**, whose 194 directories exist only in the MSI — read out with a
+from-scratch OLE2 and Windows Installer reader — and the game itself is **one
+749,568-byte executable with no version resource**, importing one function
+from Direct3D 8 and twenty-two from FMOD. It contains a complete tokenised
+scripting language whose reserved words include **`AZIONE`, `IMPREVISTO`,
+`PROB` and `GUINAME`**, and a simulation in the clear: five rooms, four turns
+a day, empathy on five named levels, public approval, a tolerance meter, a
+malus for repeated actions, secrets with a gravity field, jealousy, and 26
+named actions from `raccogli le uova` to `fai sesso`. The cast is **34
+records** — name, texture folder, surname, birthplace, residence, star sign,
+occupation, distinguishing marks — of which **four carry an edition tag,
+`1a`, `2a` and `3a`, because two housemates share a first name across
+seasons**: the disc is forced to write down which three editions it covers,
+and it does. The 2,212 textures are Truevision Targa **XORed by the low byte
+of each file's own length** — a key the file carries in its own size, because
+a Targa's ID-length byte is always zero — and `tga.py`, written for another
+studio's game two sessions earlier and listed as inapplicable, reads all of
+them one XOR later. Also on the disc: **Ogg Vorbis 1.0 release candidate 3**
+in a 2003 retail box, 155 one-second WAVE files and **no recorded speech at
+all**, a Visual SourceSafe status file installed onto the buyer's hard drive
+whose 82 records match the 82 files beside it, a mirrored copy of **Radio
+101's FM frequency pages** scraped with Teleport Pro and given a Start Menu
+shortcut, a second build of the game carried only to supply an icon, a
+telephone number that is an email address, four untranslated InstallShield
+placeholders, and — in the video player, in English, in an Italian product —
+`Press the 'Arrow' keys to move the ball.` The session was briefed to ask how
+much of the disc is a PlayStation port; the executable's credits answer it the
+other way, naming **`conversione per playstation a cura di`** with no
+reciprocal PC credit, and there is not one Sony toolchain string, asset magic
+or sector alignment anywhere on the disc.
