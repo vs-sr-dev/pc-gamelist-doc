@@ -1,6 +1,6 @@
 # pc-gamelist-doc
 
-**Index of the PC and portable-C game documentation** — 26 titles, one
+**Index of the PC and portable-C game documentation** — 27 titles, one
 repository each. This family has no shared platform checklist: a DOS game from
 1987 and a PhyreEngine remaster from 2018 have almost nothing in common except
 the machine they end up on, which is exactly why the index is per platform and
@@ -104,6 +104,7 @@ is between the two discs that share a studio.
 | [**1000 Miglia**](https://github.com/vs-sr-dev/pc-1000miglia-doc) | 1991–92 | Simulmondo *(attributed externally; the material names no studio)* | | The Brescia–Rome–Brescia road race, whose sixteen route files are named for the city at each end and whose sixteen filenames are therefore a graph — one closed circuit through fifteen towns with Bologna visited twice. **What survives is not the product**: it is one installation, made on 9 November 1992, of a March 1992 bulletin-board distribution, and 37.93 % of it is PowerPacker with the bits in an order the standard depacker cannot read |
 | [**Harry Potter and the Philosopher's Stone**](https://github.com/vs-sr-dev/pc-harrypotter1-doc) | 2001 | KnowWonder / Electronic Arts *(the game's own credits name no studio, only "PC Team"; `KnowWonder` appears once in 540 files, as a Windows domain inside a developer's path, and on the printed case)* | Harry Potter | The first object here measured from the disc itself rather than a copy. A **table hidden in the primary volume descriptor**, in 344 bytes ISO 9660 requires to be zero, naming six boundaries of the disc including both edges of a 9,280-sector unreadable region — whose near border **a binary search cannot find**, because the drive reads 64 sectors at a time. 249 Unreal Engine 1 packages in seven format versions, 91 music files with no tracker module in them, and 31 levels in a single line recovered twice from two independent sources |
 | [**Harry Potter and the Goblet of Fire**](https://github.com/vs-sr-dev/pc-harrypotter4-doc) | 2005 | Electronic Arts *(publisher; the disc names no development studio at all — it names RenderWare, RealCore 6.27.01, RealGraph 6 and Havok, and one Perforce path, `d:\P4\Eauk\HPGoF\`)* | Harry Potter | A DVD that is **93.98 % one file**, and whose 126 unallocated gaps are not gaps: 79 of them are exactly 20 sectors, one every twenty files, and they hold a complete **second filesystem** — UDF File Entries, one per file, agreeing with ISO 9660 on all 1,659 of them. Six sources disagree by one sector about how long the disc is, and the sector in dispute is **UDF's closing anchor**: unreachable through Windows, read with a SCSI `READ(10)`. SafeDisc 4.50.000, whose version is written a second time as two integers in a descriptor field ISO 9660 requires to be zero |
+| [**Harry Potter and the Order of the Phoenix**](https://github.com/vs-sr-dev/pc-harrypotter5-doc) | 2007 | Electronic Arts *(publisher; the disc names no development studio as a company, but `hp.exe`'s Authenticode certificate reads `O=Electronic Arts, OU=UK Studio, L=Guildford, ST=Surrey, C=GB` and eleven source paths sit under `z:\phoenix\code`)* | Harry Potter | A **pressed** DVD whose image was assembled with a desktop ISO editor — `UltraISO V8.5`, signed 1,222 times where the 2005 disc said `GEAR` 1,717 times — and whose ISO 9660 primary namespace is **not ISO 9660**: zero `;1` version suffixes, 1,185 lower-case names, 67 with spaces, which is exactly why it carries no Joliet. A lead-out reported **674,807 sectors before the end of the disc**, proved to be a one-byte MSF field saturating. SecuROM instead of SafeDisc, with **no version string anywhere in 10,329,160 bytes** and four PE sections named `ars` / `est` / `artem` / `celare`. And the eight-disc run of zero shared files **ends**: 500 files here are byte-identical to files on the 2005 disc |
 
 ## The write-ups
 
@@ -932,3 +933,103 @@ And the file the previous disc shares a name and a length with — `00000002.TMP
 second drive: the 2001 session published enough about its copy (entropy
 −0.0000, one byte value in 256) to reconstruct it exactly, which is the one
 thing in that repository that can still be compared against anything.
+
+### [Harry Potter and the Order of the Phoenix](https://github.com/vs-sr-dev/pc-harrypotter5-doc)
+
+*Harry Potter e l'Ordine della Fenice* (Windows, Electronic Arts, June 2007) —
+**1,187 files, 3,740,991,488 bytes, 1,826,656 sectors, RenderWare on EA's
+RealCore 6.27.01, SecuROM.** The third Harry Potter disc in this index, and the
+first where the person handing it over expects a sequel and the disc disagrees
+in three seconds.
+
+The box is a sequel: same two logos, same case, the actors updated to the fifth
+film. The disc is a different object. Where the 2005 DVD says
+`GEAR CD/DVD PREMASTERING` and `*GEAR UDF` 1,717 times, this one says `Win32`
+and `UltraISO V8.5 CD & DVD Creator, (c) 2006 EZB Systems, Inc.`, with
+`*EZB UltraISO` in each of its 1,213 UDF File Entries and nine volume
+structures. It is nonetheless a **pressed** disc — `layer type 1` is embossed,
+the profile is `0x0010 DVD-ROM`, one track, no session border. An industrially
+replicated DVD whose filesystem carries the name of a desktop ISO editor. Who
+ran it, and why, is not on the disc, and the repository does not guess.
+
+What the editor did to the layout is measurable, and it is six things. The
+sharpest is that **this disc's ISO 9660 is not ISO 9660**: of 1,187 file records
+in the *primary* descriptor, **zero** carry the `;1` version suffix the standard
+requires, 1,185 contain lower-case letters, 67 contain spaces and 747 have stems
+longer than eight characters, the longest running to 52. Joliet exists to carry
+names a primary descriptor is not allowed to hold; this primary holds them
+anyway, so there is **no supplementary descriptor at all**. The 2005 disc has
+three namespaces and this one has two. Everything else runs the same way: 1,213
+UDF File Entries in **one contiguous run** where GEAR wrote them twenty at a
+time down the length of the volume; **three** gaps of three distinct sizes where
+GEAR left 126, seventy-nine of them identical; a partition ending on the last
+sector instead of one before it, so Windows sees the whole disc. Reading all
+1,521 unclaimed sectors names 1,317 of them, and the genuinely spare space on
+this DVD is **204 sectors**.
+
+`toc.py` reports the lead-out at LBA **1,151,849** on a volume of 1,826,656 — a
+lead-out 674,807 sectors *before* the end of the disc. It is not a fact about
+the disc. `READ TOC` returns each address as three one-byte fields, the largest
+expressible value is `255:59:74`, and `(255 × 60 + 59) × 75 + 74 − 150` is
+1,151,849 exactly. The tool that proves it carries no disc's constants at all:
+fed the two siblings' volume sizes it reproduces **both of their published MSF
+values** — `64:59:48` and `149:17:39` — from the definition alone, and then says
+this volume would need M = 405.
+
+The protection changed vendor and stopped identifying itself. There is no
+`DIAG.EXE`, no `00000001.TMP`, no `BoG_` marker and no occurrence of
+`Macrovision` in either encoding. `hp.exe` has **nine** PE sections, not the
+five a first reading found: `.text .rdata .data .rsrc` and then **`ars`, `est`,
+`artem`, `celare`** and `.securom`. The four added names are the four words of
+*ars est celare artem* — "the art is to conceal the art" — with the last two
+swapped, which is what the bytes say and is left as it is. `ars` is 5,920,096
+bytes at entropy **8.000** marked writable *and* executable; `celare` is a
+statically linked **zlib 1.2.2**, Mark Adler's copyright string intact; the
+entry point is inside `est`. A sweep of all 10,329,160 bytes finds **no version
+string in any shape** — against SafeDisc's 2.40.010 and 4.50.000, both of which
+sat at a fixed offset in a file that announced itself.
+
+What the wrapper did **not** eat is the debug directory, because a packed
+executable still has to load. Relocated into `.securom`, twenty-eight bytes:
+`z:\phoenix\code\release_pc\game\built\pc\hp_unity_f.pdb`. Eleven more source
+paths name `eauk_renderframework`, `eauk_shadercore`, `seedrt` and
+`realcore\6.27.01` — **the same point release as the 2005 disc**, in the same
+three source files, under a different root. And `hp.exe` is Authenticode-signed
+to `C=GB, ST=Surrey, L=Guildford, O=Electronic Arts, OU=UK Studio`. Two
+structures written by two unrelated tools naming the same organisation is the
+strongest provenance result this family has produced; the 2001 disc named its
+studio once by accident and the 2005 disc named nobody. `KnowWonder` is still
+zero, and so is every actor's surname — the two hits for `Watson` are both
+`_invoke_watson`, in Microsoft's C runtime.
+
+Then the streak. `discdiff.py` had printed zero on eight discs running, most
+recently over 17,553 files. It ends here, and it ends on nothing glamorous:
+**500 files on this disc are byte-identical to files on the 2005 disc**, 40
+distinct contents, 32,311,885 bytes — of which 97.8 % is **five DirectX
+cabinets** Microsoft did not touch between the two dates, and the rest is the
+technical-support booklet's furniture and four RoboHelp build logs that crossed
+twenty months untouched. **Not one of the 524 HTML pages matched.** The booklet
+is regenerated; only its chrome is copied.
+
+The 2001 disc went back into the drive during the session and its 540 files were
+hashed for the first time, closing the family's oldest open item — and the hole
+that repository measured, 9,280 unreadable sectors, turns out to touch no file
+at all. It shares **zero** files with either DVD. Four years, a change of
+medium, a change of engine and a change of studio transmit nothing; twenty
+months and the same building transmit forty distinct contents. Three points,
+with two consecutive products missing between the first and the second, and — as
+the repository says in its own first chapter — that is two differences that
+agree, not a series.
+
+Smaller things that are still measurements. Forty controller maps named both as
+DirectInput GUIDs and as English device names, whose **twelve content groups
+pair the two schemes** and thereby prove, from this disc alone, which half of
+the GUID is the vendor. `Localization.ini`, UTF-16LE, twenty-four language codes
+in each of five sections — and a commented-out block still carrying **FIFA 2004,
+FIFA 2005 and Madden 2005** patch URLs, which is what a publisher-wide template
+looks like from the inside. Two ZIP archives with no ZIP64 locator, the first at
+**97.55 % of 2³¹** with no remaining member small enough to fit, which is the
+whole reason there are two rather than one. Forty-three signed Microsoft
+cabinets, each with a bare PKCS#7 appended and **no** `WIN_CERTIFICATE`
+header — an eight-byte difference from a PE, and the reason the reader written
+for them called all forty-three unrecognisable on its first run.
