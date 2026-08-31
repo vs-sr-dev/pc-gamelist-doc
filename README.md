@@ -1608,7 +1608,7 @@ sixteen rows of vertical, which is what you build to scroll an EGA by moving the
 CRTC start address instead of redrawing. One number out of a blitter, one out of
 a DOS call, and they agree.
 
-**The game has no text.** Seventeen printable literals in the entire unpacked
+**The game has no text.** Twenty-two printable literals in the entire unpacked
 executable — the options menu and a table of twelve filenames — and **no
 copyright, no build path, no runtime signature and no compiler banner of any
 kind**, which for a 1990 MS-DOS executable is itself a finding. Three of the menu
