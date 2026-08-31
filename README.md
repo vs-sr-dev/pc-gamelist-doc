@@ -1,6 +1,6 @@
 # pc-gamelist-doc
 
-**Index of the PC and portable-C game documentation** — 29 titles, one
+**Index of the PC and portable-C game documentation** — 30 titles, one
 repository each. This family has no shared platform checklist: a DOS game from
 1987 and a PhyreEngine remaster from 2018 have almost nothing in common except
 the machine they end up on, which is exactly why the index is per platform and
@@ -107,6 +107,7 @@ is between the two discs that share a studio.
 | [**Harry Potter and the Order of the Phoenix**](https://github.com/vs-sr-dev/pc-harrypotter5-doc) | 2007 | Electronic Arts *(publisher; the disc names no development studio as a company, but `hp.exe`'s Authenticode certificate reads `O=Electronic Arts, OU=UK Studio, L=Guildford, ST=Surrey, C=GB` and eleven source paths sit under `z:\phoenix\code`)* | Harry Potter | A **pressed** DVD whose image was assembled with a desktop ISO editor — `UltraISO V8.5`, signed 1,222 times where the 2005 disc said `GEAR` 1,717 times — and whose ISO 9660 primary namespace is **not ISO 9660**: zero `;1` version suffixes, 1,185 lower-case names, 67 with spaces, which is exactly why it carries no Joliet. A lead-out reported **674,807 sectors before the end of the disc**, proved to be a one-byte MSF field saturating. SecuROM instead of SafeDisc, with **no version string anywhere in 10,329,160 bytes** and four PE sections named `ars` / `est` / `artem` / `celare`. And the eight-disc run of zero shared files **ends**: 500 files here are byte-identical to files on the 2005 disc |
 | [**Age of Wonders II: The Wizard's Throne**](https://github.com/vs-sr-dev/pc-ageofwonders2-doc) | 2002 | Triumph Studios *(the disc names it in `AoW2.~ex`'s version resource and four times in a plaintext credits block; the publisher, Gathering of Developers, holds the copyright in the English readme)* |  | The first disc here whose **unallocated space is the subject**: 23.91 % of it belongs to no file, and 143,595,520 bytes of that are reproduced from two integers. A volume descriptor that writes down the disc's own first and last unreadable sector. A Delphi 5 game, and two files shared with a 2001 disc from a different publisher |
 | [**Il cane di terracotta**](https://github.com/vs-sr-dev/pc-canediterracotta-doc) | 2000 | IM*MEDIA (software), Sellerio (publisher) |  | **Not a game** — an interactive cartoon from Camilleri's novel, and the first hybrid in this list: Windows mounts 2,374 files in 4 folders, the HFS volume on the same sectors holds 2,401 in 11, and 2,372 of the 2,373 they share begin on the **same sector**. Macromedia Director 7.0.2, a 10,240-byte grid whose padding has a closed form at 100.0000 %, and 517 Macintosh audio files each leaking the same Windows 95 `KERNEL32.DLL` return address |
+| [**CLIC 11**](https://github.com/vs-sr-dev/pc-clic11-doc) | 1997 | CLIC *(the magazine; the disc names its own maker in the volume identifier `CLIC_11` and in no other field — `publisher`, `data preparer` and `copyright file` are empty on both descriptors, and `Clic95.exe`'s `CompanyName` reads `Macromedia, Inc.`, which is the engine's vendor and not the disc's)* |  | **Not a game, and not a work** — the CD bound into an Italian magazine, and the first object here with no author and no centre: eleven separately-assembled bodies of software spanning **1,636 days**, of which the magazine itself made **3.37 %**. A hybrid whose file count is a property of the walker — Windows shows 857, the ISO volume holds **875** records because eighteen carry the ECMA-119 **Associated-File** flag and describe Macintosh resource forks, and the HFS catalogue adds 23 files that exist nowhere else: **26,607,777 bytes no Windows machine can read**. An ownership map over all 322,926 sectors leaves **two** belonging to nobody. **99.11 % of the directory records have an even seconds field** — MS-DOS's two-second grid, on a disc mastered by a Macintosh program — and the eight exceptions are three Mac files with resource forks. The eight-disc run of zero shared files ends properly: 21,870 records compared, **two crossings, both Microsoft redistributables** |
 
 ## The write-ups
 
@@ -1222,3 +1223,150 @@ published hash lists and nine working trees — including against `pc-883d-doc`,
 which shares a vendor with it and not one component, because Macromedia's runtime
 is PowerPC code on one disc and Win32 PE on the other.
 
+### [CLIC 11](https://github.com/vs-sr-dev/pc-clic11-doc)
+**The twelfth disc measured here and the first that is not an opera.** Eleven of
+the previous twelve were monographic — one game, one cartoon, one CD Extra — and
+every instrument in this collection was built on that assumption: `discdiff`
+looks for files shared *between* discs, `clocks` looks for clocks that *ought* to
+agree, `whose` looks for *the* producer. On a magazine's cover disc all three
+assumptions are false by construction, and the useful question inverts: not *is
+this coherent* but **how heterogeneous is it, and does the layering read from
+the bytes**.
+
+It does. `CLIC_11` on the ISO side, `CLIC! 11` on the HFS side — the magazine's
+exclamation mark survives only because ISO 9660 cannot spell it and HFS can —
+mastered by **Toast 3.5.2** on 20 October 1997 at 15:57:10 GMT and closed
+thirty-seven seconds later. Eleven bodies of work, four and a half years apart at
+the extremes: a **rolling demo of Microsoft Encarta 98** (33.76 %), the whole of
+the 1996 Mondadori adventure **Wolfgang il cyberlupo** (33.99 %), a
+Hewlett-Packard promotional website about Italian football (14.67 %), **Internet
+Explorer 4.0 build 1712** in 121 signed cabinets (10.27 %), FrontPage 98, a
+FileMaker Pro 3 database of the magazine's reviews, an LCSI MicroWorlds demo, and
+the magazine's own Director browser in two platform builds. **What the editorial
+staff made is 3.37 % of their own disc.**
+
+**The file count is a property of the walker, and this is the disc that proves
+it.** Windows shows 857 files. The ISO 9660 volume holds **875 directory
+records**: eighteen of them carry **File Flags bit 2, the Associated-File flag of
+ECMA-119 §9.1.6**, which means "this record describes a file associated with the
+next record of the same name" and which Toast uses for the **Macintosh resource
+fork**. The Windows CDFS driver implements that bit by not showing you the
+record. Every one of the eighteen lengths matches, to the byte, the `rsrc_len`
+the HFS catalogue records for the same file — two structures written by two
+halves of one program in 1997, agreeing on eighteen numbers. Three of the
+eighteen have a data fork of **zero bytes** and 528,413 bytes of 68000 machine
+code in the fork: Macromedia's Shockwave Audio Xtras for Macs without a PowerPC,
+which on the PC side are three empty files with meaningless 8.3 names. Add the 23
+files that exist only in the HFS catalogue — a Macintosh Internet Explorer
+installer, a FileMaker runtime, an application whose entire content is a 1.4 MB
+resource fork, and the Finder's own desktop database — and **26,607,777 bytes of
+this disc, 4.02 %, cannot be read by any Windows machine**, including the one
+that made the copy this work started from.
+
+**Two sectors out of 322,926 belong to nobody.** Building an ownership array over
+the whole volume and letting five claimants write into it — ISO metadata, ISO
+extents, the Apple partition map, HFS volume structures, HFS forks — leaves
+**4,096 bytes unclaimed, both sectors zero**, between the last ISO file and the
+start of the Apple partition. **46.7 % of the disc is claimed by both catalogues
+at once**, which is what a hybrid *is*, and no sector is claimed twice by two
+records of the same catalogue. The HFS lattice comes out closed: allocation
+blocks of 6,144 bytes = exactly three sectors, first block at LBA 159,494, so
+`LBA(n) = 159494 + 3n` with **both constants read out of the Master Directory
+Block and neither fitted**. Under that formula every one of the **385 forks
+present in both catalogues resolves to the same LBA — 385 comparisons, zero
+disagreements**: the disc was built in one pass and nothing on it was written
+twice. Two of the three sectors that first came out unclaimed were bugs in the
+tool; the third was the **HFS alternate Master Directory Block**, sitting in the
+very last sector of the volume and announcing itself with `BD` and the volume
+name. The last sector of this disc is a backup copy of its own name.
+
+**Ninety-nine point one one per cent of the directory records have an even
+seconds field.** MS-DOS packs a file time into sixteen bits and leaves seconds in
+units of two; HFS does not, and ISO 9660 has a whole byte for them. So a disc
+mastered on a Macintosh, by a Macintosh program, into a filesystem that could
+have recorded odd seconds, has **891 of 899 records on the FAT grid** — because
+the material arrived from PCs and Toast copied the timestamps rather than
+restamping them. The eight exceptions are the whole counter-example and they are
+legible one by one: **three files, all of them among the eighteen with a resource
+fork**, and two directories made on the mastering Mac in the last two days.
+Alongside it, 18.02 % of records land on `:00` seconds against 1.67 % by chance
+and 13.13 % on an exact hour against 0.0278 % — twenty-two files in the Internet
+Explorer folder share the timestamp `1997-09-14 05:00:00` **to the second**, and
+one cabinet among them, `DXDDEX.CAB`, contains members dated three and a half
+days *later*, which is impossible by copying and proves all twenty-two synthetic
+from a single file.
+
+**The difference between two clocks turns out to be a place.** Every directory
+record on the disc carries a GMT offset of zero and a COFF `TimeDateStamp` is UTC
+by definition, so for files recorded on the same day they were linked the
+difference between the two is the **time zone of the machine that did the
+linking**. Seven LEADTOOLS DLLs come out at **+4.00 h** in October 1996 and four
+MicroWorlds DLLs at **+5.00 h** in January and February 1997 — North American
+Eastern Time, with its daylight saving, recovered from an Italian magazine's
+cover disc in a field that was never meant to record a zone. Getting there
+required fixing a tool that had read the same clock through the Windows
+filesystem and reported eleven files as *written before they were linked*: an
+error that was hiding a finding.
+
+**And the eight-disc run of zero shared files ends properly.** The tenth session
+in this family formulated the rule — *two discs share files only where they share
+a third party's component* — and the two discs after it had almost no
+third-party components to test it with. This one is made of little else. Against
+**21,870 records**, five published hash lists and nine working trees, there are
+**two crossings and both are Microsoft redistributables**: `DXMINI.CAB`, 339,279
+bytes of DirectX mini-installer, and a 22-byte `FILELIST.DAT`, both identical to
+files on *Viaggio al centro del Mondo* a year later. Not one JPEG, not one
+Director movie, not one HTML page crossed. The same mechanism fires *inside* the
+disc too: the MS-Setup loader that installs Video for Windows 1.1 for the Encarta
+demo is byte-for-byte the loader that installs Win32s 1.30c for the magazine's
+database, 24,624 bytes, recorded 1993-11-18 in one folder and 1996-04-27 in the
+other.
+
+Three smaller things worth the sentence. The 171 underscore-suffixed files are
+not one format but **two Microsoft compressors — 98 SZDD, all of them in one
+folder, and 72 KWAJ, all of them in another, with zero overlap**, which is the
+sharpest stratigraphic separation on the disc and was invisible until a tool that
+read them all as SZDD reported containers that had *grown* under compression. The
+magazine's `.clc` database is a **FileMaker Pro 3** file — `FMP3`/`NFIN` on the
+Mac side, six Claris `CompanyName`s on the PC side — whose Windows copy contains
+**680 accented Italian letters, every one of them MacRoman and not one Latin-1**,
+so the PC users got the Macintosh file; and 1,408 bytes of its free space are
+filled with *All work and no play makes Jack a dull boy*, which is what FileMaker
+writes into unused blocks. And the root of the disc is somebody else's: eight of
+its nine entries are the **1996 Wolfgang CD-ROM's root, copied whole**, including
+an `AUTORUN.EXE` with no `AUTORUN.INF` to start it — so the program designed to
+autorun does not, and the browser that should have does not either.
+
+**The Saga cell is deliberately empty, and this is the first object where the
+rule and the intuition pull apart.** A magazine *is* a series; issue 11 implies
+issues 1 to 10. But the rule this collection has now applied five times — to
+Harry Potter until the fourth disc, to Baron Baldric until *Mystic Towers*, to
+*Age of Wonders II* which is still waiting, and to *Il cane di terracotta* — is
+that **a saga of one is not a saga**, and of CLIC there is exactly one disc here.
+If CLIC 12 ever arrives the cell fills then, and the fact that a periodical
+*obviously* has siblings is precisely the intuition the rule exists to resist.
+
+**The Studio cell names the magazine and the write-up has to say why**, because
+this is the first disc here where "who made it" and "whose code is in it" give
+different answers and both are defensible. A byte census attributes 32.14 % of
+the disc to **Macromedia**, which is true — every Director movie carries
+Macromedia's copyright — and useless, because Macromedia did not make Wolfgang.
+Turning on the weakest evidence grade attributes **186 MB of a 1996 Italian
+adventure game to Microsoft** because one Microsoft-linked helper DLL sits in the
+game's data folder, which is why that grade is off by default. The disc names its
+own maker in the volume identifier and in **no other field**: publisher, data
+preparer, copyright file, abstract and bibliographic are all empty on both
+descriptors, and `Clic95.exe`'s `CompanyName` reads `Macromedia, Inc.` because it
+is a Director 6 projector — with the *same COFF timestamp*, `1997-05-10
+22:42:39`, as the Encarta demo's executable, since both are built on one stub.
+
+The **Year is 1997** from the descriptor, and the cell needs the caveat that
+**fifty-seven of the disc's files are from 1993**: the date of a disc is not the
+date of its contents, and this is the first object in this list where that
+distinction carries a third of the bytes. Leftovers come to **3,813,223 bytes,
+0.5766 %** — the largest share this collection has measured, and composed
+differently from the last: not a virus scanner's cache and leaked memory, which
+are traces of a *machine*, but duplicates and superseded originals, which are
+traces of an *assembly*. Chief among them, 1.8 MB of a 1996 game's discarded
+working files, saved as `.OLD` beside the versions that replaced them and
+pressed onto two CD-ROMs anyway.
