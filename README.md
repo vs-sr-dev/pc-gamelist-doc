@@ -1,6 +1,6 @@
 # pc-gamelist-doc
 
-**Index of the PC and portable-C game documentation** — 32 titles, one
+**Index of the PC and portable-C game documentation** — 33 titles, one
 repository each. This family has no shared platform checklist: a DOS game from
 1987 and a PhyreEngine remaster from 2018 have almost nothing in common except
 the machine they end up on, which is exactly why the index is per platform and
@@ -19,8 +19,8 @@ Listed in the order they were documented. The **Saga** column is filled in where
 the title belongs to a series that may one day earn its own index; it is empty
 where it does not. Three of them — Final Fantasy twice, and Mana — already point
 at a Square Enix cluster that is one title away from deserving its own repo.
-**HeroQuest** is a saga of two, and its other half is on a different machine
-entirely: *HeroQuest II: Legacy of Sorasil* sits in the CD32 list as
+**HeroQuest** is one of three sagas of two here, and its other half is on a
+different machine entirely: *HeroQuest II: Legacy of Sorasil* sits in the CD32 list as
 [cd32-heroquest2-doc](https://github.com/vs-sr-dev/cd32-heroquest2-doc). Two
 titles across two families is not yet an index of its own.
 **Baron Baldric** is the second saga of two, and the mirror image of that
@@ -32,7 +32,7 @@ have in common turns out to be a protagonist, a Borland runtime and three
 asset files — different studio, different publisher, different engine, and a
 different machine underneath.
 
-The newest entry is the first that **is not a game**, and it is in the list on
+One entry is the only one that **is not a game**, and it is in the list on
 purpose. *Viaggio al centro del Mondo* is the data session of an 883 CD Extra:
 put the disc in a stereo and it plays an album, put it in a computer and it
 opens a Macromedia Director program with a slot machine inside it. The slot
@@ -57,23 +57,30 @@ are corrected by the newer one.
 
 **Three counts, and they do not all agree, on purpose.** The table below has
 **33 rows**, the write-ups section has **32 entries**, and the heading says
-**32 titles**. The extra row is *Tales of Berseria*, which has a row and no
-write-up because its primary index is
+**33 titles, 34 rows, 33 write-ups.** The extra row is *Tales of Berseria*,
+which has a row and no write-up because its primary index is
 [tales-gamelist-doc](https://github.com/vs-sr-dev/tales-gamelist-doc) — the
 format it documents belongs to the saga, not to the platform. The heading
 counts documents, the table counts titles reachable from here, and the gap is
-one crosslink. Raising the heading to 33 would claim a write-up that does not
+one crosslink. Raising the heading to 34 would claim a write-up that does not
 exist here; dropping the row would hide a title that is on this platform.
 
-**Mega Man** is the newest entry and its **Saga** cell is deliberately empty,
-which is worth a sentence because the temptation is the strongest in the list.
-*Mega Man* is an enormous series. This is not part of it in any measurable
-sense: it is a licensed title written from scratch by one person for the PC,
-with three Robot Masters the NES game does not have, five stages it does not
-have, and an engine that shares nothing with anything. The Saga column is
-filled only when another object in this collection shares **bytes** with it,
-and nothing here does. A saga of one is not a saga, and a licence is not a
-saga either.
+**Mega Man** is the third saga of two, and it is the one that shows what the
+Saga column is actually for. Its cell was deliberately empty when *Mega Man*
+(PC/DOS, 1990) was the only entry, with the reason written out: *Mega Man* is an
+enormous series, this is a licensed title written from scratch for the PC with
+Robot Masters and stages the NES game does not have, and **the column is filled
+only when another object in this collection shares bytes with it**. A saga of
+one is not a saga and a licence is not a saga either.
+
+The newest entry is that other object. *Mega Man 3: The Robots are Revolting*
+(PC/DOS, 1992) is the same studio, the same programmer and the same platform
+twenty-one months later, and the two programs share **1,855 bytes** in runs of
+32 or more — 98 of them the options display list, 32 of them both palette
+tables, the rest EGA blitter code — measured with the threshold named before the
+comparison was run. So both cells are filled now, on that measurement and on
+nothing else. **There is still no PC *Mega Man 2*:** the first DOS game is
+called *Mega Man* and the second is called *Mega Man 3*.
 
 *Grande Fratello Il Gioco* makes it three Italian discs in the list and is
 **not** a third member of that pair: different studio, different city, two
@@ -129,7 +136,8 @@ is between the two discs that share a studio.
 | [**Il cane di terracotta**](https://github.com/vs-sr-dev/pc-canediterracotta-doc) | 2000 | IM*MEDIA (software), Sellerio (publisher) |  | **Not a game** — an interactive cartoon from Camilleri's novel, and the first hybrid in this list: Windows mounts 2,374 files in 4 folders, the HFS volume on the same sectors holds 2,401 in 11, and 2,372 of the 2,373 they share begin on the **same sector**. Macromedia Director 7.0.2, a 10,240-byte grid whose padding has a closed form at 100.0000 %, and 517 Macintosh audio files each leaking the same Windows 95 `KERNEL32.DLL` return address |
 | [**CLIC 11**](https://github.com/vs-sr-dev/pc-clic11-doc) | 1997 | CLIC *(the magazine; the disc names its own maker in the volume identifier `CLIC_11` and in no other field — `publisher`, `data preparer` and `copyright file` are empty on both descriptors, and `Clic95.exe`'s `CompanyName` reads `Macromedia, Inc.`, which is the engine's vendor and not the disc's)* |  | **Not a game, and not a work** — the CD bound into an Italian magazine, and the first object here with no author and no centre: eleven separately-assembled bodies of software spanning **1,636 days**, of which the magazine itself made **3.37 %**. A hybrid whose file count is a property of the walker — Windows shows 857, the ISO volume holds **875** records because eighteen carry the ECMA-119 **Associated-File** flag and describe Macintosh resource forks, and the HFS catalogue adds 23 files that exist nowhere else: **26,607,777 bytes no Windows machine can read**. An ownership map over all 322,926 sectors leaves **two** belonging to nobody. **99.11 % of the directory records have an even seconds field** — MS-DOS's two-second grid, on a disc mastered by a Macintosh program — and the eight exceptions are three Mac files with resource forks. The eight-disc run of zero shared files ends properly: 21,870 records compared, **two crossings, both Microsoft redistributables** |
 | [**Tubular Worlds**](https://github.com/vs-sr-dev/pc-tubularworlds-doc) | 1993–94 *(the file mtimes, 1993-10-11 to 1994-05-31; there is no descriptor here to separate the date of the product from the date of this copy, and the last file is a player's high score)* | *(none — the object names **nineteen people** in `PART2.EXE`'s credits and no organisation anywhere; the only copyright string in 3,432,758 bytes is Clarion Software's, and it belongs to the compiler of an 8 KB DOS version check)* |  | **The first object in this list that is not a medium** — not a disc, not an image, but a downloaded folder of 107 files, and therefore the first with **no volume descriptor, no lead-out and no field anywhere that says when it was made or where it ends**. What a folder can prove instead was proved: **106 of its 107 files are reachable from `TUBWORLD.BAT`** and the 107th is `TUBWORLD.BAT`, so nothing is missing and nothing is spare; and **107 of 107 timestamps sit on the MS-DOS two-second grid** with a zero sub-second field, which is the fingerprint of a DOS-era archive restored onto NTFS. The whole game is drawn from a **64-byte 8×8 tile**, recovered from arithmetic — seven of fifteen banks are exact multiples of 64 once a 768-byte VGA palette comes off the end, and the tile indices across all 21 maps form the dense range **0..2639 with every gap equal to 1** — and rendering it turns two unnamed files into **GET READY** and **GAME OVER**. `size = w·h·k + 4` holds on **35 of 37** level grids; the two that break are level 3, in both files, with the same bytes — and the header is **right**: the autocorrelation of the payload peaks at 169 and is at chance at 200, so the file is 1,488 cells too long rather than the header being wrong. The loading screens are **IFF ILBM written by Deluxe Paint** (`DPPS`, `CRNG`, `TINY`) with a six-bit VGA palette in an eight-bit chunk, decoding to exactly 153,600 bytes each. And a **58-byte German QWERTZ scancode table** is compiled into both game programs, forced by two positions and not one: `Z` at scancode 0x15 and `Y` at 0x2C. **85.447 % of the bytes are structured, 74.383 % decoded, 0.263 % leftover**, and zero of 23,631 records cross with anything else in this collection |
-| [**Mega Man**](https://github.com/vs-sr-dev/pc-megaman-doc) | 1990 *(28 of the 29 files carry mtimes from 1990-09-30 to 1990-11-29 and the executable is the last of them; the 29th is a BBS descriptor written 2011-01-22. As with the other loose-file object in this list there is no descriptor, no version field and nothing to separate the date of the product from the date of this copy — except that here the executable's own filename table names every data file the folder holds)* | *(none as a company — the object credits a **person**: `CREDITS.STA`, rendered, gives **design, graphics, programming and sound to Stephen Rozner** and the concept to **Capcom**, and `LOGO.STA` carries `© 1990 CAPCOM CO.,LTD.` — all of it drawn as pixels, none of it as text. The publisher, **Hi-Tech Expressions, Inc.**, is named by exactly one file, the `file_id.diz` added in 2011, and by nothing in the 28 files of 1990)* |  | **Not the NES game and not a conversion of one** — a licensed DOS original, and the second folder of loose files in this list. 29 files, 346,995 bytes, five undocumented formats and an EXEPACK'd executable, and every one of them closes: `MM.EXE` unpacks to **exactly 211,712 bytes with zero packed input left over**, of which **91.8 % is zero** and 17,415 is program — so the famous *twenty kilobytes for a whole game* is a fact about a linker's BSS, and the real answer is that **71 % of this game's code is not in its executable** but in five per-stage 8086 modules that far-return to it, whose 2,318 CS-relative references land inside their own files **2,318 times**. One run-length coder serves all four compressed families and it is **PackBits with `0x80` meaning a run of 129 rather than a no-op** — decode it Apple's way and the stage maps come out short and still look plausible. Two planar layouts, not one: backgrounds are four EGA planes interleaved **per row**, sprites five planes interleaved **per byte** with the **mask first**, and reading the mask last gives 305 sprites of the right shape in the wrong colours. `.SCN` closes as `13 + width·height` on 5 of 5; `.BLK` as 41,984 = 328 × 128-byte 16×16 tiles on 5 of 5, of which a map can address only **0..215**; `.FRM` as 305 chained per-frame records ending exactly on EOF on 8 of 8; `.STA` as 30,720 = **320 × 192** on 4 of 4. The 234 bytes shared by all five `.BIN` are **13 × 18** — the hit boxes of the thirteen sprite frames the five `.FRM` also share. The blitter's row pitch is **42 bytes** and the buffers it asks DOS for are 34,944 = (42 × 4) × 208: a **336 × 208 page for a 320 × 192 screen**, sixteen pixels of scroll margin, derived twice from two unrelated numbers. The game has **no text**: seventeen string literals in the whole executable, no copyright, no build path, **no compiler banner at all**, and the only attribution anywhere had to be *rendered*. And the copy protection is not a password system — it is a manual lookup whose **twelve answers** sit in the executable in a private alphabet that is the glyph's own frame index minus thirteen, the first of them `BATVIRE` |
+| [**Mega Man**](https://github.com/vs-sr-dev/pc-megaman-doc) | 1990 *(28 of the 29 files carry mtimes from 1990-09-30 to 1990-11-29 and the executable is the last of them; the 29th is a BBS descriptor written 2011-01-22. As with the other loose-file object in this list there is no descriptor, no version field and nothing to separate the date of the product from the date of this copy — except that here the executable's own filename table names every data file the folder holds)* | *(none as a company — the object credits a **person**: `CREDITS.STA`, rendered, gives **design, graphics, programming and sound to Stephen Rozner** and the concept to **Capcom**, and `LOGO.STA` carries `© 1990 CAPCOM CO.,LTD.` — all of it drawn as pixels, none of it as text. The publisher, **Hi-Tech Expressions, Inc.**, is named by exactly one file, the `file_id.diz` added in 2011, and by nothing in the 28 files of 1990)* | Mega Man | **Not the NES game and not a conversion of one** — a licensed DOS original, and the second folder of loose files in this list. 29 files, 346,995 bytes, five undocumented formats and an EXEPACK'd executable, and every one of them closes: `MM.EXE` unpacks to **exactly 211,712 bytes with zero packed input left over**, of which **91.8 % is zero** and 17,415 is program — so the famous *twenty kilobytes for a whole game* is a fact about a linker's BSS, and the real answer is that **71 % of this game's code is not in its executable** but in five per-stage 8086 modules that far-return to it, whose 2,318 CS-relative references land inside their own files **2,318 times**. One run-length coder serves all four compressed families and it is **PackBits with `0x80` meaning a run of 129 rather than a no-op** — decode it Apple's way and the stage maps come out short and still look plausible. Two planar layouts, not one: backgrounds are four EGA planes interleaved **per row**, sprites five planes interleaved **per byte** with the **mask first**, and reading the mask last gives 305 sprites of the right shape in the wrong colours. `.SCN` closes as `13 + width·height` on 5 of 5; `.BLK` as 41,984 = 328 × 128-byte 16×16 tiles on 5 of 5, of which a map can address only **0..215**; `.FRM` as 305 chained per-frame records ending exactly on EOF on 8 of 8; `.STA` as 30,720 = **320 × 192** on 4 of 4. The 234 bytes shared by all five `.BIN` are **13 × 18** — the hit boxes of the thirteen sprite frames the five `.FRM` also share. The blitter's row pitch is **42 bytes** and the buffers it asks DOS for are 34,944 = (42 × 4) × 208: a **336 × 208 page for a 320 × 192 screen**, sixteen pixels of scroll margin, derived twice from two unrelated numbers. The game has **no text**: twenty-two string literals in the whole executable, no copyright, no build path, **no compiler banner at all**, and the only attribution anywhere had to be *rendered*. And the copy protection is not a password system — it is a manual lookup whose **twelve answers** sit in the executable in a private alphabet that is the glyph's own frame index minus thirteen, the first of them `BATVIRE` |
+| [**Mega Man 3: The Robots are Revolting**](https://github.com/vs-sr-dev/pc-megaman3-doc) | 1992 *(64 of the 64 files carry DOS mtimes from 1992-07-18 to 1992-08-02, and this is the first object in this list whose year is also **drawn into it**: `LOGO.STA`, rendered, carries `© 1992 CAPCOM CO.,LTD.` and `™ and © 1992 CAPCOM, USA, INC.`. The container disagrees and says **2008-06-23**, which is the date of the archiving and of nothing else — one ZIP record in 65)* | **Rozner Labs**, and for once the object says so — but in pixels, not in text: `ROZLABS.STA` renders as a circuit board reading `A` / `ROZNER` / `LABS` (spelled on four seven-segment displays) / `PRODUCTION`, `HITECHLO.STA` renders as the **Hi Tech Expressions** logo over the word `PRESENTS`, and `CREDITS.STA` gives **design, programming and sound to Stephen Rozner** and **graphics to William Rozner**, with the concept to **Capcom**. None of those six words exists as ASCII anywhere in the 55,456 bytes of unpacked executable | Mega Man | **The second Mega Man on PC is called the third, because there was never a second** — and it is the first object in this collection with a sibling already measured to the byte, which is what makes it worth a row rather than a footnote. 64 files, 392,593 bytes, inside a ZIP whose 65 CRC-32s all verify and whose 65 local headers agree with their central-directory twins in every field. **One codec for all four families and it is not the 1990 codec**: twelve-bit LZW, MSB first, no clear code, dictionary frozen at 0xFFE — confirmed twice, by 63 of 63 files ending on the 0xFFF end code with only their byte padding left over, and by the decompressor itself at 0xb280 in the unpacked image. Run the 1990 PackBits reader on a 1992 screen and it **consumes 2,926 bytes of a 2,866-byte file**, which is the loudest way a wrong codec can fail. **The pixel changed too**: one byte per pixel, chunky, sixteen colours — against 1990's four EGA planes — so every byte of art is converted to planes once per tile at load time by a routine the `Graphics Card:` setting switches, and the menu that selects it has **dropped the VGA option** the 1990 game offered. `.STA` closes as 64,000 = **320 × 200** on 6 of 6; `.ZSC` as `width·height + 6 + 16·count` with the count read from inside the same stream, on 7 of 7; `.ZBL` as 256 tiles × 256 + 256 records × 32 + four 256-byte tables = 74,752, which is not arithmetic but the loader's own three read constants; `.VFR` as 326 chained frame records ending exactly on EOF on 43 of 43. **The `.BIN` family is gone**: the 1990 game shipped 71 % of its code in five per-stage 8086 modules and this one has none, because a stage is now data — 366 sixteen-byte object records in the `.ZSC` files, and a four-word hit box on each of 326 frames. The executable's filename table names **49 files in full and 7 as padded stems, which is all 63 data files, with no name unfulfilled and no file unnamed** — the closest thing a folder has to a volume descriptor, closing exactly. And **the two games share 1,855 bytes**, in runs of 32 or more, including 98 bytes of the options display list and the 32 bytes of both palette tables: the Saga cell in this row and in the row above it is filled on that measurement and on nothing else |
 
 ## The write-ups
 
@@ -1653,3 +1661,86 @@ mode. Forty-four predictions were written before the executable was unpacked and
 scored at **65.9 %**, the lowest here — with eight of the losses traced to a
 single sentence about pixel packing that the predictions file had already
 isolated, named and told the scoring to charge once.
+
+### [Mega Man 3: The Robots are Revolting](https://github.com/vs-sr-dev/pc-megaman3-doc)
+**The first object in this collection with a sibling already measured to the
+byte, and the first whose Saga cell was filled by a command rather than by a
+name.** *Mega Man* (PC/DOS, 1990) left that cell deliberately empty with the
+rule written out beside it — *filled only when another object here shares
+**bytes** with it* — and this is the other object: same studio, same
+programmer, same platform, twenty-one months later. The threshold was named
+before the comparison was run, 32 bytes, and both layers were compared, raw and
+decoded, because two different compressors would otherwise have reported
+"nothing shared" for a reason that has nothing to do with the objects.
+**1,855 bytes of the 1992 program appear verbatim in the 1990 program**, the
+longest run 234 bytes, including 98 bytes of the options display list and the 32
+bytes of both palette tables. No data file of either game shares anything with
+the other but runs of flat colour.
+
+**And the sibling was a trap in exactly one place.** The prediction file put one
+inference above all others and argued it from the menu being byte-identical, the
+`Masking:` option still being there, and one art set still feeding three
+adapters: *the pixel is the 1990 pixel, four EGA planes, four bits.* It is one
+byte per pixel, chunky, sixteen colours out of the 256 a byte can hold — and the
+options menu, which is the same 98 bytes, has **dropped the VGA entry** the 1990
+game had, so the one adapter that could display a chunky byte is the one this
+game no longer supports. Every tile is converted to planes at load time, 256
+times per bank, by a routine whose address the `Graphics Card:` setting
+switches. The lesson, written into the scoring chapter because it is the only
+one the session was really for: *an inheritance visible in the interface is not
+evidence about the representation.*
+
+**One codec, four families, and it is LZW.** Twelve bits a code, most
+significant bit first, no clear code, no width growth, dictionary frozen at
+0xFFE. Sixty-three of sixty-three compressed files decode and stop on the 0xFFF
+end code with 8 or 12 bits of byte padding left and never more — and the same
+format is in the executable at 0xb280, with the bit reader at 0xb20a shifting a
+32-bit accumulator right by twenty to take the top twelve. The 1990 game's
+PackBits reader, run first and unmodified, **over-consumes**: 2,926 bytes read
+out of a 2,866-byte file. And the freeze is not academic. Every `.ZBL` fills its
+4,095 dictionary entries between 19 KB and 30 KB into a 74 KB output and codes
+the remaining 45–55 KB frozen, which is why `.ZBL` is the only family the
+archive's own DEFLATE can still halve — and why the region past the tiles
+**expands** by a third.
+
+**A stage stopped being a program.** The 1990 game shipped five compiled 8086
+modules holding 71 % of its code; there is no `.BIN` family here. The executable
+grew from 17,415 bytes of content to 32,838 and **collapsed to one segment** —
+24 relocations against 176, `mov ax,cs / mov ds,ax` at the entry — and what the
+overlays carried became data: **366 sixteen-byte object records** at the end of
+the seven `.ZSC` files, and a four-word collision box on each of **326** frame
+records. Forty-three `.VFR` banks named for what they draw, one file per object,
+against eight per-stage banks in 1990. A one-byte map cell now meets exactly 256
+tiles, where 1990 shipped 328 slots for the same one-byte index.
+
+**It answers three of its sibling's ten open questions, and it does it with the
+loader.** The `.ZBL` loader reads three regions with three explicit constants —
+256 tiles of 256 bytes, 256 records of 32, then 1,024 bytes to `0d8a:0000` — and
+the `Animation:` pass then indexes those last 1,024 by tile number every frame.
+So the 1,024-byte trailer that ends every 1990 `.BLK` and that document could not
+identify is **four 256-byte per-tile tables**, three of them read and one of them
+slop; split the 1990 trailer the same way and the same four shapes are there.
+`Animation:` itself is bit 2 of a flag byte at 0x593c, tested at exactly three
+sites, one in each adapter driver, each guarding a per-frame redraw of every
+visible tile whose attribute byte has either of two bits set. And the *volume
+descriptor of a folder* turns out to be the executable's own filename table: 49
+full names and 7 padded stems, accounting for all 63 data files, **no name
+unfulfilled and no file unnamed**.
+
+**The clocks are inverted.** In 1990 the data froze and the executable came
+**24 days 8 hours** later, a month of work on code alone that nothing in the
+folder could identify. Here the last data file is `Logo.sta` at 15:43:58 and
+`Mm.exe` is at 16:05:34 — **21 minutes 36 seconds**, a link and not a build.
+Thirty-eight `.vfr` came out of one tool run in 16 minutes 44 seconds in
+alphabetical order; eleven `.zbl`/`.zsc` in under four minutes that evening; and
+`Foilrig.zsc` sits alone seven hours earlier, the only stage in the object whose
+two halves were not written within twenty seconds of each other.
+
+**Leftovers: 118,293 decoded bytes costing 16,509 as shipped, 4.21 %** — against
+9.89 % in 1990 — after a draft of that chapter said 26.51 % and was wrong,
+because it modelled the tile bank as 288 flat slots from arithmetic that divides
+perfectly instead of from the loader that does not. Twenty-three bytes in the
+whole object hold a colour index above fifteen that a sixteen-entry palette
+cannot express. **Fifty-three predictions scored at 70.8 %**, method 7 of 7 —
+and of the three clauses marked as inherited from the sibling, two hit and the
+third was the one that cost four others.
