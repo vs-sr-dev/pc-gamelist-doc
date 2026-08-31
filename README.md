@@ -1,6 +1,6 @@
 # pc-gamelist-doc
 
-**Index of the PC and portable-C game documentation** — 31 titles, one
+**Index of the PC and portable-C game documentation** — 32 titles, one
 repository each. This family has no shared platform checklist: a DOS game from
 1987 and a PhyreEngine remaster from 2018 have almost nothing in common except
 the machine they end up on, which is exactly why the index is per platform and
@@ -54,6 +54,26 @@ in [pc-bloodandlace-doc chapter
 which is the first side-by-side comparison in this family: the engine *lost*
 237,568 bytes of code between them, and three claims in the older repository
 are corrected by the newer one.
+
+**Three counts, and they do not all agree, on purpose.** The table below has
+**33 rows**, the write-ups section has **32 entries**, and the heading says
+**32 titles**. The extra row is *Tales of Berseria*, which has a row and no
+write-up because its primary index is
+[tales-gamelist-doc](https://github.com/vs-sr-dev/tales-gamelist-doc) — the
+format it documents belongs to the saga, not to the platform. The heading
+counts documents, the table counts titles reachable from here, and the gap is
+one crosslink. Raising the heading to 33 would claim a write-up that does not
+exist here; dropping the row would hide a title that is on this platform.
+
+**Mega Man** is the newest entry and its **Saga** cell is deliberately empty,
+which is worth a sentence because the temptation is the strongest in the list.
+*Mega Man* is an enormous series. This is not part of it in any measurable
+sense: it is a licensed title written from scratch by one person for the PC,
+with three Robot Masters the NES game does not have, five stages it does not
+have, and an engine that shares nothing with anything. The Saga column is
+filled only when another object in this collection shares **bytes** with it,
+and nothing here does. A saga of one is not a saga, and a licence is not a
+saga either.
 
 *Grande Fratello Il Gioco* makes it three Italian discs in the list and is
 **not** a third member of that pair: different studio, different city, two
@@ -109,6 +129,7 @@ is between the two discs that share a studio.
 | [**Il cane di terracotta**](https://github.com/vs-sr-dev/pc-canediterracotta-doc) | 2000 | IM*MEDIA (software), Sellerio (publisher) |  | **Not a game** — an interactive cartoon from Camilleri's novel, and the first hybrid in this list: Windows mounts 2,374 files in 4 folders, the HFS volume on the same sectors holds 2,401 in 11, and 2,372 of the 2,373 they share begin on the **same sector**. Macromedia Director 7.0.2, a 10,240-byte grid whose padding has a closed form at 100.0000 %, and 517 Macintosh audio files each leaking the same Windows 95 `KERNEL32.DLL` return address |
 | [**CLIC 11**](https://github.com/vs-sr-dev/pc-clic11-doc) | 1997 | CLIC *(the magazine; the disc names its own maker in the volume identifier `CLIC_11` and in no other field — `publisher`, `data preparer` and `copyright file` are empty on both descriptors, and `Clic95.exe`'s `CompanyName` reads `Macromedia, Inc.`, which is the engine's vendor and not the disc's)* |  | **Not a game, and not a work** — the CD bound into an Italian magazine, and the first object here with no author and no centre: eleven separately-assembled bodies of software spanning **1,636 days**, of which the magazine itself made **3.37 %**. A hybrid whose file count is a property of the walker — Windows shows 857, the ISO volume holds **875** records because eighteen carry the ECMA-119 **Associated-File** flag and describe Macintosh resource forks, and the HFS catalogue adds 23 files that exist nowhere else: **26,607,777 bytes no Windows machine can read**. An ownership map over all 322,926 sectors leaves **two** belonging to nobody. **99.11 % of the directory records have an even seconds field** — MS-DOS's two-second grid, on a disc mastered by a Macintosh program — and the eight exceptions are three Mac files with resource forks. The eight-disc run of zero shared files ends properly: 21,870 records compared, **two crossings, both Microsoft redistributables** |
 | [**Tubular Worlds**](https://github.com/vs-sr-dev/pc-tubularworlds-doc) | 1993–94 *(the file mtimes, 1993-10-11 to 1994-05-31; there is no descriptor here to separate the date of the product from the date of this copy, and the last file is a player's high score)* | *(none — the object names **nineteen people** in `PART2.EXE`'s credits and no organisation anywhere; the only copyright string in 3,432,758 bytes is Clarion Software's, and it belongs to the compiler of an 8 KB DOS version check)* |  | **The first object in this list that is not a medium** — not a disc, not an image, but a downloaded folder of 107 files, and therefore the first with **no volume descriptor, no lead-out and no field anywhere that says when it was made or where it ends**. What a folder can prove instead was proved: **106 of its 107 files are reachable from `TUBWORLD.BAT`** and the 107th is `TUBWORLD.BAT`, so nothing is missing and nothing is spare; and **107 of 107 timestamps sit on the MS-DOS two-second grid** with a zero sub-second field, which is the fingerprint of a DOS-era archive restored onto NTFS. The whole game is drawn from a **64-byte 8×8 tile**, recovered from arithmetic — seven of fifteen banks are exact multiples of 64 once a 768-byte VGA palette comes off the end, and the tile indices across all 21 maps form the dense range **0..2639 with every gap equal to 1** — and rendering it turns two unnamed files into **GET READY** and **GAME OVER**. `size = w·h·k + 4` holds on **35 of 37** level grids; the two that break are level 3, in both files, with the same bytes — and the header is **right**: the autocorrelation of the payload peaks at 169 and is at chance at 200, so the file is 1,488 cells too long rather than the header being wrong. The loading screens are **IFF ILBM written by Deluxe Paint** (`DPPS`, `CRNG`, `TINY`) with a six-bit VGA palette in an eight-bit chunk, decoding to exactly 153,600 bytes each. And a **58-byte German QWERTZ scancode table** is compiled into both game programs, forced by two positions and not one: `Z` at scancode 0x15 and `Y` at 0x2C. **85.447 % of the bytes are structured, 74.383 % decoded, 0.263 % leftover**, and zero of 23,631 records cross with anything else in this collection |
+| [**Mega Man**](https://github.com/vs-sr-dev/pc-megaman-doc) | 1990 *(28 of the 29 files carry mtimes from 1990-09-30 to 1990-11-29 and the executable is the last of them; the 29th is a BBS descriptor written 2011-01-22. As with the other loose-file object in this list there is no descriptor, no version field and nothing to separate the date of the product from the date of this copy — except that here the executable's own filename table names every data file the folder holds)* | *(none as a company — the object credits a **person**: `CREDITS.STA`, rendered, gives **design, graphics, programming and sound to Stephen Rozner** and the concept to **Capcom**, and `LOGO.STA` carries `© 1990 CAPCOM CO.,LTD.` — all of it drawn as pixels, none of it as text. The publisher, **Hi-Tech Expressions, Inc.**, is named by exactly one file, the `file_id.diz` added in 2011, and by nothing in the 28 files of 1990)* |  | **Not the NES game and not a conversion of one** — a licensed DOS original, and the second folder of loose files in this list. 29 files, 346,995 bytes, five undocumented formats and an EXEPACK'd executable, and every one of them closes: `MM.EXE` unpacks to **exactly 211,712 bytes with zero packed input left over**, of which **91.8 % is zero** and 17,415 is program — so the famous *twenty kilobytes for a whole game* is a fact about a linker's BSS, and the real answer is that **71 % of this game's code is not in its executable** but in five per-stage 8086 modules that far-return to it, whose 2,318 CS-relative references land inside their own files **2,318 times**. One run-length coder serves all four compressed families and it is **PackBits with `0x80` meaning a run of 129 rather than a no-op** — decode it Apple's way and the stage maps come out short and still look plausible. Two planar layouts, not one: backgrounds are four EGA planes interleaved **per row**, sprites five planes interleaved **per byte** with the **mask first**, and reading the mask last gives 305 sprites of the right shape in the wrong colours. `.SCN` closes as `13 + width·height` on 5 of 5; `.BLK` as 41,984 = 328 × 128-byte 16×16 tiles on 5 of 5, of which a map can address only **0..215**; `.FRM` as 305 chained per-frame records ending exactly on EOF on 8 of 8; `.STA` as 30,720 = **320 × 192** on 4 of 4. The 234 bytes shared by all five `.BIN` are **13 × 18** — the hit boxes of the thirteen sprite frames the five `.FRM` also share. The blitter's row pitch is **42 bytes** and the buffers it asks DOS for are 34,944 = (42 × 4) × 208: a **336 × 208 page for a 320 × 192 screen**, sixteen pixels of scroll margin, derived twice from two unrelated numbers. The game has **no text**: seventeen string literals in the whole executable, no copyright, no build path, **no compiler banner at all**, and the only attribution anywhere had to be *rendered*. And the copy protection is not a password system — it is a manual lookup whose **twelve answers** sit in the executable in a private alphabet that is the glyph's own frame index minus thirteen, the first of them `BATVIRE` |
 
 ## The write-ups
 
@@ -1505,3 +1526,130 @@ neither carries a size table anywhere. Leftovers come to **9,043 bytes, 0.263 %*
 briefing's headline guess that a directory called `TEDIT` would turn out to be a
 development tool's droppings. It is 78.96 % of the object, it holds every map and
 every tile bank, and the game opens all four of its subdirectories by name.
+
+### [Mega Man](https://github.com/vs-sr-dev/pc-megaman-doc)
+**The second object in this list that is not a medium, and the first that had to
+be *rendered* before it would say who made it.** *Tubular Worlds* was a folder of
+107 files with no volume descriptor; this is a folder of **29 files and 346,995
+bytes** with the same absence and a worse provenance — the only file that names a
+publisher is a 184-byte BBS descriptor written on **2011-01-22**, twenty years
+after the game, describing a `.zip` that is not here.
+
+**And it is the most judged object this collection has opened.** *Mega Man* for
+DOS is routinely listed among the worst conversions ever published. That is a
+fact about its reception, it was true before this repository existed, and the
+useful consequence of it is that **nobody ever opened the files**: the only
+modding reference that carries a page for this game marks every one of its
+formats *not editable* and documents none of them. Thirty-five years of
+commentary, zero hex editors.
+
+**The executable is nine tenths air, and the framing everyone repeats is
+backwards.** `MM.EXE` is 20,349 bytes, EXEPACK'd, and unpacks to **exactly
+211,712 bytes with zero packed input left over** — a written unpacker, verified
+against `dest_len` before anything was read out of it, with the relocation table
+located by trying every offset in the 685-byte stub and keeping the one where
+sixteen length-prefixed groups close **exactly** on `exepack_size`. There is one
+such offset and it holds 176 fixups. But **91.8 % of the expanded image is
+zero**: content occupies two regions and comes to **17,415 bytes**. So the
+ten-to-one is a fact about a linker's BSS, not about density — and the real
+finding is the other way round: `.BIN` turns out not to be data at all but
+**five separately built, position-independent 8086 modules**, one per stage,
+42,449 bytes of them, that far-return to the resident core. **Seventy-one per
+cent of this game's code is not in its executable.** The check that proves they
+are modules rather than blobs: every `cs:[imm16]` reference in all five files
+lands inside its own file — **2,318 of 2,318**.
+
+**One codec, and one byte in it that a stock decoder gets wrong in silence.**
+Maps, tiles, sprite banks and screens all go through the same run-length coder,
+and it is PackBits with a single deliberate difference: **`0x80` is a run of 129,
+not the reserved no-op Apple documented in 1984.** Decode this game with a stock
+routine and the four fixed screens come out perfect while every stage map is
+short by a few hundred bytes and still looks structured. It was caught by
+arithmetic, not by eye: `SECUR.SCN`'s opening tokens must sum to the width in its
+own header, and `129 + 55 + 16 = 200` while `71` is nothing.
+
+**Two planar layouts in one game, and the wrong guess about either produces a
+picture.** Backgrounds are four EGA bitplanes interleaved **one row at a time**;
+sprites are **five** planes interleaved **every byte**, mask first. Read the
+background as chunky and the credits screen decodes into three vertical bands of
+legible-looking noise; read it plane-major and it becomes four bands of
+text-shaped noise. Read the sprite mask as the last of the five instead of the
+first and all 305 frames come out the right shape in the wrong colours — a white
+Mega Man instead of a blue one, with no length check anywhere to complain. **A
+wrong planar guess does not look like static.**
+
+**Every format closes, and each closes on a number it did not have to.** `.SCN`
+is `13 + width·height` bytes with the stage's own name at offset 4, exact on 5 of
+5 with the input consumed to the byte. `.BLK` is 41,984 = **328 records of 128
+bytes**, identical on all five stages despite compressed lengths spanning three
+to one — and a map can address only **0..215** of those 328, the rest being the
+heads-up display and, above record 320, **1,024 bytes the compressor itself flags
+as not-tiles** by being the only region it does not encode one tile at a time.
+`.FRM` is 305 per-frame records chained head to tail, **eight files, eight chains
+ending exactly on EOF**. `.STA` is 30,720 = **320 × 192**, and its encoder is so
+strictly row-aligned that all 192 row boundaries in all four files land on a
+token boundary: **768 of 768**.
+
+**The two shared blocks the briefing found turn out to be the same fact.** The
+1,227 bytes common to all five stage sprite banks are **thirteen whole frames** —
+the buster shot, the pickups, the explosion, the life icon — and the divergence
+at offset 1,229 is frame 13's width byte in every one of the five. The 234 bytes
+common to all five stage code modules are **13 × 18**: the hit boxes of those same
+thirteen frames, in a table that holds exactly `18 × frames` bytes where `frames`
+is the count in the matching `.FRM`, on all five, with neither file storing the
+other's number.
+
+**The screen is sixteen pixels wider than the screen, and two unrelated numbers
+say so.** The sprite blitter's destination row pitch is an immediate: `mov bx,
+2Ah` — 42 bytes, where 320 pixels is 40. The buffers the CGA and Tandy paths ask
+DOS for are `mov bx, 888h` — 34,944 bytes, which is `(42 × 4) × 208`. A **336 ×
+208** page for a **320 × 192** display: sixteen pixels of horizontal margin and
+sixteen rows of vertical, which is what you build to scroll an EGA by moving the
+CRTC start address instead of redrawing. One number out of a blitter, one out of
+a DOS call, and they agree.
+
+**The game has no text.** Seventeen printable literals in the entire unpacked
+executable — the options menu and a table of twelve filenames — and **no
+copyright, no build path, no runtime signature and no compiler banner of any
+kind**, which for a 1990 MS-DOS executable is itself a finding. Three of the menu
+strings the briefing quoted turned out not to be strings: `CGA-`, `EGA2` and
+`VGA7` are `CGA`, `EGA` and `VGA` followed by the **column byte of the next
+record** in a display list of `[column][row][length][text]`. The menu offers four
+graphics adapters and the program contains three initialisations; `VGA` resolves
+to the EGA path, and there is no write to the VGA DAC anywhere in the image.
+
+**So the only attribution in 346,995 bytes had to be decompressed,
+un-interleaved, palette-corrected and looked at.** `CREDITS.STA`, rendered, gives
+the concept to **Capcom** and **design, graphics, programming and sound to
+Stephen Rozner** — four disciplines, one name — with two people thanked.
+`LOGO.STA` carries `© 1990 CAPCOM CO.,LTD.`. Hi-Tech Expressions appears nowhere
+in the object.
+
+**And the copy protection is not a password system.** `PASS.FRM` renders `FIND
+THE PICTURE IN THE MANUAL AND TYPE IN THE NAME`, holds twelve creatures and the
+letters A–Z, and the **twelve accepted answers** sit in the executable in a
+private alphabet that turns out to be **the glyph's own frame index minus
+thirteen** — `0x00` a space, `0x01` a hyphen, `0x02` an `A`. Twelve pictures,
+twelve names, index for index: `BATVIRE`, `FROGBOT`, `SEWER RAT`, `PIRANHA`,
+`EEL-ECTRIC`, `RAPTORBOT`, `INSECTOBOT`, `SPYDROBORG`, `SENTRY BEE`, `DRILL
+PRESS`, `ARMY ANT`, `ASSEMBLER`. The single `0x01` in the whole table is the
+hyphen in `EEL-ECTRIC`, and it is the byte that proves the alphabet.
+
+**The clocks hold a tool changing in the middle of an evening.** Four
+`.SCN`/`.BLK` pairs were written on 1990-09-30 in three minutes and ten seconds,
+and `DYNA`'s pair 26 days later. But the compressed streams group them
+differently from the calendar: `SECUR.BLK` and `DYNA.BLK` emit runs of 129 and
+the other three cap at 128 — so the compressor changed in the two-and-a-half
+minute gap before `SECUR` was exported, and `DYNA` went through the new one four
+weeks on. Then `PASS.FRM` twelve seconds after `CREDITS.STA` on a Sunday night,
+and **24 days 8 hours** of nothing but the executable.
+
+**Leftovers: 34,308 bytes, 9.89 %**, and half of it is **152 tiles that were
+drawn and never placed in any level** — 55 of them in Wily's fortress. No
+duplicate files, no orphaned data, no development artefacts, no dead strings, no
+audio of any kind: the only sound hardware the code touches is the PC speaker,
+and there is no Tandy sound chip access in an executable that sets a Tandy video
+mode. Forty-four predictions were written before the executable was unpacked and
+scored at **65.9 %**, the lowest here — with eight of the losses traced to a
+single sentence about pixel packing that the predictions file had already
+isolated, named and told the scoring to charge once.
