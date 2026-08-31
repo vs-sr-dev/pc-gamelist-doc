@@ -1,6 +1,6 @@
 # pc-gamelist-doc
 
-**Index of the PC and portable-C game documentation** — 30 titles, one
+**Index of the PC and portable-C game documentation** — 31 titles, one
 repository each. This family has no shared platform checklist: a DOS game from
 1987 and a PhyreEngine remaster from 2018 have almost nothing in common except
 the machine they end up on, which is exactly why the index is per platform and
@@ -108,6 +108,7 @@ is between the two discs that share a studio.
 | [**Age of Wonders II: The Wizard's Throne**](https://github.com/vs-sr-dev/pc-ageofwonders2-doc) | 2002 | Triumph Studios *(the disc names it in `AoW2.~ex`'s version resource and four times in a plaintext credits block; the publisher, Gathering of Developers, holds the copyright in the English readme)* |  | The first disc here whose **unallocated space is the subject**: 23.91 % of it belongs to no file, and 143,595,520 bytes of that are reproduced from two integers. A volume descriptor that writes down the disc's own first and last unreadable sector. A Delphi 5 game, and two files shared with a 2001 disc from a different publisher |
 | [**Il cane di terracotta**](https://github.com/vs-sr-dev/pc-canediterracotta-doc) | 2000 | IM*MEDIA (software), Sellerio (publisher) |  | **Not a game** — an interactive cartoon from Camilleri's novel, and the first hybrid in this list: Windows mounts 2,374 files in 4 folders, the HFS volume on the same sectors holds 2,401 in 11, and 2,372 of the 2,373 they share begin on the **same sector**. Macromedia Director 7.0.2, a 10,240-byte grid whose padding has a closed form at 100.0000 %, and 517 Macintosh audio files each leaking the same Windows 95 `KERNEL32.DLL` return address |
 | [**CLIC 11**](https://github.com/vs-sr-dev/pc-clic11-doc) | 1997 | CLIC *(the magazine; the disc names its own maker in the volume identifier `CLIC_11` and in no other field — `publisher`, `data preparer` and `copyright file` are empty on both descriptors, and `Clic95.exe`'s `CompanyName` reads `Macromedia, Inc.`, which is the engine's vendor and not the disc's)* |  | **Not a game, and not a work** — the CD bound into an Italian magazine, and the first object here with no author and no centre: eleven separately-assembled bodies of software spanning **1,636 days**, of which the magazine itself made **3.37 %**. A hybrid whose file count is a property of the walker — Windows shows 857, the ISO volume holds **875** records because eighteen carry the ECMA-119 **Associated-File** flag and describe Macintosh resource forks, and the HFS catalogue adds 23 files that exist nowhere else: **26,607,777 bytes no Windows machine can read**. An ownership map over all 322,926 sectors leaves **two** belonging to nobody. **99.11 % of the directory records have an even seconds field** — MS-DOS's two-second grid, on a disc mastered by a Macintosh program — and the eight exceptions are three Mac files with resource forks. The eight-disc run of zero shared files ends properly: 21,870 records compared, **two crossings, both Microsoft redistributables** |
+| [**Tubular Worlds**](https://github.com/vs-sr-dev/pc-tubularworlds-doc) | 1993–94 *(the file mtimes, 1993-10-11 to 1994-05-31; there is no descriptor here to separate the date of the product from the date of this copy, and the last file is a player's high score)* | *(none — the object names **nineteen people** in `PART2.EXE`'s credits and no organisation anywhere; the only copyright string in 3,432,758 bytes is Clarion Software's, and it belongs to the compiler of an 8 KB DOS version check)* |  | **The first object in this list that is not a medium** — not a disc, not an image, but a downloaded folder of 107 files, and therefore the first with **no volume descriptor, no lead-out and no field anywhere that says when it was made or where it ends**. What a folder can prove instead was proved: **106 of its 107 files are reachable from `TUBWORLD.BAT`** and the 107th is `TUBWORLD.BAT`, so nothing is missing and nothing is spare; and **107 of 107 timestamps sit on the MS-DOS two-second grid** with a zero sub-second field, which is the fingerprint of a DOS-era archive restored onto NTFS. The whole game is drawn from a **64-byte 8×8 tile**, recovered from arithmetic — seven of fifteen banks are exact multiples of 64 once a 768-byte VGA palette comes off the end, and the tile indices across all 21 maps form the dense range **0..2639 with every gap equal to 1** — and rendering it turns two unnamed files into **GET READY** and **GAME OVER**. `size = w·h·k + 4` holds on **35 of 37** level grids; the two that break are level 3, in both files, with the same bytes — and the header is **right**: the autocorrelation of the payload peaks at 169 and is at chance at 200, so the file is 1,488 cells too long rather than the header being wrong. The loading screens are **IFF ILBM written by Deluxe Paint** (`DPPS`, `CRNG`, `TINY`) with a six-bit VGA palette in an eight-bit chunk, decoding to exactly 153,600 bytes each. And a **58-byte German QWERTZ scancode table** is compiled into both game programs, forced by two positions and not one: `Z` at scancode 0x15 and `Y` at 0x2C. **85.447 % of the bytes are structured, 74.383 % decoded, 0.263 % leftover**, and zero of 23,631 records cross with anything else in this collection |
 
 ## The write-ups
 
@@ -1370,3 +1371,137 @@ are traces of a *machine*, but duplicates and superseded originals, which are
 traces of an *assembly*. Chief among them, 1.8 MB of a 1996 game's discarded
 working files, saved as `.OLD` beside the versions that replaced them and
 pressed onto two CD-ROMs anyway.
+
+### [Tubular Worlds](https://github.com/vs-sr-dev/pc-tubularworlds-doc)
+**The thirteenth object measured here and the first that is not a medium.** The
+twelve before it were discs, and every one of them carried a notary: an ISO 9660
+primary volume descriptor states when the volume was built, by what program, how
+many sectors it holds and where they stop. It is a field, in a fixed place, that
+a mastering program wrote once and that nothing since had a reason to touch.
+
+This is a **downloaded folder**: 107 files, 3,432,758 bytes, eight directories on
+an NTFS volume. There is no such field, and there is no analogue of one. So the
+first question is not what is inside it but **what it is**, and the answer has to
+be built from the bytes.
+
+**It came out of a DOS-era archive, and three columns prove it.** All eight
+directories carry today's date and all 107 files carry 1993 or 1994 — the split
+the person who handed it over predicted, with zero exceptions in either
+direction, and the eight directories were made inside **1.547 seconds**. Then:
+**every one of the 107 file times has an even seconds field.** MS-DOS stores a
+file time in units of two seconds and the ZIP local header inherited that field
+unchanged, so a timestamp off a 1994 FAT filesystem *cannot* carry an odd second.
+107 of 107. **Every one has a zero sub-second field**, because a DOS-derived time
+has nothing to put in NTFS's 100-nanosecond units. And **not one file has a
+creation time at or before its modification time**: each was created here at
+09:36:33 and then stamped 1994 — born older than it is, which is impossible for a
+file actually written on this volume and is exactly what an extractor does.
+
+**The boundary had to be rebuilt from the inside, and it closes.** A 1994 game
+does not store 107 filenames; it stores **stencils** — `TEDIT/MAP/MAP00.DAT`,
+whose two digit positions are overwritten in place before the open, which in real
+mode costs two `MOV`s and no stack. Five such tables sit in `PART2.EXE`, one per
+scene, and every path in them uses forward slashes, which DOS has accepted since
+version 2.0 and almost nobody used. Matching literals, stencils and assembled
+names against the tree: **106 of 107 files are reachable, and the 107th is
+`TUBWORLD.BAT`**, the four-line batch file the player types. 3,432,724 bytes of
+3,432,758. There is no dead file here, nothing forgotten and nothing dropped in
+later — which on eleven previous objects was the side that always paid.
+
+**The whole game is drawn from a 64-byte tile, and the arithmetic found it before
+the picture did.** `TEDIT/CHAR` is 55.54 % of the object and eight of its files
+are exactly 172,368 bytes, which factors as 2⁴·3⁴·7·19 and is therefore not a
+width times a height. Two observations open it: seven of the fifteen banks are
+**exact multiples of 64 once 768 bytes come off the end** — 768 being 256 palette
+entries of three bytes, none above 0x3F, which is the VGA DAC's six-bit ceiling —
+and the tile indices across all twenty-one maps form the **dense range 0..2639,
+2,640 distinct values, every gap exactly 1**. That caps a tile at 65 bytes, which
+forces 64, which is 8×8 at one byte per pixel in VGA mode 13h. Rendered,
+`MAP9A.DAT` and `MAP9D.DAT` — two files nothing in the executables names — read
+**GET READY** and **GAME OVER**.
+
+**A closed form that holds thirty-five times, and the two that break it break
+together.** `size = w·h·k + 4` on every `MAP` and `OBJ` file, with the map and the
+object grid of each level declaring the same width and height sixteen times out
+of sixteen. Level 3 breaks it in both files with the identical four bytes
+`a9 00 30 00`. The obvious reading — the header is corrupt, the real width is
+200, since (19,204−4)/(48·2) = 200.000 — is **wrong**, and proving it wrong took
+three measurements: the autocorrelation of the payload's zero map peaks sharply
+at lag **169** (0.9811) and sits at chance at 200 (0.6466); rendered at 169 the
+level is a coherent picture and at 200 it is a diagonal shear; and the content
+stops at exactly row 47, the last row the header declares, dropping from fifty
+non-zero cells to seven at row 48. **The header is right and the file is 1,488
+cells too long**, in both members of the pair — 4,464 bytes of buffer nobody
+trimmed.
+
+**The loading screens are Amiga-format pictures that never saw an Amiga.**
+`LG01.DAT` and `LG02.DAT` are IFF ILBM, 640×480 in four bitplanes, ByteRun1, and
+both decode to **exactly 153,600 bytes** consuming their input to the last byte.
+They hold six chunk types, not the four the game's parser names — and three of
+the extra ones, `DPPS`, sixteen `CRNG` and `TINY`, are **Deluxe Paint's**
+signature, which is how the paint program gets named in a document where nothing
+says it in words. The palette settles the platform: every byte of both `CMAP`
+chunks is 0 or congruent to **3 modulo 4**, which is a six-bit value widened by
+`(v<<2)|3` — the **VGA DAC**, not the Amiga's four bits per gun widened by 17.
+And 640×480 in four planes is not an Amiga mode at all; it is IBM VGA **mode
+12h**, which `PART1.EXE` sets sixteen bytes before it draws.
+
+**A German keyboard, in a lookup table nobody wrote to be read.** Fifty-eight
+bytes compiled into both game programs, indexed by IBM scancode from zero — `1`
+at 0x02, `Q` at 0x10, `A` at 0x1E, `M` at 0x32, and a space at 0x39, which is the
+space bar. The nationality is forced by two positions in opposite directions:
+**`Z` at 0x15 and `Y` at 0x2C**, which a US layout has the other way round.
+Nineteen people are named in the end credits, `mueller` and `guedelhoefer` with
+their umlauts spelled out because the font has forty glyphs and none of them is
+`ü`; **no company is named anywhere**. And at `PART2.EXE`+0x18d25, alone in
+eighty-six bytes of zeros, in capital letters the game's font cannot draw, there
+is `TODAY IS HER BIRTHDAY`.
+
+**The compiler is not recoverable, and that is a measurement rather than a gap.**
+`PART1.EXE` and `PART2.EXE` carry no toolchain banner, no runtime library string,
+no error table and no floating-point message; they have **2 and 10 relocations**
+where a compiled 115 KB program has hundreds, entry points sixteen bytes into the
+image, and prologues that push every register in order. The absence is real, not
+a broken search: `Borland C++ - Copyright` is found five times in
+[pc-mystictowers-doc](https://github.com/vs-sr-dev/pc-mystictowers-doc) and once
+in [pc-1000miglia-doc](https://github.com/vs-sr-dev/pc-1000miglia-doc) by the
+same needle. What the two programs *do* share is **834 bytes of code**, longest
+run 368 bytes, containing `MOV AH,48h / INT 21h` and `MOV AH,49h / INT 21h` — the
+DOS allocate-and-free pair behind their shared message `ERROR: Memory allocation
+failed!`. Against `CHECKMS.EXE`, whose TopSpeed/Clarion runtime makes it a
+different chain entirely, the same measurement returns **0.00 %**. That negative
+control matters: the first version of the tool, before it skipped runs of zero,
+scored 48.9 % on it.
+
+**Fifty-five bytes belong to a person.** `HOF.DAT` is dated 1994-05-31, four and
+a half months after the January mass and six weeks after the last program, and it
+is five records of eleven bytes — three characters of name, six ASCII digits of
+score, a NUL, and a level. All five differ from the table compiled into
+`PART2.EXE`; the scores are ten to fifty times the defaults they replaced; two
+entries share `093750` to the digit, which is what happens when somebody plays
+until they match a number on the screen; and one name is three spaces. This is
+not the game as it shipped — it is **one person's copy of it**. The shipped
+defaults are worth a line of their own: read in order and reversed, the five
+names `loo ocs ien ino rez` spell `zeronineiscoool`.
+
+**Zero of 23,631, and the number is defended rather than announced.** Eight
+published hash lists and ten working trees, and not one file crosses. The single
+third-party candidate is `CHECKMS.EXE`, 8,154 bytes of TopSpeed/Clarion runtime
+wrapped around a check that refuses to run on MS-DOS 1.x — in 1994, nine years
+after DOS 3.0 — and `TopSpeed RTL (C) Clarion Software Corporation` appears in
+exactly **one of eleven trees searched**, this one. The tenth session's rule
+survives with its prediction intact.
+
+**And this is the first object in this list small enough to finish.** Twelve
+600 MB discs could not honestly publish *how much of this do we know*; at 3.4 MB
+it can be checked, and the tiers were defined before they were counted:
+**85.447 % structured** — inside a region whose extent a verified rule produces —
+**74.383 % decoded**, and **0.161 % residue**, bytes known to be unread. The
+14.392 % that is neither is `.SHP` and `.ZMP` exactly, the two formats that do not
+state their own length: the sprites are VGA mode-X planar and fourteen of them
+render correctly, the music has event streams with monotonic timestamps, and
+neither carries a size table anywhere. Leftovers come to **9,043 bytes, 0.263 %**
+— the lowest rate this collection has measured, and a direct refutation of the
+briefing's headline guess that a directory called `TEDIT` would turn out to be a
+development tool's droppings. It is 78.96 % of the object, it holds every map and
+every tile bank, and the game opens all four of its subdirectories by name.
