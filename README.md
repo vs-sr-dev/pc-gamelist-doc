@@ -1,6 +1,6 @@
 # pc-gamelist-doc
 
-**Index of the PC and portable-C game documentation** — 33 titles, one
+**Index of the PC and portable-C game documentation** — 34 titles, one
 repository each. This family has no shared platform checklist: a DOS game from
 1987 and a PhyreEngine remaster from 2018 have almost nothing in common except
 the machine they end up on, which is exactly why the index is per platform and
@@ -55,10 +55,10 @@ which is the first side-by-side comparison in this family: the engine *lost*
 237,568 bytes of code between them, and three claims in the older repository
 are corrected by the newer one.
 
-**Three counts, and they do not all agree, on purpose.** The table below has
-**33 rows**, the write-ups section has **32 entries**, and the heading says
-**33 titles, 34 rows, 33 write-ups.** The extra row is *Tales of Berseria*,
-which has a row and no write-up because its primary index is
+**Three counts, and they do not all agree, on purpose.** Re-derived by command
+rather than incremented: the heading says **34 titles**, the table has **35
+rows**, and the write-ups section has **34 entries**. The extra row is *Tales of
+Berseria*, which has a row and no write-up because its primary index is
 [tales-gamelist-doc](https://github.com/vs-sr-dev/tales-gamelist-doc) — the
 format it documents belongs to the saga, not to the platform. The heading
 counts documents, the table counts titles reachable from here, and the gap is
@@ -102,6 +102,27 @@ discs and three studios are no more a national school than three were, and
 the useful result is the negative one: the only crossing anywhere in the four
 is between the two discs that share a studio.
 
+*Tesla Effect: A Tex Murphy Adventure* is the newest entry and the largest object
+in this family by four orders of magnitude — 17.5 gigabytes against the 392,593
+bytes measured before it. **Its Saga cell is empty, and the reason is the rule
+and not an oversight.** It is the sixth and last *Tex Murphy*, a series of six
+that began in 1989; the column is famous-title-proof and fills only when another
+object in this collection shares bytes with it, and today there is no other *Tex
+Murphy* here. The one thing this object contains that points at its own series is
+a video file called `meanstreets_newspaperarticle.bk2`, naming the 1989 game the
+series began with — and **a reference is not a shared byte.** When the rest of
+the series is measured, the cell fills itself, on a measurement, exactly as
+*Mega Man*'s did after a session of standing empty.
+
+It is also the first entry here whose subject is a **live installation on
+somebody's disk** rather than a disc, an image or a folder of files, and the
+first with personal data in it. Two fields of its Steam manifest belong to the
+person who owns the copy and are redacted in the repository; the game's own
+runtime log, written on that machine, is neither copied nor quoted. The
+distinction the document draws is worth carrying: a name found *in the object* —
+`masonj`, `courtneyj`, `steve w` — is a measurement, and a name belonging to the
+person who installed it is not.
+
 | Title | Year | Studio | Saga | What it is |
 |---|---|---|---|---|
 | [**Prince of Qin**](https://github.com/vs-sr-dev/pc-princeofqin-doc) | 2002 | Object Software |  | The Chinese action RPG and Object Software's "EasyRPG" engine |
@@ -138,6 +159,7 @@ is between the two discs that share a studio.
 | [**Tubular Worlds**](https://github.com/vs-sr-dev/pc-tubularworlds-doc) | 1993–94 *(the file mtimes, 1993-10-11 to 1994-05-31; there is no descriptor here to separate the date of the product from the date of this copy, and the last file is a player's high score)* | *(none — the object names **nineteen people** in `PART2.EXE`'s credits and no organisation anywhere; the only copyright string in 3,432,758 bytes is Clarion Software's, and it belongs to the compiler of an 8 KB DOS version check)* |  | **The first object in this list that is not a medium** — not a disc, not an image, but a downloaded folder of 107 files, and therefore the first with **no volume descriptor, no lead-out and no field anywhere that says when it was made or where it ends**. What a folder can prove instead was proved: **106 of its 107 files are reachable from `TUBWORLD.BAT`** and the 107th is `TUBWORLD.BAT`, so nothing is missing and nothing is spare; and **107 of 107 timestamps sit on the MS-DOS two-second grid** with a zero sub-second field, which is the fingerprint of a DOS-era archive restored onto NTFS. The whole game is drawn from a **64-byte 8×8 tile**, recovered from arithmetic — seven of fifteen banks are exact multiples of 64 once a 768-byte VGA palette comes off the end, and the tile indices across all 21 maps form the dense range **0..2639 with every gap equal to 1** — and rendering it turns two unnamed files into **GET READY** and **GAME OVER**. `size = w·h·k + 4` holds on **35 of 37** level grids; the two that break are level 3, in both files, with the same bytes — and the header is **right**: the autocorrelation of the payload peaks at 169 and is at chance at 200, so the file is 1,488 cells too long rather than the header being wrong. The loading screens are **IFF ILBM written by Deluxe Paint** (`DPPS`, `CRNG`, `TINY`) with a six-bit VGA palette in an eight-bit chunk, decoding to exactly 153,600 bytes each. And a **58-byte German QWERTZ scancode table** is compiled into both game programs, forced by two positions and not one: `Z` at scancode 0x15 and `Y` at 0x2C. **85.447 % of the bytes are structured, 74.383 % decoded, 0.263 % leftover**, and zero of 23,631 records cross with anything else in this collection |
 | [**Mega Man**](https://github.com/vs-sr-dev/pc-megaman-doc) | 1990 *(28 of the 29 files carry mtimes from 1990-09-30 to 1990-11-29 and the executable is the last of them; the 29th is a BBS descriptor written 2011-01-22. As with the other loose-file object in this list there is no descriptor, no version field and nothing to separate the date of the product from the date of this copy — except that here the executable's own filename table names every data file the folder holds)* | *(none as a company — the object credits a **person**: `CREDITS.STA`, rendered, gives **design, graphics, programming and sound to Stephen Rozner** and the concept to **Capcom**, and `LOGO.STA` carries `© 1990 CAPCOM CO.,LTD.` — all of it drawn as pixels, none of it as text. The publisher, **Hi-Tech Expressions, Inc.**, is named by exactly one file, the `file_id.diz` added in 2011, and by nothing in the 28 files of 1990)* | Mega Man | **Not the NES game and not a conversion of one** — a licensed DOS original, and the second folder of loose files in this list. 29 files, 346,995 bytes, five undocumented formats and an EXEPACK'd executable, and every one of them closes: `MM.EXE` unpacks to **exactly 211,712 bytes with zero packed input left over**, of which **91.8 % is zero** and 17,415 is program — so the famous *twenty kilobytes for a whole game* is a fact about a linker's BSS, and the real answer is that **71 % of this game's code is not in its executable** but in five per-stage 8086 modules that far-return to it, whose 2,318 CS-relative references land inside their own files **2,318 times**. One run-length coder serves all four compressed families and it is **PackBits with `0x80` meaning a run of 129 rather than a no-op** — decode it Apple's way and the stage maps come out short and still look plausible. Two planar layouts, not one: backgrounds are four EGA planes interleaved **per row**, sprites five planes interleaved **per byte** with the **mask first**, and reading the mask last gives 305 sprites of the right shape in the wrong colours. `.SCN` closes as `13 + width·height` on 5 of 5; `.BLK` as 41,984 = 328 × 128-byte 16×16 tiles on 5 of 5, of which a map can address only **0..215**; `.FRM` as 305 chained per-frame records ending exactly on EOF on 8 of 8; `.STA` as 30,720 = **320 × 192** on 4 of 4. The 234 bytes shared by all five `.BIN` are **13 × 18** — the hit boxes of the thirteen sprite frames the five `.FRM` also share. The blitter's row pitch is **42 bytes** and the buffers it asks DOS for are 34,944 = (42 × 4) × 208: a **336 × 208 page for a 320 × 192 screen**, sixteen pixels of scroll margin, derived twice from two unrelated numbers. The game has **no text**: twenty-two string literals in the whole executable, no copyright, no build path, **no compiler banner at all**, and the only attribution anywhere had to be *rendered*. And the copy protection is not a password system — it is a manual lookup whose **twelve answers** sit in the executable in a private alphabet that is the glyph's own frame index minus thirteen, the first of them `BATVIRE` |
 | [**Mega Man 3: The Robots are Revolting**](https://github.com/vs-sr-dev/pc-megaman3-doc) | 1992 *(64 of the 64 files carry DOS mtimes from 1992-07-18 to 1992-08-02, and this is the first object in this list whose year is also **drawn into it**: `LOGO.STA`, rendered, carries `© 1992 CAPCOM CO.,LTD.` and `™ and © 1992 CAPCOM, USA, INC.`. The container disagrees and says **2008-06-23**, which is the date of the archiving and of nothing else — one ZIP record in 65)* | **Rozner Labs**, and for once the object says so — but in pixels, not in text: `ROZLABS.STA` renders as a circuit board reading `A` / `ROZNER` / `LABS` (spelled on four seven-segment displays) / `PRODUCTION`, `HITECHLO.STA` renders as the **Hi Tech Expressions** logo over the word `PRESENTS`, and `CREDITS.STA` gives **design, programming and sound to Stephen Rozner** and **graphics to William Rozner**, with the concept to **Capcom**. None of those six words exists as ASCII anywhere in the 55,456 bytes of unpacked executable | Mega Man | **The second Mega Man on PC is called the third, because there was never a second** — and it is the first object in this collection with a sibling already measured to the byte, which is what makes it worth a row rather than a footnote. 64 files, 392,593 bytes, inside a ZIP whose 65 CRC-32s all verify and whose 65 local headers agree with their central-directory twins in every field. **One codec for all four families and it is not the 1990 codec**: twelve-bit LZW, MSB first, no clear code, dictionary frozen at 0xFFE — confirmed twice, by 63 of 63 files ending on the 0xFFF end code with only their byte padding left over, and by the decompressor itself at 0xb280 in the unpacked image. Run the 1990 PackBits reader on a 1992 screen and it **consumes 2,926 bytes of a 2,866-byte file**, which is the loudest way a wrong codec can fail. **The pixel changed too**: one byte per pixel, chunky, sixteen colours — against 1990's four EGA planes — so every byte of art is converted to planes once per tile at load time by a routine the `Graphics Card:` setting switches, and the menu that selects it has **dropped the VGA option** the 1990 game offered. `.STA` closes as 64,000 = **320 × 200** on 6 of 6; `.ZSC` as `width·height + 6 + 16·count` with the count read from inside the same stream, on 7 of 7; `.ZBL` as 256 tiles × 256 + 256 records × 32 + four 256-byte tables = 74,752, which is not arithmetic but the loader's own three read constants; `.VFR` as 326 chained frame records ending exactly on EOF on 43 of 43. **The `.BIN` family is gone**: the 1990 game shipped 71 % of its code in five per-stage 8086 modules and this one has none, because a stage is now data — 366 sixteen-byte object records in the `.ZSC` files, and a four-word hit box on each of 326 frames. The executable's filename table names **49 files in full and 7 as padded stems, which is all 63 data files, with no name unfulfilled and no file unnamed** — the closest thing a folder has to a volume descriptor, closing exactly. And **the two games share 1,855 bytes**, in runs of 32 or more, including 98 bytes of the options display list and the 32 bytes of both palette tables: the Saga cell in this row and in the row above it is filled on that measurement and on nothing else |
+| [**Tesla Effect: A Tex Murphy Adventure**](https://github.com/vs-sr-dev/pc-teslaeffect-doc) | 2014 *(and the first object in this list whose **filesystem dates nothing**: Steam rewrote all 4,769 mtimes into one six-minute window on the day this copy was downloaded, so the year comes only from inside file contents — the five script workbooks were created 2013-11-20T17:42:33Z and last saved between 2014-04-14 and 2014-05-09, and the studio's own code carries a linker stamp of **2014-06-11T21:55:36Z**. The `.exe` is stamped 2014-01-08 and dates the **engine**, not the game)* | **`BigFinishGames`**, and the object says so in exactly two places, neither of them a credit: as Unity's `companyName` in `mainData`, and inside `/Documents/BigFinishGames/TeslaEffect/` in the assembly — **the only place in 17.5 GB where the studio names itself in text is the path your saved games go to**. `TeslaEffect.exe`'s version resource has no `CompanyName`, no `ProductName` and no copyright; `Assembly-CSharp.dll` has every field present and every one **empty**; and the only binary here that names its maker is **RAD Game Tools**, in the video codec. The credits are `MainCredits.bk2`, 271.1 seconds, and a document that counts bytes cannot read them |  | **Fourteen and a half gigabytes of video with a program around it** — 4,769 files, **17,519,466,565 bytes**, agreed to the byte by `du -sb`, by 4,769 `stat` calls and by the distributor's own `SizeOnDisk`; the first object here with an **external, dated, versioned volume descriptor** (`buildid 297944`, depot manifest `6231652133838335837`) and the first with personal data in it, two fields redacted. **82.93 % of the bytes are film**: 1,035 Bink 2 files, all 1,035 headers parsing, all 1,035 declared lengths matching `stat`, **all 1,035 at 2048 × 1024** — a power-of-two texture, not a picture — 1,028 at 23.976 fps, all 1,035 with exactly one audio track, and **20,014.286 seconds = 5 h 33 m 34.3 s of running time summed from 1,035 exact frame counts with zero frames decoded**. **4,570 distinct SHA-1s for 4,769 files**: 1,330,831,607 bytes — 7.596 % — already exist elsewhere, 99.994 % of it video, because the story graph is stored as a directory tree and a scene reachable from six branches is written six times while its subtitle file is written once. The script is **five Excel 2003 workbooks** shipped with their `DocumentProperties` intact — `Author James`, `LastAuthor masonj` and `courtneyj`, all five **created in the same second**, English and Spanish saved in the same second, and **the English one printed on 2014-04-24 at 20:59:23 UTC**, the only record of paper in the object. The 1992 sibling's name-table closure closed exactly, 56 names for 63 files; **this one fails both ways** — 294 of 3,262 requested string IDs have no English text, at least 3,250 of 6,535 English keys are named by nothing visible — because the join is `GetSubtitleDataFilePath`, a function that concatenates a directory, a stem and an extension, and nothing in the build ever checked it. English has the **fewest** keys of the five languages, not the most: the 1,223-row gap is 1,404 blank rows where its section headings were cleared, and the translators kept and translated theirs, instruction rows included. A `???` left in a retail English line was patched four different ways — Italian **invented a name**; a writer's note reading *XXX (Deep, lonely, noir-esque voice-over goes here. Once we finish writing it of course.) XXX* shipped **translated into German and French**. **101 drive-lettered build paths** in the executable from five vendors and **none** from the studio, against **zero of any kind** in the 1992 object; `Assembly-CSharp.dll` has zero. That assembly is **0.0090 % of the object** and 59 of its 882 types came from elsewhere — Unity's *Stealth* tutorial, a bought FPS kit, iTween — while of its 5,002 string literals only **65** are a line of script and **319** are *keys*: the code contains the names of text, not text. Seventeen files named `- Copy`, six of them older versions; four files a conforming XML parser rejects; four editor GUIDs duplicated by one folder copy; `browscap.ini`, a 311,984-byte web-browser table, as the largest non-video leftover. **16.86 % — 2,954,047,069 bytes of Unity serialized data — was not opened**, stated in its own chapter, and the one probe into it found 48,821,155 more duplicated bytes that a per-file hash census structurally cannot see. **Fifty-six predictions plus two named inferences scored at 81.6 %**, method 17.5 of 18 — and the largest miss, the running time by 50 %, came from trusting a sample of five files out of 1,035 |
 
 ## The write-ups
 
@@ -1744,3 +1766,54 @@ whole object hold a colour index above fifteen that a sixteen-entry palette
 cannot express. **Fifty-three predictions scored at 70.8 %**, method 7 of 7 —
 and of the three clauses marked as inherited from the sibling, two hit and the
 third was the one that cost four others.
+
+### [Tesla Effect: A Tex Murphy Adventure](https://github.com/vs-sr-dev/pc-teslaeffect-doc)
+
+*Tesla Effect: A Tex Murphy Adventure* (PC/Windows, 2014) — **17,519,466,565
+bytes in 4,769 files, of which 82.93 % is filmed video and 0.0090 % is the code
+the studio wrote**, and the largest object in this collection by a factor of
+44,600 over the one measured before it. The total closes three ways — `du -sb`,
+the sum of 4,769 `stat` calls, and the distributor's own `SizeOnDisk` — which
+makes this the first object here with an **external, dated, versioned volume
+descriptor**, and the third different answer this branch has had to the question
+*what is the volume descriptor of a folder*. It is also the first with **personal
+data in it**: two fields of the Steam manifest belong to the person who owns the
+installation and are redacted everywhere.
+
+**1,035 Bink 2 headers, censused entirely, no frame decoded**: all 1,035 parse,
+all 1,035 declared lengths match `stat`, **all 1,035 are 2048 × 1024** (a
+power-of-two texture, not a picture), 1,028 run at 23.976 fps, every one declares
+exactly one audio track, and the sum is **20,014.286 seconds — five hours,
+thirty-three minutes, thirty-four point three seconds**. 4,570 distinct SHA-1s
+for 4,769 files: **1,330,831,607 bytes already exist elsewhere**, 99.994 % of it
+video, because the branching story is stored as a directory tree — a scene
+reachable from six routes is written six times, while the subtitle file that goes
+over it is written once.
+
+The script is **five Excel 2003 workbooks**, shipped with their document
+properties intact: `Author James`, `LastAuthor masonj` on English and Spanish and
+`courtneyj` on the other three, all five **created in the same second**, English
+and Spanish saved in the same second — and **the English one printed on
+2014-04-24 at 20:59:23 UTC**, the only record of a piece of paper anywhere in
+17.5 gigabytes. The sibling object's closure test closed exactly, 56 names for 63
+files; **this one fails in both directions**, 294 of 3,262 requested string IDs
+with no English text and at least 3,250 of 6,535 English keys named by nothing
+visible, because the join is a function that concatenates a directory, a file
+stem and an extension and nothing in the build ever checked it. English turns out
+to have the **fewest** keys of the five languages: the famous 1,223-row gap is
+1,404 blank rows where its section headings were cleared, and the translators
+kept theirs — instruction rows included. A `???` left in a retail English line was
+patched four different ways by five people; the Italian translator **invented a
+name**.
+
+**101 drive-lettered build paths in the executable, from five vendors, and none
+from the studio** — against zero of any kind in the 1992 object — while
+`Assembly-CSharp.dll` has zero, every version field empty, and 59 of its 882
+types from Unity's tutorial, a bought FPS kit and iTween. Of its 5,002 string
+literals, **65 are a line of script and 319 are keys**: the code holds the names
+of text, not text. And **16.86 % of the object was not opened**, said so in its
+own chapter — the one probe into it turned up 48,821,155 further duplicated bytes
+that a per-file hash census structurally cannot see, which makes every leftover
+figure in the document a floor. Fifty-six predictions and two named inferences
+scored at **81.6 %**; the largest miss was the running time, wrong by 50 %,
+because it trusted a sample of five files out of 1,035.
