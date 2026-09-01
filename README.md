@@ -112,12 +112,45 @@ Four discs and three studios are no more a national school than three were, and
 the useful result is the negative one: the only crossing anywhere in the four is
 between the two discs that share a studio.
 
+**The Saga column's rule was rewritten when the second Resident Evil arrived,
+and the reason is measured rather than editorial.** The rule until then, as
+*Mega Man* established it and CLIC 02/97 refined it, was **shared bytes**: a cell
+fills when another object in this collection shares bytes with this one, a saga
+of one is not a saga, and a licence is not a saga. That rule was invented before
+the index held a genuine pair of one series, and the first genuine pair broke it.
+*Resident Evil* (1997) and *Resident Evil 2* (1999) — same studio, same
+publisher, same engine, two years apart — share **12 files and 352,267 bytes**,
+and every one of the twelve is a Microsoft DirectX driver or licence. The same
+discs share **221 files and 10,537,993 bytes** with *FINAL FANTASY VIII*. By
+shared bytes, Resident Evil 2 is **thirty times** more closely related to a
+Squaresoft role-playing game than to its own predecessor, and all 222 of its
+crossings are Microsoft's. A rule whose honest output is *Resident Evil 2 belongs
+to the Final Fantasy saga* is measuring the wrong thing.
+
+So the column now reads: **a Saga cell names the video-game series the title
+belongs to, and is filled once a second member of that series has been measured
+in this collection.** The second half is the old *Mega Man* criterion, unchanged
+— a saga of one is still not a saga, and no cell fills from outside knowledge of
+what exists in the world. What is dropped is the byte criterion, which keeps the
+job it does well: it is the **crossings** measurement, and "222 files, 10,539,308
+bytes, all of them Microsoft's" is exactly the right sentence for it. Kinship
+between two releases of one codebase is measurable too, and it was measured: the
+two Resident Evils share seven structural traits — the PlayStation TIM
+identifier, the `.RDT`/`.EMD`/`.ESP` extensions, one `CORE00.ESP` each in the
+engine's data directory, the `RC####` background naming scheme, no version
+resource on any of the studio's binaries, and a nine-hour Tokyo offset on the
+studio's build stamps — and Final Fantasy VIII shares **none** of the seven. The
+argument is in [pc-residentevil2-doc chapter 13](https://github.com/vs-sr-dev/pc-residentevil2-doc/blob/master/docs/13-the-crossings-and-the-saga.md).
+Both Resident Evil cells were filled in the commit that added the second one;
+*Mega Man*'s two and *Harry Potter*'s three already satisfied the new rule under
+the old one.
+
 *Tesla Effect: A Tex Murphy Adventure* is the largest object in this family, and
 arrived four orders of magnitude above the one measured before it — 17.5
 gigabytes against 392,593 bytes. **Its Saga cell is empty, and the reason is
 the rule and not an oversight.** It is the sixth and last *Tex Murphy*, of six
-that began in 1989; the column is famous-title-proof and fills only when another
-object in this collection shares bytes with it, and today there is no other *Tex
+that began in 1989; the column is famous-title-proof and fills only once a second
+member of the series has been measured here, and today there is no other *Tex
 Murphy* here. The one thing this object contains that points at its own series is
 a video file called `meanstreets_newspaperarticle.bk2`, naming the 1989 game the
 series began with — and **a reference is not a shared byte.** When the rest of
@@ -179,7 +212,8 @@ person who installed it is not.
 | [**CLIC 02/97**](https://github.com/vs-sr-dev/pc-clic0297-doc) | 1997, to the second — the primary volume descriptor says `1997-02-14 18:54:32.00 GMT+0` and writes it twice, identically. *(Which **issue** it is, is the harder half, and this is the first row where the object contradicts its own catalogue: the volume identifier is `CLIC`, with no number and no date, unlike CLIC 11's `CLIC_11`; the only directory naming an issue is `NUMERI/CLIC297/`, February 1997; and `/LEGGIMI.TXT` at the root opens **«Clic! Cd-rom di Marzo»** and then says it contains the February website. It is the **March** disc carrying **February** content, and it advertises an April trade fair. Called **02/97** here after the directory, and after this collection's habit of sorting on what the filesystem says, with the readme's disagreement recorded rather than resolved. The back-issue archive it carries is coded **4, 6, 7, 9, 10, 11, 12** and then `197`, `297` — and those codes are **months, not positions in a sequence**: the magazine cites its own back issues only by month name, five times (*«numero di ottobre»*, *«di maggio»*, *«di giugno»*…), `PAG/12CO003.HTM` names the October issue as a back number, and `PAG/11CO005.HTM` previews a release *«Il 15 novembre»* in the future tense. So 4–12 are April to December 1996 and the year was appended only when 1996 ran out. **There is no running issue count for `CLIC_11` to be the eleventh of**, which dates the other object in this index: a disc cut on 1997-10-20 is the **November 1997** issue, as this one cut on 14 February is the March one)* | **CLIC!**, published by **Mondadori Informatica S.p.A.**, CD-ROM produced by **GLAMM Interactive s.r.l.** of Milan — and the three are named in inverse proportion to what they made. `/CREDITS.HTM` is a published colophon crediting thirteen people, and **both names under *Produzione CD-ROM*** are GLAMM's. Counted as literal byte strings across all 2,818 files, the magazine names itself **1,649 times** (`Clic!` 1,104 + `CLIC` 545) and contributed **0.82 %** of the bytes; **Mondadori** appears 86 times; **Leader**, whose catalogue is 72.4342 % of the disc, appears **69**; **GLAMM**, who built the object, appears **fourteen**. Exactly one binary on the disc carries a `CompanyName` of `GLAMM Interactive` — `SETUPIE.EXE`, 16,896 bytes, PE32, COFF-stamped 1997-02-12 14:16:04 — and it is what `AUTORUN.INF` runs | CLIC — **and this is the first Saga cell in this index to fill on measured *process* rather than on shared payload, which is a change to how the rule is applied and is argued out in [chapter 14](https://github.com/vs-sr-dev/pc-clic0297-doc/blob/master/docs/14-against-clic11.md) rather than assumed.** The two CLIC discs share **1,792,592 bytes and none of it is theirs**: `QTINSTAL.EXE` (Apple) and `VBRUN300.DLL` (Microsoft), plus a third matching hash that is two empty files and is not a crossing. **Zero bytes of either magazine's own work appears on both.** Filling the cell on a QuickTime installer would put every hybrid in this collection in a saga with every other, so the rule's implicit clause is made explicit — *shared bytes must belong to the objects, not to a third party both licensed* — and by that reading the payload measurement is **zero**. What fills the cell instead is five independent fingerprints of one production line: the same mastering program in two versions (`TOAST … 1993-1995 MILES SOFTWARE ENGINEERING` / `TOAST 2.5 Partition` here against `TOAST … 1997 ADAPTEC` / `Toast 3.5.2 PPC HFS Optimizer` there), the same ISO+HFS hybrid with an Apple partition map at block 0, the same empty implementor fields, **99.0622 % even seconds against 99.11 %**, and **two unowned sectors, both zero**, on two discs of different sizes mastered by different versions of one program | **Not a game** — a magazine's cover disc whose ownership map is walked from two catalogues at once, because 96.79 % of a hybrid is owned twice; its padding is 16.5 MB of uncleared memory |
 | [**Il Mio Computer 02/2006**](https://github.com/vs-sr-dev/pc-ilmiocomputer0206-doc) | 2006, and for once the argument is short because **the packaging prints it**: `FEBBRAIO 2006` screen-printed on the disc face and repeated on the sleeve, against a primary volume descriptor reading `2006-01-04 16:46:00 GMT+01:00` — a February number cut on 4 January, the same relationship CLIC 02/97 had and the first time in this index it is **read rather than inferred**. *(The **issue number** is the interesting half and it is nowhere on the object: the volume identifier is `MICO02CD`, the sleeve says only the month, and no page prints a number. What dates it is the disc's own database of everything before it. `Micodb/` — which the briefing for that session read as an article archive and which is nothing of the kind — holds **684 records, one per program the magazine had published on a cover disc**, each naming its issue and month, and they run **113 (Dicembre 2004) to 128 (Gennaio 2006), sixteen consecutive numbers with no gaps** — thirteen a year, because a *Natale* issue sits between November and January. The next number is **129**, and it is derived, not printed. The same database says **102 of the 684 were *solo nel DVD***, which is why the sleeve has `CD` in a box in its corner)* | **Il Mio Computer**, published by **Future Media Italy S.p.A.** — and the attribution has two independent sources that agree, which the previous magazine row did not: the archive record names the publisher, and the disc carries three e-mail addresses on the `futuremediaitaly.it` domain. The full legal name appears **once** on the whole object, in the privacy notice at the foot of the questionnaire. Counted as literal strings over 810 text-shaped files, *Il Mio Computer* appears **696 times in 688 files** — but **686 of those are the masthead on the 685 database pages it copied in**, and in the front end a reader actually sees it names itself **nine times in two files**. It made **0.8111 %** of the bytes, 0.7509 % once ten Windows thumbnail caches and a Dreamweaver design note are taken out; CLIC 02/97, a different magazine from a different publisher nine years earlier, came out at 0.82 %. **It wrote no software at all**: `IERunner.exe`, the shell `autorun.inf` launches, is a Borland-built third-party utility — `Comments: TWebBrowser wrapper`, `LegalCopyright: (c) 2001-2002 Pavel Kilovatiy`, US-English translation, ISO record dated 2002 — which the session briefing had called the one thing the magazine produced |   | **Not a game** — a magazine disc with four games on it, and the first here whose physical sectors survived: 349,462 raw sectors, every EDC verified, and 12.93 % of the file is CD frame |
 | [**Flight of the Amazon Queen**](https://github.com/vs-sr-dev/pc-flightoftheamazonqueen-doc) | **1995**, and the object carries **five** dates of which four are not the product's — the widest spread this column has had to argue since *Allods Online*, and unlike that one it is settled **inside the game data**. The credit roll exists **twice**: `DATA`, 5,172 bytes, reads `Copyright (c) **1994**, Interactive Binary Illusions`; `CREDIT1.CRD`, 1,540 bytes, is the same page with the same indents and reads `Copyright (c) **1995**`. Both ship on every copy. The 1994 roll credits a **Sound Engineer** and no recording infrastructure; the 1995 pair adds *Voice Recording Project Management*, *Executive Voice Producers*, two *Production Assistants* and a **Sound Mixer**, and corrects two people's names — `Will Jeffries` becomes `Will Jeffery`, `Mark Dearling` becomes `Mark Dearsley`. So the two years are not a contradiction: **1994 is the game and 1995 is the talkie**, and the same executable that indexes this file also indexes the 1994 floppy release at 22,677,657 bytes, one eighth the size, with the same rooms and no recordings. The cell takes the year of the object in hand, as the *Lands of Lore* row did with its 1993/94. *(The other three dates are in the object too and none is the product's: `Copyright (C) **1990** by Voyetra Technologies`, in a MIDI meta event inside `AQBANK.RL`, five years older than the game; `ScummVM 2.0.0 (Dec  9 **2017** 07:14:40)`, the interpreter's own `__DATE__`, and the only date the two largest binaries will give — both are GNU-linked with a COFF timestamp of zero, which is reproducibility refusing to answer; and **2018**-04-25 11:48:02 on all nine members of the shop's web cache. The filesystem says none of them: 41 of 45 mtimes fall inside **six seconds** of the morning this copy was installed, which is the *Lands of Lore* finding — 62 of 65 inside ten seconds — reproduced exactly. And the shortcut disagrees with the filesystem by precisely 7,200 seconds, because a Shell Link stores UTC)* | **Interactive Binary Illusions**, Brisbane — published by **Renegade, UK** — and the string was counted before the cell was filled, as this column now requires. `Interactive Binary Illusions` occurs **6 times in 190,787,021 bytes**, all six inside the three credit resources and nowhere else; `Renegade` 6 times, `Bitmap Brothers` twice, `John Passfield` 27, `Steve Stamatiadis` 23, `Tony Ball` 10. The studio is two people and the roll says which did what: story and design both, programming Passfield and Ball, graphics and animation Stamatiadis, script Passfield *(extra words by Steve)*. *(The credits also name the engine, which is why this row can do something the others cannot: **JASPAR Game Engine and other development systems — John Passfield**, and a separate line, **JASPAR PC Conversion — Tony Ball**. `.JAS` is JASPAR. That single line explains why a 1995 MS-DOS CD is indexed in **big-endian** and holds **375 AMOS memory banks** — AMOS being a BASIC for the Commodore Amiga — every one of them closing to the byte under a Motorola reading and to nonsense under an Intel one. The Amiga release came first, one person converted the engine, and nobody converted the data. Four PCX backgrounds are still **320 × 256**, which is a PAL Amiga screen)* |   | A talking adventure whose talking is 89.23 % of it and whose script is 0.33 %: one 190 MB file with no index of itself, described only by a table inside ScummVM twenty-two years later |
-| [**Resident Evil**](https://github.com/vs-sr-dev/pc-residentevil-doc) | **1997**, and the object offers **five** dates of which four are not the product's. The primary volume descriptor reads `1997-08-22 12:13:04`, the newest file on the disc is `RESIDENTEVIL.EXE` at `1997-08-22 12:03:44` — and it is also the last file in extent order, at sector 312,222 — so the disc was closed on 22 August 1997 and the cell takes that year. *(The other four: the **game** this is a port of came out for the PlayStation in **1996**, and the executable still calls itself `bio1997` after the Japanese title while carrying the string `1997/3/21` in Japanese date order; the **oldest file** is `1995-07-10 21:09:00`, eight months before the PlayStation original shipped, and it is a Microsoft display driver for a Japanese PC, not a game asset — all 76 files dated 1995 are third-party; and the `.bin` file's own mtime says **1996-12-25 03:32:00**, which is **240 days before the volume it contains** and is therefore synthetic, the same impossibility `pecensus.py` tests binaries for, applied to an image and failing.)* **What makes this row different from every other one here is that the year is not the only thing the filesystem knows.** This is the first object in the collection whose directory records date the **work** rather than the copy: 1,102 distinct timestamps over **129 distinct days**, 1995-07-10 to 1997-08-22, proved two ways — the seconds field is even on **2,638 of 2,638** file records that are not exactly midnight, which is FAT and nothing else, while the 47 directory records written by the mastering program are even on **25 of 47**, which is chance; and four of the five root programs carry a recorded time exactly **nine hours** ahead of their own COFF linker stamp, to within fifteen seconds. Nine hours ahead of UTC is Japan. Every one of the 3,436 records declares a timezone byte of GMT+01:00, which is where the disc was mastered, and it is wrong about all of them | **Capcom Co., Ltd**, published in Europe by **Virgin Interactive Entertainment (Europe) Ltd** — and the strings were counted before the cell was filled. `Capcom` in any case occurs **21 times in 634,776,465 bytes** across seven files, `Virgin` **3 times**, and `Interactive Entertainment` **once**. Both attributions come from the same place: two lines of prose at the top of `README.TXT`. Everywhere else the name is a registry key, `Software\CAPCOM\RESIDENT EVIL`, in four of the five programs — and two of the three lower-case `virgin` hits are a path to `virgin.tim`, the publisher's logo screen. *(**Who did the port is not on the disc, and the silence is structural.** All five programs — `RESIDENTEVIL.EXE`, `LAUNCH.EXE`, `SETUP.EXE`, `UNINSTALL.EXE`, `CHECKER.EXE`, 2,163,200 bytes, one linker version, no Authenticode — carry **`VS_VERSIONINFO: ABSENT`**. Not one company name, not one product name, not one file version, on any binary the publisher wrote. The only path that leaks a machine at the company that made it is a single CodeView record, `E:` + `work` + `Unsetup` + `Release` + `Uninstall.pdb`, inside the uninstaller: **one leaked build path in 736,133,664 bytes**, against Final Fantasy VIII's 31,737. The mastering software names itself twice, in the two identification fields that are not blank — `GEAR VERSION 4.0 APRIL 1996` and `ELEKTROSON 1996`, both naming the company that wrote the burner — so the disc identifies its tool and neither of its authors)* |  | A PlayStation game on a Windows CD: every recording of the world is in a PC format and every description of it is in the console's — 2,601 TIM textures and 828 TMD models inside a Win32 product |
+| [**Resident Evil**](https://github.com/vs-sr-dev/pc-residentevil-doc) | **1997**, and the object offers **five** dates of which four are not the product's. The primary volume descriptor reads `1997-08-22 12:13:04`, the newest file on the disc is `RESIDENTEVIL.EXE` at `1997-08-22 12:03:44` — and it is also the last file in extent order, at sector 312,222 — so the disc was closed on 22 August 1997 and the cell takes that year. *(The other four: the **game** this is a port of came out for the PlayStation in **1996**, and the executable still calls itself `bio1997` after the Japanese title while carrying the string `1997/3/21` in Japanese date order; the **oldest file** is `1995-07-10 21:09:00`, eight months before the PlayStation original shipped, and it is a Microsoft display driver for a Japanese PC, not a game asset — all 76 files dated 1995 are third-party; and the `.bin` file's own mtime says **1996-12-25 03:32:00**, which is **240 days before the volume it contains** and is therefore synthetic, the same impossibility `pecensus.py` tests binaries for, applied to an image and failing.)* **What makes this row different from every other one here is that the year is not the only thing the filesystem knows.** This is the first object in the collection whose directory records date the **work** rather than the copy: 1,102 distinct timestamps over **129 distinct days**, 1995-07-10 to 1997-08-22, proved two ways — the seconds field is even on **2,638 of 2,638** file records that are not exactly midnight, which is FAT and nothing else, while the 47 directory records written by the mastering program are even on **25 of 47**, which is chance; and four of the five root programs carry a recorded time exactly **nine hours** ahead of their own COFF linker stamp, to within fifteen seconds. Nine hours ahead of UTC is Japan. Every one of the 3,436 records declares a timezone byte of GMT+01:00, which is where the disc was mastered, and it is wrong about all of them | **Capcom Co., Ltd**, published in Europe by **Virgin Interactive Entertainment (Europe) Ltd** — and the strings were counted before the cell was filled. `Capcom` in any case occurs **21 times in 634,776,465 bytes** across seven files, `Virgin` **3 times**, and `Interactive Entertainment` **once**. Both attributions come from the same place: two lines of prose at the top of `README.TXT`. Everywhere else the name is a registry key, `Software\CAPCOM\RESIDENT EVIL`, in four of the five programs — and two of the three lower-case `virgin` hits are a path to `virgin.tim`, the publisher's logo screen. *(**Who did the port is not on the disc, and the silence is structural.** All five programs — `RESIDENTEVIL.EXE`, `LAUNCH.EXE`, `SETUP.EXE`, `UNINSTALL.EXE`, `CHECKER.EXE`, 2,163,200 bytes, one linker version, no Authenticode — carry **`VS_VERSIONINFO: ABSENT`**. Not one company name, not one product name, not one file version, on any binary the publisher wrote. The only path that leaks a machine at the company that made it is a single CodeView record, `E:` + `work` + `Unsetup` + `Release` + `Uninstall.pdb`, inside the uninstaller: **one leaked build path in 736,133,664 bytes**, against Final Fantasy VIII's 31,737. The mastering software names itself twice, in the two identification fields that are not blank — `GEAR VERSION 4.0 APRIL 1996` and `ELEKTROSON 1996`, both naming the company that wrote the burner — so the disc identifies its tool and neither of its authors)* | Resident Evil | A PlayStation game on a Windows CD: every recording of the world is in a PC format and every description of it is in the console's — 2,601 TIM textures and 828 TMD models inside a Win32 product |
+| [**Resident Evil 2**](https://github.com/vs-sr-dev/pc-residentevil2-doc) | **1999**, the year both volumes were written — `1999-03-21`, an hour and two minutes apart — and the second of the two years in the readme's own copyright line, `CAPCOM CO.,LTD. 1998,1999`. *(Five other dates are on the discs and none is the product's: the PlayStation original is **1998**; the oldest file is **1996-10-20** and the newest **1999-02-01**; and the game executable is stamped **1999-02-16** on one disc and **1999-01-21** on the other, because they are two different builds of the same 1,001,984 bytes.)* | **CAPCOM**, published in Europe by **Virgin Interactive** — the readme's own two lines, and shorter than 1997's `Capcom Co., Ltd` and `Virgin Interactive Entertainment (Europe) Ltd`. *Who did the port is again not on the discs: all four of the studio's binaries carry `VS_VERSIONINFO: ABSENT`, which is nine of nine across two products and seven years* | Resident Evil | Two CDs of 1999 in Mode 2 sectors that use nothing Mode 2 exists for, of which more than half of each disc is the other — 42 minutes of Indeo 5 named `.BIN`, and five hours of four-bit speech |
 
 ## The write-ups
 
@@ -3205,3 +3239,207 @@ Sixty-two predictions were written before the image was opened: **36 hit, 17
 half, 9 miss, 71.8 %**. Six of the nine misses are the same failure — believing
 the session briefing's account of what a file header says instead of running a
 twelve-byte head census — and the remedy is the one that worked last time.
+
+### [Resident Evil 2](https://github.com/vs-sr-dev/pc-residentevil2-doc)
+
+The thirtieth object, and the first that is **two**. `RES2 LEON.bin` is
+758,583,504 bytes and `RES2 CLAIRE.bin` is 722,626,128, both raw — 322,527 and
+307,239 sectors of 2,352, remainder zero on each — and the first question a
+two-disc product has to answer is how much of one is the other.
+
+**1,696 shared content hashes, 357,785,576 bytes, 54.4374 % of Leon and
+57.1645 % of Claire.** Four of the seven layers are duplicated perfectly:
+`COMMON` (1,005 files, 251,181,574 bytes), `ZMOVIE`, `GALLERY` and `DRIVERS` are
+byte-identical between the discs, file for file, with zero differing and zero
+present on one side only. Outside the scenario directories **exactly three files
+differ**: `AUTORUN.INF` by two bytes, `REGIST/RES2_INST.EXE` by 25.3019 %, and
+`RESIDENTEVIL2.EXE` — same 1,001,984 bytes on both discs, **809,643 of them
+different, 80.8040 %, in 55,023 runs**. That is not one build with a flag
+changed; it is two compilations twenty-six days apart, and they carry different
+strings: Leon's holds `http://www.virgin.com` and Claire's holds
+`http://www.vie.co.uk`. The measurement forced six denominators where every
+earlier object here needed two, and every figure in the repository names which
+one it uses.
+
+**The sectors are Mode 2 Form 1 and nothing on either disc uses Mode 2.** Both
+cue sheets say `MODE2/2352` and both tell the truth: mode byte 2 on 100 % of
+629,766 sectors, Form 1 on 100 %, Form 2 on none, and **629,766 of 629,766 EDCs
+verified with zero mismatches of any kind**. But the eight bytes that
+distinguish Mode 2 from Mode 1 — the subheader, which exists to say *this sector
+is data* or *audio* or *the end of a record* — are `00 00 00 00 00 00 00 00` on
+**every sector of both discs**. Submode 0 does not have the `data` bit set, so
+by the letter of CD-ROM XA every sector on this object declares itself to be
+nothing in particular. There is no `CD-XA001` marker on any of the four
+descriptors and **0 of 2,230 and 0 of 2,260 directory records** carry XA's
+System Use area. The discs spend 5,038,128 bytes writing, into the field Mode 2
+reserves for meaning, exactly the bytes Mode 1 reserves for nothing. Both modes
+cost 304 bytes a sector — **12.9252 % on both discs, which is 304 ÷ 2,352 and
+was proved a constant last session, so it is cited here and not re-derived** —
+and the choice was therefore free and empty. This is a Mode 1 disc in a Mode 2
+wrapper, and the one practical consequence, that the payload starts at offset 24
+instead of 16, is what killed a tool written twenty-four hours earlier.
+
+**The unclaimed space is not empty, for the first time in thirty objects.** Each
+disc has 304 sectors the filesystem does not reach and both runs contain
+something. Sector 19 holds `CeQuadrat Joliet directory link table` followed by a
+count of **37** and **37 pairs of dwords** — a complete map from Joliet
+directory extents to primary ones, in path-table order, **all 37 of 37
+resolved**, referenced by neither namespace. The last sector of the volume space
+holds `CeQuadrat ISO 9660 formatter information block`, then **its own sector
+address written both-endian**, which is ISO 9660's own convention applied to a
+structure ISO 9660 knows nothing about, then 1,908 zero bytes and `AA 55 55 AA`.
+168 non-null bytes across the two discs, and the sector accounting closes on
+them with **residue 0**: 16 + 3 + 1 + 4 + 161 + 322,039 + 1 = 322,225, the
+declared volume space exactly. So the collection's oldest question gets its
+sharpest answer in eighteen: the descriptor is not merely silent about the
+lead-out, it counts two sectors into its own volume size that its own author
+wrote and provides no way to reach them. The mastering program's timezone bytes
+are **−66 and +113** on both discs, and ECMA-119 allows −48 to +52.
+
+**Last session's proof about dates does not work here, and finding out why is
+the result.** Yesterday's demonstration that a volume's file dates came from a
+FAT source was a contrast: every file record even, the mastering program's
+directory records even only by chance. Here both populations are even — 2,194 of
+2,194, 2,224 of 2,224, 36 of 36 and 36 of 36 — so the contrast is gone. A new
+test settles it: **all 36 directory records on each disc are dated the burn day**,
+inside a five-minute window, which makes them CeQuadrat's own work; and Claire's
+volume-descriptor creation stamp carries an **odd** second, `14:35:11.95`, which
+proves CeQuadrat's clock is not restricted to even ones. The program therefore
+has two code paths at two resolutions, and the parity of the file dates is
+**fully explained by the writer**. The evidence is consumed before it reaches the
+question, the FAT origin here is undetermined, and last year's conclusion is not
+inherited. What survives without needing parity is that the dates are the work's:
+1,446 and 1,478 distinct timestamps over 159 and 153 days, spanning **835 days**
+from 1996-10-20 to 1999-02-01, with **zero records at midnight**.
+
+**Tokyo is on a European disc for the second year running, and this time the
+exception explains itself.** Four CAPCOM binaries on Leon and **five on Claire**
+sit between −32,399 and −32,412 seconds from their own COFF stamps — nine hours,
+which is Japan — while every one of the 4,418 records declares GMT+00:00. Last
+session's open question was why the game executable was the one binary that did
+*not* sit there. Here it exists twice: **Claire's copy is at −32,401 seconds like
+the rest, and Leon's is the only file of 2,194 whose internal clock is newer than
+its own directory record**, by 25 days 2:02:31. A file cannot be copied before it
+exists, so Leon's master was assembled in January, the executable was rebuilt on
+16 February, and the new binary was dropped in without its timestamp being
+updated. The main executable is the file that gets rebuilt last, and on the disc
+where nobody rebuilt it, it sits with the others exactly.
+
+**The largest extension on the object is a lie about 55.7755 % of it.** `.BIN` is
+254 files and 715,671,936 bytes and it is six unrelated formats: 32 RIFF/AVI
+films, five indexed archives, 100 in-game documents, four PlayStation TIMs, one
+Microsoft PE, and one third-party blob. Classified by signature instead of by
+name, all five archives have their offset tables verified and **all five close
+with residue 0** — `ROOMCUT.BIN` at 71,948,686 bytes uses 1,287 of 3,584 slots
+and its members run from 179 bytes to 107,235, and three different
+unused-slot conventions turned up where the first file opened showed one.
+
+**Forty-two minutes of Indeo 5, counted and not decoded.** The 32 films are
+`IV50` at **320 × 160** on 32 of 32 — 320 × 240 letterboxed to two thirds the
+pixels, which is what made 555,978,176 bytes of full-motion video fit on two
+CDs at all — 52,780 frames, **2,532.5314 seconds**. The inherited AVI counter
+reported *0 frames, DISAGREE* on 32 files of 32 without saying why, because
+these files name their video chunks `00iv` rather than the `00dc` every reader
+expects; the repaired tool takes the stream number from the header, prints the
+full inventory of chunk ids it sees, and closes declared frames against counted
+frames on **34 of 34 files**. The mean film wants **219,536 bytes a second =
+1.4293×** a single-speed drive and the fastest single file wants 1.95×, against
+a readme that demands 4× and recommends 8×. Two years earlier the same
+publisher's film wanted 1.33× and its readme asked for 2×. **The film's appetite
+grew seven per cent; the machine the publisher assumed you owned doubled.**
+
+**The `.SAP` sound bank was derived from the bytes and its header is not what it
+looks like.** Eight bytes, then one or more self-delimiting `RIFF….WAVE` chunks.
+The obvious reading of the first dword is a count of streams; it is a **bit
+mask**. `WEAPON01.SAP` carries 481 — `1 1110 0001`, five bits set — and holds
+five streams, and the tool asserts `popcount(mask) == streams walked` on every
+file and passes on **1,495 of 1,495**, with container residue **0 bytes** and
+zero files failing to close. Sixteen files per disc are eight bytes long and
+hold nothing: empty sound banks for rooms with no sound of their own. Behind it,
+a Microsoft ADPCM decoder written from the published definition — coefficients
+read from each file's own `fmt` chunk, not hard-coded, checked block by block
+against a scalar reference **19/19** before any census ran — decodes all 5,195
+streams: **18,450.146848075 seconds, 307.5024 minutes**, closing to the byte.
+Against 1997's 1,110 uncompressed files and 5,027.658866213 seconds, that is
+**3.7 times the recorded sound in 1.7 times the bytes**, bought with one codec
+decision: 4.0474 bits a sample against sixteen.
+
+**The texture did not move and the model did.** Yesterday's object validated
+2,601 PlayStation TIMs and **828 TMDs**; these validate 1,445 TIMs and **ten**
+TMDs each. The characters are still there — 169 files of `.EMD`, `.PLD` and
+`.PLW` on Leon — and the container was derived from the population by a single
+equation, `dword0 == size − 4 × dword1`, which holds on **169 of 169** files on
+Leon and 168 of 168 on Claire; the section table sits at `dword0`, ascends, and
+begins at byte 8, on every one of them. Eight sections for an enemy, four for a
+player or a weapon. And the geometry inside is **not TMD**: 277 of the 337 model
+files contain the bytes `41 00 00 00` somewhere and **0 of 337** have a TMD
+header that validates there. The music moved the other way — 232 `.BGM` files
+whose first four bytes are `pQES`, the PlayStation sequence format, where 1997's
+score was PCM in a Microsoft container.
+
+**What would not open is named with its readings attached.** The background
+compressor — 224 `.ADT` files and the 1,287 members of `ROOMCUT.BIN`, the same
+format as each other, 147,670,436 bytes across the two discs — shares a role, a
+directory and the `RC####` naming scheme with 1997's `.PAK` and shares no
+algorithm: last session's decompressor raises `ValueError` on all of them. Four
+of the five indicators that opened `.PAK` fire cleanly — entropy 7.9489 mean,
+603 aligned four-byte repeats in four megabytes, 702 of 1,399 streams an odd
+number of bytes long, and **every one of 1,399 streams ending `00 00`**, often
+after runs of `AA` and `55` that are the same alternating bit pattern one bit
+apart. The fifth does not: the first 32 bits take 17 distinct values and decode
+to nothing under any of **twenty-four byte-oriented LZSS configurations**, every
+one of which underflows within five output bytes. Declared underived. So is the
+interior of the model container, and so is the other half of the `.RDT` room
+record, of which **45.82 % validates as PlayStation texture** and the rest does
+not resolve.
+
+**Twelve files in common with its own predecessor, and 221 with Final Fantasy
+VIII.** Swept against 58 repositories and 28,382 hash tokens, the discs cross
+**222 times, 10,539,308 bytes, and every single crossing is in
+`REGIST/DIRECTX`** — Microsoft's redistributable, eleven display drivers and a
+licence in the case of the twelve it shares with Resident Evil. Zero textures,
+zero models, zero sound, zero film, zero CAPCOM code. By shared bytes this game
+is thirty times closer to a Squaresoft role-playing game than to the game it is
+the sequel to, **which is what rewrote this index's Saga rule** — argued in the
+repository's chapter 13 and in the paragraph above the table. Kinship measured
+structurally runs the other way: seven traits shared with Resident Evil, of which
+one is that both games carry exactly one `.ESP` file, both call it `CORE00.ESP`,
+both put it in the engine's data directory, and the two files share **no bytes
+at all**.
+
+**Recorded reality: 75.3264 % of the distinct content, 68.9810 % of what was
+manufactured, 59.7562 % of the raw images** — three figures because there are
+six defensible denominators and mixing them silently would move the answer by
+twenty-six points. The naive-sum figure lands within half a point of 1997's
+68.5388 % and the raw-image figure within 0.7 of its 59.1018 %, and neither
+coincidence is a fact about the games: it is what a CD full of film and speech
+looks like twice. The honest number is the deduplicated one, and it is six
+points higher than the manufactured one because the duplicated half of the
+product is disproportionately film and sound.
+
+**The price of not being a console rose from 3.7889 % to 5.3744 %**, and its
+composition inverted: the runtime half nearly doubled while the driver half
+shrank by a quarter and the number of supported chipsets went from six named by
+brand to fourteen named by chip. There are **three** prerequisites now instead
+of one — DirectX 6, DirectXMedia 6 and Indeo Video 5.06, all named in the
+readme's imperative — and the third is a new kind of case, because a codec whose
+absence makes 43.34 % of the object unreadable is not software the object fails
+to need. Leftovers come to **11,490,859 bytes, 1.2418 %**, of which 4,703,784 is
+a fourth DirectXMedia installer that is on Leon, is on no line of any readme, and
+is not on Claire at all.
+
+The discs are otherwise clean: slack **100.0000 % zero** on both, 0 dirty files
+of 2,194 and 2,224; no copy protection across eleven schemes; **zero absolute
+paths belonging to a CAPCOM or Virgin build machine in 1,481,209,632 bytes**,
+against one in 736 MB last year; and no personal data — the single
+person-shaped string on each disc sits at offset 163,960 inside the pixel block
+of a TIM that closes with residue 0, and a second, wider pattern over all
+558,219,896 bytes of Indeo video found one piece of compressed-video noise and
+zero domains.
+
+Seventy predictions were written before either image was opened. The briefing
+they were written against contained **eight** errors, the largest of which
+invented a chapter that does not exist — forty-nine `COMMON` files said to
+differ between the discs, where the true number is zero and the 956 that
+suggested it was a count of distinct hashes inside one disc rather than a
+comparison between two.
