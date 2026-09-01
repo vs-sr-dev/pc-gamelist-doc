@@ -1,10 +1,10 @@
 # pc-gamelist-doc
 
-**Index of the PC and portable-C game documentation** — 44 titles, one
-repository each. This family has no shared platform checklist: a DOS game from
-1987 and a PhyreEngine remaster from 2018 have almost nothing in common except
-the machine they end up on, which is exactly why the index is per platform and
-not per engine.
+**Index of the PC and portable-C game documentation** — one repository per
+title. This family has no shared platform checklist: a DOS game from 1987 and a
+PhyreEngine remaster from 2018 have almost nothing in common except the machine
+they end up on, which is exactly why the index is per platform and not per
+engine.
 
 Two strands run through it. The first is format archaeology from the DOS and
 early-Windows era — containers, sprite codecs, map formats and the editor work
@@ -22,17 +22,17 @@ reproduce them.
 
 Listed in the order they were documented. The **Saga** column is filled in where
 the title belongs to a series that may one day earn its own index; it is empty
-where it does not. Four of them — Final Fantasy three times, and Mana — now point
-at a Square Enix cluster large enough to deserve its own repo, and the third
-Final Fantasy is the one that says why the column is worth being strict about:
+where it does not. Several of them — the *Final Fantasy* rows, and *Mana* — point
+at a Square Enix cluster large enough to deserve its own repo, and *FINAL
+FANTASY VIII* is the one that says why the column is worth being strict about:
 its cell is filled **on the title**, because the two objects it would have to
 share bytes with are not on the machine that measured it, and the row says so
 rather than letting a series name pass for a measurement.
-**HeroQuest** is one of three sagas of two here, and its other half is on a
+**HeroQuest** is one of the sagas of two here, and its other half is on a
 different machine entirely: *HeroQuest II: Legacy of Sorasil* sits in the CD32 list as
 [cd32-heroquest2-doc](https://github.com/vs-sr-dev/cd32-heroquest2-doc). Two
 titles across two families is not yet an index of its own.
-**Baron Baldric** is the second saga of two, and the mirror image of that
+**Baron Baldric** is another of them, and the mirror image of that
 arrangement: both halves are on this machine and in this list, *Baron Baldric:
 A Grave Adventure* and its sequel *Mystic Towers*. Its Saga cell was empty
 until the sequel arrived, because a saga of one is not a saga; two titles in
@@ -41,20 +41,20 @@ have in common turns out to be a protagonist, a Borland runtime and three
 asset files — different studio, different publisher, different engine, and a
 different machine underneath.
 
-One entry is the only one that **is not a game**, and it is in the list on
-purpose. *Viaggio al centro del Mondo* is the data session of an 883 CD Extra:
-put the disc in a stereo and it plays an album, put it in a computer and it
+Some entries **are not games**, and they are in the list on purpose. *Viaggio
+al centro del Mondo* is the data session of an 883 CD Extra: put the disc in a
+stereo and it plays an album, put it in a computer and it
 opens a Macromedia Director program with a slot machine inside it. The slot
 machine is 2.7 % of the data track and the rest is a hypertext menu, nineteen
 QuickTime movies and an installer for a 3D avatar chat world. An index that
 admits its edge cases is more useful than one that hides them, and the What-it-is
-cell says plainly that this is not a game — because leaving it out would lose
-the fact that an Italian record label shipped an Activeworlds client in every
-copy of an album in 1999.
+cell of every such row says plainly that it is not a game — because leaving them
+out would lose facts like an Italian record label shipping an Activeworlds
+client in every copy of an album in 1999.
 
-The newest pair of *games* in the list is the first to share an **engine**, and
-its Saga cells are deliberately **empty**. *Blood & Lace* and *Zero Comico* are both
-GMM Entertainment, both running `japotek3d.dll`, seven months apart — and
+*Blood & Lace* and *Zero Comico* are the first pair of *games* here to share an
+**engine**, and their Saga cells are deliberately **empty**. Both are GMM
+Entertainment, both running `japotek3d.dll`, seven months apart — and
 they have no characters, setting or fiction in common, which is what the Saga
 column is for. The Studio column already carries the link that exists. What
 the two discs say about each other is a great deal, and it is said in prose,
@@ -64,25 +64,26 @@ which is the first side-by-side comparison in this family: the engine *lost*
 237,568 bytes of code between them, and three claims in the older repository
 are corrected by the newer one.
 
-**Three counts, and they do not all agree, on purpose.** Re-derived by command
-rather than incremented: the heading says **34 titles**, the table has **35
-rows**, and the write-ups section has **34 entries**. The extra row is *Tales of
-Berseria*, which has a row and no write-up because its primary index is
-[tales-gamelist-doc](https://github.com/vs-sr-dev/tales-gamelist-doc) — the
-format it documents belongs to the saga, not to the platform. The heading
-counts documents, the table counts titles reachable from here, and the gap is
-one crosslink. Raising the heading to 34 would claim a write-up that does not
-exist here; dropping the row would hide a title that is on this platform.
+**Two counts, and they do not agree, on purpose.** The table counts titles
+reachable from here; the write-ups section counts the ones documented in this
+family. A title whose primary index is elsewhere gets a row and no write-up —
+*Tales of Berseria*, whose format belongs to
+[tales-gamelist-doc](https://github.com/vs-sr-dev/tales-gamelist-doc) rather
+than to the platform — and every such crosslink widens the gap by one. Neither
+number is written into the prose above, because a count written down is a count
+that goes stale: both are re-derived by command when they are wanted. Making
+them agree would either claim a write-up that does not exist here, or hide a
+title that is on this platform.
 
-**Mega Man** is the third saga of two, and it is the one that shows what the
-Saga column is actually for. Its cell was deliberately empty when *Mega Man*
-(PC/DOS, 1990) was the only entry, with the reason written out: *Mega Man* is an
-enormous series, this is a licensed title written from scratch for the PC with
+**Mega Man** is the saga that shows what the Saga column is actually for. Its
+cell was deliberately empty when *Mega Man* (PC/DOS, 1990) was the only half of
+it here, with the reason written out: *Mega Man* is an enormous series, this is
+a licensed title written from scratch for the PC with
 Robot Masters and stages the NES game does not have, and **the column is filled
 only when another object in this collection shares bytes with it**. A saga of
 one is not a saga and a licence is not a saga either.
 
-The newest entry is that other object. *Mega Man 3: The Robots are Revolting*
+The other object arrived later. *Mega Man 3: The Robots are Revolting*
 (PC/DOS, 1992) is the same studio, the same programmer and the same platform
 twenty-one months later, and the two programs share **1,855 bytes** in runs of
 32 or more — 98 of them the options display list, 32 of them both palette
@@ -91,30 +92,30 @@ comparison was run. So both cells are filled now, on that measurement and on
 nothing else. **There is still no PC *Mega Man 2*:** the first DOS game is
 called *Mega Man* and the second is called *Mega Man 3*.
 
-*Grande Fratello Il Gioco* makes it three Italian discs in the list and is
-**not** a third member of that pair: different studio, different city, two
-years later, and — measured file by file by content hash — **not one byte in
-common** with either of them. The only thing all three share is somebody
-else's: `fmod.dll`, in two different versions. Three discs from one country
-are not a national school, and the comparison chapter says so; what it does
+*Grande Fratello Il Gioco* is a further Italian disc and is **not** a third
+member of that pair: different studio, different city, two years later, and —
+measured file by file by content hash — **not one byte in common** with either
+of them. The only thing it shares with them is somebody else's: `fmod.dll`, in
+two different versions. Discs from one country are not a national school, and
+the comparison chapter says so; what it does
 say is that the differences are almost all differences of *year* rather than
 of place, and that the third disc, by arriving with its subchannel, was able
 to correct the other two rather than merely be compared with them.
 
-*Lucignolo Il Videogioco* is the fourth Italian disc and the first that could
-be set against a genuine like-for-like — two tie-ins to Mediaset television
-programmes, four years apart. It closes the question rather than extending
-it: **not one file on it is byte-identical to any file on the other three,
-and the set of filenames common to all four is empty.** `fmod.dll`, the one
-thing the first three shared, does not survive; this game uses Audiere. Four
-discs and three studios are no more a national school than three were, and
-the useful result is the negative one: the only crossing anywhere in the four
-is between the two discs that share a studio.
+*Lucignolo Il Videogioco* is the Italian disc that could first be set against a
+genuine like-for-like — two tie-ins to Mediaset television programmes, four
+years apart. It closes the question rather than extending it: **not one file on
+it is byte-identical to any file on *Zero Comico*, *Blood & Lace* or *Grande
+Fratello*, and the set of filenames common to the four is empty.** `fmod.dll`,
+the one thing the first three shared, does not survive; this game uses Audiere.
+Four discs and three studios are no more a national school than three were, and
+the useful result is the negative one: the only crossing anywhere in the four is
+between the two discs that share a studio.
 
-*Tesla Effect: A Tex Murphy Adventure* is the newest entry and the largest object
-in this family by four orders of magnitude — 17.5 gigabytes against the 392,593
-bytes measured before it. **Its Saga cell is empty, and the reason is the rule
-and not an oversight.** It is the sixth and last *Tex Murphy*, a series of six
+*Tesla Effect: A Tex Murphy Adventure* is the largest object in this family, and
+arrived four orders of magnitude above the one measured before it — 17.5
+gigabytes against 392,593 bytes. **Its Saga cell is empty, and the reason is
+the rule and not an oversight.** It is the sixth and last *Tex Murphy*, of six
 that began in 1989; the column is famous-title-proof and fills only when another
 object in this collection shares bytes with it, and today there is no other *Tex
 Murphy* here. The one thing this object contains that points at its own series is
