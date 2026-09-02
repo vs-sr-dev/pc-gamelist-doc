@@ -239,6 +239,7 @@ Three times now it has said no.
 | [**Resident Evil 2**](https://github.com/vs-sr-dev/pc-residentevil2-doc) | **1999**, the year both volumes were written — `1999-03-21`, an hour and two minutes apart — and the second of the two years in the readme's own copyright line, `CAPCOM CO.,LTD. 1998,1999`. *(Five other dates are on the discs and none is the product's: the PlayStation original is **1998**; the oldest file is **1996-10-20** and the newest **1999-02-01**; and the game executable is stamped **1999-02-16** on one disc and **1999-01-21** on the other, because they are two different builds of the same 1,001,984 bytes.)* | **CAPCOM**, published in Europe by **Virgin Interactive** — the readme's own two lines, and shorter than 1997's `Capcom Co., Ltd` and `Virgin Interactive Entertainment (Europe) Ltd`. *Who did the port is again not on the discs: all four of the studio's binaries carry `VS_VERSIONINFO: ABSENT`, which is nine of nine across two products and seven years* | Resident Evil | Two CDs of 1999 in Mode 2 sectors that use nothing Mode 2 exists for, of which more than half of each disc is the other — 42 minutes of Indeo 5 named `.BIN`, and five hours of four-bit speech |
 | [**Deadly Premonition: The Director's Cut**](https://github.com/vs-sr-dev/pc-deadlypremonitiondc-doc) | **2013**, and this object offers **six** candidate years of which five are not the product's. The cell takes 2013 because that is when the two programs in this package were built: `DPLauncher.exe` is linked **2013-11-12 10:40:58** and `DP.exe` **2013-11-28 09:20:54**, and both stamps are the PE header's own. *(The other five: the game this is a director's cut of shipped on **Xbox 360 in 2010**, and the archive still carries a build path with `X360` in it; the **film** was encoded in **2007** and **2009** — four ASF creation dates run 2007-09-10 to 2007-10-12 and twenty-three run 2009-07-17 to 2009-10-23, three years before the console release; the mod in the folder dates itself **2013-12-03**, and it is not the game's; and the **GOG wrapper** is stamped **2015-01-05**, corroborated by five ZIP member dates in `webcache.zip`, which is when this package was made rather than when the game was.)* **What the filesystem says is nothing at all**, and this is the third and cleanest sample of that: **937 of 958 files carry an mtime inside 243 seconds** of the installation, and of the 930 files the publisher declares, exactly **two** carry a date that means anything — both of them GOG's. Every year above came from inside a file, out of four internal clocks: COFF timestamps, XACT `FILETIME`s, ASF creation dates and a ZIP member date | **Access Games Inc.**, published by **Marvelous Entertainment Inc.**, licensed to and published in the west by **Rising Star Games Ltd.**, distributed by GOG — and every one of those was counted over all 6,877,549,781 bytes before the cell was filled: `Access Games` **79 occurrences in 8 files**, `Marvelous` **73 in 7**, `Rising Star` **11 in 7**, `Ignition` **8 in 2**. They are in the **credit roll**, `credit.prm`, a 502,368-byte parameter table that exists **thirteen times** in this object — six on disk, one per language, and seven more inside the archive — names **seven companies** (`Digital Media Lab.,Inc.` x12, `Access Games Inc.` x6, `Marvelous Entertainment Inc.` x5, `aquablue.inc`, `Katalyst Lab Inc.`, `SPHEREFRAME CO., LTD`, `shaft Inc.`) and closes with a **2010** copyright line, three years before the binary that displays it. *(So this row can do what the two Resident Evil rows could not: the studio **is** in the bytes, in quantity — but not in any of the places built to hold it. `DP.exe` carries **no `VS_VERSIONINFO` at all**, which is nine Capcom binaries plus these two across three products and sixteen years; and `DPLauncher.exe` carries a complete one in which four fields were never edited: `CompanyName = TODO: <Company name>`, `FileDescription = TODO: <File description>`, `LegalCopyright = TODO: (c) <Company name>. All rights reserved.`, `ProductName = TODO: <Product name>`. That resource shipped to two storefronts. Neither of the studio's binaries is signed; the five certificates in the object belong to Microsoft, NVIDIA, Inno Setup and GOG. What **is** everywhere is the machine: `D:\programmer_PC\main\UPDATA/...` prefixes all 14,328 records of the game's archive, and four more Access Games roots — `e:`, `V:`, `Z:`, and `C:\nakai\Work\mmv01\NEW\X360\` — appear inside the members. And `DP.exe` still carries, six times in six languages, `Please insert Rainy Woods disc.` — **Rainy Woods** being what this game was called in 2007 before it was withdrawn and remade, which is also the year of the four oldest ASF creation dates in its film)* |   | A 6.88 GB install whose program is 0.157677 %: a third of it is an archive indexed by 14,328 paths off the developer's own disk, and the same 643 minutes of sound ship twice in two codecs |
 | [**The Legend of Heroes: Trails in the Sky**](https://github.com/vs-sr-dev/pc-thelegendofheroes6-doc) | **2004**, and this is the hardest cell this index has had to argue: the object offers **twelve** dated strata and **not one of them is a filesystem timestamp** — 137 of its 141 files carry a single **78-second** window in 2026, and the four that do not belong to GOG. The cell takes 2004 because the object says so twice in its own words: `dll\copyrights.txt` opens `Legend of Heroes VI: SORA NO KISEKI` / `Copyright (c) 2004 Nihon Falcom Corporation. ALL RIGHTS RESERVED.`, and all four binaries carry `LegalCopyright = Copyright (C) 2004-2017 Nihon Falcom Corp.` It is corroborated by the largest single event in the object's own calendar: on **2004-06-10**, between 02:16:32 and 07:22:44 UTC, **3,852 of the archives' 12,821 members and 836,051,791 bytes** were written — six archives concurrently inside one nineteen-minute window, with timestamps that do **not** rise with offset, which means the packer copied the source files' own mtimes and that day is when the shipping copy was made rather than authored. *(The other eleven strata, none of which is the product's: the oldest sound effects are **1998**-09-08 and 1999, six years before the copyright line claims; 55 of the 58 Ogg were encoded by `Xiphophorus libVorbis I 20010615`, a **2001** beta of a library whose 1.0 was released in July 2002, and the other three by a **2002** build; **2010**-11-18/19 touches 360 members; **2013**-09-07 rebuilds 3,289 in one Saturday; **2014**-07-21 to **2015**-11-07 adds 1,942 DirectDraw textures; **2017**-04-22 rebuilds 961 members and a Visual Studio crash file is stamped 04:02:50 the same day; the ending film was composited **2017**-05-02 and the opening re-rendered **2018**-04-21, both in After Effects CC 2015 at **UTC−04:00**, in North America; `steam_api.dll` is linked **2021**-11-23; all four Falcom binaries are linked **2022**-09-22 within ten seconds of each other, from a directory the CodeView record names `20220922-configfix`; and the GOG package is stamped **2022**-11-23.)* **And the 12,821 internal timestamps settle a question this branch had carried for four sessions**: 95.80 % of them fall inside one fourteen-hour band, which is 09:00–22:59 in Tokyo read as honest UTC, and a weekday histogram over distinct days gives 68 working days against 7 weekend ones | **Nihon Falcom** — and for the first time in four sessions the studio's name is in the version resource, in Japanese, on **four binaries of four**, counted over all 2,654,569,986 bytes in three encodings before the cell was filled. `日本ファルコム` occurs **8 times, all UTF-16LE, all inside those four resources, two apiece** — because `ed6_win.exe` and `ed6_win_DX9.exe` each carry **two** `VS_VERSION_INFO` blocks, one Japanese (`日本ファルコム 英雄伝説 空の軌跡`) and one English (`Nihon Falcom Corporation` / `The Legend of Heroes: Trails in the Sky`), both stamped langid `0x0411`, which is Japanese. *(The two text files nobody had opened say the rest. `dll\copyrights.txt`, 2,335 bytes, credits exactly three parties — Nihon Falcom for the game, the Xiph.Org Foundation for Ogg Vorbis, and one individual for an SSE and 3DNow! patch to a Vorbis build called `wuvorbis.dll`, a file that is not in the object — and it does **not** mention XviD, whose `xvid.dll` and `xvid.ax` are 786,432 bytes here. `EULA.txt`, 57,718 bytes, is the GOG.com User Agreement and names GOG sp. z o.o. of Warsaw and nobody else. And the company that produced the English edition this package is built on is **absent from the bytes**: `XSEED` occurs **0 times** in 2,654,569,986, in ASCII, UTF-16LE and Shift-JIS alike, and so does `Carpe`. What the object does leak of its makers is one Windows domain login, serialised into a 3D mesh in `ED6_DT16.dat` on 2004-06-10 and shipped ever since, counted and not reproduced)* |   | A 2.65 GB install whose program is 0.3042 % and whose 65 % is an uncompressed archive of 12,821 self-dated members — 44.72 % recorded media, and the sound that decides it is inside the container |
+| [**Broken Sword: The Sleeping Dragon**](https://github.com/vs-sr-dev/pc-brokensword3-doc) | **2003**, and the object offers **five** candidate years of which four are not the product's. The cell takes 2003 because it is the only one that two independent things inside the executable agree on: `BSTSD.exe` carries the printable string `Core built at Nov 26 2003 06:12:12`, its engine's own build stamp, and the video middleware it ships and imports, `binkw32.dll`, is linked **2003-04-17 02:19:57**. Nothing in 1,724,710,597 bytes names a graphics API later than Direct3D 8 — `d3d9.dll` occurs **0 times** in ASCII, UTF-16LE and Shift-JIS alike — so between the engine's 2003 and the linker's 2007 the program did not move. *(The other four: **2007**, the COFF stamp of `BSTSD.exe`, 2007-08-25 13:35:17, and the month the manual was typeset — QuarkXPress 7.02, distilled on a Macintosh, source file `2.0_BrokenSword_PC_mnl_UK.qxd`, `/CreationDate D:20071015114114+01'00'`; **2008**, the manual's `/ModDate`, 2008-12-12, which disagrees with its own XMP `ModifyDate` of 2007-10-24 by fourteen months; **2014**, the DOS date on the ZIP member inside `goggame-1207658708.hashdb`, and it is 2014-04-01 00:00:00, a placeholder rather than a moment; and **2026**, this copy.)* **What the filesystem says is nothing at all**, and this is the fifth and cleanest sample of that in this collection: **6,746 of 6,748 files carry one mtime inside an 85-second window**, and the two that do not are GOG's icons. Every year above came out of a file. And this object is the counter-example the branch was looking for on the other side of that question — the format that holds 47 % of it, RenderWare's stream chunk, spends **2,048 bytes of header per file and not one bit of it on a date** | **Revolution Software Limited**, published by **THQ**, on **RenderWare** of **Criterion Software** — and every name was counted over all 1,724,710,597 bytes in three encodings before the cell was filled. `RenderWare` occurs **114 times**, `THQ` **158**, `Revolution` **10**, `Criterion` **3**. Inside `BSTSD.exe` alone the ratio is starker: `RenderWare` 112, `Revolution` 4, `Criterion` 1, **`THQ` none** — and the 112 are not a credit, they are 110 source paths reading `RenderWare/RW36Active/rwsdk/...` left in the objects by an unexpanded version-control keyword, so the engine outnames the author by accident. *(**The studio is not in any of the places built to hold it.** `BSTSD.exe` carries `VS_VERSIONINFO: ABSENT` — no `CompanyName`, no `ProductName`, no copyright line — which is now eleven binaries across four products and sixteen years; it is unsigned, and the object's only certificate belongs to **GOG Sp. z o.o.** of Warsaw, on an Inno Setup uninstaller stub built 2018-08-20 and signed 2019-10-14 that is **byte-identical to the one in Trails in the Sky**. What the object does say about its makers, it says in prose: `Readme.txt`'s 781-line credits section names five organisations — Revolution Software Limited, **Sumo Digital Ltd**, Six by Nine Limited, Babel Media Limited and THQ — and a `Localisation` section with French, German, Italian and Spanish translation houses, directors and voice casts, for a build that ships **one** language. Three absolute paths of a Revolution machine survive in the bytes, six occurrences in six files, and `buildpaths.py` can see only one of them: the richest, `\\Server2\Sword3` and `BS3\Demo2\Data\Susarro2\Graphics\objects\case_corner\textures\black.bmp`, is not drive-rooted where it sits, and the executable's own PDB path, `l:\BS3\BS3PC\Master\BS3PC.pdb`, is rejected by the tool's vowel filter at ten per cent against a fifteen per cent threshold)* |   | A 1.72 GB install with two manifests that count it three ways, whose program is 0.1012 % — 47 % is 6,721 RenderWare audio streams, eleven hours of four-bit speech against nine minutes of film |
 
 ## The write-ups
 
@@ -3620,3 +3621,112 @@ misses is the same error committed by the predictions themselves: one clause
 searched `DP.exe` for `Access Games`, found nothing, and declared the studio
 absent from its own product. The string in that file is `ACCESS GAMES INC.`, and
 across the object the name occurs **79 times in eight files**.
+
+### [Broken Sword: The Sleeping Dragon](https://github.com/vs-sr-dev/pc-brokensword3-doc)
+
+A live GOG installation on a hard disk: **6,748 files, 7 directories,
+1,724,710,597 bytes, 6,748 distinct sha1 of 6,748**. It is the fifth live object
+in this collection and the first to carry **both** of the files GOG writes — the
+Galaxy client's `goggame-galaxyFileList.ini` and the offline installer's
+`goggame-1207658708.hashdb` — which is why it can answer a question the two
+previous installations could each only half ask.
+
+**Three counters give three numbers and none of them is wrong.** Galaxy's file
+list has three sections and **6,897** entries; the installer's database has
+**6,736** records; the disk has **6,748** files. Put all three against each
+other and the seven regions of three sets come out as 6,736 declared by both and
+present, **3** declared by Galaxy alone and present, **158** declared by Galaxy
+and absent, **0** declared by the installer alone in either direction, and
+**9** present and declared by neither. Read forwards that is a chronology rather
+than a disagreement: 6,736 is what the installer had hashed when it stopped,
+6,739 is what the client declares when it has finished, 6,748 is the disk after
+the uninstaller and the shortcut arrive, and 6,897 is 6,739 plus a DirectX
+redistributable folder that was promised and never delivered. The denominator
+published is the disk.
+
+**The installer's record has a bug in it and the bug is derivable on paper.**
+Yesterday's `hashdb` had a constant 1,056-byte stride; this one does not divide,
+and `hashdb.py` refused to print rather than guess. The names here are UTF-16LE
+and the stride runs 1066, 1078, 1065, 1066, 1067, 1064, 1090… Against the name
+lengths — ten, twenty-two, nine, ten, eleven, eight, thirty-four — the
+difference is **1,056 every time**, so `record = 1024 + n + 32`: a 1,024-byte
+buffer sized for an eight-bit name, an MD5 written as thirty-two hex characters,
+and an overrun of exactly one byte per character because the name went in as
+sixteen-bit. The rule predicts that the 6,736 names contain **201,034**
+characters between them, and taking the 6,739 the manifest declares, dropping
+the three GOG writes last and summing their path lengths gives 201,034 — **delta
+zero**, computed from a directory listing before a byte of the object was
+opened. Then the digests: **6,736 MD5 of 6,736 match**, 1,721,421,870 bytes
+proved intact, the second manifest in this collection that can be checked rather
+than only read.
+
+**The engine has a name, a version and a decimal point**, which is a first in
+thirty-three objects. Every one of the 6,721 stream files carries the packed
+library ID `0x1803FFFF`; the published unpacking gives `0x36003` = **RenderWare
+3.6.0.3**, build `0xFFFF`, a released-SDK sentinel. The executable confirms it
+from the other side with **110 source paths** reading
+`RenderWare/RW36Active/rwsdk/…`, twenty-one of them under `driver/d3d8/`, and
+carries two of the engine's own PE sections, `_rwcseg` and `_rwdseg`. The
+archive disagrees with itself in a useful way: its 2,975 RenderWare members
+carry **four** versions — 3.3.0.2, 3.4.0.5, 3.5.0.0 and 3.6.0.3 — which is what
+three years of a licensed engine leaves behind when you re-export what you must
+and let the rest alone.
+
+**Forty-seven points of the thesis hung on one word in a table of chunk
+identifiers**, and it was settled without decoding a sample. Chunk `0x0000080D`
+is in RenderWare's plugin range, and three measurements say what is in it: the
+writing tool's console log is shipped inside 76 of the files and one of its
+verbs is **Deinterleaving**; the payload's nibble histogram is sign-symmetric
+about eight, with 1 against 9 at 10.6 % against 10.1 % and frequency falling
+monotonically with magnitude, which is a four-bit ADPCM code and nothing else;
+and the branch whose descriptor field reads `0x0204` shows a **byte-equality
+peak at lag four** that the branch reading `0x0104` does not — two channels
+interleaved on a four-byte grain, exactly as the header predicted. The
+entropy told the opposite story and told it wrongly: 5.9504 bits per byte with
+**zero** blocks above 7.5 looks like proof that nothing is compressed, and
+everything is, four to one.
+
+**The 39 % nobody could read opened, and it moved the thesis by eleven points.**
+`data.pak`'s obvious framing — 16-byte records from offset zero — survives
+thousands of records and is off by one word: several members are Windows
+bitmaps, a bitmap declares its own length, and under the obvious framing that
+length matches the *next* record's size field. Shift by four and the file is
+`u32 count = 19751`, then 19,751 records of `(zero, key, offset, size)`, then a
+zero word, then the members — which **tile the file with zero gaps and zero
+overlaps**, the last one ending on the last byte. Inside: 5,744 bitmaps, 1,188
+PNG, 2,975 RenderWare chunks, and **732 RIFF/WAVE members, format tag 1,
+sixteen bits, 187,408,118 bytes** of uncompressed sound that the arithmetic had
+been done without.
+
+So the thesis is **1,228,042,538 of 1,724,710,597 = 71.2028 %** recorded sound
+and film, fifth of eleven objects, where without the archive it would have been
+seventh. In seconds rather than bytes it is starker: **eight and a half to
+eleven and a half hours of recorded sound against nine minutes and seventeen
+seconds of film**, a ratio of sixty to one, in a product whose program is
+**0.1012 %** and carries no version resource at all.
+
+**And it is a console game with a Windows renderer selected.** The evidence is
+in the bytes and not in a release date: thirty UTF-16 occurrences of
+`PlayStation` inside `data.pak`, all of them the **PlayStation 2 memory-card
+dialogue** — *…ory card (8MB) (for PlayStation 2) in MEMORY CARD slot 1…* —
+shipped inside the retail Windows product; a build path ending
+`Data\streams\pc`, which is a platform folder in a multi-platform tree; and
+**6,721 of 6,721 stream files that are a whole number of 2,048-byte sectors**
+because each one's header is exactly one sector and its payload is padded to the
+same grain, on a hard disk, for no reason a hard disk has. RenderWare was sold
+to make exactly that possible, and this is the first object in the collection
+where the claim can be made from the file rather than from the box.
+
+The leftovers column records its worst figure: **145,169,513 bytes, 8.4170 %**,
+of which 118,607,373 are trailing zeros inside the shipped stream payloads — 37 %
+of the dialogue branch — with the caveat that a four-bit codec encodes silence as
+zero and the boundary between padding and silence is not visible from outside
+the decoder. The other rows are 26 MB of attract-mode loop sold to people who
+have already bought it, a 0.8-second teaser, and 47,640 bytes of a build tool's
+`WARNING` messages that nobody read before shipping.
+
+Seventy predictions were written before a byte was opened and scored **45 hits,
+20 halves, 4 misses = 55.0 of 69 = 79.71 %**. All four misses are about the
+archive, and all four were made from inside the framing the briefing handed
+over — which had asked *where does the table break*, when the answer was that it
+never broke, because it had never been framed right.
