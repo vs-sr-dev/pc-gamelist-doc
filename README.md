@@ -4102,6 +4102,29 @@ Fantasy IX* card game that is not on the disk, has never been on the disk, and
 whose eleven gamepad-button DWORDs are configured anyway. **Zero bytes and
 eleven registry values** is the most complete leftover this branch has measured.
 
+**And the two video files are MPEG under eight bytes of XOR.** They were the
+last thing left closed, and the decoder could not help: `polmvfINT.dll`, the
+DirectShow filter the installer registers for `PMUS`, is packed — `.text` raw
+size **zero**, code in a section called `POL1` at entropy 7.3966. So the
+ciphertext was read instead. `mov999.pmv` has a mean block entropy of **4.9864**,
+impossibly low for 315 megabytes of video, and its byte histogram says why: the
+**eight** commonest values are **8.36 % each**, two thirds of the file in eight
+values at equal frequency, which is a repeating eight-byte keystream over a
+constant plaintext and nothing else. The per-position histogram hands over
+**`C2 EE 9C D9 BD 6C 4D 72`** — the same key from both files, at 89.0 % signal
+in one and **4.13 %** in the other, and a four-per-cent signal getting all eight
+positions right is the confirmation. Under it, byte four is `00 00 01 B3` in one
+file and `00 00 01 BA` in the other: an MPEG **video elementary stream** of
+512×336, 29.970 fps, **12,620 pictures = 7 m 01 s** against the 420.42-second
+WAV beside it, and an MPEG **program stream** of 640×480 and 11.93 s. The
+identical procedure over 49 files that are not `PMUS` produced a start code in
+**0** of them, and a human identified both films on sight. **And 75.2800 % of
+the 315-megabyte file is zero after the XOR** — 237,745,800 bytes, **1.5693 % of
+the whole object** — because a 6 Mbit/s constant-bit-rate envelope is carrying
+1.4832 Mbit/s of picture. It is the largest single piece of nothing this branch
+has weighed, and it moved the leftovers ceiling from 15.3937 % to **16.9630 %**
+after the repository had already been published.
+
 `buildpaths.py` reported **99,881 Macintosh-shaped paths** on a Windows-only
 object, every one a manifest line read as `volume:folder:file`. The first repair
 anchored at the start of the string and left 69,677, because the Mac rule
@@ -4148,3 +4171,6 @@ escape sequences and a heredoc does not know it is quoting a Windows path. All
     24.5362 % by branch, printed beside it
     and it does not move when the 73 % is opened: SeWave 0, BGMStream 0
     inside 11,101,005,949 bytes of .DAT
+
+    of which the film is 7 m 13 s in two files, and the sound is between
+    20 and 31 hours -- a band, because the sample rate is not in the header
