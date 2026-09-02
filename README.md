@@ -3705,17 +3705,24 @@ eleven and a half hours of recorded sound against nine minutes and seventeen
 seconds of film**, a ratio of sixty to one, in a product whose program is
 **0.1012 %** and carries no version resource at all.
 
-**And it is a console game with a Windows renderer selected.** The evidence is
-in the bytes and not in a release date: thirty UTF-16 occurrences of
+**And one data build was made for three machines and never stripped.** The
+evidence is in the bytes and not in a release date: thirty UTF-16 occurrences of
 `PlayStation` inside `data.pak`, all of them the **PlayStation 2 memory-card
 dialogue** — *…ory card (8MB) (for PlayStation 2) in MEMORY CARD slot 1…* —
-shipped inside the retail Windows product; a build path ending
-`Data\streams\pc`, which is a platform folder in a multi-platform tree; and
-**6,721 of 6,721 stream files that are a whole number of 2,048-byte sectors**
-because each one's header is exactly one sector and its payload is padded to the
-same grain, on a hard disk, for no reason a hard disk has. RenderWare was sold
-to make exactly that possible, and this is the first object in the collection
-where the claim can be made from the file rather than from the box.
+shipped inside the retail Windows product, and a build path ending
+`Data\streams\pc`, which is a platform folder in a multi-platform tree.
+RenderWare was sold to make exactly that possible, and this is the first object
+in the collection where the claim can be made from the file rather than from the
+box. **What the bytes do not support is a direction.** `pc` is a *sibling* in
+that tree, not a destination, and almost nothing in the object is dated — 6,746
+of 6,748 files carry one copy stamp and the stream format has no date field —
+so no artefact of one platform can be shown to precede an artefact of another.
+The tempting sentence, *the Windows version is a port of the PlayStation 2 one*,
+is one step further than the file goes. So is the sector alignment that first
+looked like proof: all 6,721 streams are a whole number of 2,048-byte units
+because each one's header is exactly one sector, and 2,048 is a CD and DVD
+sector on every platform including the one this game shipped on for Windows in
+2003.
 
 The leftovers column records its worst figure: **145,169,513 bytes, 8.4170 %**,
 of which 118,607,373 are trailing zeros inside the shipped stream payloads — 37 %
