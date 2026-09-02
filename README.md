@@ -215,7 +215,7 @@ Three times now it has said no.
 | [**Grande Fratello Il Gioco**](https://github.com/vs-sr-dev/pc-grandefratello-doc) | 2003 | Trecision |  | The official Big Brother tie-in, and the first disc here dumped with its subchannel: 43 wrong bits in 12 MB of Q prove the read, and 2,934 files come out of one cabinet |
 | [**Lucignolo Il Videogioco**](https://github.com/vs-sr-dev/pc-lucignolo-doc) | 2007–08 | 7Th Sense s.r.l. |  | An eight-file DVD of which one file is 96.79 %, whose copy protection is a six-byte file containing the word `codice`, and whose sector padding echoes the data 65,536 bytes earlier |
 | [**Viaggio al centro del Mondo** (883 CD Extra)](https://github.com/vs-sr-dev/pc-883d-doc) | 1999 | Moltimedia |  | **Not a game** — the multimedia session of a music CD Extra: a slot-machine minigame that is 2.7 % of the data track, and an installer for an Activeworlds chat world |
-| [**1000 Miglia**](https://github.com/vs-sr-dev/pc-1000miglia-doc) | 1991–92 | Simulmondo *(attributed externally; the material names no studio)* | | The Brescia–Rome–Brescia road race, whose sixteen route filenames are a graph — one closed circuit through fifteen towns with Bologna visited twice — and 37.93 % of it is unreadable PowerPacker |
+| [**1000 Miglia**](https://github.com/vs-sr-dev/pc-1000miglia-doc) | 1991–92 | Simulmondo — *the material itself names no studio (`Simulmondo` occurs 0 times in 1,588,227 bytes), and that remains true of this folder. The attribution is no longer external to the collection: the **Simulman V** row below measures a second Simulmondo object that names the company in full, and the two share one byte-identical executable* | | The Brescia–Rome–Brescia road race, whose sixteen route filenames are a graph — one closed circuit through fifteen towns with Bologna visited twice — and 37.93 % of it is unreadable PowerPacker |
 | [**Harry Potter and the Philosopher's Stone**](https://github.com/vs-sr-dev/pc-harrypotter1-doc) | 2001 | KnowWonder / Electronic Arts *(the game's own credits name no studio, only "PC Team"; `KnowWonder` appears once in 540 files, as a Windows domain inside a developer's path, and on the printed case)* | Harry Potter | The first object here measured from the disc itself: a table hidden in the 344 bytes ISO 9660 requires to be zero, naming both edges of a 9,280-sector unreadable region a binary search cannot find |
 | [**Harry Potter and the Goblet of Fire**](https://github.com/vs-sr-dev/pc-harrypotter4-doc) | 2005 | Electronic Arts *(publisher; the disc names no development studio at all — it names RenderWare, RealCore 6.27.01, RealGraph 6 and Havok, and one Perforce path, `d:\P4\Eauk\HPGoF\`)* | Harry Potter | A DVD that is 93.98 % one file, and whose 126 unallocated gaps are not gaps: they hold a complete second filesystem, UDF File Entries agreeing with ISO 9660 on all 1,659 files |
 | [**Harry Potter and the Order of the Phoenix**](https://github.com/vs-sr-dev/pc-harrypotter5-doc) | 2007 | Electronic Arts *(publisher; the disc names no development studio as a company, but `hp.exe`'s Authenticode certificate reads `O=Electronic Arts, OU=UK Studio, L=Guildford, ST=Surrey, C=GB` and eleven source paths sit under `z:\phoenix\code`)* | Harry Potter | A pressed DVD assembled with a desktop ISO editor, whose primary namespace is not ISO 9660 — zero `;1` version suffixes and 1,185 lower-case names, which is exactly why it carries no Joliet |
@@ -243,6 +243,7 @@ Three times now it has said no.
 | [**Broken Sword: The Angel of Death**](https://github.com/vs-sr-dev/pc-brokensword4-doc) | **2006**, and the object offers **six** candidate years, of which the cell takes the earliest that is the *work* rather than the packaging. The criterion is stated before the verdict: the year of a game is the year its content was made, not the year somebody relinked it for a shop. And this is the first object in the collection whose content dates itself: **1,967 of its 1,987 compiled scenes carry an ASCII timestamp at byte 200 of their own header**, `HH MM SS DD MM YYYY`, and they span **100 distinct days from 2006-04-20 09:24:55 to 2006-08-14 12:07:50**, with a weekday histogram, a lunch hour and a 9.35 % weekend. Four DLLs and two `.ini` agree: `mss64.dll` 2006-06-07, the two Bink libraries 2006-06-23 six seconds apart, `mss32.dll` 2006-07-06, and comments inside `system\custom.ini` and `system\compat.ini` reading `18:49 22/07/2006` and `18:49 08/08/2006`. *(The other five: **2011**, the COFF stamp of `bs4pc.exe`, 2011-09-21 09:14:29, and the manual's `/ModDate` of 2011-10-13, twenty-two days apart — a relink, not a rewrite; **2017**, `d3d9.dll`, linker 11.00, COFF 2017-10-04, a Direct3D proxy carrying `mhookcxx` that GOG's own manifest declares as the first of its twenty-one game entries; **2018**, the Inno Setup uninstaller and the DOS date on the ZIP member inside the 207-byte hash database; **2019**, `support.ico`; and **2026**, this copy, which is 29 of 31 files inside one minute.)* **The filesystem again says nothing**, sixth sample running — and this is the counter-example the branch had been looking for, because the format holding 58.39 % of the object spends 312 bytes of header per member and **twenty of them on a date** | **Revolution Software**, developed with **Sumo Digital Ltd**, published by **THQ**, on the in-house **Emmersion** engine — every name counted over all 2,668,075,144 bytes in two independent encodings before the cell was filled. `Emmersion` occurs **3,449 times in ASCII and 2 in UTF-16**; **`Immersion`, the spelling the literature uses, occurs 0 times in either**. The engine team is named in the object's own `credits.txt`, between *Additional Programming* and *Engine Programmers*: **Sumo Digital Advanced Technologies group**. `THQ` 397, `Revolution` 36, `Sumo` 14, `Sumo Digital` 4. *(**And the lighting technology the literature calls *Amex* is called `amBX`.** `Amex` and `AMEX` occur **0 times** in 2.67 GB; `amBX` and its five other casings occur **1,073 times in ASCII and 5 in UTF-16**, there is a 4,186,664-byte video member called `mov_ambx.bik`, the executable carries **220 distinct `amBX_` asset and effect identifiers** in an embedded XML table, and the single occurrence of `Philips` in the whole object is the credits line `Thanks To: Philips amBX`. It is Philips' ambient-experience system, and the object contradicts the encyclopedia 1,073 to 0.* **The studio is not in the place built to hold it**: `bs4pc.exe` has a complete version resource with `FileDescription`, `ProductName`, `InternalName`, `OriginalFilename` and `LegalCopyright` — and **no `CompanyName` key at all**, while five other binaries in the folder have one. Its `FileVersion` and `ProductVersion` both read `dont_change_` followed by twenty-six `X`, a build-script placeholder that shipped; its binary versions are `0.0.0.0` and `1.0.0.1`, which disagree with each other and with everything else. And the assets name people the credits do not: **23 distinct author fields across 1,970 of 1,987 compiled scenes**, counted and not published)* | **Broken Sword**, and this row is why the cell above it is no longer empty. The rule is symmetric and had never before been able to be: the *Sleeping Dragon* row, published the day before, was updated in the same commit | A 2.67 GB install of 31 files, three of which are 99.38 % — and 58.39 % is compiled 3D scenes that date themselves to the second |
 | [**Broken Sword 5: The Serpent's Curse**](https://github.com/vs-sr-dev/pc-brokensword5-doc) | **2014**, and this is the first row in this index whose year is **not in the object at all**. Every date the 6,608,639,638 bytes contain belongs to the packaging or to a library: four COFF stamps, 2009-06-03 (`OpenAL32.dll`, signed by Creative Labs), 2018-08-20 (GOG's Inno Setup uninstaller), 2022-04-28 (`SDL2.dll`) and 2022-06-06 09:04:23 (`BS5.exe`); the DOS date on the ZIP member inside the 279-byte hash database, 2022-06-06 10:09:08, **sixty-five minutes after the link**; and the mtimes, 31 files of 33 inside a five-minute window on 2026-09-02 with GOG's two icons at 2017-09-28 and 2019-08-26. `2013` and `2014` were searched for as strings and as dates and the object does not carry either. The cell takes **2014**, the completed release, over 2013, the first episode, over 2022, a relink, over 2026, this copy — and says openly that the number came from outside. *(**And the format is why.** The two container formats hold 99.8996 % of the object between them, and neither has room for a date: a `VT7A` record is sixteen bytes fully occupied by key, offset, uncompressed size and stored size, an `AUFS` record is twelve bytes fully occupied by id, offset and size. Seventh sample of the filesystem that dates nothing, and the first in which the archive format **cannot** date its members rather than merely declining to — which makes the previous game's twenty ASCII bytes of timestamp per scene the exception in this branch, measured now across three formats by one studio rather than two.)* | **Revolution Software**, self-published after Kickstarter — and the object **does not name its engine**, which is the finding this session exists for. `Virtual Theatre`, the name universally attributed to it, occurs **0 times** in all 6,608,639,638 bytes in both independent encodings; so does `VirtualTheatre`, `Theatre` and `Theater`. That alone proves nothing, because the object is 98.44 % above entropy 7.5 and **`George` occurs 0 times too** — so the containers were opened: `general.vt7a` holds 5,012 zlib members inflating to 12,663,529 bytes of XML and string tables, in which `george` occurs **22,475 times**, `Kickstarter` **83**, `Revolution` 35 more — and `Virtual Theatre` **still zero**. *(**The engine is twelve open-source libraries and no middleware at all.** `legal.txt` lists SDL, zlib, TinyXML, libogg, libvorbis, libtheora, libtheoraplayer, the OpenGL Extension Wrangler Library, libwebp, openal-soft-1.15.1, Opus and opusfile, every one corroborated by a structure in the bytes — 6,933 zlib members, 287,931 Ogg pages, twelve `\x80theora` headers, 3,138 decoded WebP, 56,162 `OpusHead`. Against RenderWare in 2003 and Bink plus Miles in 2006, the third media stack costs **nothing**. `GLEW` itself occurs 0 times: `legal.txt` writes the library's full name and the acronym is applied from outside, exactly like `Virtual Theatre`. And `BS5.exe` carries **no version resource at all** — third executable of three by this studio and the second with none, PE checksum 0, unsigned; the only certificates in the installation belong to **Creative Labs Inc** and **GOG Sp. z o.o.** of Warsaw. A build path from a tree that is not Revolution's, `F:\Megabot\Backspace\ThirdParty\theoraplayer-1.1.0\`, sits inside the executable beside four from `F:\Revolution\BS5\`.)* | **Broken Sword**, third cell, and the first time this index has had three members of one series measured with the same tools. The two above it were true as written and were not touched. `crossmembers.py`, extended this session from two sides to N, hashes 109,667 members across the three objects: **291 crossings between 2003 and 2006, and zero between 2014 and either** — eight years, a complete change of media stack, and not one shared digest | A 6.6 GB install of 33 files whose program is 0.0333 % — 76 % is the same artwork at two resolutions, and the engine's name is nowhere in it |
 | [**FINAL FANTASY XI (PC, Steam)**](https://github.com/vs-sr-dev/pc-finalfantasy11-doc) | **2002**, and this is the first row in this index where the year of the work and the year of the bytes are twenty-three years apart. The criterion is declared before the verdict: **the year the work was released, not the year these bytes were written** — and for once the object confirms it from the inside, because `FFXiVersions.dll` carries COFF **2002-09-17 13:07:47** and a `CompanyName` reading `SQAURE CO., LTD.`, which is *pre-merger Square with the U and the A the wrong way round*, a typo that has been shipping for twenty-three years and is still registered by `regsvr32` at install time. The other three candidates are all defensible and all wrong for this cell: **2003**, the Western PC release; **2025**, the newest COFF stamp (`FFXiMain.dll`, 2025-12-04 01:27:14) and the installation itself; and **2026**, this copy. *(**And this is the eighth sample of the filesystem-that-dates-nothing question, and the first where the answer is that it dates plenty.** Ten distinct mtime days, not one: **2025-10-26 is 61,492 files and 92.9 % of the object** — the install — then four patch waves, 11-04 (4,164 files, 1.2 GB), 11-11 (46), 12-04 (7) and 12-11 (383, 244 MB), every one of them dominated by `ROM`, the 2002 layer, which is the layer that keeps changing. And then the last three dated days — 12-13, 12-16 and 12-27 — contain **not one byte of the product**: they are 97 files of one player's saved state, macros, logs and mail spool. The object's own timeline separates the product from the person without being asked to. Against that, sixteen distinct COFF days spanning **23 years 2 months 17 days**, an order of magnitude wider than anything else in this collection, and exactly one file where the two clocks describe the same event: `FFXiMain.dll`, linked 2025-12-04, written to this disk 2025-12-11, seven days of patch cycle visible end to end.)* | **Square Enix**, and the object spells it four ways. `SQUARE ENIX CO., LTD.` on 26 of the 27 binaries that carry a `CompanyName`; **`SQAURE CO., LTD.`** on the twenty-seventh; `SQUARE` and not Square Enix inside the original install path `C:\Program Files\PlayOnline\SQUARE\FINAL FANTASY XI`, still compiled into `FFXi.dll` in 2025 because moving it would break every installation in the world; and **`SquareSoft` zero times in 15,150,034,054 bytes** — every name counted with `strcount.py` in two independent encodings before the cell was filled. *(**The engine has no name to be absent, which is a different thing from an absent name.** This is the fourth engine chapter in this collection and the first where nothing was licensed: `RenderWare` 0, `Criterion` 0, `Havok` 0, `Bink` 0, `Miles Sound System` 0, `Vorbis` 0, `EmotionEngine` 0, `OpenGL` 0, `DirectShow` 0, with positive controls firing throughout (`Direct3D` 14, `d3d8` 39+1, `Moogle` 2,915). The only two library names in the whole object are `zlib` (18) and `libpng` (21). `FFXiMain.dll` is **2,896,464 bytes = 0.0191 % of the disk**, linked with **Visual C++ 6.0 on 2025-12-04**, and imports **12 DLLs and 294 functions** of which eleven DLLs are shipped with Windows; the twelfth is `d3d8.dll` and it imports **exactly one function, `Direct3DCreate8`**. No C runtime — statically linked. No D3DX: `D3DXCreate` occurs 0 times. **A 1998 compiler emitting one call into a 2000 graphics API, three months before this was measured**, beside a 2003 Unicode shim for Windows 98 shipped twice, is what twenty-three years of continuous operation costs, and it is legible in the import table.)* | **Final Fantasy**, second cell — and this row exists to close the question the row above it left open. *Final Fantasy VIII*'s cell says it was **filled on the title** and that the byte comparison the index's rule asks for **was not run**, because the other objects were not on the machine. Both are on this machine now, both measured with the same tools. `crossall.py` over 64 repositories: **2 crossings of 61,184 file hashes**, one of them Microsoft's `MSVCR71.dll` and the other a four-byte file. `datmembers.py` then hashed **1,718,526 `.DAT` chunks** so the comparison could be made at member level, and `crossall.py` over those: **0 crossings of 739,235 distinct members.** Against the Broken Sword rows in the same index — 291 member crossings between 2003 and 2006 — two Square PC games eight years apart share a trademark, a publisher and one compiler version, and **not one byte of content**. The cell stays filled, on the title, and is no longer an untested assertion; *Final Fantasy VIII*'s row is updated in the same commit | A 15.15 GB Steam install of a live service, half of which is on somebody else's machines: 73 % is one nameless file type, nine indexes that never overlap, and a checksum that turned out to be MD5 |
+| [**Simulman V**](https://github.com/vs-sr-dev/pc-simulman5-doc) | **1993**, and this is the first row in this index whose year the object states **in pixels**. Four clocks disagree and none of them is the filesystem: all **120 files carry one identical mtime**, `1996-12-24 23:32:00`, a single second three years and three months after the fact; `TNC.NFO`, which is not the product, says `Release Date: 09/20/93` twice; `SMAN5/COD/PLAYER.EXE` carries `COPYRIGHT (C) 1992, 93, 94`, which is a range and belongs to a tool rather than to the game; and the **string `1996` occurs zero times inside the bytes** while `1993` occurs once, in the file that is not the product. What settles it is the title card: `SMAN5/BNK/INTRO00.ANI` decodes to a 320x200 screen reading `SIMULMAN`, `(C) FRANCESCO CARLA' 1993` and `(C) SIMULMONDO 1993` — **drawn as run-length-encoded artwork, where no string search can reach it**. The criterion is stated before the verdict: the product's own statement about itself, over a statement about the product, over the filesystem. *(Ninth sample of the filesystem-that-dates-nothing question and the sharpest: *Broken Sword 3* gave a window of 85 seconds, *Final Fantasy XI* ten distinct days, and this one gives **zero**. It is the signature of a copy made with a tool that stamped every file as it wrote it, on Christmas Eve 1996, of material already three years old — and the anachronism runs backwards for the first time in this index: **the product is older than its container**.)* | **Simulmondo S.r.l.**, of Bologna, and **the object says so itself**, which is why the *1000 Miglia* row above had to be revisited. `SIMULMONDO` occurs **3 times** — twice in `PLAYER.EXE`, once in the release note — and one of those is the full corporate line `@COPYRIGHT (C) 1992, 93, 94  SIMULMONDO S.r.l. BOLOGNA (ITALY)`, with two engineers credited by initial and surname immediately above it. Every grapheme was counted in both cases before the cell was filled: **`Simulmondo` occurs 0 times and `SIMULMONDO` 3; `Bologna` 0 and `BOLOGNA` 1** — the same words, and searching one case only would have produced the opposite row with a straight face. *(**There is no engine name to be absent, and two compilers built what there is.** `SIMULMAN.EXE` and `SIMULMCR.EXE` carry `Portions Copyright (c) 1983,90 Borland` — the Turbo Pascal 6.0 runtime, the same string as six of nine executables in *1000 Miglia* — while `PLAYER.EXE` and `NEWMIDIL.EXE` carry `Borland C++ - Copyright 1991 Borland Intl.`; `Borland` occurs 6 times and **`Turbo Pascal` zero**, so the name that identifies the toolchain is absent and the runtime's own error-message table proves it. The split is not Pascal-is-the-game: **the Pascal knows the filenames and the C knows the file formats.** `PLAYER.EXE` is a script interpreter that documents its own command line in Italian — fourteen buffers, `dev = device musicale (0=PCspeaker,1=adlib,2=soundblaster)` — and carries a cooperative scheduler calling itself `High Performance Kernel Multitask`, while `NEWMIDIL.EXE` still holds its linker symbol table in clear: `ADLIB.C`, `MIDIINT.C`, `MIDIPLAY.C`, `SndSAttDecay`, `carrierSlot`, `Meta_Event`.)* | *(empty, and deliberately)* — ***Simulman*** was a **five-part newsstand serial** and this is part five; the other four are not in this collection and are not measurable from this one, so the rule this index adopted holds and the cell stays empty until a second member is **measured**. *1000 Miglia* is the same studio and not the same series. The object mentions the serial exactly once and not as a word: **the `5` in the directory name `SMAN5`**, repeated 369 times inside the scripts. `edicola`, `episodio`, `puntata` and `Simulman 5` all occur zero times. *(**And one file crosses to the row above.** `NEWMIDIL.EXE`, 26,137 bytes, sha1 `cc4bf11d45eac6800d2739b2c341490981d1f1fa`, is **byte-identical** to *1000 Miglia*'s `MIDI3DRV.EXE` — same driver, different name, a year apart, and the only pair of files anywhere in the two objects that even match by length. `crossall.py` reports **0 crossings against 65 repositories and 41,500 hash tokens** and is wrong in the only way that matters, because `pc-1000miglia-doc` records no SHA-1 anywhere: a tool that finds nothing is not a tool that says zero. The two games also share the `.PAL` format, and it can be dated — the header grew from **two bytes to five** between them, proved by `2 + 3*(last+1)` and `5 + 3*(last+1)` closing exactly on 15 files at three different palette sizes.)* | A 2 MB folder with **not one compressed block in 557**, in which 58.35 % is a format with no magic number that opens to 156 pictures of 156, the dialogue is XOR'd with a key stored in its own first byte, and **0.0000 % was recorded** |
 
 ## The write-ups
 
@@ -4174,3 +4175,142 @@ escape sequences and a heredoc does not know it is quoting a Windows path. All
 
     of which the film is 7 m 13 s in two files, and the sound is between
     20 and 31 hours -- a band, because the sample rate is not in the header
+
+
+### [Simulman V](https://github.com/vs-sr-dev/pc-simulman5-doc)
+
+*Simulman V* (MS-DOS, 1993) — **120 files, 2,056,643 bytes, twelve
+directories.** The seventh Italian object in this list, the second from
+**Simulmondo** after *1000 Miglia*, and the smallest thing measured here since
+the branch left the floppy era: it is **7,367 times smaller than the object
+measured the day before it**. That changes the method and not the ambition.
+Yesterday the work was choosing what not to measure; here every byte fits in
+memory twice over, sixteen of the nineteen extensions were unknown when the
+session started, and **all sixteen are derived from the bytes**. What is left
+unread is 3.06 % — the small index tables and the numeric body of the room
+records — and it is unread because the answers are in 8086 machine code and
+this repository has no disassembler, not because nobody looked.
+
+**There is not one compressed or encrypted block in it.** 557 blocks of 4,096
+bytes, **zero above entropy 7.5**, against 8.2777 % for the object before it
+and 98.44 % for the one before that. This is the far end of that scale, and it
+does not mean everything was legible: it means every format was derivable and
+there was no excuse.
+
+**58.3509 % of the object is one extension with no magic number.** The 38
+`.ANI` are a container — version, element count, declared length, and a `u32`
+offset table whose **first entry is the length of the table itself**, so the
+first element begins immediately after it. That identity, `offset[0] == 4n`,
+holds on the 38 `.ANI`, the 6 `.ELE` and the 5 `.CHV`, and at `2n` on the one
+`.TIL`: **fifty files, four formats, one habit.** Element 0 is a six-bit VGA
+palette, and `SMAN5/STA/ARCADE.PAL` is one of those elements standing alone in
+a file. The pictures are a skip/copy run encoder — a byte of pixels to leave
+alone, a byte of pixels to copy, `0xFF` to end the row — and **156 of 156
+decode consuming every byte but the last two**. The first run reported *0 of
+155*, each leaving exactly two bytes over, never one and never three; the two
+bytes are `ff ff` and are the end marker, and recognising them took the count
+from zero to all of them without changing another line.
+
+**The sprites are four bits per pixel and they index the top sixteen colours,
+not the bottom sixteen.** Which sixteen was measured, not assumed: split the
+256-entry palette into aligned blocks and ask which holds a pure white, a
+three-step flesh ramp and a three-step blue ramp, and **two blocks qualify**,
+12 and 15, being the same colours rotated by one. The tie breaks on the sprites
+themselves — **index 15 is drawn zero times in 96,515 pixels and it is the
+magenta**, a key colour being the one index a sprite never draws, while index 0
+under the other reading is drawn 843 times. Base 240, and the character's
+colours therefore do not change when the room does. Nibble order was settled
+the same way rather than by eye: a run with an odd pixel count wastes half its
+last byte, and over **5,712 odd runs of 5,712** the high nibble is zero, so the
+low nibble is written first.
+
+**The five `.MAT` screens are not scanlines.** 64,000 bytes each, which is
+320×200 at one byte per pixel, and rendered as rows they are horizontal noise.
+The byte that best predicts a byte is the one **sixteen** away, not 320 — mean
+absolute difference 1.658 against 5.207 — so they are stored as tiles of
+16×10, twenty across and twenty bands down, and reassembled that way they are
+rooms with `CLOAK ROOM` and `PRIVATE` legible in them. **No byte in 320,000
+exceeds 15**, so 160,000 bytes carry four bits of nothing each; and the usual
+excuse, that mode 13h demands a byte per pixel, does not survive here, because
+this object contains its own four-bit packer and uses it on 162 sprites, ten
+tiles and a mouse pointer before storing its five biggest pictures unpacked.
+
+**The dialogue is XOR'd with a key stored in the file's own first byte.** The
+ten `.KEY` are the highest-entropy data here and looked like nothing. 2,304
+candidate transforms were tried — XOR, add and subtract at all 256 keys, then
+the same three after bit reversal, nibble swap, complement and seven rotations
+— and scored on printable fraction: **96 cleared 85 % and 95 of them were
+nonsense**, because 0xCB and 0xCC differ in one low bit and printability cannot
+tell them apart. Scored again on Italian function words, exactly one reading
+survives, and the key is byte 0. Six files begin `0xCB` and four begin `0xDA`.
+The text writes **`_` for space 2,158 times against 3 real spaces**, because
+the font's first glyph is `0x21` and there is no glyph for a space — and its
+last glyph is `0x97`, which is **CP437's `ù`, the last letter the Italian
+language asks for**. There are 110 accented vowels in 16,498 bytes of dialogue,
+where *1000 Miglia* a year earlier has **none in 1,588,227 bytes** and writes
+`e'` throughout.
+
+**The reference graph closes in both directions and has two levels.** The
+fifteen `.PLA` scripts are a stream of **big-endian** 16-bit tokens — 88.4737 %
+of them below 0x0100 — in an object whose every other multi-byte field is
+little-endian, with NUL-terminated string operands padded to even length. Five
+tokens introduce a filename and the map from token to extension is one-to-one
+in both directions over all fifteen scripts. **Every one of the 369 paths they
+name resolves to a file that exists: zero dangling references**, which an
+installed directory usually cannot manage. Adding the second namer — the
+Pascal executables' own length-prefixed filename strings — leaves **38 files
+that nothing in the object names at all**, and the list is the finding: the
+eleven episode scripts themselves are among them, because they are called
+`AN00` through `AN0B` and the program builds the name from a **hexadecimal
+counter**. An episode is not a string in this object; it is an integer. Also on
+that list: **two music tracks nothing plays**, `ST1.MDI` and `ST2.MDI`, which
+are the two longest sequences here at 234.5 and 208.7 seconds — seven and a
+half minutes, a third of all the music in the game, that no script reaches.
+
+**Twenty-two minutes of music that never chooses an instrument.** Nine Standard
+MIDI files, format 0, one track, division **420** — not 96, 120, 192, 384 or
+480, and 420 divides by three, five and seven. 13,825 notes, and **zero
+program-change events**: the sequences say which note and never which sound.
+The timbres are the **12,345 bytes** appended past the declared load image of
+`NEWMIDIL.EXE`, which the DOS loader never reads and the program fetches
+itself. All nine also declare an `MTrk` length **four bytes short of their own
+End-of-Track event**, so a conforming reader refuses them — they have been
+unplayable for thirty-three years and nobody noticed, because the only program
+that ever read them did not care. Raising one 32-bit field by four makes all
+nine play, and they come out on Acoustic Grand Piano on every channel, which is
+what the zero program changes predicted.
+
+**And nineteen bytes reboot the computer.** `RESETTA.COM` writes `0000` and
+`FFFF` into the four bytes immediately past its own last instruction and jumps
+through them: `FFFF:0000` is the processor's reset vector. Its name is an
+imperative in Italian, nothing in the object calls it, and there is no `.BAT`
+here to call it from. It is a development tool that shipped — the same habit
+as *1000 Miglia*'s five Turbo Pascal utilities that nothing calls — and it is
+the most compressed statement of what this object is: somebody's working
+folder, copied whole onto a Christmas Eve in 1996, with the game and the tools
+and the release note from the people who pirated it all sitting in the same
+directory.
+
+**`TNC.NFO` is not the product** and is quarantined like the six such files in
+*1000 Miglia*, inside the denominator rather than subtracted from it. It is
+also the only place in the object that states a date correctly in text, it
+declares `Cracked by: N/A` — which an eleven-scheme scan over the four
+executables independently confirms — and its author writes that he cannot tell
+whether the game is *"italian or spanish (don't know exactly, nor I care too
+much)"*. The bytes settle it in one line. Its nine pseudonyms are counted and
+not printed; the two engineers who signed `PLAYER.EXE` and the name on the
+title card are printed, on the stated criterion that **a name placed by its own
+owner inside a product they sold to the public is published, and a pseudonym
+placed by a third party inside a document that is not the product is not**.
+
+**The thesis is 0.0000 %**, the second zero in that table and the first
+measured with the object fully open rather than blind. There is no `.WAV`,
+`.VOC`, `.SND`, `.SMP` or `.CMF`; no PCM inside the executables or the
+animations; the music is sequence and the pictures are cel animation with
+transparency at 38 different sizes, which is not what a film frame looks like.
+`PLAYER.EXE` reserves two sample buffers on its command line and the game ships
+nothing to put in them. The alternative figure is published beside it —
+`.ANI` + `.MAT` + `.MDI` + `.ELE` = **83.3007 %** of the object is picture and
+music — which is higher than any row in the thesis table and every byte of it
+is drawn or sequenced. A 1993 newsstand game spends five sixths of itself on
+art and sound without recording a single second of anything.
