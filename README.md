@@ -157,6 +157,16 @@ series began with — and **a reference is not a shared byte.** When the rest of
 the series is measured, the cell fills itself, on a measurement, exactly as
 *Mega Man*'s did after a session of standing empty.
 
+*Deadly Premonition: The Director's Cut* is the second cell to be left empty
+under the rewritten rule, and it is a harder test than Tesla Effect's, because
+this object **names its own franchise in its own bytes**: `DP.exe` carries the
+string `Deadly Premonition: The Director's Cut - ACCESS GAMES INC. All Rights
+Reserved.`, and its archive carries a project code name, `mmv01`, that a sequel
+might well share. There is a sequel — *Deadly Premonition 2: A Blessing in
+Disguise*, 2020 — and it is not in this collection, so **the cell is empty**. A
+name in a string is not a second member, and the rule fills on a measurement or
+not at all. Twice now it has said yes, for the two Resident Evils, and twice no.
+
 It is also the first entry here whose subject is a **live installation on
 somebody's disk** rather than a disc, an image or a folder of files, and the
 first with personal data in it. Two fields of its Steam manifest belong to the
@@ -214,6 +224,7 @@ person who installed it is not.
 | [**Flight of the Amazon Queen**](https://github.com/vs-sr-dev/pc-flightoftheamazonqueen-doc) | **1995**, and the object carries **five** dates of which four are not the product's — the widest spread this column has had to argue since *Allods Online*, and unlike that one it is settled **inside the game data**. The credit roll exists **twice**: `DATA`, 5,172 bytes, reads `Copyright (c) **1994**, Interactive Binary Illusions`; `CREDIT1.CRD`, 1,540 bytes, is the same page with the same indents and reads `Copyright (c) **1995**`. Both ship on every copy. The 1994 roll credits a **Sound Engineer** and no recording infrastructure; the 1995 pair adds *Voice Recording Project Management*, *Executive Voice Producers*, two *Production Assistants* and a **Sound Mixer**, and corrects two people's names — `Will Jeffries` becomes `Will Jeffery`, `Mark Dearling` becomes `Mark Dearsley`. So the two years are not a contradiction: **1994 is the game and 1995 is the talkie**, and the same executable that indexes this file also indexes the 1994 floppy release at 22,677,657 bytes, one eighth the size, with the same rooms and no recordings. The cell takes the year of the object in hand, as the *Lands of Lore* row did with its 1993/94. *(The other three dates are in the object too and none is the product's: `Copyright (C) **1990** by Voyetra Technologies`, in a MIDI meta event inside `AQBANK.RL`, five years older than the game; `ScummVM 2.0.0 (Dec  9 **2017** 07:14:40)`, the interpreter's own `__DATE__`, and the only date the two largest binaries will give — both are GNU-linked with a COFF timestamp of zero, which is reproducibility refusing to answer; and **2018**-04-25 11:48:02 on all nine members of the shop's web cache. The filesystem says none of them: 41 of 45 mtimes fall inside **six seconds** of the morning this copy was installed, which is the *Lands of Lore* finding — 62 of 65 inside ten seconds — reproduced exactly. And the shortcut disagrees with the filesystem by precisely 7,200 seconds, because a Shell Link stores UTC)* | **Interactive Binary Illusions**, Brisbane — published by **Renegade, UK** — and the string was counted before the cell was filled, as this column now requires. `Interactive Binary Illusions` occurs **6 times in 190,787,021 bytes**, all six inside the three credit resources and nowhere else; `Renegade` 6 times, `Bitmap Brothers` twice, `John Passfield` 27, `Steve Stamatiadis` 23, `Tony Ball` 10. The studio is two people and the roll says which did what: story and design both, programming Passfield and Ball, graphics and animation Stamatiadis, script Passfield *(extra words by Steve)*. *(The credits also name the engine, which is why this row can do something the others cannot: **JASPAR Game Engine and other development systems — John Passfield**, and a separate line, **JASPAR PC Conversion — Tony Ball**. `.JAS` is JASPAR. That single line explains why a 1995 MS-DOS CD is indexed in **big-endian** and holds **375 AMOS memory banks** — AMOS being a BASIC for the Commodore Amiga — every one of them closing to the byte under a Motorola reading and to nonsense under an Intel one. The Amiga release came first, one person converted the engine, and nobody converted the data. Four PCX backgrounds are still **320 × 256**, which is a PAL Amiga screen)* |   | A talking adventure whose talking is 89.23 % of it and whose script is 0.33 %: one 190 MB file with no index of itself, described only by a table inside ScummVM twenty-two years later |
 | [**Resident Evil**](https://github.com/vs-sr-dev/pc-residentevil-doc) | **1997**, and the object offers **five** dates of which four are not the product's. The primary volume descriptor reads `1997-08-22 12:13:04`, the newest file on the disc is `RESIDENTEVIL.EXE` at `1997-08-22 12:03:44` — and it is also the last file in extent order, at sector 312,222 — so the disc was closed on 22 August 1997 and the cell takes that year. *(The other four: the **game** this is a port of came out for the PlayStation in **1996**, and the executable still calls itself `bio1997` after the Japanese title while carrying the string `1997/3/21` in Japanese date order; the **oldest file** is `1995-07-10 21:09:00`, eight months before the PlayStation original shipped, and it is a Microsoft display driver for a Japanese PC, not a game asset — all 76 files dated 1995 are third-party; and the `.bin` file's own mtime says **1996-12-25 03:32:00**, which is **240 days before the volume it contains** and is therefore synthetic, the same impossibility `pecensus.py` tests binaries for, applied to an image and failing.)* **What makes this row different from every other one here is that the year is not the only thing the filesystem knows.** This is the first object in the collection whose directory records date the **work** rather than the copy: 1,102 distinct timestamps over **129 distinct days**, 1995-07-10 to 1997-08-22, proved two ways — the seconds field is even on **2,638 of 2,638** file records that are not exactly midnight, which is FAT and nothing else, while the 47 directory records written by the mastering program are even on **25 of 47**, which is chance; and four of the five root programs carry a recorded time exactly **nine hours** ahead of their own COFF linker stamp, to within fifteen seconds. Nine hours ahead of UTC is Japan. Every one of the 3,436 records declares a timezone byte of GMT+01:00, which is where the disc was mastered, and it is wrong about all of them | **Capcom Co., Ltd**, published in Europe by **Virgin Interactive Entertainment (Europe) Ltd** — and the strings were counted before the cell was filled. `Capcom` in any case occurs **21 times in 634,776,465 bytes** across seven files, `Virgin` **3 times**, and `Interactive Entertainment` **once**. Both attributions come from the same place: two lines of prose at the top of `README.TXT`. Everywhere else the name is a registry key, `Software\CAPCOM\RESIDENT EVIL`, in four of the five programs — and two of the three lower-case `virgin` hits are a path to `virgin.tim`, the publisher's logo screen. *(**Who did the port is not on the disc, and the silence is structural.** All five programs — `RESIDENTEVIL.EXE`, `LAUNCH.EXE`, `SETUP.EXE`, `UNINSTALL.EXE`, `CHECKER.EXE`, 2,163,200 bytes, one linker version, no Authenticode — carry **`VS_VERSIONINFO: ABSENT`**. Not one company name, not one product name, not one file version, on any binary the publisher wrote. The only path that leaks a machine at the company that made it is a single CodeView record, `E:` + `work` + `Unsetup` + `Release` + `Uninstall.pdb`, inside the uninstaller: **one leaked build path in 736,133,664 bytes**, against Final Fantasy VIII's 31,737. The mastering software names itself twice, in the two identification fields that are not blank — `GEAR VERSION 4.0 APRIL 1996` and `ELEKTROSON 1996`, both naming the company that wrote the burner — so the disc identifies its tool and neither of its authors)* | Resident Evil | A PlayStation game on a Windows CD: every recording of the world is in a PC format and every description of it is in the console's — 2,601 TIM textures and 828 TMD models inside a Win32 product |
 | [**Resident Evil 2**](https://github.com/vs-sr-dev/pc-residentevil2-doc) | **1999**, the year both volumes were written — `1999-03-21`, an hour and two minutes apart — and the second of the two years in the readme's own copyright line, `CAPCOM CO.,LTD. 1998,1999`. *(Five other dates are on the discs and none is the product's: the PlayStation original is **1998**; the oldest file is **1996-10-20** and the newest **1999-02-01**; and the game executable is stamped **1999-02-16** on one disc and **1999-01-21** on the other, because they are two different builds of the same 1,001,984 bytes.)* | **CAPCOM**, published in Europe by **Virgin Interactive** — the readme's own two lines, and shorter than 1997's `Capcom Co., Ltd` and `Virgin Interactive Entertainment (Europe) Ltd`. *Who did the port is again not on the discs: all four of the studio's binaries carry `VS_VERSIONINFO: ABSENT`, which is nine of nine across two products and seven years* | Resident Evil | Two CDs of 1999 in Mode 2 sectors that use nothing Mode 2 exists for, of which more than half of each disc is the other — 42 minutes of Indeo 5 named `.BIN`, and five hours of four-bit speech |
+| [**Deadly Premonition: The Director's Cut**](https://github.com/vs-sr-dev/pc-deadlypremonitiondc-doc) | **2013**, and this object offers **six** candidate years of which five are not the product's. The cell takes 2013 because that is when the two programs in this package were built: `DPLauncher.exe` is linked **2013-11-12 10:40:58** and `DP.exe` **2013-11-28 09:20:54**, and both stamps are the PE header's own. *(The other five: the game this is a director's cut of shipped on **Xbox 360 in 2010**, and the archive still carries a build path with `X360` in it; the **film** was encoded in **2007** and **2009** — four ASF creation dates run 2007-09-10 to 2007-10-12 and twenty-three run 2009-07-17 to 2009-10-23, three years before the console release; the mod in the folder dates itself **2013-12-03**, and it is not the game's; and the **GOG wrapper** is stamped **2015-01-05**, corroborated by five ZIP member dates in `webcache.zip`, which is when this package was made rather than when the game was.)* **What the filesystem says is nothing at all**, and this is the third and cleanest sample of that: **937 of 958 files carry an mtime inside 243 seconds** of the installation, and of the 930 files the publisher declares, exactly **two** carry a date that means anything — both of them GOG's. Every year above came from inside a file, out of four internal clocks: COFF timestamps, XACT `FILETIME`s, ASF creation dates and a ZIP member date | **Access Games Inc.**, published by **Marvelous Entertainment Inc.**, licensed to and published in the west by **Rising Star Games Ltd.**, distributed by GOG — and every one of those was counted over all 6,877,549,781 bytes before the cell was filled: `Access Games` **79 occurrences in 8 files**, `Marvelous` **73 in 7**, `Rising Star` **11 in 7**, `Ignition` **8 in 2**. They are in the **credit roll**, `credit.prm`, a 502,368-byte parameter table that exists **thirteen times** in this object — six on disk, one per language, and seven more inside the archive — names **seven companies** (`Digital Media Lab.,Inc.` x12, `Access Games Inc.` x6, `Marvelous Entertainment Inc.` x5, `aquablue.inc`, `Katalyst Lab Inc.`, `SPHEREFRAME CO., LTD`, `shaft Inc.`) and closes with a **2010** copyright line, three years before the binary that displays it. *(So this row can do what the two Resident Evil rows could not: the studio **is** in the bytes, in quantity — but not in any of the places built to hold it. `DP.exe` carries **no `VS_VERSIONINFO` at all**, which is nine Capcom binaries plus these two across three products and sixteen years; and `DPLauncher.exe` carries a complete one in which four fields were never edited: `CompanyName = TODO: <Company name>`, `FileDescription = TODO: <File description>`, `LegalCopyright = TODO: (c) <Company name>. All rights reserved.`, `ProductName = TODO: <Product name>`. That resource shipped to two storefronts. Neither of the studio's binaries is signed; the five certificates in the object belong to Microsoft, NVIDIA, Inno Setup and GOG. What **is** everywhere is the machine: `D:\programmer_PC\main\UPDATA/...` prefixes all 14,328 records of the game's archive, and four more Access Games roots — `e:`, `V:`, `Z:`, and `C:\nakai\Work\mmv01\NEW\X360\` — appear inside the members. And `DP.exe` still carries, six times in six languages, `Please insert Rainy Woods disc.` — **Rainy Woods** being what this game was called in 2007 before it was withdrawn and remade, which is also the year of the four oldest ASF creation dates in its film)* |   | A 6.88 GB install whose program is 0.157677 %: a third of it is an archive indexed by 14,328 paths off the developer's own disk, and the same 643 minutes of sound ship twice in two codecs |
 
 ## The write-ups
 
@@ -3443,3 +3454,155 @@ invented a chapter that does not exist — forty-nine `COMMON` files said to
 differ between the discs, where the true number is zero and the 956 that
 suggested it was a count of distinct hashes inside one disc rather than a
 comparison between two.
+
+### [Deadly Premonition: The Director's Cut](https://github.com/vs-sr-dev/pc-deadlypremonitiondc-doc)
+
+The thirty-first object, and the first that is **not a disc**. It is a live GOG
+installation on a working hard drive — 958 files, 6,877,549,781 bytes, somebody
+else's save file in it — read once, in place, and never written to. Half the
+apparatus this branch has built over eight sessions has no surface on it:
+`toolclass.py` puts **149 of 226 tools** in a class that does not apply, and
+**sixty-nine of those are one loss** — every reader of a raw sector, a volume
+descriptor, an EDC field, a gap, a lead-out, a subchannel or a second disc,
+retired in a single step.
+
+**In exchange it is the first object in this collection that came with a list of
+itself.** `goggame-galaxyFileList.ini` declares 1,098 entries, and the
+comparison against a directory walk closes twice on the byte: **930 declared and
+present, 6,855,369,290 bytes; 28 present and undeclared, 22,180,491; 930 + 28 =
+958 and the two byte totals sum to the whole.** Seven of the manifest's entries
+are directories rather than files and all seven exist, so the count of things
+the publisher declared and the disk lacks is **zero, of anything**. That makes
+the boundary of the object a document rather than a judgement, for the first
+time in thirty-one — and the reason it exists is not the publisher but the
+**installer**: this is the first title here installed through the GOG Galaxy
+client rather than from an offline installer, which is what writes the list.
+
+The 28 undeclared files sort into four classes with no residue: **seventeen
+mods** (DXVK, 2024-11-18, and DPfix, 2013-10-29 to 2013-12-03), **five files
+belonging to the player**, and **six GOG's own**, including the list itself,
+which cannot list itself. Not one file of the game is missing from the
+publisher's list. The two mods are a stratigraphy: DPfix is a `d3d9.dll` wrapper
+and the `d3d9.dll` in the folder is DXVK's, so **the second repair silently
+disabled the first** eleven years later, and of DXVK's five libraries **four
+cannot be reached by this game at all** — `DP.exe` imports one function from
+`d3d9.dll` and nothing from the other four.
+
+**The program is 10,809,344 bytes, which is 0.157677 % of the object — one part
+in 634.** Everything else is something it reads, and three things account for
+**96.7204 %**: 2,972,941,025 bytes of Windows Media (43.3666 %), 2,228,707,120
+of one archive (32.5104 %), 1,428,894,575 of sound (20.8437 %).
+
+**The archive is the finding.** `updata\_flink\DPSerial.001/.002/.003` are
+three independent containers with no table of contents. Every member is preceded
+by a fixed 256-byte record holding nothing but the **absolute path that file had
+on the machine which built it**, NUL-terminated and padded with `0xCC`:
+
+    D:\programmer_PC\main\UPDATA/BG/BG.PRM
+
+Note the separators: backslash for the first three components and forward slash
+below, on **14,328 of 14,328 paths**, because a Windows constant was pasted in
+front of a console-style relative list. Two readers were written and made to
+argue — a signature scanner that knows nothing about the format, and a walker
+that hops by the length field at offset 256 — and they agree on **every one of
+the 14,328 record offsets and names, with residue 0 on all three archives**.
+Every byte of 2,228,707,120 is a record, a length, a member or zero padding.
+
+And they are **not a residue**. There is no other index; the archives close with
+no room for one; `D:\programmer_PC` appears **zero** times in `DP.exe`, which
+instead carries 17,991 occurrences of `UPDATA/` in relative forward-slash form.
+So the runtime matches on the tail and steps over a 22-byte prefix 14,328 times
+— **315,216 bytes of a stranger's drive letter and home directory that the
+program deliberately skips and cannot remove**. Reconstructed, the paths give
+something this collection has never had: **the complete asset tree of a shipped
+game's development machine**, 3,015 directories deep to eight components, with
+`ZZZ` and `DEB` branches in it, three PlayStation 3 `PARAM.SFO`, three sets of
+XMB icons, and **three Windows Explorer `THUMBS.DB`** — thumbnail caches created
+by somebody looking at their own folder, swept into a retail archive and given
+entries in its index.
+
+**The sound exists twice, and the proof is arithmetic.** `updata\sound\` (26
+files, 505,061,852 bytes) and `updata\soundex\` (27 files, 923,832,723) share
+eighteen file names and **not one byte**. One is Microsoft XACT — `WBND`, `SDBK`,
+`XGSF`, thirteen banks, 6,704 entries — and its fourteen headers are stamped
+**2013-09-27 10:25:42 UTC with platform byte 1, Windows**. The other is Access
+Games' own `XSB2`, derived here from the bytes, 6,673 entries, and it **closes on
+the byte on 13 of 13 banks**. Computed independently from each side, the two hold
+**38,592.4 and 38,614.9 seconds** — 643.21 minutes against 643.58, **0.06 %
+apart**. Forty-eight six-channel cues on each side, exactly. Ninety-one music
+cues in one bank on one side and 43 + 20 + 16 + 12 = **91** across four banks on
+the other. It is the same ten hours and forty-three minutes, repacked and
+re-encoded, and one of the two copies is dead weight: `sound\`'s codec has a
+constant 152-byte frame on 6,673 of 6,673 streams, no Windows decoder, and
+nothing in the folder supplies one.
+
+**The film is three strata and a duplicate.** Forty-one ASF files, 70.90 minutes,
+1280×720 on all, and the internal creation dates partition them in a way that
+agrees with the codec and the audio format in every single case: four encoded in
+**2007**, twenty-three in **2009**, twelve with **no date and no encoder string
+at all** in Windows Media Video 8, and **two** encoded as VC-1 on a Windows 7 SP1
+machine in October 2013. Those two, 194,085,716 bytes, are the only film in this
+object made for this platform. And `add08_us.wmv` and `add09_us.wmv` are
+**byte-identical**: the same 318,384,245 bytes, the same 469.715 seconds, shipped
+twice under two names — **4.6443 % of the whole object**, and on its own
+**27.6 times** the largest leftover this collection had previously measured.
+
+**And it still asks for a disc that was never pressed.** `DP.exe` contains, six
+times and in six languages, the message `Please insert Rainy Woods disc.` —
+*Rainy Woods* being the title this game was announced under in **2007** and then
+withdrawn from. Two unrelated measurements corroborate each other across four
+chapters: that string, and the fact that the four oldest films in the object
+carry ASF creation dates of **2007-09-10 to 2007-10-12** and are the only ones
+encoded at 44.1 kHz 24-bit. The credit roll agrees from a third direction — it
+is a `.prm` parameter table, 502,368 bytes, present **thirteen times** in this
+object, naming seven companies and closing with a **2010** copyright line three
+years before the binary that displays it.
+
+**The reputation was the reason this object was chosen, and the structure does
+not confirm it.** Deadly Premonition is famous for being broken. Measured against
+a criterion stated before the verdict — an indicator *fires* only if it names a
+mechanism visible in the bytes — **nine fire, seven turn out to be cosmetic, and
+nine acquit**. `TODO: <Company name>` is in the second column: a version resource
+is metadata about a file and changes nothing the program does. What is in the
+first column is duller and real: **three imported libraries absent** (36 of 183
+functions, 19.67 % of the import surface), of which `PhysXLoader.dll` belongs to
+a **2009** physics API whose prerequisite installer, on a modern machine,
+correctly reports that a newer version is already present and installs nothing;
+**no ASLR and no DEP on the game while its own launcher has both**, from the same
+linker in the same fortnight, which the Rich headers prove is a project setting
+and not a toolchain; **zlib 1.2.1 of 2003** statically linked into a 2013 build;
+and a localisation record, `RAINCOAT000.DLC`, whose four non-English names are
+`EMILY002.DLC`'s **character for character**. What acquits it is the code:
+`DP.exe` is four clean sections, `.text` at 6.616 bits, **99.99 % of the file
+inside its sections and zero bytes after the last one**, no packer, no protection
+residue, an intact Rich header. The verdict is that **the code is ordinary and
+the box was filled by copying a directory** — and the box contains, in a Windows
+game, thirty-two PlayStation 3 `.EDAT` licence stubs, two PS3 disc codes
+(`BLES01776`, `BLUS30426`), three PS3 icon sets, a PlayStation Eye camera-check
+screen in five languages, and an `X360` component in a build path.
+
+Against the two Capcom ports of the previous two sessions this is the third point
+of a line, and it is the first from another studio, another console and another
+decade. In 1997 and 1999 a PlayStation and a PC shared no format, so Capcom
+converted the media the operating system insisted on and kept the models. In 2013
+an Xbox 360 and a PC shared a **vendor** — the console's video codec was Windows
+Media, its audio tool had a Windows runtime, its graphics API was a Direct3D 9
+derivative — so almost nothing had to be converted, and almost nothing was. The
+third-party code this object ships is **514,608 bytes, 0.0075 %**, against 3.7889
+% and 5.3744 % on the two discs: sixteen years cut the price of being a PC by a
+factor of five hundred, because the operating system now supplies what the disc
+used to carry. Accounted end to end, **16.4765 % of this object was made for
+Windows and 98.97 % of that is audio and two movies**; the other **83.5160 %**
+came off the console project untouched.
+
+Seventy predictions were written before a byte was read, and scored **38 hits, 26
+halves, 6 misses = 51.0 of 70**. The briefing they were written against contained
+**fourteen** errors, the most of any in this branch, and nine of the fourteen are
+the same mistake: a count of a set presented as a reading of it — seven entries
+counted without checking whether they were files or directories, seventeen files
+counted and fifteen added up, twenty-six sound banks counted and one signature
+read, forty-one films counted and one header read. The sharpest of the six
+misses is the same error committed by the predictions themselves: one clause
+searched `DP.exe` for `Access Games`, found nothing, and declared the studio
+absent from its own product. The string in that file is `ACCESS GAMES INC.`, and
+across the object the name occurs **79 times in eight files**.
