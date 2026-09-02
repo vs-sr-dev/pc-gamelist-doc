@@ -3947,7 +3947,7 @@ silently decoded 288 of 1,563, and reported a pixel-area ratio of 1.0043 that
 would have reversed the session's central conclusion.
 
 Forty-eight predictions were written before a byte was opened and scored
-**36 hits, 7 halves, 4 misses = 40.0 of 48 = 83.3 %**. All four misses are a
+**35 hits, 10 halves, 3 misses = 40.0 of 48 = 83.3 %**. All three misses are a
 quantity attached to a correct mechanism: the two graphics archives were
 predicted to share **zero** members and share 17; `BS5.exe` was predicted to
 import 400–1,200 symbols and imports 290. The clause that mattered stated two
