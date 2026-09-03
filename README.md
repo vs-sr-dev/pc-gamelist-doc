@@ -245,6 +245,7 @@ Three times now it has said no.
 | [**FINAL FANTASY XI (PC, Steam)**](https://github.com/vs-sr-dev/pc-finalfantasy11-doc) | **2002**, and this is the first row in this index where the year of the work and the year of the bytes are twenty-three years apart. The criterion is declared before the verdict: **the year the work was released, not the year these bytes were written** — and for once the object confirms it from the inside, because `FFXiVersions.dll` carries COFF **2002-09-17 13:07:47** and a `CompanyName` reading `SQAURE CO., LTD.`, which is *pre-merger Square with the U and the A the wrong way round*, a typo that has been shipping for twenty-three years and is still registered by `regsvr32` at install time. The other three candidates are all defensible and all wrong for this cell: **2003**, the Western PC release; **2025**, the newest COFF stamp (`FFXiMain.dll`, 2025-12-04 01:27:14) and the installation itself; and **2026**, this copy. *(**And this is the eighth sample of the filesystem-that-dates-nothing question, and the first where the answer is that it dates plenty.** Ten distinct mtime days, not one: **2025-10-26 is 61,492 files and 92.9 % of the object** — the install — then four patch waves, 11-04 (4,164 files, 1.2 GB), 11-11 (46), 12-04 (7) and 12-11 (383, 244 MB), every one of them dominated by `ROM`, the 2002 layer, which is the layer that keeps changing. And then the last three dated days — 12-13, 12-16 and 12-27 — contain **not one byte of the product**: they are 97 files of one player's saved state, macros, logs and mail spool. The object's own timeline separates the product from the person without being asked to. Against that, sixteen distinct COFF days spanning **23 years 2 months 17 days**, an order of magnitude wider than anything else in this collection, and exactly one file where the two clocks describe the same event: `FFXiMain.dll`, linked 2025-12-04, written to this disk 2025-12-11, seven days of patch cycle visible end to end.)* | **Square Enix**, and the object spells it four ways. `SQUARE ENIX CO., LTD.` on 26 of the 27 binaries that carry a `CompanyName`; **`SQAURE CO., LTD.`** on the twenty-seventh; `SQUARE` and not Square Enix inside the original install path `C:\Program Files\PlayOnline\SQUARE\FINAL FANTASY XI`, still compiled into `FFXi.dll` in 2025 because moving it would break every installation in the world; and **`SquareSoft` zero times in 15,150,034,054 bytes** — every name counted with `strcount.py` in two independent encodings before the cell was filled. *(**The engine has no name to be absent, which is a different thing from an absent name.** This is the fourth engine chapter in this collection and the first where nothing was licensed: `RenderWare` 0, `Criterion` 0, `Havok` 0, `Bink` 0, `Miles Sound System` 0, `Vorbis` 0, `EmotionEngine` 0, `OpenGL` 0, `DirectShow` 0, with positive controls firing throughout (`Direct3D` 14, `d3d8` 39+1, `Moogle` 2,915). The only two library names in the whole object are `zlib` (18) and `libpng` (21). `FFXiMain.dll` is **2,896,464 bytes = 0.0191 % of the disk**, linked with **Visual C++ 6.0 on 2025-12-04**, and imports **12 DLLs and 294 functions** of which eleven DLLs are shipped with Windows; the twelfth is `d3d8.dll` and it imports **exactly one function, `Direct3DCreate8`**. No C runtime — statically linked. No D3DX: `D3DXCreate` occurs 0 times. **A 1998 compiler emitting one call into a 2000 graphics API, three months before this was measured**, beside a 2003 Unicode shim for Windows 98 shipped twice, is what twenty-three years of continuous operation costs, and it is legible in the import table.)* | **Final Fantasy**, second cell — and this row exists to close the question the row above it left open. *Final Fantasy VIII*'s cell says it was **filled on the title** and that the byte comparison the index's rule asks for **was not run**, because the other objects were not on the machine. Both are on this machine now, both measured with the same tools. `crossall.py` over 64 repositories: **2 crossings of 61,184 file hashes**, one of them Microsoft's `MSVCR71.dll` and the other a four-byte file. `datmembers.py` then hashed **1,718,526 `.DAT` chunks** so the comparison could be made at member level, and `crossall.py` over those: **0 crossings of 739,235 distinct members.** Against the Broken Sword rows in the same index — 291 member crossings between 2003 and 2006 — two Square PC games eight years apart share a trademark, a publisher and one compiler version, and **not one byte of content**. The cell stays filled, on the title, and is no longer an untested assertion; *Final Fantasy VIII*'s row is updated in the same commit | A 15.15 GB Steam install of a live service, half of which is on somebody else's machines: 73 % is one nameless file type, nine indexes that never overlap, and a checksum that turned out to be MD5 |
 | [**Simulman V**](https://github.com/vs-sr-dev/pc-simulman5-doc) | **1993**, and this is the first row in this index whose year the object states **in pixels**. Four clocks disagree and none of them is the filesystem: all **120 files carry one identical mtime**, `1996-12-24 23:32:00`, a single second three years and three months after the fact; `TNC.NFO`, which is not the product, says `Release Date: 09/20/93` twice; `SMAN5/COD/PLAYER.EXE` carries `COPYRIGHT (C) 1992, 93, 94`, which is a range and belongs to a tool rather than to the game; and the **string `1996` occurs zero times inside the bytes** while `1993` occurs once, in the file that is not the product. What settles it is the title card: `SMAN5/BNK/INTRO00.ANI` decodes to a 320x200 screen reading `SIMULMAN`, `(C) FRANCESCO CARLA' 1993` and `(C) SIMULMONDO 1993` — **drawn as run-length-encoded artwork, where no string search can reach it**. The criterion is stated before the verdict: the product's own statement about itself, over a statement about the product, over the filesystem. *(Ninth sample of the filesystem-that-dates-nothing question and the sharpest: *Broken Sword 3* gave a window of 85 seconds, *Final Fantasy XI* ten distinct days, and this one gives **zero**. It is the signature of a copy made with a tool that stamped every file as it wrote it, on Christmas Eve 1996, of material already three years old — and the anachronism runs backwards for the first time in this index: **the product is older than its container**.)* | **Simulmondo S.r.l.**, of Bologna, and **the object says so itself**, which is why the *1000 Miglia* row above had to be revisited. `SIMULMONDO` occurs **3 times** — twice in `PLAYER.EXE`, once in the release note — and one of those is the full corporate line `@COPYRIGHT (C) 1992, 93, 94  SIMULMONDO S.r.l. BOLOGNA (ITALY)`, with two engineers credited by initial and surname immediately above it. Every grapheme was counted in both cases before the cell was filled: **`Simulmondo` occurs 0 times and `SIMULMONDO` 3; `Bologna` 0 and `BOLOGNA` 1** — the same words, and searching one case only would have produced the opposite row with a straight face. *(**There is no engine name to be absent, and two compilers built what there is.** `SIMULMAN.EXE` and `SIMULMCR.EXE` carry `Portions Copyright (c) 1983,90 Borland` — the Turbo Pascal 6.0 runtime, the same string as six of nine executables in *1000 Miglia* — while `PLAYER.EXE` and `NEWMIDIL.EXE` carry `Borland C++ - Copyright 1991 Borland Intl.`; `Borland` occurs 6 times and **`Turbo Pascal` zero**, so the name that identifies the toolchain is absent and the runtime's own error-message table proves it. The split is not Pascal-is-the-game: **the Pascal knows the filenames and the C knows the file formats.** `PLAYER.EXE` is a script interpreter that documents its own command line in Italian — fourteen buffers, `dev = device musicale (0=PCspeaker,1=adlib,2=soundblaster)` — and carries a cooperative scheduler calling itself `High Performance Kernel Multitask`, while `NEWMIDIL.EXE` still holds its linker symbol table in clear: `ADLIB.C`, `MIDIINT.C`, `MIDIPLAY.C`, `SndSAttDecay`, `carrierSlot`, `Meta_Event`.)* | *(empty, and deliberately)* — ***Simulman*** was a **five-part newsstand serial** and this is part five; the other four are not in this collection and are not measurable from this one, so the rule this index adopted holds and the cell stays empty until a second member is **measured**. *1000 Miglia* is the same studio and not the same series. The object mentions the serial exactly once and not as a word: **the `5` in the directory name `SMAN5`**, repeated 369 times inside the scripts. `edicola`, `episodio`, `puntata` and `Simulman 5` all occur zero times. *(**And one file crosses to the row above.** `NEWMIDIL.EXE`, 26,137 bytes, sha1 `cc4bf11d45eac6800d2739b2c341490981d1f1fa`, is **byte-identical** to *1000 Miglia*'s `MIDI3DRV.EXE` — same driver, different name, a year apart, and the only pair of files anywhere in the two objects that even match by length. `crossall.py` reports **0 crossings against 65 repositories and 41,500 hash tokens** and is wrong in the only way that matters, because `pc-1000miglia-doc` records no SHA-1 anywhere: a tool that finds nothing is not a tool that says zero. The two games also share the `.PAL` format, and it can be dated — the header grew from **two bytes to five** between them, proved by `2 + 3*(last+1)` and `5 + 3*(last+1)` closing exactly on 15 files at three different palette sizes.)* | A 2 MB folder with **not one compressed block in 557**, in which 58.35 % is a format with no magic number that opens to 156 pictures of 156, the dialogue is XOR'd with a key stored in its own first byte, and **0.0000 % was recorded** |
 | [**Underground**](https://github.com/vs-sr-dev/pc-underground-doc) | **1999**, and this is the first row in this index where **four clocks agree**. The volume was burned 1999-11-15 11:06:00 GMT+01:00; the newest file on it, Microsoft's DirectX installer, is 1999-11-15 11:03:46 — **134 seconds earlier**; the game's own PE was linked 1999-11-13 11:34:02 UTC and its directory record says 1999-11-13 12:34:02 GMT+01:00, **the same instant to the second, from two independent encodings two years apart in toolchain**; and the Internet Archive record says 1999. The one dissenting date is the oldest mtime, **1997-05-06**, and it belongs to `OS.DAT`, a table of Windows version numbers that came with InstallShield. *(Seven files carry 1997 dates and six of them are InstallShield's; the seventh is `TG159A.BMP`, a wall texture two years older than the rest of the art and the single most-used texture in the object's 36 meshes, requested 29 times. It is the only piece of this game that predates its own production.)* | **The object credits four people and no company.** `Colors Arti Multimediali`, which the Internet Archive record names as the developer, occurs **zero times** — `Colors` 0, in ASCII and UTF-16, over all 148 files and 141,426,916 bytes — and appears in none of the 302 bank bitmaps, none of the 82 loose bitmaps and none of the 337 movie frames, all of which were put on contact sheets and looked at. What the object does say, in a 371×378 bitmap called `INTRO_C.BMP` buried in a 32 MB archive with no index of its contents, is *Ideato, diretto e prodotto da* **IVAN VENTURI**, *Programmazione* **NATALE FIETTA**, *Grafica, testi e sonoro* **IVAN VENTURI**, *Grafica 2D aggiuntiva* **TERENZIO AVANTAGGIATO** and **DANIELE BARUZZI** — plus ten more fade frames reading *un videogioco di* **IVAN VENTURI**. **Not one of the four names is a string anywhere on the disc**; `Venturi` 0, `Fietta` 0, `Baruzzi` 0, `Avantaggiato` 0. The *publisher* is the opposite: `Tecniche Nuove` 10 as text, `TECNICHE NUOVE` in the volume descriptor, `Company=Tecniche Nuove` in `DATA.TAG`, `Software\Tecniche Nuove\Underground` as the registry key, and an **8.3 MB twelve-second logo film** of its own. *(This is the fourth object in a row on four different platforms where the studio's name turned out to be a drawing, and the first where the drawing names people instead of a company. **One of the four is Terenzio Avantaggiato — the man from whose personal archive this copy came.** The disc credits its own donor, and that connection is the reason it is measurable at all.)* | *(empty, and measured rather than assumed)* — *Underground* is not part of a series and no second member exists to compare bytes with. The nearest thing in this index is [Simulman V](https://github.com/vs-sr-dev/pc-simulman5-doc), **the same author six years earlier**, and the rule of this column is shared bytes: `crossall.py` over 70 repositories, 284 list files and 42,858 hash tokens returns **0 crossings of 143 distinct hashes**, and the two objects share no container, no executable format, no compiler vendor and no archive format either. *(The denominator is declared: 19 of the 60 `pc-*` repositories are not on the machine that measured this, a 32 % hole in the family, and the zero is stated with that number every time.)* Six years, one author, and the only habit that survives is putting the credit in the pictures | **61.0193 % of this disc is 24.9167 seconds of rendered film, and the bigger half of it cannot be played from the disc it is on.** `INTRO.AVI` is 78,345,766 bytes for **12.25 seconds** at 800×600 in Microsoft Video 1 — 6,395,573 bytes per second, 51 Mbit/s, **a sustained 41.6× CD-ROM in 1999** — so the installer copies it to the hard disk. Behind it: an eight-player DirectPlay game in **474,624 bytes** that imports no `DPLAYX` at all and reaches DirectPlay through COM, carrying **57 `DPERR_` codes** for a server that has been off for twenty years; two `BANK` archives with no published format, derived from the bytes and closing on zero; 36 3D Studio meshes totalling **15,436 triangles**; **386 absolute build paths** under `D:\3d\Maya\`, ending a run of four objects that produced none; and the number **eight** — players, factions, emblems, status bars, room skins — in six file formats that cannot see each other |
+| [**Cruise for a Corpse**](https://github.com/vs-sr-dev/pc-cruiseforacorpse-doc) | **1991**, the release — and this is the first row in this column where the year comes from **outside the object entirely and nothing inside contradicts it**, because nothing inside mentions it. `1991` occurs **0 times** as a string over the 3,569,162 readable bytes *and* over the 14,086,466 that come out of the compressor; `1992` occurs once, in a graphics driver's copyright line; `1927`, the year the game is *set* in, occurs once, in the opening narration — *"Paris, April 1927."* So the object dates itself twice and neither date is its own. *(**And the filesystem here is the opposite of every previous sample of that question.** Nine rows in this index have said the mtimes date nothing — 6,746 of 6,748 files in one 85-second window, 120 files sharing one identical second, 937 of 958 inside 243 seconds. This one has **twenty files and twenty distinct mtimes, no duplicates at all**, spanning **797 days = 2.1821 years** from 1990-05-07 23:16:28 to 1992-07-13 01:43:22, and they read as a production log: the floppy roll-call written five files twenty seconds apart on 1992-05-18 13:52–13:53, the VGA driver on the 25th, the game and the installer eighteen minutes apart on the morning of the 26th, `D3` and `D5` that afternoon, `D2` and `D4` the next morning ten seconds apart, the readme three weeks later, and then — seven weeks after everything else, at 01:43 in the morning — six bytes called `DELPHINE.CFG` that Delphine never wrote. It is the signature of a **DOS `COPY` that preserved timestamps**, and it is the first object in this index where the clock is evidence rather than noise. The one stamp that cannot be true is `D1`'s **1990-05-07**, two years before the other four volumes: `D1` contains the English packaging credits and the code-wheel protection screen, neither of which existed in 1990.)* | **Delphine Software International** — taken from outside the object, because **`Delphine` occurs 0 times inside it**, in either denominator. `DELPHINE` occurs five times and all five are in `READ.ME`, as a **directory name** (`\DELPHINE`, `\DELPHINE\CR256`). The executable is called `DELPHINE.EXE`, the install path is `\DELPHINE`, and the company never signs anything. *(**What the object does name, in plain text, is nineteen people and its own engine.** `D1/GEN.FR` and `D1/GENDEB.FR` are the credit rolls — 364 and 825 bytes, one member deep inside a compressor that hides 95.2190 % of this object — and they read `STORY CONCEPTION` **Paul Cuisset**, **Denis Mercier**, **Philippe Chastel**; `GRAPHICS AND ANIMATION` **Christian Robert**, **Thierry Perreau**; `MUSIC` **Jean Baudlot**; `SOUND EFFECTS` **Benoist Aron**; and then a heading that is this row's finding: **`CINEMATIC SYSTEM EVOLUTION II`**. The literature calls this engine *Cinématique*; `Cinematique` occurs **0 times** in 17.6 megabytes and `CINEMATIC SYSTEM EVOLUTION II` occurs **4**. It is the seventh named engine in this index and the first named **by the product's own credit roll** rather than by a build path, a linker artefact or the outside world — and against *Broken Sword 5*, where the universally attributed *Virtual Theatre* occurs 0 times in 6.6 GB, it is the happy case. Counted before the cell was filled: `Paul Cuisset` 7, `Philippe Chastel` 6, `Benoist Aron` 6, `Denis Mercier` 4, every one of them **0** before decompression. And the **only** name a string search can reach without a decompressor is in none of that: `VGADRV.BIN` says `Copyright 1992 Daniel Morais. All Rights Reserved.`, once — the man who wrote the code that puts every pixel of this game on screen, and he is not in its credits.)* | *(empty, and measured rather than assumed)* — this is the **first Delphine object in this collection**, so there is nothing to compare bytes with and the column's rule holds: it fills on shared bytes, not on a shared engine or a shared studio. The Cinématique engine is shared with *Future Wars* and *Operation Stealth*; neither is here; `Delphine`, `Another World`, `Flashback`, `Future Wars` and `Operation Stealth` all occurred **0 times in this index** before this row was written. `crossall.py` over **71 repositories, 293 list files and 43,657 hash tokens**, with `--skip`: **0 crossings of 20 file hashes, and 0 of 868 distinct unpacked-member hashes** — the second number being the one worth having, since twenty bespoke archives were never going to collide with anything and 868 sprites, backgrounds, patches and scripts could have | Twenty files off a 1992 hard disk, **95.2190 % of them compressed** — a bit-stream unpacker written from scratch, 848 of 849 members closing on the format's own checksum, and the one that does not is the copy protection |
 
 ## The write-ups
 
@@ -4432,3 +4433,135 @@ machine that measured this. The first run of that tool, without `--skip`,
 reported **143 of 143 crossings** against this object's own hash lists, and the
 only reason that number is in the corrections chapter rather than in the
 findings is that the output named the repository it matched: itself.
+
+### [Cruise for a Corpse](https://github.com/vs-sr-dev/pc-cruiseforacorpse-doc)
+
+*Cruise for a Corpse* (PC, MS-DOS, 1991, Delphine Software International;
+English VGA 256-colour release) — **not a disc image and not a download, but
+twenty files off somebody's hard disk**, 3,569,162 bytes, of which **95.2190 %
+is compressed**
+
+Every object in this index until now was a manufactured artefact: a pressing, a
+burn, an installer's output, a download. This one is a **state**. Somebody put
+five floppies into a PC in 1992, ran `INSTALL`, played the game, and this
+directory is what was left on the disk — including a six-byte file the *game*
+wrote, seven weeks later, at 01:43 in the morning, recording which sound card
+they had. It is the only file in the object that Delphine did not write.
+
+The briefing this session began from said the object's `READ.ME` "describes an
+installation that this folder is not", because the readme tells the reader to
+type `INSTALL` and then `CR256` and neither is present. **It describes this
+folder exactly.** The readme offers *two* ways to start the game and the second
+is *"Go into the `\DELPHINE\CR256` directory … then type the command
+`DELPHINE`"*. `DELPHINE.EXE` is here. This is `\DELPHINE\CR256`; `CR256` is a
+launcher one directory up that was not copied; `INSTALL` never left the floppy.
+Nothing is missing from this dump. The readme was read to the end.
+
+**The whole day is one number: 3,398,520 of 3,569,162 bytes — 95.2190 % — are
+compressed, so every string count over this object before the decompressor
+existed was a statement about 4.78 % of it.** The five volume files `D1`…`D5`
+and an empty sixth called `VOL.END` are archives with a derived format: `u16 BE`
+entry count, `u16 BE` entry size of 30 on 6 of 6, then records carrying a
+NUL-terminated name in fourteen bytes, three `u32 BE` for offset, packed size
+and unpacked size, and four constant bytes. It closes to nothing: first member
+at exactly the end of the directory on 5 of 5, **0 gaps, 0 overlaps, 0 past EOF,
+0 slack**, and `24 + 32,880 + 3,424,605 = 3,457,509`, which is the six files.
+Six negative controls refuse it when it is broken. `VOL.CNF`, the floppy
+catalogue, closes the same way — `4 + 5×20 + Σ(4 + segment) = 14,372`, remainder
+0, with each segment repeating its own length in a header the directory also
+declares, **agreeing 5 of 5** — and every one of the **1,096 directory names
+occurs literally inside its own volume's segment, 1,096 of 1,096**.
+
+The compression is **Delphine's own bit-stream unpacker**, the routine the
+company used across its DOS, Amiga and ST titles: it reads the packed stream
+**backwards**, four bytes at a time big-endian, writes the output **backwards**
+from the end of the destination buffer, and XORs every word it consumes into a
+checksum seeded to land on zero. **848 of 849 compressed members unpack with
+that checksum at exactly zero**, six negative controls fire, and 3,424,605 bytes
+become **14,086,466**.
+
+**The one refusal is the copy protection.** `D1/XX2.OVL` produces its 8,185
+bytes perfectly — write cursor on −1, source consumed to its first byte, output
+a coherent overlay whose symbols are `combinaison`, `nb_essai`, `tirage`,
+`fleche_h` — and its stored checksum seed disagrees with the closing value in
+three bytes of four. Its companion `XX2.FR` says `PROTECTION`, `Plug in the
+combination`, `Incorrect code.` and *"Put the wheel's arrow on the number you
+have chosen."* It is a **code wheel**, found in the game's own text; the eleven
+markers `protscan.py` looks for are all CD schemes from 1998 onward and finding
+none of them was never going to be the answer. Whether the broken word is a
+packer slip or an alteration is not determined; what is excluded is the reader,
+because the same arithmetic returns zero on 848 other members.
+
+**The filenames lie three times and the object warns you in clear.** Seven `.FR`
+members are stored uncompressed and readable with no tool at all, and they are
+in **English** — *"Paris, April 1927."* Of the 80 distinct `.FR` members,
+**76 classify English and 0 French**, and across all 185,922 bytes of dialogue
+there is **exactly one accented letter standing between two lower-case letters**:
+`fiancé`, in `ROSE.FR`. The second lie is `.PI1`, Atari ST's Degas Elite
+extension, on files that are **not Degas** — a Degas `.PI1` is a fixed 32,034
+bytes and nothing here is that size. There are two formats under it and both
+close exactly: **`2 + 768 + 64,000 = 64,770`**, a 320 × 200 chunky VGA image
+whose palette is 256 triples of the form `(n << 2) | 3` on 68 of 68, and
+**`2 + 64 + 40,000 = 40,066`**, the same screen in **five bitplanes** under a
+32-entry **12-bit `0x0RGB` Amiga/STE palette**. So the Atari survives in the
+*colour* and not in the *pixels* — the plane layout that renders is five
+contiguous whole-screen planes, which is neither the ST's nor the Amiga's
+per-line interleave, and the two wrong ones produced plausible banded rubbish
+that only a person looking at a contact sheet of all 125 images could reject.
+The third lie is the twelve members with **no extension at all**: they are
+**Amiga Protracker modules**, 20-byte title, fifteen 30-byte instrument slots,
+song length, order list, then `N × 1024`-byte patterns from offset 1,376 — and
+`(size − 1376) / 1024` is a whole number on **12 of 12**, with the first
+`song length` order entries all referencing an existing pattern on **12 of 12**.
+They carry **no sample data**. Their instrument slots name `.AMI` files that this
+object does not contain, and **the first character of every `.AMI` name has been
+overwritten with a NUL** — 126 of 230 used slots across the twelve — while the
+slots repointed at the PC's `.H32` patch files keep their names intact.
+
+**The thesis: 0.6083 % of this object is digitised sound**, and it was set
+against the hypothesis that it would be the collection's second 0.0000 %. Twelve
+`.SPL` members, 21,710 bytes, `SPL\0` plus a `u16 BE` length plus **4-bit samples
+centred on nibble 8**, named after things being recorded — `FOUDRE` (thunder,
+2.4 seconds), `PORTGRIN` (a creaking door), `TOCTOC` (a knock), `GIFFLE` (a
+slap), `GOUTTE` (a drip). A waveform plot of all twelve settles it: thunder has a
+thunder envelope. The chapter publishes the evidence against itself in the same
+place — `PORTGRIN` is 4,370 bytes containing only nibble values 6, 7, 8 and 9, a
+second of one-quantum dither and 20 % of the numerator — so the honest figure is
+a range, **0.4858 %–0.6083 %**. Against that, **4.0399 %** of the object is music
+that is instructions rather than audio, and **0.6705 %** is synthesiser patches:
+49 `.ADL`, 49 `.H32` and 15 `.HP` over **the same 49 basenames**, three parallel
+definitions of one instrument list for three sound cards. All 30 of the 279-byte
+`.H32` carry a printable ten-character field at exactly offset 23 followed by
+four blocks at a 58-byte stride, and the names read `Nylon Atmo`, `Clsd HiHat`,
+`Crash Cym` — and then, in the same field, `bulles`, `egout_75`, `mitraille`. A
+1927 murder mystery on a yacht has a sewer and a machine gun in its instrument
+bank.
+
+**And 616 asset names come out of the 82 script overlays, of which 598 resolve.**
+Sixty-five of them resolve only after dropping one or two leading bytes that
+belong to the record and not to the name — the same false positive that ate
+twenty names on this branch the day before. Of the eighteen that remain,
+**seventeen are `.SPL` sound effects the shipped scripts call for and the object
+does not contain**: the sea, a seagull, a doorbell, footsteps, a cat. Twelve
+samples exist; twenty-nine are named; fourteen of the missing have no fallback
+patch either.
+
+The rest is arithmetic with a story in it. **15.2437 %** of the object —
+544,071 bytes — is the same material written onto more than one floppy so the
+player never has to swap disks mid-room, with `"INSERT DISK "` in
+`DELPHINE.LNG` as the receipt; of the 115 repeated names, **102 are
+byte-identical everywhere and thirteen are not**, and the thirteen split into ten
+MT-32-shaped patches edited between masterings **in the same sixteen header
+offsets every time** and three sound effects whose D2 copy is **one byte longer**
+than the D4 and D5 copies, the shorter an exact prefix of the longer, because
+somebody re-packed them and never updated the directory entry. That is also
+where fourteen members whose two independently written unpacked lengths disagree
+by exactly −1 come from. **Zero absolute build paths**, at 4.78 % coverage and
+again at 100 %. **Zero crossings of 888 hashes** against 71 repositories.
+`contacts.py` finds no person at either denominator, and the object credits
+nineteen — which is why a tool that finds nothing is not a tool that says zero.
+
+The saved games are not here and the object says why: `DELPHINE.LNG` reads
+`"Save Game Disk"` and `"Insert save game disk in drive %s"`. This game saved to
+a **separate floppy**, which is the exact inverse of *Underground*, the row
+above, which carried its six empty save slots on the CD it shipped on.
