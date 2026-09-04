@@ -247,6 +247,7 @@ Three times now it has said no.
 | [**Underground**](https://github.com/vs-sr-dev/pc-underground-doc) | **1999**, and this is the first row in this index where **four clocks agree**. The volume was burned 1999-11-15 11:06:00 GMT+01:00; the newest file on it, Microsoft's DirectX installer, is 1999-11-15 11:03:46 — **134 seconds earlier**; the game's own PE was linked 1999-11-13 11:34:02 UTC and its directory record says 1999-11-13 12:34:02 GMT+01:00, **the same instant to the second, from two independent encodings two years apart in toolchain**; and the Internet Archive record says 1999. The one dissenting date is the oldest mtime, **1997-05-06**, and it belongs to `OS.DAT`, a table of Windows version numbers that came with InstallShield. *(Seven files carry 1997 dates and six of them are InstallShield's; the seventh is `TG159A.BMP`, a wall texture two years older than the rest of the art and the single most-used texture in the object's 36 meshes, requested 29 times. It is the only piece of this game that predates its own production.)* | **The object credits four people and no company.** `Colors Arti Multimediali`, which the Internet Archive record names as the developer, occurs **zero times** — `Colors` 0, in ASCII and UTF-16, over all 148 files and 141,426,916 bytes — and appears in none of the 302 bank bitmaps, none of the 82 loose bitmaps and none of the 337 movie frames, all of which were put on contact sheets and looked at. What the object does say, in a 371×378 bitmap called `INTRO_C.BMP` buried in a 32 MB archive with no index of its contents, is *Ideato, diretto e prodotto da* **IVAN VENTURI**, *Programmazione* **NATALE FIETTA**, *Grafica, testi e sonoro* **IVAN VENTURI**, *Grafica 2D aggiuntiva* **TERENZIO AVANTAGGIATO** and **DANIELE BARUZZI** — plus ten more fade frames reading *un videogioco di* **IVAN VENTURI**. **Not one of the four names is a string anywhere on the disc**; `Venturi` 0, `Fietta` 0, `Baruzzi` 0, `Avantaggiato` 0. The *publisher* is the opposite: `Tecniche Nuove` 10 as text, `TECNICHE NUOVE` in the volume descriptor, `Company=Tecniche Nuove` in `DATA.TAG`, `Software\Tecniche Nuove\Underground` as the registry key, and an **8.3 MB twelve-second logo film** of its own. *(This is the fourth object in a row on four different platforms where the studio's name turned out to be a drawing, and the first where the drawing names people instead of a company. **One of the four is Terenzio Avantaggiato — the man from whose personal archive this copy came.** The disc credits its own donor, and that connection is the reason it is measurable at all.)* | *(empty, and measured rather than assumed)* — *Underground* is not part of a series and no second member exists to compare bytes with. The nearest thing in this index is [Simulman V](https://github.com/vs-sr-dev/pc-simulman5-doc), **the same author six years earlier**, and the rule of this column is shared bytes: `crossall.py` over 70 repositories, 284 list files and 42,858 hash tokens returns **0 crossings of 143 distinct hashes**, and the two objects share no container, no executable format, no compiler vendor and no archive format either. *(The denominator is declared: 19 of the 60 `pc-*` repositories are not on the machine that measured this, a 32 % hole in the family, and the zero is stated with that number every time.)* Six years, one author, and the only habit that survives is putting the credit in the pictures | **61.0193 % of this disc is 24.9167 seconds of rendered film, and the bigger half of it cannot be played from the disc it is on.** `INTRO.AVI` is 78,345,766 bytes for **12.25 seconds** at 800×600 in Microsoft Video 1 — 6,395,573 bytes per second, 51 Mbit/s, **a sustained 41.6× CD-ROM in 1999** — so the installer copies it to the hard disk. Behind it: an eight-player DirectPlay game in **474,624 bytes** that imports no `DPLAYX` at all and reaches DirectPlay through COM, carrying **57 `DPERR_` codes** for a server that has been off for twenty years; two `BANK` archives with no published format, derived from the bytes and closing on zero; 36 3D Studio meshes totalling **15,436 triangles**; **386 absolute build paths** under `D:\3d\Maya\`, ending a run of four objects that produced none; and the number **eight** — players, factions, emblems, status bars, room skins — in six file formats that cannot see each other |
 | [**Cruise for a Corpse**](https://github.com/vs-sr-dev/pc-cruiseforacorpse-doc) | **1991**, the release — and this is the first row in this column where the year comes from **outside the object entirely and nothing inside contradicts it**, because nothing inside mentions it. `1991` occurs **0 times** as a string over the 3,569,162 readable bytes *and* over the 14,086,466 that come out of the compressor; `1992` occurs once, in a graphics driver's copyright line; `1927`, the year the game is *set* in, occurs once, in the opening narration — *"Paris, April 1927."* So the object dates itself twice and neither date is its own. *(**And the filesystem here is the opposite of every previous sample of that question.** Nine rows in this index have said the mtimes date nothing — 6,746 of 6,748 files in one 85-second window, 120 files sharing one identical second, 937 of 958 inside 243 seconds. This one has **twenty files and twenty distinct mtimes, no duplicates at all**, spanning **797 days = 2.1821 years** from 1990-05-07 23:16:28 to 1992-07-13 01:43:22, and they read as a production log: the floppy roll-call written five files twenty seconds apart on 1992-05-18 13:52–13:53, the VGA driver on the 25th, the game and the installer eighteen minutes apart on the morning of the 26th, `D3` and `D5` that afternoon, `D2` and `D4` the next morning ten seconds apart, the readme three weeks later, and then — seven weeks after everything else, at 01:43 in the morning — six bytes called `DELPHINE.CFG` that Delphine never wrote. It is the signature of a **DOS `COPY` that preserved timestamps**, and it is the first object in this index where the clock is evidence rather than noise. The one stamp that cannot be true is `D1`'s **1990-05-07**, two years before the other four volumes: `D1` contains the English packaging credits and the code-wheel protection screen, neither of which existed in 1990.)* | **Delphine Software International** — taken from outside the object, because **`Delphine` occurs 0 times inside it**, in either denominator. `DELPHINE` occurs five times and all five are in `READ.ME`, as a **directory name** (`\DELPHINE`, `\DELPHINE\CR256`). The executable is called `DELPHINE.EXE`, the install path is `\DELPHINE`, and the company never signs anything. *(**What the object does name, in plain text, is nineteen people and its own engine.** `D1/GEN.FR` and `D1/GENDEB.FR` are the credit rolls — 364 and 825 bytes, one member deep inside a compressor that hides 95.2190 % of this object — and they read `STORY CONCEPTION` **Paul Cuisset**, **Denis Mercier**, **Philippe Chastel**; `GRAPHICS AND ANIMATION` **Christian Robert**, **Thierry Perreau**; `MUSIC` **Jean Baudlot**; `SOUND EFFECTS` **Benoist Aron**; and then a heading that is this row's finding: **`CINEMATIC SYSTEM EVOLUTION II`**. The literature calls this engine *Cinématique*; `Cinematique` occurs **0 times** in 17.6 megabytes and `CINEMATIC SYSTEM EVOLUTION II` occurs **4**. It is the seventh named engine in this index and the first named **by the product's own credit roll** rather than by a build path, a linker artefact or the outside world — and against *Broken Sword 5*, where the universally attributed *Virtual Theatre* occurs 0 times in 6.6 GB, it is the happy case. Counted before the cell was filled: `Paul Cuisset` 7, `Philippe Chastel` 6, `Benoist Aron` 6, `Denis Mercier` 4, every one of them **0** before decompression. And the **only** name a string search can reach without a decompressor is in none of that: `VGADRV.BIN` says `Copyright 1992 Daniel Morais. All Rights Reserved.`, once — the man who wrote the code that puts every pixel of this game on screen, and he is not in its credits.)* | *(empty, and measured rather than assumed)* — this is the **first Delphine object in this collection**, so there is nothing to compare bytes with and the column's rule holds: it fills on shared bytes, not on a shared engine or a shared studio. The Cinématique engine is shared with *Future Wars* and *Operation Stealth*; neither is here; `Delphine`, `Another World`, `Flashback`, `Future Wars` and `Operation Stealth` all occurred **0 times in this index** before this row was written. `crossall.py` over **71 repositories, 293 list files and 43,657 hash tokens**, with `--skip`: **0 crossings of 20 file hashes, and 0 of 868 distinct unpacked-member hashes** — the second number being the one worth having, since twenty bespoke archives were never going to collide with anything and 868 sprites, backgrounds, patches and scripts could have | Twenty files off a 1992 hard disk, **95.2190 % of them compressed** — a bit-stream unpacker written from scratch, 848 of 849 members closing on the format's own checksum, and the one that does not is the copy protection |
 | [**Capcom Beat 'Em Up Bundle**](https://github.com/vs-sr-dev/pc-capcombeatemupbundle-doc) | **2018**, and it is the only year the object itself asserts. The install offers four other numbers and none of them is the product's: the files' mtimes are 2020, 2022 and 2023; the executable's PE link stamp is **2022-04-18 06:32:27 UTC**; Steam's manifest says the depot was published **2023-07-31**; and the seven games inside carry their own arcade build stamps, 1989 to 1997, one of which is legible to the day — `kod` region 0 reads `T H E  K I N G  O F  D R A G O N S ///  9 1 0 8 0 5 ///  J A P A N`, spaced one character per tile cell. **The product's own copyright line is 2018 and it is painted into a texture**: `credit05_BM_NOMIP`, 2048×512, block-compressed, reading `(c) HIROSHI MOTOMIYA (c) Thirdline (c) SHUEISHA (c) CAPCOM CO., LTD. 1992, 2018 ALL RIGHTS RESERVED.` — 1992 for *Tenchi wo Kurau II*, 2018 for the bundle. *(No `.txt`, `.md` or readme of any kind exists in 809,632,531 bytes, so no year is machine-readable anywhere in the install; the string `2018` cannot be grepped for, because 71.41 % of the executable is at entropy 8.0000 and the only place the year is written is an image.)* | **CAPCOM CO., LTD.**, and the cell names where the string is, because the session brief said it was nowhere: not in `.rdata`, which has the engine's ninety-one class names and one build path and no company; in **`.rsrc`**, in the `VS_VERSIONINFO` block, `CompanyName` and `LegalCopyright` both **`CAPCOM CO., LTD.`**, with `FileDescription` `CAPCOM BEAT 'EM UP BUNDLE / CAPCOM BELT ACTION COLLECTION` and `FileVersion 1.0.0.2`. *(**Who wrote the emulator is the one thing the object will not say, and the session was commissioned to find out.** The credit roll's `PROGRAMMING` heading has exactly two entries, `KOBUTA` and `MUUMUU`, neither in the `FIRSTNAME SURNAME` form the other hundred-odd credits use, and nothing in the product expands either. The three transformations that would carry an implementer's fingerprint — the CPS2 program cipher, the Kabuki sound-CPU cipher and the CPS graphics interleave — were all **applied before shipping**, so the running program needs no per-game table and there is none to find. The answer published is *not determinable from the shipped files*, with the measurements and a list of what would close it)* |  | An emulator sold as seven games, of which **80.09 % by weight is a picture gallery** and 9.01 % is the seven arcade programs — 14 ROM containers holding 11 distinct 68000 programs, three pairs being one program with a patched `MOVE` immediate |
+| [**Sam & Max Season One**](https://github.com/vs-sr-dev/pc-samandmaxseasonone-doc) | **2007**, and the object states it four ways that agree. The five installer stubs carry `FileVersion 1.2007.08.13` and `1.2007.08.14` — *the build date inside the version number* — and the ISO directory records of the files carrying them say 2007-08-13 and 2007-08-14, so a quantity written in a resource and a quantity written in a filesystem agree on 5 of 5. The volume descriptors were cut 2007-08-15 16:09:59 at GMT+03:00, and `LegalCopyright` reads `© 2007 JoWooD Productions`. *(The object's own clock is older than its year in one direction: the earliest thing on it is a Photoshop `DateTime` of **2006-04-20 12:16:42** in a concept-art scan, and the oldest file is Microsoft's Visual Basic 4.0 runtime, linked **1996-01-25**. Sixteen months of real production time, five independent clocks and four timezones, against the previous object in this index whose 200 records fell inside three seconds)* | **Telltale Games** (the game, its engine and its credits), **JoWooD Productions** (this pressing) *(and the split is measured, not assumed. Telltale is named in six shipped credit rolls of 114 person-shaped names each drawn from the game's own containers, in the `TP1` and `TCM` tags of all eighteen soundtrack MP3s, and in six `ttg_splash_10N_b_ttg.d3dtx` textures. JoWooD is named in the `CompanyName` of all five installer stubs, in the readme's only support address — `www.jowood.com/support` — and in six `ttg_splash_10N_a_jowood.d3dtx` textures, so **every episode opens with the publisher's splash and then the studio's**. A third distributor, **GameTap**, gets its own section in every credit roll. The disc's autorun shell is a fourth party's: `Autorun Maestro 5.01`, `Pollen Software Pty Ltd`, whose two binaries need a Microsoft runtime from January 1996)* |   | 2.94 GB of which **80.79 % is one game five times** — five NSIS installers opened from the published format definition, 13,482 members per build hashed and agreed with 7-Zip, French and German shown to **replace** the English voice rather than add to it, and a recording share published as an **interval** because 81.62 % of the product is a container that was identified and not opened |
 
 ## The write-ups
 
@@ -2654,7 +2655,7 @@ running time and lost three clauses with one mistake; and they bet that the
 speech was English, which is the whole difference between an edition that is
 6.57 % Italian and one that is 94.68 %.
 
-**The Saga cell is empty**, and for the third row running the reason is worth
+**The Saga cell is empty**, and for the third row running the reason was worth
 writing down. *Sam & Max* is a real series of fiction, unlike the publisher name
 that tempted the two rows above — but the index fills that column on **measured
 shared bytes**, and there is no second *Sam & Max* object here to measure
@@ -2665,6 +2666,35 @@ Fantasy VIII* row did, and declared it was doing; this row has the same option
 and declines it. A second SCUMM object would do for this row what the second
 Infocom object did for the row above it: turn *how much of an engine is engine*
 from an adjective into a number.
+
+**And now there is a second *Sam & Max* object, so the cell stays empty for a
+better reason.** *Sam & Max Season One* joined this index in the forty-eighth
+session, and the two were crossed: **0 of 103 file hashes**, against 55,107
+hash tokens from 76 repositories. A 1993 SCUMM container and a 2007 Telltale
+Tool build share nothing but a premise, a creator and two characters. The cell
+stays empty because **the rule is shared bytes and the measurement has now been
+made**, not because the measurement was unavailable — which is a different
+sentence from the one above it and a stronger one.
+
+That session also proposed a **third basis** for this column and declined to
+use it, which is recorded here because the proposal outlives the row. Where
+shared payload is too narrow and `pc-clic0297-doc`'s shared *process* does not
+apply — these two objects are different studios, engines, decades and
+countries, so there is no production line to fingerprint — the candidate is a
+**shared authorship token**: a string naming a person who authored both works,
+occurring measurably in both, and belonging to neither's third-party suppliers.
+The guard matters more than the proposal: the token must name a **person who
+authored both works**, never a publisher or a licensed middleware vendor,
+because without that clause every disc from one publisher is in a saga with
+every other, which is what the shared-bytes rule exists to prevent.
+
+On the 2007 side the test passes emphatically — `Purcell` occurs eight times,
+in all six credit rolls and in two concept-art filenames. On the 1993 side it
+**cannot be run**: that repository published its *decoded Italian dialogue* and
+its hash lists, not a binary string census, and a credit roll would not appear
+in the first. So the basis is proposed, guarded, and left for whoever holds
+both objects' bytes to settle in one command. **One object is entitled to add a
+column, not to delete a section.**
 
 
 ### [Allods Online](https://github.com/vs-sr-dev/pc-allodsonline-doc)
@@ -4652,3 +4682,90 @@ inherited and **52.0/59 open against 38.0 predicted** — the first time in five
 sessions the calibration error changed sign, and the chapter on it argues the
 correction was applied to a trend line fitted to optical media and this object
 is a file tree.
+
+
+### [Sam & Max Season One](https://github.com/vs-sr-dev/pc-samandmaxseasonone-doc)
+
+*Sam & Max Season One* (Telltale Games, 2007), the five-language retail
+DVD-ROM published by **JoWooD Productions** — **103 files, 15 directories,
+2,940,938,884 bytes, 103 distinct SHA-1 of 103**, on a disc established as
+commercially pressed by two independent MMC commands agreeing (profile `0x10`,
+book type `0`).
+
+**Eighty point seven nine per cent of it is one game five times**, and this is
+the first object in this index where the headline required opening the
+container rather than measuring it from outside. Five NSIS-2 installers, stub
+326,656 bytes on 5 of 5, solid LZMA with an 8,388,608-byte dictionary on 5 of
+5, `NO_CRC` on 5 of 5. The format has **no file table**: the member list is
+derived by walking the compiled install script and reading the operands of
+every `EW_EXTRACTFILE`, and the derivation is proved by three arithmetic
+closures the pre-briefing did not have — 6 pages × 64, 28 sections × 1,048 and
+13,861 entries × 28 land exactly on the next block boundary — plus a data-record
+chain that closes with **residue 0 on 5 of 5**. Run afterwards and not instead,
+7-Zip agrees on **13,482 names of 13,482**; the one entry it lists that the
+derivation does not is the uninstaller, which NSIS writes rather than extracts.
+
+**The size deltas said two languages were dubbed, and the member census says
+they were dubbed by replacement.** French keeps **804 of English's 12,194**
+voice files and German keeps 796; the rest are swapped out, at 1.80 and 2.12
+times the bytes per line — the same script, recorded again, stored fatter. And
+the fifth build is the surprise: `setup_spanish.exe` has an **identical blob
+set, an identical member-name set, an identical PE stub and NSIS language id
+1033 (English)**. Its entire difference from the English build is **971 bytes**
+in the uncompressed header — a translated licence agreement and one word — and
+those 971 bytes cost 62,352 compressed ones, because a change at the front of a
+solid stream re-codes the 440 MB behind it.
+
+Only **11 of 13,482 member paths occur in all five builds**, because every path
+carries a localised episode directory name, so the comparison is keyed on
+SHA-1 and not on names. Keyed that way: the 642 Ogg Vorbis music streams —
+**3 h 56 min 24 s of them** — are byte-identical in all five.
+
+**The thesis figure is an interval, and that is the row's argument.** Solid
+LZMA has no per-member compressed size, so a disc-level percentage cannot
+exist even in principle; over the product, the English build is 12.1430 %
+known recording, 6.2393 % known not, and **81.6178 % inside six `.ttarch`
+containers that were identified, sampled and quoted from but not enumerated**.
+So: **12.1430 % – 93.7607 %**, at 100 % coverage of the build's membership. The
+previous PC object in this index published a point figure with 28.59 % coverage
+attached; this one publishes bounds, because a point estimate over the
+five-sixths that opened would have been a coverage artefact with a confident
+face.
+
+**The disc's own nine PE files carry no copy protection and the thirty inside
+its installers carry SecuROM.** `protscan.py` returns zero over eleven markers
+and 2.4 GB of disc with its positive control firing; pointed at the extracted
+episode executables it fires on **30 of 30**, and the section table settles it:
+ten sections, of which `.securom` and four more spelling ***ars est celare
+artem***. The six English binaries were wrapped inside **fifty minutes and
+eighteen seconds** on the night of 9–10 August 2007. Nothing on the disc is
+Authenticode-signed: **0 of 9**.
+
+**Three of the five builds ship the developer's own editor preferences**,
+which is 23 absolute build-machine paths rooted at `C:\Telltale` — including
+`Telltale Tool\T3\Wizard\NewInstaller`, two directories belonging to another
+Telltale project, a **Russian voice directory** for it on a disc that ships no
+Russian, and two recently-opened files named `SamMax10N_full_nodrm.exe`. The
+English and Spanish builds ship a third the size and carry none of it.
+
+**The names are the point.** After three consecutive objects returning zero
+from `contacts.py`, this one carries **six shipped credit rolls in plain CRLF
+text** inside its own containers — 114 person-shaped names, 22 performer
+entries and 21 people, the product spelling one surname two ways — published
+with the byte offset of each block. `contacts.py` still returns zero function
+addresses on the disc and zero person-shaped addresses printed anywhere; the
+six it counts inside the builds belong to the OpenSSL and Ogg Vorbis licence
+texts the engine links, and are counted and not printed.
+
+Nine errors were found in the pre-briefing and eight of the session's own are
+recorded, the sharpest being an interval of **two minutes and fourteen
+seconds** that the pre-briefing had computed as sixty-two, by comparing a
+timestamp Windows had converted against a raw string it had not. The
+predictions scored **16.0/20 inherited** and **48.0/72 open against 57.0
+predicted** — an overestimate of nine, on an object the prediction file argued
+was *both* calibration populations at once and adjusted upward accordingly.
+The chapter on it concludes that the six points added by the adjustment were
+the wrong lesson, and that the right one is about brackets: **a numeric
+bracket needs a named mechanism and a measured parameter**, and four of this
+session's brackets had mechanisms and guessed parameters, and all four missed
+by large factors.
