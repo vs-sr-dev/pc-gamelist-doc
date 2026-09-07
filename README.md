@@ -207,6 +207,20 @@ measured in this collection, so the cell is empty.** A number in the title is no
 a second member measured, and the rule fills on a measurement or not at all.
 Three times now it has said no.
 
+*Hugo's House of Horrors* is the **fourth**, and the first where the series name
+is inside the object's own encrypted bytes rather than in its title. `HUGO.BSF`,
+the 381-byte file the game will not start without, decrypts to *"This registered
+version of the **HUGO TRILOGY**"* — and the trilogy is real: *Hugo II,
+Whodunit?* (1991) and *Hugo III, Jungle of Doom!* (1992). **Neither is in this
+collection.** The other David P. Gray title that is —
+[pc-nitemare3d-doc](https://github.com/vs-sr-dev/pc-nitemare3d-doc) — is not a
+Hugo game; its own manual distinguishes them, and what the two objects share is
+a **cipher construction**, measured on both, rather than a franchise. That
+crossing is worth a chapter and it has one:
+[pc-hugoshouseofhorrors-doc/docs/08](https://github.com/vs-sr-dev/pc-hugoshouseofhorrors-doc/blob/master/docs/08-the-bsf.md).
+A saga of one is not a saga, and a shared cipher between two titles in different
+series is not a Saga entry.
+
 
 ### The shape of a row
 
@@ -305,6 +319,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**POP-CORN**](https://github.com/vs-sr-dev/pc-popcorn-doc) | 1988 | LACRAL software |  | Nine files and the lowest coverage here, **13.0927 %**, which is exactly its ceiling: an EXEPACK image found only after eight signature searches failed, and 2,418 bytes of XOR'd credits inside it |
 | [**Kings of the Beach**](https://github.com/vs-sr-dev/pc-kingsofthebeach-doc) | 1988 | Electronic Arts |  | Not a disc but an installed MS-DOS tree, **59 files and 524,839 bytes**: the smallest object this collection had opened, two EXEPACK overlays, and `.PAK` derived as four-plane EGA |
 | [**Wizardry: Proving Grounds of the Mad Overlord**](https://github.com/vs-sr-dev/pc-wizardry-doc) | 1987 | RWI, Inc. / Sir-tech Software |  | A self-booting UCSD p-System disk that never calls DOS: its directory declares 1,272 blocks and the file holds 640, and the 212 present blocks of its largest file are not that file at all |
+| [**Hugo's House of Horrors**](https://github.com/vs-sr-dev/pc-hugoshouseofhorrors-doc) | 1990 | David P. Gray / Gray Design Associates |  | One man's 1989 working directory, 107 files and no two sharing a second: 55.7890 % of it is the byte zero, and two files differing in 8,809 bytes hold the same twelve sprites |
 
 ## The write-ups
 
