@@ -254,6 +254,28 @@ What the two games *do* share is structural and is in that chapter: one
 registry key naming `Square Soft, Inc`, no version resource on either main
 binary, and the same Yamaha synthesiser on both discs.
 
+*Little Big Adventure – Twinsen's Quest* is the **sixth** cell to be argued and
+the **fifth** to be left empty, and it is the hardest of the five by a wide
+margin. The four before it named their series in a title, a string or an
+encrypted blob. This one **contains its predecessor's source vocabulary**: the
+studio's own `Assembly-CSharp.dll` carries **101 of the 101 `LM_` script
+opcodes and 30 of the 30 `LF_` conditions** defined in the published 1994
+source of *Little Big Adventure*, byte-identical, French spellings and all
+— `LM_SET_COMPORTEMENT`, `LF_COMPORTEMENT_HERO` — with 26 and 11 added and
+**zero left behind**
+([pc-twinsensquest-doc/docs/11](https://github.com/vs-sr-dev/pc-twinsensquest-doc/blob/master/docs/11-the-engine-of-1994-inside-the-assembly-of-2024.md)).
+**No Little Big Adventure title has been measured in this collection**, so the
+cell is empty. A hundred and thirty-one shared identifiers with an unmeasured
+predecessor is not a second member measured, and the rule fills on a
+measurement or not at all. Five times now it has said no, and this is the first
+time saying no has cost something worth naming.
+
+It is also the first entry here whose object is a **shop's installer** rather
+than a game: two files, 2,891,523,108 bytes, of which 99.9689 % is a payload
+slice, and nothing was installed or run. Eight repositories in this list have
+documented a GOG product and all eight documented the tree after the installer
+ran; this is the ninth and the first from the other side of it.
+
 
 ### The shape of a row
 
@@ -355,6 +377,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**Hugo's House of Horrors**](https://github.com/vs-sr-dev/pc-hugoshouseofhorrors-doc) | 1990 | David P. Gray / Gray Design Associates |  | One man's 1989 working directory, 107 files and no two sharing a second: 55.7890 % of it is the byte zero, and two files differing in 8,809 bytes hold the same twelve sprites |
 | [**FINAL FANTASY VII (PC)**](https://github.com/vs-sr-dev/pc-finalfantasy7-doc) | 1998 | Square Soft / Eidos Interactive | Final Fantasy | A container nobody in this collection had opened is 42.6696 % of it: .LGP closes with residue 0 on 49 of 49 archives, and the studio source tree fell out of one |
 | [**Inquisitor**](https://github.com/vs-sr-dev/pc-inquisitor-doc) | 2009 | Wooden Dragon / CINEMAX |  | An installed GOG tree, 98.9036 % of it twenty-two DRPK containers nobody had named: derived and closed on 22 of 22 with residue 0 over 112,752 members, and the codec reproduces 90.1164 % exactly |
+| [**Little Big Adventure – Twinsen's Quest**](https://github.com/vs-sr-dev/pc-twinsensquest-doc) | 2024 | 2:21 |  | The GOG offline installer rather than the installed tree: two files placed at 100.0000 % with residue 0, and a shop's undocumented naming layer gives back the 788 files it would write |
 
 ## The write-ups
 
