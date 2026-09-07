@@ -221,6 +221,23 @@ crossing is worth a chapter and it has one:
 A saga of one is not a saga, and a shared cipher between two titles in different
 series is not a Saga entry.
 
+*FINAL FANTASY VII* is the **fifth**, and the first of the five where the cell
+**fills** — four *Final Fantasy* titles are already measured here, so the second
+half of the rule is satisfied several times over and there is nothing to argue.
+It is worth one sentence anyway, because a cell that fills without argument is
+the cell nobody checks. The repository ran the byte comparison the old rule
+would have demanded and published it:
+[pc-finalfantasy7-doc/docs/13](https://github.com/vs-sr-dev/pc-finalfantasy7-doc/blob/master/docs/13-against-the-collection.md)
+reports **198 payloads and 9,951,170 bytes shared with *FINAL FANTASY VIII*, of
+which zero are Square's** — every one is Microsoft's DirectX. Two games in one
+series, one publisher, one platform, one year apart, sharing not a byte of the
+studio's own work. **That is the second time this list has measured exactly why
+the byte criterion was dropped**, and the first was the pair that dropped it.
+What the two games *do* share is structural and is in that chapter: one
+`C:\lib\` source tree with `tim.cpp`, `rsd.cpp` and `psx.cpp` in it, one
+registry key naming `Square Soft, Inc`, no version resource on either main
+binary, and the same Yamaha synthesiser on both discs.
+
 
 ### The shape of a row
 
@@ -320,6 +337,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**Kings of the Beach**](https://github.com/vs-sr-dev/pc-kingsofthebeach-doc) | 1988 | Electronic Arts |  | Not a disc but an installed MS-DOS tree, **59 files and 524,839 bytes**: the smallest object this collection had opened, two EXEPACK overlays, and `.PAK` derived as four-plane EGA |
 | [**Wizardry: Proving Grounds of the Mad Overlord**](https://github.com/vs-sr-dev/pc-wizardry-doc) | 1987 | RWI, Inc. / Sir-tech Software |  | A self-booting UCSD p-System disk that never calls DOS: its directory declares 1,272 blocks and the file holds 640, and the 212 present blocks of its largest file are not that file at all |
 | [**Hugo's House of Horrors**](https://github.com/vs-sr-dev/pc-hugoshouseofhorrors-doc) | 1990 | David P. Gray / Gray Design Associates |  | One man's 1989 working directory, 107 files and no two sharing a second: 55.7890 % of it is the byte zero, and two files differing in 8,809 bytes hold the same twelve sprites |
+| [**FINAL FANTASY VII (PC)**](https://github.com/vs-sr-dev/pc-finalfantasy7-doc) | 1998 | Square Soft / Eidos Interactive | Final Fantasy | A container nobody in this collection had opened is 42.6696 % of it: .LGP closes with residue 0 on 49 of 49 archives, and the studio source tree fell out of one |
 
 ## The write-ups
 
