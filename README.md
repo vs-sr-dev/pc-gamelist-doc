@@ -295,6 +295,26 @@ documented a GOG product and all eight documented the tree after the installer
 ran; this is the ninth and the first from the other side of it.
 
 
+*Theme Park* is the **seventh** cell to be argued and the **sixth** to be left
+empty, and it is the easy case: there is no second *Theme Park*, no *Theme
+Hospital*, and no other Bullfrog title in this collection. A directory listing
+settles it in one command, and `grep -rli "theme park"` across every `.md`
+here, with its own repository excluded, returns **zero** — the phrase occurs
+nowhere else. A saga of one, argued in one line rather than one paragraph.
+
+**Its `Studio` cell is the interesting one, and it was nearly `*(none named)*`.**
+The pre-briefing searched the executables for `Bullfrog` and did not find it,
+because in a 1994 DOS game the studio's name is not in the program: it is in the
+data. `LANG0-0.DAT`, the English string table, holds `DESIGNED BY BULLFROG
+PRODUCTIONS` in its credit group and `BULLFROG'S WORLD` in its interface group,
+and the studio's frog crest is painted frame by frame into a run-length coded
+animation that plays on a cinema screen inside one of the rides
+([pc-themepark-doc/docs/04](https://github.com/vs-sr-dev/pc-themepark-doc/blob/master/docs/04-the-rides.md)).
+**A `Studio` cell filled from a data file rather than from a version resource is
+a first for this list**, and it is worth the sentence because the alternative —
+filling it from what everybody knows about *Theme Park* — would have produced
+the same two words and proved nothing.
+
 ### The shape of a row
 
 A list is a list. The table says which door to open; the repository behind the
@@ -398,6 +418,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**Little Big Adventure – Twinsen's Quest**](https://github.com/vs-sr-dev/pc-twinsensquest-doc) | 2024 | 2:21 |  | The GOG offline installer rather than the installed tree: two files placed at 100.0000 % with residue 0, and a shop's undocumented naming layer gives back the 788 files it would write |
 | [**Streets of Kamurocho**](https://github.com/vs-sr-dev/pc-streetsofkamurocho-doc) | 2020 | Empty Clip Studios / SEGA |  | An installed Steam depot, never launched: 84.2165 % of it is a headerless archive whose 55 extents close with residue 0, and the AES-128 key is an 11-character literal in the executable |
 | [**The Murder of Sonic the Hedgehog**](https://github.com/vs-sr-dev/pc-themurderofsonicthehedgehog-doc) | 2023 | Sonic Social / SEGA | Sonic the Hedgehog | It hides nothing and the accounting is the hard part: four UnityFS bundles close at residue 0, 996,569,296 bytes of headerless side-file leave 433, and 124 of 137 binaries carry a hash not a date |
+| [**Theme Park**](https://github.com/vs-sr-dev/pc-themepark-doc) | 1994 | Bullfrog Productions / Electronic Arts |  | 77.9056 % of it is FLIC behind a twelve-byte header that closes 17 of 17 at residue 0, and fifteen of its twenty-nine rides are named by three tables that agree |
 
 ## The write-ups
 
