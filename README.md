@@ -83,7 +83,12 @@ reachable from here; the write-ups section counts the ones documented in this
 family. A title whose primary index is elsewhere gets a row and no write-up —
 *Tales of Berseria*, whose format belongs to
 [tales-gamelist-doc](https://github.com/vs-sr-dev/tales-gamelist-doc) rather
-than to the platform — and every such crosslink widens the gap by one. Neither
+than to the platform — and every such crosslink widens the gap by one. **There
+is a second cause now, and it is the intended one:** the write-ups are what a
+migration left behind, they are not fed by anything, and a title documented
+after it gets the row and stops there. *Links: The Challenge of Golf*, *Skunny:
+Back to the Forest* and *POP-CORN* are the first three. The row is the index and
+the repository is the document; a paragraph in the middle is a third copy. Neither
 number is written into the prose above, because a count written down is a count
 that goes stale: both are re-derived by command when they are wanted. Making
 them agree would either claim a write-up that does not exist here, or hide a
@@ -295,6 +300,9 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**Cruise for a Corpse**](https://github.com/vs-sr-dev/pc-cruiseforacorpse-doc) | 1991 | Delphine Software International |  | Twenty files off a 1992 hard disk, **95.2190 % of them compressed**: a bit-stream unpacker written from scratch, and the one member of 849 that misses the format's own checksum is the copy protection |
 | [**Capcom Beat 'Em Up Bundle**](https://github.com/vs-sr-dev/pc-capcombeatemupbundle-doc) | 2018 | Capcom |  | An emulator sold as seven games, of which **80.09 % by weight is a picture gallery** and 9.01 % is the seven arcade programs: 11 distinct 68000 programs in 14 ROM containers |
 | [**Sam & Max Season One**](https://github.com/vs-sr-dev/pc-samandmaxseasonone-doc) | 2007 | Telltale Games / JoWooD Productions |  | 2.94 GB of which **80.79 % is one game five times** — five NSIS installers opened from the published format definition, and French and German shown to *replace* the English voice, not add to it |
+| [**Links: The Challenge of Golf**](https://github.com/vs-sr-dev/pc-linksthechallengeofgolf-doc) | 1990 | Access Software |  | The same game as a VIS pressing already in this collection and measured against it: **192 distinct payloads** shared, and one title that differs from itself by exactly an hour |
+| [**Skunny: Back to the Forest**](https://github.com/vs-sr-dev/pc-skunnybacktotheforest-doc) | 1993 | Copysoft / Edisys |  | Twenty files off a hard disk, **73.1869 % identified** and 47.57 points of that somebody else's PCX spec: a Copysoft object from the year before *Skunny Kart*, sharing three of its formats |
+| [**POP-CORN**](https://github.com/vs-sr-dev/pc-popcorn-doc) | 1988 | LACRAL software |  | Nine files and the lowest coverage here, **13.0927 %**, which is exactly its ceiling: an EXEPACK image found only after eight signature searches failed, and 2,418 bytes of XOR'd credits inside it |
 | [**Kings of the Beach**](https://github.com/vs-sr-dev/pc-kingsofthebeach-doc) | 1988 | Electronic Arts |  | Not a disc but an installed MS-DOS tree, **59 files and 524,839 bytes**: the smallest object this collection has opened, two EXEPACK overlays, and `.PAK` derived as four-plane EGA |
 
 ## The write-ups
