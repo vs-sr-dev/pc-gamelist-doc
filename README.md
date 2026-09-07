@@ -6,6 +6,16 @@ PhyreEngine remaster from 2018 have almost nothing in common except the machine
 they end up on, which is exactly why the index is per platform and not per
 engine.
 
+**The DOS-era subset is the exception, and it was settled by counting rather
+than by reopening that decision.** Half the family has independently done MZ
+header arithmetic and a third of it has independently met a DOS-era packer — 25
+and 16 of 49 repositories — so the items they have in common are written down
+once, in
+[dos-platformnotes-doc](https://github.com/vs-sr-dev/dos-platformnotes-doc),
+whose primary index is this one. It is about executables and tool discipline and
+contains nothing about content: the graphics formats are per title and were
+derived from the bytes every time.
+
 Two strands run through it. The first is format archaeology from the DOS and
 early-Windows era — containers, sprite codecs, map formats and the editor work
 files that shipped by accident.
