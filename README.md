@@ -248,6 +248,7 @@ Three times now it has said no.
 | [**Cruise for a Corpse**](https://github.com/vs-sr-dev/pc-cruiseforacorpse-doc) | **1991**, the release — and this is the first row in this column where the year comes from **outside the object entirely and nothing inside contradicts it**, because nothing inside mentions it. `1991` occurs **0 times** as a string over the 3,569,162 readable bytes *and* over the 14,086,466 that come out of the compressor; `1992` occurs once, in a graphics driver's copyright line; `1927`, the year the game is *set* in, occurs once, in the opening narration — *"Paris, April 1927."* So the object dates itself twice and neither date is its own. *(**And the filesystem here is the opposite of every previous sample of that question.** Nine rows in this index have said the mtimes date nothing — 6,746 of 6,748 files in one 85-second window, 120 files sharing one identical second, 937 of 958 inside 243 seconds. This one has **twenty files and twenty distinct mtimes, no duplicates at all**, spanning **797 days = 2.1821 years** from 1990-05-07 23:16:28 to 1992-07-13 01:43:22, and they read as a production log: the floppy roll-call written five files twenty seconds apart on 1992-05-18 13:52–13:53, the VGA driver on the 25th, the game and the installer eighteen minutes apart on the morning of the 26th, `D3` and `D5` that afternoon, `D2` and `D4` the next morning ten seconds apart, the readme three weeks later, and then — seven weeks after everything else, at 01:43 in the morning — six bytes called `DELPHINE.CFG` that Delphine never wrote. It is the signature of a **DOS `COPY` that preserved timestamps**, and it is the first object in this index where the clock is evidence rather than noise. The one stamp that cannot be true is `D1`'s **1990-05-07**, two years before the other four volumes: `D1` contains the English packaging credits and the code-wheel protection screen, neither of which existed in 1990.)* | **Delphine Software International** — taken from outside the object, because **`Delphine` occurs 0 times inside it**, in either denominator. `DELPHINE` occurs five times and all five are in `READ.ME`, as a **directory name** (`\DELPHINE`, `\DELPHINE\CR256`). The executable is called `DELPHINE.EXE`, the install path is `\DELPHINE`, and the company never signs anything. *(**What the object does name, in plain text, is nineteen people and its own engine.** `D1/GEN.FR` and `D1/GENDEB.FR` are the credit rolls — 364 and 825 bytes, one member deep inside a compressor that hides 95.2190 % of this object — and they read `STORY CONCEPTION` **Paul Cuisset**, **Denis Mercier**, **Philippe Chastel**; `GRAPHICS AND ANIMATION` **Christian Robert**, **Thierry Perreau**; `MUSIC` **Jean Baudlot**; `SOUND EFFECTS` **Benoist Aron**; and then a heading that is this row's finding: **`CINEMATIC SYSTEM EVOLUTION II`**. The literature calls this engine *Cinématique*; `Cinematique` occurs **0 times** in 17.6 megabytes and `CINEMATIC SYSTEM EVOLUTION II` occurs **4**. It is the seventh named engine in this index and the first named **by the product's own credit roll** rather than by a build path, a linker artefact or the outside world — and against *Broken Sword 5*, where the universally attributed *Virtual Theatre* occurs 0 times in 6.6 GB, it is the happy case. Counted before the cell was filled: `Paul Cuisset` 7, `Philippe Chastel` 6, `Benoist Aron` 6, `Denis Mercier` 4, every one of them **0** before decompression. And the **only** name a string search can reach without a decompressor is in none of that: `VGADRV.BIN` says `Copyright 1992 Daniel Morais. All Rights Reserved.`, once — the man who wrote the code that puts every pixel of this game on screen, and he is not in its credits.)* | *(empty, and measured rather than assumed)* — this is the **first Delphine object in this collection**, so there is nothing to compare bytes with and the column's rule holds: it fills on shared bytes, not on a shared engine or a shared studio. The Cinématique engine is shared with *Future Wars* and *Operation Stealth*; neither is here; `Delphine`, `Another World`, `Flashback`, `Future Wars` and `Operation Stealth` all occurred **0 times in this index** before this row was written. `crossall.py` over **71 repositories, 293 list files and 43,657 hash tokens**, with `--skip`: **0 crossings of 20 file hashes, and 0 of 868 distinct unpacked-member hashes** — the second number being the one worth having, since twenty bespoke archives were never going to collide with anything and 868 sprites, backgrounds, patches and scripts could have | Twenty files off a 1992 hard disk, **95.2190 % of them compressed** — a bit-stream unpacker written from scratch, 848 of 849 members closing on the format's own checksum, and the one that does not is the copy protection |
 | [**Capcom Beat 'Em Up Bundle**](https://github.com/vs-sr-dev/pc-capcombeatemupbundle-doc) | **2018**, and it is the only year the object itself asserts. The install offers four other numbers and none of them is the product's: the files' mtimes are 2020, 2022 and 2023; the executable's PE link stamp is **2022-04-18 06:32:27 UTC**; Steam's manifest says the depot was published **2023-07-31**; and the seven games inside carry their own arcade build stamps, 1989 to 1997, one of which is legible to the day — `kod` region 0 reads `T H E  K I N G  O F  D R A G O N S ///  9 1 0 8 0 5 ///  J A P A N`, spaced one character per tile cell. **The product's own copyright line is 2018 and it is painted into a texture**: `credit05_BM_NOMIP`, 2048×512, block-compressed, reading `(c) HIROSHI MOTOMIYA (c) Thirdline (c) SHUEISHA (c) CAPCOM CO., LTD. 1992, 2018 ALL RIGHTS RESERVED.` — 1992 for *Tenchi wo Kurau II*, 2018 for the bundle. *(No `.txt`, `.md` or readme of any kind exists in 809,632,531 bytes, so no year is machine-readable anywhere in the install; the string `2018` cannot be grepped for, because 71.41 % of the executable is at entropy 8.0000 and the only place the year is written is an image.)* | **CAPCOM CO., LTD.**, and the cell names where the string is, because the session brief said it was nowhere: not in `.rdata`, which has the engine's ninety-one class names and one build path and no company; in **`.rsrc`**, in the `VS_VERSIONINFO` block, `CompanyName` and `LegalCopyright` both **`CAPCOM CO., LTD.`**, with `FileDescription` `CAPCOM BEAT 'EM UP BUNDLE / CAPCOM BELT ACTION COLLECTION` and `FileVersion 1.0.0.2`. *(**Who wrote the emulator is the one thing the object will not say, and the session was commissioned to find out.** The credit roll's `PROGRAMMING` heading has exactly two entries, `KOBUTA` and `MUUMUU`, neither in the `FIRSTNAME SURNAME` form the other hundred-odd credits use, and nothing in the product expands either. The three transformations that would carry an implementer's fingerprint — the CPS2 program cipher, the Kabuki sound-CPU cipher and the CPS graphics interleave — were all **applied before shipping**, so the running program needs no per-game table and there is none to find. The answer published is *not determinable from the shipped files*, with the measurements and a list of what would close it)* |  | An emulator sold as seven games, of which **80.09 % by weight is a picture gallery** and 9.01 % is the seven arcade programs — 14 ROM containers holding 11 distinct 68000 programs, three pairs being one program with a patched `MOVE` immediate |
 | [**Sam & Max Season One**](https://github.com/vs-sr-dev/pc-samandmaxseasonone-doc) | **2007**, and the object states it four ways that agree. The five installer stubs carry `FileVersion 1.2007.08.13` and `1.2007.08.14` — *the build date inside the version number* — and the ISO directory records of the files carrying them say 2007-08-13 and 2007-08-14, so a quantity written in a resource and a quantity written in a filesystem agree on 5 of 5. The volume descriptors were cut 2007-08-15 16:09:59 at GMT+03:00, and `LegalCopyright` reads `© 2007 JoWooD Productions`. *(The object's own clock is older than its year in one direction: the earliest thing on it is a Photoshop `DateTime` of **2006-04-20 12:16:42** in a concept-art scan, and the oldest file is Microsoft's Visual Basic 4.0 runtime, linked **1996-01-25**. Sixteen months of real production time, five independent clocks and four timezones, against the previous object in this index whose 200 records fell inside three seconds)* | **Telltale Games** (the game, its engine and its credits), **JoWooD Productions** (this pressing) *(and the split is measured, not assumed. Telltale is named in six shipped credit rolls of 114 person-shaped names each drawn from the game's own containers, in the `TP1` and `TCM` tags of all eighteen soundtrack MP3s, and in six `ttg_splash_10N_b_ttg.d3dtx` textures. JoWooD is named in the `CompanyName` of all five installer stubs, in the readme's only support address — `www.jowood.com/support` — and in six `ttg_splash_10N_a_jowood.d3dtx` textures, so **every episode opens with the publisher's splash and then the studio's**. A third distributor, **GameTap**, gets its own section in every credit roll. The disc's autorun shell is a fourth party's: `Autorun Maestro 5.01`, `Pollen Software Pty Ltd`, whose two binaries need a Microsoft runtime from January 1996)* |   | 2.94 GB of which **80.79 % is one game five times** — five NSIS installers opened from the published format definition, 13,482 members per build hashed and agreed with 7-Zip, French and German shown to **replace** the English voice rather than add to it, and a recording share published as an **interval** because 81.62 % of the product is a container that was identified and not opened |
+| [**Kings of the Beach**](https://github.com/vs-sr-dev/pc-kingsofthebeach-doc) | **1988**, and this is the first row in this index where the object contradicts itself in two media and both halves are right. The title screen says `© COPYRIGHT 1988 MICHAEL ABBOT & NANA CHAMBERS` — **drawn in pixels**, not stored as text, and therefore invisible to every string search — while the same credit as plain ASCII inside all three executables says `1989`, with the chooser adding the middle initials: `(c) copyright 1989    Michael W. Abbot & Nana M. Chambers`. The file timestamps settle it rather than choosing between them: 51 of 59 files fall between **1988-08-31 22:32:18** and **1989-01-11 22:57:44**, with the art finished in December 1988 (`TITLE.PAK`, 1988-12-16) and the two overlays linked ten seconds apart in January 1989. The cell takes 1988 because the year of a game is the year its content was made. *(The other three dates on the object are not the game's and are the reason it is here: **1989-07-30 07:04:58**, five byte-identical batch files written in one second whose names are four level-skip passwords; **1993-05-21**, a Microsoft Anti-Virus record that protects exactly one of the three executables; and **2002-01-29**, a 67-byte readme in Italian. Four hands over fourteen years, none of it an artefact of the copy)* | **Electronic Arts** *(drawn across the title screen as `ELECTRONIC ARTS ®` and stored as a plain string at offset 11,333 of `VBALL.EXE`, so the publisher is stated in both media the credit uses. The two authors are named in three renderings across three files, with two years and two separators, and are the only personal names in the program)* |   | Not a disc: **59 files, 524,839 bytes**, an installed MS-DOS tree copied off a hard disk, and **the smallest object this collection has opened**. Two EXEPACK overlays unpacked to 408,176 bytes after repairing a decompressor that produced exactly the right length with 11,184 bytes of code missing; `.PAK` derived from the bytes as row-interleaved four-plane EGA behind a run-length stream whose apparent magic number turned out to be its first command byte; eleven of twelve `.DAT` resolved into 460 records with residue 0; **eight passwords recovered from one's-complement obfuscation, four of which no walkthrough names**; and a Tandy build that the loader offers on its own command line and that is not on the disc |
 
 ## The write-ups
 
@@ -4769,3 +4770,103 @@ the wrong lesson, and that the right one is about brackets: **a numeric
 bracket needs a named mechanism and a measured parameter**, and four of this
 session's brackets had mechanisms and guessed parameters, and all four missed
 by large factors.
+
+### [Kings of the Beach](https://github.com/vs-sr-dev/pc-kingsofthebeach-doc)
+
+*Kings of the Beach: Professional Beach Volleyball* (Electronic Arts, 1988),
+MS-DOS — **59 files, 524,839 bytes, 55 distinct SHA-1**, one directory deep.
+**There is no disc.** No image, no cue sheet, no ISO 9660, no sectors: this is
+somebody's installed game directory copied off a hard disk, and it is **the
+smallest object this collection has opened on any platform**, against
+236,804,096 bytes for the smallest VIS disc. It fits on a 720 KB floppy with
+195,000 bytes to spare.
+
+That size is not a footnote, it is the method. On 524,839 bytes a four-byte
+needle has a chance rate of 0.0000, so for the first time in this index **a
+single hit is a finding and a zero is evidence** — the inverse of the last six
+objects, one of which had to discount 314 occurrences of a two-byte needle
+against 3,575 expected. Three results here rest on that arithmetic, and the
+discipline that comes with it is stated on every count: a *two*-byte needle over
+204,704 bytes is still expected 3.12 times by chance and is still worth nothing.
+
+**One denominator, not four**, and the byte table closes to residue 0 with
+**zero bytes in a "format not derived" row** — the first time this pipeline has
+been able to write that line.
+
+**The packer, and a decoder that was arithmetically perfect and wrong.** The two
+graphics overlays are Microsoft EXEPACK, closing on their own declared sizes.
+The toolbox's `exepack.py` unpacked them to 203,472 and 204,704 bytes, matching
+`dest_len` exactly, residue 0 on 2 of 2 — and printed two figures nobody had a
+use for: `destination bytes never written at the head : 11184` and `packed bytes
+left unread : 11184`, identical on both files. That hole is 8086 code, a
+Microsoft C module prologue, and EXEPACK leaves it verbatim at the bottom of the
+buffer because its stub unpacks downwards from the top. **No arithmetic on the
+declared length can see it; the packer's own relocation table can.** Eight of one
+overlay's 99 relocation entries point into the hole and read segment `0x0000`
+with it left in, and read addressable segments with the head restored. The fix
+and the check are published, and the first version of the check was itself wrong
+— it treated segment `0x0000` as impossible, which it is not, since ten entries
+in each file hold it legitimately as the load base.
+
+**`.PAK`, 52.8225 % of the object, and the magic number that was never there.**
+All 36 files begin `0x82` and no other file does, which reads as a signature and
+is not one: **the program never compares anything to `0x82`** — `80 3E xx xx 82`
+occurs zero times against a chance rate of 0.0000. `0x82` is the *first command
+byte* of a run-length stream and means "copy the next two bytes literally"; those
+two bytes are the geometry, and the fourth header byte that took twelve values
+across the population and resisted identification was simply the second command.
+The last two bytes of every file are a footer holding the decompressed length,
+which closes on **36 of 36** and explains the four court backdrops that decode
+short: they declare 13,602 = 2 + 40 × **85** × 4 and deliver exactly that, 85
+rows of a 200-row screen, because the game draws the sand itself.
+
+The payload is four-plane EGA interleaved per row, **and the interleave was
+settled by rendering rather than by arithmetic**: four sequential planes and four
+row-interleaved planes consume the same bytes and pass every length check, and
+only one of them draws a beach.
+
+**Twenty-two portraits with their own names drawn into them.** The roster files
+are 8.3 contractions — `GSELZNIC`, `RVHAGEN`, `THOVLAND`, `JSTEVE` — and
+expanding an abbreviation from its own name is the error this pipeline exists to
+avoid. It did not have to be guessed: each portrait carries its name in pixels
+under the face, and rendering reads it out. `GSELZNIC` is **SELZNICK** with a
+letter cut to fit, `RVHAGEN` is **VON HAGEN** where the `V` is a particle and not
+an initial, and `JSTEVE` is **STEVENSON**. Two of twenty-two would have been
+guessed wrong, and none of the twenty-two is a string anywhere in the program.
+
+**Eight passwords, stored as the one's complement of their uppercase ASCII.** In
+plain text the four known level-skip words occur **zero** times against a chance
+rate of 1.1 × 10⁻¹⁴; complementing the image finds them contiguous in both
+builds, together with four that no published walkthrough names — `LOGIC ON`,
+`LOGIC OFF`, `CHEAT ON`, `CHEAT OFF`. The four known ones map onto the venues in
+tour order, and the tour is in the object too: five welcome messages naming San
+Diego, Chicago, Hawaii, Rio and Australia, matching the five `*COURT.PAK`
+backdrops by their filename prefixes.
+
+**A build the loader offers and the object does not have.** `VBALL.EXE` names
+`vbtdy.` twice and prints `vball t  -  runs game in TANDY 16 color if possible`
+in its own help text; no such file is here; and three converted Tandy masks
+totalling **30,518 bytes, 5.8147 %**, are referenced by neither shipped overlay.
+The fourth `TDY*` file is *not* orphaned — both builds load `TDYMUSIC.DAT`,
+because both drive the Tandy sound chip, and it is 4-bit sample data rather than
+register data: mean difference between a byte's two nibbles **0.8557**, against a
+measured random control of 5.3222. The repository states what the object states
+and declines to say whether the Tandy build was ever compiled, which the object
+cannot.
+
+**Four hands over fourteen years**, all of it out of one `find` and none of it an
+artefact: eighteen portraits exported in two minutes forty-six seconds in
+November 1988, the two overlays linked ten seconds apart in January 1989, five
+byte-identical batch files written in one second in July 1989 whose names are
+passwords, a zero-length file in 1990, a Microsoft Anti-Virus record in 1993 that
+indexes the one executable with an extension and misses the two that are eleven
+times larger, and an Italian readme in 2002 whose two high-bit bytes decide which
+keyboard it was typed on. **The richest provenance any object in this collection
+has produced.**
+
+And the family question, asked with the count in hand: **24 of the 49 `pc-*-doc`
+repositories do MZ header arithmetic and 16 meet a DOS-era packer**, which
+reverses this session's own prediction that a DOS-era sub-checklist would not pay
+for itself. The repository publishes the four items such a checklist would
+contain and does not write it, because writing a family document on the strength
+of one object is the error the whole pipeline exists to avoid.
