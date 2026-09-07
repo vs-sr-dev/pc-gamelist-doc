@@ -378,6 +378,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**FINAL FANTASY VII (PC)**](https://github.com/vs-sr-dev/pc-finalfantasy7-doc) | 1998 | Square Soft / Eidos Interactive | Final Fantasy | A container nobody in this collection had opened is 42.6696 % of it: .LGP closes with residue 0 on 49 of 49 archives, and the studio source tree fell out of one |
 | [**Inquisitor**](https://github.com/vs-sr-dev/pc-inquisitor-doc) | 2009 | Wooden Dragon / CINEMAX |  | An installed GOG tree, 98.9036 % of it twenty-two DRPK containers nobody had named: derived and closed on 22 of 22 with residue 0 over 112,752 members, and the codec reproduces 90.1164 % exactly |
 | [**Little Big Adventure – Twinsen's Quest**](https://github.com/vs-sr-dev/pc-twinsensquest-doc) | 2024 | 2:21 |  | The GOG offline installer rather than the installed tree: two files placed at 100.0000 % with residue 0, and a shop's undocumented naming layer gives back the 788 files it would write |
+| [**Streets of Kamurocho**](https://github.com/vs-sr-dev/pc-streetsofkamurocho-doc) | 2020 | Empty Clip Studios / SEGA |  | An installed Steam depot, never launched: 84.2165 % of it is a headerless archive whose 55 extents close with residue 0, and the AES-128 key is an 11-character literal in the executable |
 
 ## The write-ups
 
