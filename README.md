@@ -164,6 +164,22 @@ Both Resident Evil cells were filled in the commit that added the second one;
 *Mega Man*'s two and *Harry Potter*'s three already satisfied the new rule under
 the old one.
 
+***Inquisitor*'s Saga cell is empty and its crossings make the rule's case from
+the other end.** It is a 2009 Czech role-playing game and it is the only one of
+its kind here, so the second-member criterion settles the cell without an
+argument. What it adds is the *crossings* half: 4 of its 40 files appear in
+other repositories — `unins000.exe`, `unins000.msg`, `gog.ico`, `support.ico`,
+1,498,338 bytes, 0.0638 % — and they are shared with three *Broken Sword*
+adventures, a *Legend of Heroes*, a *Lands of Lore*, a *Flight of the Amazon
+Queen* and a *Deadly Premonition*. **Seven repositories, six studios, four
+countries, and every shared byte belongs to the shop or to Inno Setup.** The
+Resident Evil case showed that a shared-bytes rule would put a Capcom horror
+game in the Final Fantasy saga because both ship Microsoft's DirectX; this one
+shows the same rule relating a Czech RPG to a Revolution Software adventure
+because both were bought from GOG. Not one byte of the game crosses with
+anything. See [pc-inquisitor-doc chapter
+12](https://github.com/vs-sr-dev/pc-inquisitor-doc/blob/master/docs/12-against-the-collection.md).
+
 *Tesla Effect: A Tex Murphy Adventure* is the largest object in this family, and
 arrived four orders of magnitude above the one measured before it — 17.5
 gigabytes against 392,593 bytes. **Its Saga cell is empty, and the reason is
@@ -338,6 +354,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**Wizardry: Proving Grounds of the Mad Overlord**](https://github.com/vs-sr-dev/pc-wizardry-doc) | 1987 | RWI, Inc. / Sir-tech Software |  | A self-booting UCSD p-System disk that never calls DOS: its directory declares 1,272 blocks and the file holds 640, and the 212 present blocks of its largest file are not that file at all |
 | [**Hugo's House of Horrors**](https://github.com/vs-sr-dev/pc-hugoshouseofhorrors-doc) | 1990 | David P. Gray / Gray Design Associates |  | One man's 1989 working directory, 107 files and no two sharing a second: 55.7890 % of it is the byte zero, and two files differing in 8,809 bytes hold the same twelve sprites |
 | [**FINAL FANTASY VII (PC)**](https://github.com/vs-sr-dev/pc-finalfantasy7-doc) | 1998 | Square Soft / Eidos Interactive | Final Fantasy | A container nobody in this collection had opened is 42.6696 % of it: .LGP closes with residue 0 on 49 of 49 archives, and the studio source tree fell out of one |
+| [**Inquisitor**](https://github.com/vs-sr-dev/pc-inquisitor-doc) | 2009 | Wooden Dragon / CINEMAX |  | An installed GOG tree, 98.9036 % of it twenty-two DRPK containers nobody had named: derived and closed on 22 of 22 with residue 0 over 112,752 members, and the codec reproduces 90.1164 % exactly |
 
 ## The write-ups
 
