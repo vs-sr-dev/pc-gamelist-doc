@@ -164,6 +164,24 @@ Both Resident Evil cells were filled in the commit that added the second one;
 *Mega Man*'s two and *Harry Potter*'s three already satisfied the new rule under
 the old one.
 
+***Sonic the Hedgehog* is the first saga this column has had to fill across two
+platform families, and it is the first case where the old rule and the new one
+disagree.** *The Murder of Sonic the Hedgehog* (Windows, 2023) is the second
+Sonic title measured in this collection; the first is
+[dc-sonicadventure-doc](https://github.com/vs-sr-dev/dc-sonicadventure-doc)
+(Dreamcast, 1999), whose own cell had been empty since it was written because it
+was then a saga of one. **Both cells are filled now**, in the same commit, on
+the second-member criterion and on nothing else. The objection is real and is
+written rather than resolved: the two objects share a franchise and nothing
+else — different studio, different decade, different platform, different engine,
+different genre — and **zero bytes**, measured, in both directions. Under the
+byte rule the cell would stay empty; the byte rule was retired one paragraph
+above, for the reason given there, and applying a retired rule because it gives
+a more comfortable answer would be worse than either decision. The argument is
+in [pc-themurderofsonicthehedgehog-doc chapter 13](https://github.com/vs-sr-dev/pc-themurderofsonicthehedgehog-doc/blob/master/docs/13-against-the-collection.md),
+which also records that a `grep` for `sonic` across this collection's `.md`
+files returns **17 repositories and none of them is a Sonic game**.
+
 ***Inquisitor*'s Saga cell is empty and its crossings make the rule's case from
 the other end.** It is a 2009 Czech role-playing game and it is the only one of
 its kind here, so the second-member criterion settles the cell without an
@@ -379,6 +397,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**Inquisitor**](https://github.com/vs-sr-dev/pc-inquisitor-doc) | 2009 | Wooden Dragon / CINEMAX |  | An installed GOG tree, 98.9036 % of it twenty-two DRPK containers nobody had named: derived and closed on 22 of 22 with residue 0 over 112,752 members, and the codec reproduces 90.1164 % exactly |
 | [**Little Big Adventure – Twinsen's Quest**](https://github.com/vs-sr-dev/pc-twinsensquest-doc) | 2024 | 2:21 |  | The GOG offline installer rather than the installed tree: two files placed at 100.0000 % with residue 0, and a shop's undocumented naming layer gives back the 788 files it would write |
 | [**Streets of Kamurocho**](https://github.com/vs-sr-dev/pc-streetsofkamurocho-doc) | 2020 | Empty Clip Studios / SEGA |  | An installed Steam depot, never launched: 84.2165 % of it is a headerless archive whose 55 extents close with residue 0, and the AES-128 key is an 11-character literal in the executable |
+| [**The Murder of Sonic the Hedgehog**](https://github.com/vs-sr-dev/pc-themurderofsonicthehedgehog-doc) | 2023 | Sonic Social / SEGA | Sonic the Hedgehog | It hides nothing and the accounting is the hard part: four UnityFS bundles close at residue 0, 996,569,296 bytes of headerless side-file leave 433, and 124 of 137 binaries carry a hash not a date |
 
 ## The write-ups
 
