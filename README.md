@@ -303,7 +303,8 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**Links: The Challenge of Golf**](https://github.com/vs-sr-dev/pc-linksthechallengeofgolf-doc) | 1990 | Access Software |  | The same game as a VIS pressing already in this collection and measured against it: **192 distinct payloads** shared, and one title that differs from itself by exactly an hour |
 | [**Skunny: Back to the Forest**](https://github.com/vs-sr-dev/pc-skunnybacktotheforest-doc) | 1993 | Copysoft / Edisys |  | Twenty files off a hard disk, **73.1869 % identified** and 47.57 points of that somebody else's PCX spec: a Copysoft object from the year before *Skunny Kart*, sharing three of its formats |
 | [**POP-CORN**](https://github.com/vs-sr-dev/pc-popcorn-doc) | 1988 | LACRAL software |  | Nine files and the lowest coverage here, **13.0927 %**, which is exactly its ceiling: an EXEPACK image found only after eight signature searches failed, and 2,418 bytes of XOR'd credits inside it |
-| [**Kings of the Beach**](https://github.com/vs-sr-dev/pc-kingsofthebeach-doc) | 1988 | Electronic Arts |  | Not a disc but an installed MS-DOS tree, **59 files and 524,839 bytes**: the smallest object this collection has opened, two EXEPACK overlays, and `.PAK` derived as four-plane EGA |
+| [**Kings of the Beach**](https://github.com/vs-sr-dev/pc-kingsofthebeach-doc) | 1988 | Electronic Arts |  | Not a disc but an installed MS-DOS tree, **59 files and 524,839 bytes**: the smallest object this collection had opened, two EXEPACK overlays, and `.PAK` derived as four-plane EGA |
+| [**Wizardry: Proving Grounds of the Mad Overlord**](https://github.com/vs-sr-dev/pc-wizardry-doc) | 1987 | RWI, Inc. / Sir-tech Software |  | A self-booting UCSD p-System disk that never calls DOS: its directory declares 1,272 blocks and the file holds 640, and the 212 present blocks of its largest file are not that file at all |
 
 ## The write-ups
 
@@ -4926,3 +4927,65 @@ reverses this session's own prediction that a DOS-era sub-checklist would not pa
 for itself. The repository publishes the four items such a checklist would
 contain and does not write it, because writing a family document on the strength
 of one object is the error the whole pipeline exists to avoid.
+
+### [Wizardry: Proving Grounds of the Mad Overlord](https://github.com/vs-sr-dev/pc-wizardry-doc)
+
+*Wizardry: Proving Grounds of the Mad Overlord*, IBM PC, **© 1987 RWI, Inc.** —
+**seven files, 329,541 bytes**, of which 99.4353 % is one 327,680-byte floppy
+image. Smaller than *Kings of the Beach* and **the smallest object this
+collection has opened on any platform**.
+
+**It is not a DOS game and that is a decision, not an omission.** The image
+boots its own operating system: a **UCSD p-System** volume named `WIZBOOT`,
+thirteen files, a bootstrap that says `Wizardry for the IBM-PC`. Seven of the
+ten fields an MS-DOS BPB is required to have fail outright and there is no
+`55 AA`. `INT 21h` occurs **0** times in 327,680 bytes and `INT 13h` occurs
+**3**, below its own chance rate of 5.0, while `INT 18h` occurs 33. The only DOS
+program on the object is a 1,388-byte third-party emulator from 1996–98 —
+**0.4212 % of the object and 100 % of what is DOS about it**. So three of
+[dos-platformnotes-doc](https://github.com/vs-sr-dev/dos-platformnotes-doc)'s
+six sections have an empty population here, and the repository publishes the
+decision to contribute nothing to that document rather than a `[1 object]` item
+about a filesystem no other PC repository has met.
+
+**Three denominators, and the third is bigger than the second.** 329,541 bytes
+of files; 327,680 bytes of image; **651,264 bytes that the image's own volume
+header declares the volume to be**. Every figure in the repository names which
+of the three it stands on.
+
+**The trap, and it has two floors.** The thirteenth directory entry, `ZOT`, is
+844 blocks — 66.3522 % of the declared volume — and the image ends 632 blocks
+short. Every check the directory can run on itself passes: thirteen extents
+chain without a gap, the last lands exactly on the declared end of volume, and
+there is not one free block. The extent audit against the *medium* rather than
+against the *field* catches the 632. **And then the content check catches the
+rest**: of the 212 blocks that do fit, **166 are byte-for-byte copies of blocks
+224..427 of the same image**, eight are `0xF6` MS-DOS `FORMAT` fill, and
+**zero are `ZOT`**. The residue is an earlier generation of the same volume,
+laid down 204 blocks later, carrying an interpreter build thirteen days older —
+and 104,448 bytes that used to sit between `SYSTEM.PASCAL` and `ASCII.KRN` and
+do not any more.
+
+**Four bytes that are not 1987.** The p-machine's message table occurs four
+times on the image. Three read `Divided by Zero`. One reads **`Divided by
+Take`** — and `(Take)` is how the author of the 1996–98 emulator signs himself,
+twice, in the file sitting beside the image on the same directory. There is a
+`01/24/97` in the boot area, a two-byte jump that disables the disk-parameter
+installer the emulator replaces, and a batch file naming the tool that did it.
+**99.9933 % of the image is 1987 or earlier; twenty-two bytes are not, and they
+are the twenty-two that decide whether it runs.**
+
+**An English game carrying a Japanese input method.** `KANA.KEYMAP` holds 44
+strictly ascending Shift-JIS codes in gojūon order — the first kanji of each
+reading group, an index over the whole of JIS level 1. The program has a
+6,720-byte overlay called `KANJIREA` with 50 procedures. The character sets
+carry both kana syllabaries in full. And the two fonts the program opens by
+name, `KANA.KRN` and `KANJI.KRN`, are not on the volume — while every string a
+player reads is English.
+
+**Sixteen segments, 659 procedures, 659 of 659 entry pointers inside their own
+segment**, and a comparison chain that identifies which of the first three
+*Wizardry* scenarios it is running by matching six characters of a title. Eight
+saved characters from 1987 named after the Blues Brothers band. And **384 bytes
+of the game's own UCSD Pascal source text**, in the slack of the file that holds
+them.
