@@ -420,6 +420,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**The Murder of Sonic the Hedgehog**](https://github.com/vs-sr-dev/pc-themurderofsonicthehedgehog-doc) | 2023 | Sonic Social / SEGA | Sonic the Hedgehog | It hides nothing and the accounting is the hard part: four UnityFS bundles close at residue 0, 996,569,296 bytes of headerless side-file leave 433, and 124 of 137 binaries carry a hash not a date |
 | [**Theme Park**](https://github.com/vs-sr-dev/pc-themepark-doc) | 1994 | Bullfrog Productions / Electronic Arts |  | 77.9056 % of it is FLIC behind a twelve-byte header that closes 17 of 17 at residue 0, and fifteen of its twenty-nine rides are named by three tables that agree |
 | [**Kult: Heretic Kingdoms**](https://github.com/vs-sr-dev/pc-heretickingdoms-doc) | 2004 | 3D People / Got Game Entertainment |  | 56,868 files and a studio container nobody had published on 14,697 of them: AGP! closes at residue 0 on all of them, and the publisher's own 56,853 MD5 verify |
+| [**Moto Racer**](https://github.com/vs-sr-dev/pc-motoracer-doc) | 1997 | Delphine Software International / Electronic Arts |  | A hundred files, 78 % of them a ripped compact disc behind a proxy `winmm.dll`; LEZ1 unpacks 755 of 755, and ten loading screens turn out to say their own track names |
 
 ## The write-ups
 
@@ -5104,3 +5105,54 @@ segment**, and a comparison chain that identifies which of the first three
 saved characters from 1987 named after the Blues Brothers band. And **384 bytes
 of the game's own UCSD Pascal source text**, in the slack of the file that holds
 them.
+
+### [Moto Racer](https://github.com/vs-sr-dev/pc-motoracer-doc)
+
+*Moto Racer* (PC, Windows, 1997, Delphine Software International / Electronic
+Arts; the GOG Galaxy re-release) — **a hundred files, 462,353,633 bytes, and
+seventy-eight per cent of it is a compact disc somebody ripped**
+
+**This is the second Delphine object in this index and the first cell of this
+table to be filled twice.** *Cruise for a Corpse* is six years earlier, on
+MS-DOS, and its `docs/04` derived the company's own bit-stream unpacker — one
+stream read backwards, big-endian, four bytes at a time, with an XOR checksum
+that has to land on zero. The obvious question was whether *Moto Racer* uses
+it. **It does not.** `LEZ1` is three parallel streams read forwards, a
+1,024-byte sliding window, six-bit lengths and ten-bit distances, and no
+checksum at all. The two share exactly one habit — both consume their control
+bits **thirty-two at a time** — and getting that wrong on the 1997 one decodes
+77 members of 755 and then wanders off. Six years and one processor apart,
+Delphine kept the width of a control word and changed everything else.
+
+**The container is the preamble, not the chapter.** Twenty-eight `.BKF` banks,
+a `u32` count and 44-byte records, `max(offset + size) == file length` on 28 of
+28 at residue 0, 1,969 members — one command. What took the session was the
+payload: 755 `LEZ1` members that unpack to Truevision TGA, 755 of 755 with all
+three streams exhausted exactly, and **463 more members in a published raster
+format nobody had noticed**, `mhwanh`, which closes on 463 of 463.
+
+**The tracks name themselves once the codec runs.** Each of the ten `ILE__.BKF`
+holds a `LOAD.LEZ`, and decoded they read *Speed Bay*, *West Way*, *Rock
+Forest*, *Lost Ruins*, *Snow Ride*, *Great Wall*, *Red City*, *Dirt Arena*,
+*Fun Fair* and *Sea of Sand*. Eight of those are in the high-score table and
+two are not — and the menu holds a title bar reading **`Moto Racer / DATA
+DISK`**. The `.trk` in `ile09` is called `bercy`, after the Paris arena, and
+its loading screen says *Dirt Arena*.
+
+**The pack order came out of a bug.** The bank's 36-byte name field is never
+cleared between writes, so 1,033 of the 1,969 records carry rubbish behind
+their terminator — and in sixteen of them the rubbish is a fragment of the
+packer's console line naming **the length of the archive built immediately
+before**. Four chains fall out of it, they confirm from a third direction that
+the English menu and the two data-disk tracks were built separately, and one of
+them names an archive of `…9930` bytes that **is not in the object**.
+
+**And the shop's answer to a missing compact disc costs 361 megabytes.**
+`winmm.dll`, 73,728 bytes, no version resource, calls itself `PROXYDLL` in its
+own error string, imports nothing but KERNEL32, forwards no export at link
+time, and carries the two format strings `%d.wav` and `0%d.wav` — which is
+exactly why the twelve WAV on disk are numbered 02 to 13 and there is no 01.
+The same problem was solved on two earlier objects with a 588-byte shim
+database and with a DOS emulator. Somebody ran this one once, for forty-one
+seconds, and the game left a 229-byte log with a Windows MCI error in Italian
+in the middle of it.
