@@ -421,6 +421,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**Theme Park**](https://github.com/vs-sr-dev/pc-themepark-doc) | 1994 | Bullfrog Productions / Electronic Arts |  | 77.9056 % of it is FLIC behind a twelve-byte header that closes 17 of 17 at residue 0, and fifteen of its twenty-nine rides are named by three tables that agree |
 | [**Kult: Heretic Kingdoms**](https://github.com/vs-sr-dev/pc-heretickingdoms-doc) | 2004 | 3D People / Got Game Entertainment |  | 56,868 files and a studio container nobody had published on 14,697 of them: AGP! closes at residue 0 on all of them, and the publisher's own 56,853 MD5 verify |
 | [**Moto Racer**](https://github.com/vs-sr-dev/pc-motoracer-doc) | 1997 | Delphine Software International / Electronic Arts |  | A hundred files, 78 % of them a ripped compact disc behind a proxy `winmm.dll`; LEZ1 unpacks 755 of 755, and ten loading screens turn out to say their own track names |
+| [**Karmaflow: The Rock Opera Videogame**](https://github.com/vs-sr-dev/pc-karmaflow-doc) | 2015 | Basecamp Games / Basecamp Productions |  | A Steam UDK tree never launched: LZO opens 113 packages and 38,820 texture mips, 46,074 offsets land at 100 %, and 685 subtitle cues time themselves with a Dutch comma |
 
 ## The write-ups
 
@@ -5156,3 +5157,61 @@ The same problem was solved on two earlier objects with a 588-byte shim
 database and with a DOS emulator. Somebody ran this one once, for forty-one
 seconds, and the game left a 229-byte log with a Windows MCI error in Italian
 in the middle of it.
+
+### [Karmaflow: The Rock Opera Videogame](https://github.com/vs-sr-dev/pc-karmaflow-doc)
+
+*Karmaflow: The Rock Opera Videogame* (PC, Windows, 2015, Basecamp Games /
+Basecamp Productions; the Steam installation, app 317940) — **740 files,
+4,614,595,028 bytes, and the free coverage started at 15.5825 %, the lowest
+this index has ever recorded**
+
+**This is the first Steam object in the index and the first 64-bit one**, and
+both facts cost a tool. Fifty-three of its fifty-nine binaries are PE32+ and
+`pecensus.py` had no name for them — it printed a bare `PE` for fifteen objects
+because every one of them was x86. And Steam keeps its bookkeeping *outside*
+the game folder, in a 1,030-byte `.acf` one directory up, where GOG puts a
+manifest inside: so the object's boundary became a decision instead of a given,
+and the crossing rate against the other ninety-nine repositories is **0 of
+611**, because a Steam folder contains nothing another Steam folder contains.
+
+**Fifty-one per cent of it is behind an extension the game's own `.ini`
+names.** `DefaultEngine.ini` line five reads `MapExt=kf`, so the 89 `.kf` are
+cooked Unreal packages; 113 files carry Epic's tag, 109 declare themselves
+compressed, and the codec is **LZO and not zlib**, which meant writing an
+LZO1X decoder before a single byte could be read. Then the packages open all
+the way: **136,541 names, 21,593 imports and 371,299 exports, at residue 0 on
+113 of 113**, and 18.3 % of everything in the game is a shadow map.
+
+**Three files carry the same tag and are not packages**, and they are a quarter
+of the object. The `.tfc` turn out to be a directory-less heap of LZO texture
+mips in the same chunk format — 38,820 entries, residue 0 on all three, and
+seventeen distinct sizes every one of which is a power of two. The proof is a
+closure from the other side: the packages declare **46,074 mip offsets and
+46,074 of them land exactly on an entry the walk found**, sizes agreeing,
+100.0000 %. Going the other way, `Lighting.tfc` is a perfect bijection —
+36,618 entries, each claimed exactly once — `Textures.tfc` is claimed 4.7 times
+per entry, which is the de-duplication measured, and **eleven entries are
+claimed by nobody**.
+
+**The game's own English localisation file is zero bytes long**, so the text is
+somewhere else: inside the map packages, as 685 subtitle cues in a
+`start#text#end` string. Four thousand six hundred and ninety-three words of a
+libretto about a Moon Sister and a Dissonance — and **300 of the cues time
+themselves `13,5` against 19 that use a point**, which is a Dutch decimal comma
+in a field no English-speaking player ever sees.
+
+**Nothing here was signed by the people who made it.** Basecamp Games appears
+in no version resource in the object; `KFGame.exe` declares `Epic Games, Inc.`
+and carries the studio's build root 28,360 times in assertion strings. The
+shipped executable **imports eight wxWidgets DLLs** and links forty-six object
+files out of `UnrealEd`, so a game that never opens an editor window cannot
+start without a GUI toolkit's grid widget. The editor's splash and the game's
+splash are the same picture: 375 of 375 rows pixel-identical, differing in
+**four bytes of row padding**.
+
+**And the soundtrack signs itself in a field designed for it.** Twelve MP3 name
+twenty-two performers and the Metropole Orkest in `TPE1`; the twelve WAV beside
+them are Broadcast Wave, bounced from Pro Tools on 25, 26 and 27 March 2015,
+each stamped to the second — and the hour between the `bext` local time and the
+`minf` Windows FILETIME puts the mastering machine on **UTC+1 in March**, which
+is the winter clock of the Netherlands.
