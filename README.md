@@ -419,6 +419,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**Streets of Kamurocho**](https://github.com/vs-sr-dev/pc-streetsofkamurocho-doc) | 2020 | Empty Clip Studios / SEGA |  | An installed Steam depot, never launched: 84.2165 % of it is a headerless archive whose 55 extents close with residue 0, and the AES-128 key is an 11-character literal in the executable |
 | [**The Murder of Sonic the Hedgehog**](https://github.com/vs-sr-dev/pc-themurderofsonicthehedgehog-doc) | 2023 | Sonic Social / SEGA | Sonic the Hedgehog | It hides nothing and the accounting is the hard part: four UnityFS bundles close at residue 0, 996,569,296 bytes of headerless side-file leave 433, and 124 of 137 binaries carry a hash not a date |
 | [**Theme Park**](https://github.com/vs-sr-dev/pc-themepark-doc) | 1994 | Bullfrog Productions / Electronic Arts |  | 77.9056 % of it is FLIC behind a twelve-byte header that closes 17 of 17 at residue 0, and fifteen of its twenty-nine rides are named by three tables that agree |
+| [**Kult: Heretic Kingdoms**](https://github.com/vs-sr-dev/pc-heretickingdoms-doc) | 2004 | 3D People / Got Game Entertainment |  | 56,868 files and a studio container nobody had published on 14,697 of them: AGP! closes at residue 0 on all of them, and the publisher's own 56,853 MD5 verify |
 
 ## The write-ups
 
