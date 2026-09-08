@@ -422,6 +422,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**Kult: Heretic Kingdoms**](https://github.com/vs-sr-dev/pc-heretickingdoms-doc) | 2004 | 3D People / Got Game Entertainment |  | 56,868 files and a studio container nobody had published on 14,697 of them: AGP! closes at residue 0 on all of them, and the publisher's own 56,853 MD5 verify |
 | [**Moto Racer**](https://github.com/vs-sr-dev/pc-motoracer-doc) | 1997 | Delphine Software International / Electronic Arts |  | A hundred files, 78 % of them a ripped compact disc behind a proxy `winmm.dll`; LEZ1 unpacks 755 of 755, and ten loading screens turn out to say their own track names |
 | [**Karmaflow: The Rock Opera Videogame**](https://github.com/vs-sr-dev/pc-karmaflow-doc) | 2015 | Basecamp Games / Basecamp Productions |  | A Steam UDK tree never launched: LZO opens 113 packages and 38,820 texture mips, 46,074 offsets land at 100 %, and 685 subtitle cues time themselves with a Dutch comma |
+| [**Academagia: The Making of Mages**](https://github.com/vs-sr-dev/pc-academagia-doc) | 2010 | Black Chicken Studios |  | A .NET game whose entire content is a published Firebird dump: 605 bytes of MS-NRBF declare 449,320 objects, header.bin closes on that number at residue 0, and Steam is short by exactly seven files |
 
 ## The write-ups
 
@@ -5215,3 +5216,60 @@ them are Broadcast Wave, bounced from Pro Tools on 25, 26 and 27 March 2015,
 each stamped to the second — and the hour between the `bext` local time and the
 `minf` Windows FILETIME puts the mastering machine on **UTC+1 in March**, which
 is the winter clock of the Netherlands.
+
+### [Academagia: The Making of Mages](https://github.com/vs-sr-dev/pc-academagia-doc)
+
+*Academagia: The Making of Mages* (PC, Windows, Black Chicken Studios, Inc.; the
+Steam installation, app 533480, build 2453605) - **1,598 files, 352,246,696
+bytes, and only 360 of the files are distinct**
+
+**The Year cell is the object's and not a catalogue's.** Nothing in these bytes
+states a release date. What they state is that the content database was last
+modified on **1 August 2010**, that the manual was distilled seven days later on
+8 August 2010, and that the two shipped expansions were created on 17 August
+2010 - three clocks inside three different formats, all in one fortnight. The
+code was rebuilt in January 2018 for the Steam release, which is a link and not
+a release. The repository's clocks chapter argues all of it.
+
+**This is the index's first .NET object and its first object with a redundancy
+problem**, and the two facts are unrelated except that both are measured in the
+same table. One thousand two hundred and thirty-eight of the 1,598 files are a
+second copy of another; the redundancy is **15.1040 %** where the previous Steam
+object managed 0.0979 %; and 1,559 of the files - **97.56 % of the population** -
+have no extension at all and a bare GUID for a name, which makes the extension
+table this index's tools reach for first completely unusable.
+
+**The whole game is a database somebody pressed publish on.** `OfficialContent\`
+is three files. The smallest is 605 bytes of **MS-NRBF**, the published
+BinaryFormatter grammar, and it declares its own population: `_objectsCount`
+**449,320** and `_resourceCount` **1,559**. The second is 7,189,608 bytes of full
+entropy that three decompressors refuse and that turns out not to be compressed
+at all - it is **112 lists of GUIDs, one per content class, and a GUID is
+sixteen random bytes**. The walk closes: `5 x 94 + 16 x 449,320 + 18 =
+7,189,608`, residue 0, and the total is `_objectsCount` exactly. **The 112 class
+names are in `Storage.dll`'s UTF-16 string heap, in the same alphabetical
+order**, so every list can be named - and slot 109 is `Visualization` with 1,547
+GUIDs and slot 64 is `Music` with twelve, which is how the twelve files that
+have no recognisable magic get identified without guessing from their size.
+
+**Six hundred and sixty-nine things share one two-and-a-half-kilobyte icon.**
+The next four duplicate groups are 152 books, 85 weapons, 58 potions and 40
+ingredients, and `data.bin` gives 1,367 of the 1,559 pictures the name of the
+thing they depict. Every object gets its own resource; every kind of object gets
+one drawing, and the whole decision costs 3,879,215 bytes.
+
+**Steam's own total is wrong about the tree it describes, which had not happened
+here before.** `SizeOnDisk` declares 302,920,503 against 352,246,696 counted, and
+the difference is exactly seven files. The NTFS creation timestamps of the live
+installation - a field a copy cannot carry - separate them: on every delivered
+file creation equals last-write, and on all seven it does not. They are the
+game's own first-run pass at 15:03:20 on 19 November 2024, thirteen seconds
+after the download, **so the object records two runs of this game and not one**.
+
+And the object ships an object-relational mapper from 2007, a proxy generator
+from 2006 built in a debug configuration, a Firebird SQL client, sixty-six SQL
+statements including a `CREATE TABLE` whose seven columns map one to one onto
+the manifest's seven fields - and no `.fdb` anywhere. The database is there: it
+is **two gzip-compressed Firebird files embedded as resources inside
+`Storage.dll`**, 2,628,608 bytes decompressed, shipped as the empty template the
+studio's authoring tool starts a new content database from.
