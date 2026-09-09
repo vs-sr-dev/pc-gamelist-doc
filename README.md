@@ -424,7 +424,8 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**Karmaflow: The Rock Opera Videogame**](https://github.com/vs-sr-dev/pc-karmaflow-doc) | 2015 | Basecamp Games / Basecamp Productions |  | A Steam UDK tree never launched: LZO opens 113 packages and 38,820 texture mips, 46,074 offsets land at 100 %, and 685 subtitle cues time themselves with a Dutch comma |
 | [**Academagia: The Making of Mages**](https://github.com/vs-sr-dev/pc-academagia-doc) | 2010 | Black Chicken Studios |  | A .NET game whose entire content is a published Firebird dump: 605 bytes of MS-NRBF declare 449,320 objects, header.bin closes on that number at residue 0, and Steam is short by exactly seven files |
 | [**I am Setsuna**](https://github.com/vs-sr-dev/pc-iamsetsuna-doc) | 2016 | Tokyo RPG Factory / Square Enix |  | A Unity 5.2 JRPG never launched: 145 LZMA bundles and 290 nodes close on Unity's own integers, a CRC-16 clears 381,077 audio frames, and the box's Unity reader reports nineteen terabytes |
-| [**RPG Maker 95+**](https://github.com/vs-sr-dev/pc-rpgmaker95-doc) | 1999 | ASCII Corporation / Don Miguel (translation) |  | Not a game but the tool that makes them: one ZIP, and 94.7453 % of it is an undocumented InstallShield container that closes at residue 0 and holds a 32-bit program behind a 16-bit installer |
+| [**RPG Maker 95+**](https://github.com/vs-sr-dev/pc-rpgmaker95-doc) | 1999 | ASCII Corporation / Don Miguel (translation) | RPG Maker | Not a game but the tool that makes them: one ZIP, and 94.7453 % of it is an undocumented InstallShield container that closes at residue 0 and holds a 32-bit program behind a 16-bit installer |
+| [**RPG Maker 2000 Value!**](https://github.com/vs-sr-dev/pc-rpgmaker2000-doc) | 2017 | KADOKAWA GAMES / ASCII Corporation | RPG Maker | The bought successor to the stolen one: a tool, 477 files, and an unopened quarter that was two vendor-unspecified containers - both close at residue 0, and 1,102 of its 1,104 strings are English |
 
 ## The write-ups
 
@@ -5376,3 +5377,62 @@ binary, because the installer around it is entirely sixteen-bit. `rpg95.exe`
 is a **32-bit PE** linked by Borland, whose version resource still declares
 its language as Japanese while its strings are English. The wrapper is 3 NE
 and 0 PE; the object is 5 NE and 13 PE.
+### [RPG Maker 2000 Value!](https://github.com/vs-sr-dev/pc-rpgmaker2000-doc)
+
+*RPG Maker 2000 Value!* (PC, Windows; Steam app 383730, published by KADOKAWA
+GAMES, the tool itself made by ASCII Corporation) - **a live installation
+copied and verified on four criteria: 477 files, 23,518,308 bytes, and the
+whole unopened quarter was two files in formats their vendors never specified**
+
+**This is the index's second entry that is not a game, and it is the first
+time two consecutive objects in this collection are the same product family.**
+One was stolen and one was bought. The entry above it is Don Miguel's
+unauthorised 1999 translation of ASCII's *RPG Maker 95*; this is Kadokawa's
+licensed English re-release of its successor, bought on Steam for about two
+euros. They share a Borland `MZP` stub, a third party's LHA library, and a
+stock resource library of the same three formats - and BMP has become PNG in
+between.
+
+**The Saga cell is filled on both rows and it is a navigational claim, not a
+narrative one.** *RPG Maker* is a tool line rather than a fiction, so it is not
+a saga in the sense the other cells in this column use. What the cell does in
+this index is put rows a reader would want to see together next to each other,
+and two entries fifteen years apart in one product line are exactly that. The
+row above was published with the cell empty because there was only one of them.
+
+**The Year cell is 2017 and it is the English build's.** Four years have a
+claim and only three of them are in the bytes. The product is called *2000*,
+and 2000 is measured twice: one map tileset carries a PNG `tIME` chunk reading
+**2000-05-19 12:44:09 UTC**, and 62 of the 92 MIDI files carry
+`(C)2000 by ASCII Corp./Y.Kitagami`. The COFF link timestamps say 1992 and are
+a Borland constant - three binaries of different sizes share it to the second.
+**2015, the year the Steam listing appeared, is not in this object anywhere**;
+it is a fact about a shop's catalogue and the repository declines to put it in
+a cell. What the object does state, four independent ways, is when the English
+build was compiled: `/#SYSTEM` carries a Unix clock reading **2017-09-13
+12:06:26 UTC** and a `FILETIME` reading **12:06:17.556**, the ITSF header's own
+truncated timestamp pairs to **12:06:17.564**, and a shortcut in the tree is
+named `RM2000 EN PRELIMINARY 13.09.2017.url`. A date written by a human into a
+file name, confirmed to the day by a compiler's clock inside a container that
+human never opened. **This repository documents the English release, so the
+cell is 2017**, and 2000 is in the repository's spec sheet.
+
+**Three quarters of it read themselves and the interesting quarter was two
+files.** A Microsoft ITSF help file at 23.3998 % of the object and an LCF
+database at 0.8120 % - both **publicly reverse-engineered and never specified
+by their vendors**, which is a bucket this collection's coverage table did not
+have before. The help file closes at residue 0 on **nine** quantities it states
+about itself, including its own byte count in a 24-byte header section, and its
+reader was validated unchanged on a second `.chm` found in a neighbouring
+repository - a different product, a different publisher, twelve years earlier.
+The database closes on sixteen chunks at every level, and **208 of its resource
+names resolve to files that exist** in a 466-file library it does not otherwise
+touch.
+
+**And the translation can be counted from the inside.** Of the 1,104 string
+values in the database, 1,102 are English. The two that are not are the
+use-messages of the skills `Teleport` and `Escape` - which are the two a player
+uses outside battle, where a line like that is least likely to be seen by
+whoever checked the work. The object also names a human being the
+pre-briefing said it did not: **Y. Kitagami**, credited as the composer in 62
+files, in a published format nobody had opened because it looked boring.
