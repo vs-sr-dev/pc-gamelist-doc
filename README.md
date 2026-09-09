@@ -428,6 +428,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**RPG Maker 2000 Value!**](https://github.com/vs-sr-dev/pc-rpgmaker2000-doc) | 2017 | KADOKAWA GAMES / ASCII Corporation | RPG Maker | The bought successor to the stolen one: a tool, 477 files, and an unopened quarter that was two vendor-unspecified containers - both close at residue 0, and 1,102 of its 1,104 strings are English |
 | [**RPG Maker 2003**](https://github.com/vs-sr-dev/pc-rpgmaker2003-doc) | 2017 | KADOKAWA GAMES / Enterbrain | RPG Maker | The third tool in a row, and the first that ships a playable game: 737 files, half of whose hashes are already published next door, and four map files nobody had opened |
 | [**RPG Maker XP**](https://github.com/vs-sr-dev/pc-rpgmakerxp-doc) | 2005 | Enterbrain / Degica | RPG Maker | The fourth tool in a row and the first that ships no game: 913 files, a database that is Ruby's own Marshal, and a help file that turns out to document 323 of its own 324 field names |
+| [**RPG Maker VX Ace**](https://github.com/vs-sr-dev/pc-rpgmakervxace-doc) | 2012 | Enterbrain / Degica | RPG Maker | The fifth tool in a row and the first anybody has used: 2,026 files, a shop's total short by exactly the two its owner added, and 12,720 strings of a tile vocabulary nobody had read |
 
 ## The write-ups
 
@@ -5621,3 +5622,109 @@ three entries above, appears in **0 of 913 files** in either encoding.
 About-box line beside `Ruby Version 1.8.1`**, and `Neil Hodgson` is beside
 `Scintilla Version 1.58` - and an eight-bit search of all 26,915,383 bytes
 finds none of the three.
+
+### [RPG Maker VX Ace](https://github.com/vs-sr-dev/pc-rpgmakervxace-doc)
+
+*RPG Maker VX Ace* (PC, Windows; Steam app 220700, published by Enterbrain and
+distributed in English by Degica) - **a live installation copied and verified
+on four criteria: 2,026 files, 342,722,404 bytes, 45 directories of which none
+is empty, 1,935 distinct hashes - and the first object in this index whose
+owner has used it.**
+
+**This is the index's fifth entry that is not a game, and the first whose
+copy contains work by the person who owns it.** The four before it were bought
+and never launched; this one has twenty-seven hours on it, and `LastPlayed` in
+Steam's own manifest is not `"0"`. **The What it is cell says it is a tool**,
+like the four rows above it, and the reason it is here is the same reason they
+are.
+
+**The Saga cell is `RPG Maker`, like the four rows above it**, for the same
+navigational reason: it is a tool line rather than a fiction, and five entries
+across thirteen years of one product family are what this column exists to put
+next to each other. **VX is skipped deliberately** - the owner's reasoning is
+that VX Ace is VX's definitive version - and that is a scoping decision and not
+a measurement.
+
+**The Year cell is 2012, and the argument is not the one the row above it
+used.** That row took 2005 because two witnesses inside the object - the
+editor's `LegalCopyright` and the help file's compile clock - agreed. **Here
+they disagree**: the copyright field says **2011** and the help file compiles
+on **2012-03-12**. So:
+
+* **2014-03-05**, the editor's link time, is the wrong kind of date for exactly
+  the reason the row above gave: `RPGVXAce.exe` carries a fifth section called
+  `.bind`, **562,176 bytes - the same size as `RPGXP.exe`'s, nine years
+  earlier**, sharing its first 768 bytes and a 6,084-byte run and opening with
+  code that compares against `MZ` and `PE\0\0`. Something re-linked the image
+  after the product was built.
+* **19572675** is the Steam build id, a counter.
+* **2011** is a copyright year, which is a claim about when a work was made.
+* **2012 is what three structures written by three different tools say**:
+  RGSS3's link time **2012-02-22**, the help file's compile **2012-03-12**, and
+  a preorder bonus EULA dated **"Mar. 14th, 2012"** in prose - a document whose
+  whole purpose is to be dated at or before a release. Three artefacts in a
+  twenty-one-day window against one copyright field.
+
+**The shop's total does not close, and that is the finding.** `SizeOnDisk`
+declares 342,514,066 and the walked tree is 342,722,404 - **short by exactly
+208,338, which is `Projects\cd32.zip` (208,185) plus `Projects\cd32.ini`
+(153)**, two files Steam did not put there. **And a timestamp census that has
+never read a manifest finds two mtime waves**: 2,024 files in forty-five
+seconds on 2025-10-16, then those same two files five months later. **Wave 1's
+byte total is `SizeOnDisk` to the byte.** Two instruments partition 2,026 files
+identically and neither was told about the other. Four objects in a row had
+closed at residue 0 because nobody had ever opened them.
+
+**A second residue names something else.** Six depots sum to 356,092,141
+against `SizeOnDisk`'s 342,514,066, and the −13,578,075 is depot 220708 - the
+language packs - minus the one language DLL this installation runs in.
+**`UserConfig` says `italian`.**
+
+**The interesting twelve per cent was six published formats and a lie.**
+`coverage.py` reported 85.1928 % specified with 68 files opaque - MP3, TrueType,
+BMP, PDF, ZIP and 34 text files in UTF-8 and EUC-JP, every one of them a
+published format and two of them already readable by this box. **And one file
+was worse than opaque**: a 328,733-byte PDF sat in the *specified* bucket named
+**plain text, Shift-JIS**, because a cp932 probe read a PDF header and found
+nothing illegal in it. Five magics, two codecs and **a rule that every binary
+signature is tested before every text codec** took the figure to **98.0644 %
+with zero bytes opaque**. The rule has a check that fails when it is broken,
+which is the part that repairs the class rather than the file.
+
+**What genuinely had no reader was 2,544 rows of plain text.**
+`rtp\Graphics\Tilesets\` ships 22 images and 22 lists, each row five
+pipe-separated fields - **English, Japanese, French, German, Spanish** -
+**12,720 strings, zero blank lines, zero empty fields, and not one row of 2,544
+whose five fields are the same.** No object in this index has ever shipped a
+localisation table for its own vocabulary. **And the fifth language is not
+Italian, while the interface this copy runs in is.**
+
+**Then the two formats were joined to each other.** The 117 sample maps hold
+1,085,288 cells over four layers using 3,133 distinct tile ids; nothing in the
+object states how an id maps to a tileset page. **But every page kind has one
+row count, so laying the pages end to end derives the id bands - and every one
+of the 3,133 ids falls inside one, residue 0.** The two cluster boundaries the
+maps show, at 511 and 1663, are exactly where the derived spans end.
+
+**And the maps' events are the finding the class census could not see.** Seven
+classes the previous object's manual documented and its database never
+instantiated are all here, 59 instances each - **and every one of the 59 events
+is empty**: one page, one command, and that command's code is the default the
+manual's own constructor declares. **Eleven of 117 maps carry an event at all.**
+
+**The help file documents the object completely.** 7,398,317 bytes of LZX at
+residue 0, 82 class pages, and the join against the data is **11 classes of 11
+and, once inheritance is followed, 75 field names of 75** - against the row
+above's 323 of 324. **And it declines to specify one thing, in the same
+sentence as its predecessor with three words changed**: *"Due to its nature,
+the encrypted archive's internal format has not, and will not, be released to
+the public. Please refrain from analyzing it."* The previous product's version
+read *"will not, been released"*. Somebody fixed the grammar and left the
+refusal.
+
+**Twenty-six files survive from the entry above, and not one kept its name.**
+All 26 are Ogg sound effects and ambiences, verified by magic; `001-System01`
+became `Load`, `044-Chest01` became `Chest`, `078-Small05` became `Crow`. The
+numbering scheme four consecutive products used is gone. **The rate is 26 of
+1,935 against the previous step's 0 of 913 and the one before's 368 of 731**,
+and what it measures is a re-use decision rather than a family resemblance.
