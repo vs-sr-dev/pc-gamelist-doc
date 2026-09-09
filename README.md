@@ -424,6 +424,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**Karmaflow: The Rock Opera Videogame**](https://github.com/vs-sr-dev/pc-karmaflow-doc) | 2015 | Basecamp Games / Basecamp Productions |  | A Steam UDK tree never launched: LZO opens 113 packages and 38,820 texture mips, 46,074 offsets land at 100 %, and 685 subtitle cues time themselves with a Dutch comma |
 | [**Academagia: The Making of Mages**](https://github.com/vs-sr-dev/pc-academagia-doc) | 2010 | Black Chicken Studios |  | A .NET game whose entire content is a published Firebird dump: 605 bytes of MS-NRBF declare 449,320 objects, header.bin closes on that number at residue 0, and Steam is short by exactly seven files |
 | [**I am Setsuna**](https://github.com/vs-sr-dev/pc-iamsetsuna-doc) | 2016 | Tokyo RPG Factory / Square Enix |  | A Unity 5.2 JRPG never launched: 145 LZMA bundles and 290 nodes close on Unity's own integers, a CRC-16 clears 381,077 audio frames, and the box's Unity reader reports nineteen terabytes |
+| [**RPG Maker 95+**](https://github.com/vs-sr-dev/pc-rpgmaker95-doc) | 1999 | ASCII Corporation / Don Miguel (translation) |  | Not a game but the tool that makes them: one ZIP, and 94.7453 % of it is an undocumented InstallShield container that closes at residue 0 and holds a 32-bit program behind a 16-bit installer |
 
 ## The write-ups
 
@@ -5332,3 +5333,46 @@ and 93.3 % of the instructions are *read a global, load a constant, call it*.
 Sixteen of Lua's forty opcodes never appear, including all four loop
 instructions. The studio's entire executable contribution to a 1.47-gigabyte
 object is 3,482,348 bytes.
+
+### [RPG Maker 95+](https://github.com/vs-sr-dev/pc-rpgmaker95-doc)
+
+*RPG Maker 95+ v1.02* (PC, Windows; ASCII Corporation, translated without
+permission by Don Miguel in 1999) - **one downloaded ZIP file, 7,120,053
+bytes, twelve members, and 94.7453 % of it in a container format nobody has
+published**
+
+**This is the index's first entry that is not a game, and the object argues
+the case better than a sentence can.** It is a game-making tool, and what
+justifies it here is arithmetic on its own manifest: of the 256 files it
+installs, **209 are stock MIDI, WAV and bitmap** whose only purpose is to end
+up in somebody else's game, **nineteen more are a complete sample project**
+with its own characters, items, magic, monsters and events, and one of the
+four executables is `game.exe`, the runtime that plays what the editor
+produces. The object contains a game engine, a game's worth of assets and a
+game, and the thing it is named after is the editor.
+
+**The Year cell is the object's and it is the translation's.** Three years have
+a claim. The product is called *95*; the six version resources inside it say
+**Copyright (c) 1997 by ASCII Corporation**; and every file the translator
+touched is stamped **1999** - the readme signs itself 28 June 1999 and the
+archive was built on 12 July at 01:29. This repository documents Don Miguel's
+distribution, not ASCII's product, so the cell is 1999. The 1997 is in the
+repository's spec sheet, and *95* turns out to be a product name rather than a
+date at all.
+
+**Almost none of it could be read when it arrived.** Three InstallShield 3 "Z"
+archives, an `_INST32I` bootstrap and a `.PKG` manifest - five files, three
+undocumented formats, 99.1613 % of the bytes, and nothing in a box of 514
+inherited tools that could read one of them. All five are open now, each
+closing at **residue 0** against a length it declares about itself, and the
+256 files inside decompress to their declared sizes **256 of 256** under a
+PKWARE implode decoder written from the algorithm. The strongest check was
+free: the readme exists three times in the object, in three different
+containers, and all three copies hash identically.
+
+**And the interesting question had the wrong answer.** The repository
+predicted in writing that the editor would be a sixteen-bit Windows 3.1
+binary, because the installer around it is entirely sixteen-bit. `rpg95.exe`
+is a **32-bit PE** linked by Borland, whose version resource still declares
+its language as Japanese while its strings are English. The wrapper is 3 NE
+and 0 PE; the object is 5 NE and 13 PE.
