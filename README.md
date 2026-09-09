@@ -426,6 +426,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**I am Setsuna**](https://github.com/vs-sr-dev/pc-iamsetsuna-doc) | 2016 | Tokyo RPG Factory / Square Enix |  | A Unity 5.2 JRPG never launched: 145 LZMA bundles and 290 nodes close on Unity's own integers, a CRC-16 clears 381,077 audio frames, and the box's Unity reader reports nineteen terabytes |
 | [**RPG Maker 95+**](https://github.com/vs-sr-dev/pc-rpgmaker95-doc) | 1999 | ASCII Corporation / Don Miguel (translation) | RPG Maker | Not a game but the tool that makes them: one ZIP, and 94.7453 % of it is an undocumented InstallShield container that closes at residue 0 and holds a 32-bit program behind a 16-bit installer |
 | [**RPG Maker 2000 Value!**](https://github.com/vs-sr-dev/pc-rpgmaker2000-doc) | 2017 | KADOKAWA GAMES / ASCII Corporation | RPG Maker | The bought successor to the stolen one: a tool, 477 files, and an unopened quarter that was two vendor-unspecified containers - both close at residue 0, and 1,102 of its 1,104 strings are English |
+| [**RPG Maker 2003**](https://github.com/vs-sr-dev/pc-rpgmaker2003-doc) | 2017 | KADOKAWA GAMES / Enterbrain | RPG Maker | The third tool in a row, and the first that ships a playable game: 737 files, half of whose hashes are already published next door, and four map files nobody had opened |
 
 ## The write-ups
 
@@ -5436,3 +5437,97 @@ uses outside battle, where a line like that is least likely to be seen by
 whoever checked the work. The object also names a human being the
 pre-briefing said it did not: **Y. Kitagami**, credited as the composer in 62
 files, in a published format nobody had opened because it looked boring.
+
+### [RPG Maker 2003](https://github.com/vs-sr-dev/pc-rpgmaker2003-doc)
+
+*RPG Maker 2003* (PC, Windows; Steam app 362870, published by KADOKAWA GAMES,
+customised for Degica, the tool itself descending from ASCII Corporation
+through Enterbrain) - **a live installation copied and verified on four
+criteria: 737 files, 33,578,445 bytes, 41 directories of which nineteen are
+empty, and 368 of its 731 distinct hashes are already published by the entry
+above it**
+
+**This is the index's third entry that is not a game, and the first one that
+ships one.** `Sample\ArcheiaPictureTutorial\` is 47 files - a runtime, a
+database, a map tree, three maps and twenty-four pictures - and it is playable.
+The entry above had to argue from a registry value that a tool belongs in a
+game list; this object hands the argument over. The **What it is** cell says it
+is a tool because that is what the product is, and the game inside it is the
+reason the sentence has a second half.
+
+**The Saga cell is `RPG Maker`, like the two rows above it**, for the same
+navigational reason those two give: it is a tool line rather than a fiction,
+and three entries eighteen years apart in one product line are exactly what
+this column exists to put next to each other. The cell was empty on the 95's
+row when it was published, because there was only one of them; there are now
+three.
+
+**The Year cell is 2017 and the argument is different from the 2000's.** Four
+candidates have a claim and the object settles none of them the way the
+previous one did.
+
+* **2003**, the product's own name, is nowhere in the object. Not one date from
+  2002 or 2003 exists in 33,578,445 bytes.
+* **13 September 2017** is in a file name - `RM2003 EN PRELIMINARY
+  13.09.2017.url` - and that file is **byte-identical to the previous object's
+  shortcut**, sha1 `e1f501ef97c6b9e5f34ce78b814733c4468b75df`, 52 bytes, on
+  both trees. On the 2000 that name agreed to the day with the help file's
+  compile clock and was the strongest date in the object. Here it is inherited
+  and proves nothing about this product. **The same evidence, one product
+  later, is worthless, and only a hash comparison shows it.**
+* **16 September 2017** is the help file's compile clock, read three ways -
+  a Unix stamp at 19:54:13 UTC, a `FILETIME` at 19:53:55.521, and the ITSF
+  header's truncated timestamp pairing to 19:53:55.529.
+* **28 September 2017** is the floor. The shipped sample project contains a
+  Photoshop file whose own metadata says it was modified then, and a version-1
+  UUID inside it decodes to 2017-09-28 03:26:58 UTC - twelve days after the
+  help file was compiled. **The tree cannot predate it.**
+
+So the cell is **2017**, the year every real clock in the object agrees on, and
+the four candidates are argued in the repository's clocks chapter rather than
+in this cell.
+
+**Half of it is already documented next door, and that measures a decision
+rather than a product.** 368 of the 731 distinct hashes cross into
+*RPG Maker 2000 Value!* - all 211 of its WAV, all 92 of its MIDI, 63 of its 162
+PNG - which is 50.3420 % against a collection record of 8.3333 %. The reason is
+not that the two products are unusually alike: it is that the 2000 published
+the hashes of a live tree while the 95 published twelve hashes of an archive
+and withheld the 256 files inside. **A crossing rate measures what somebody
+wrote down.** Every sound effect and every piece of music in the 2000 is in the
+2003 byte for byte, and the graphics were half redone; and 91 of the 368 arrive
+under a different name, of which thirty-eight are the same Japanese word
+translated into English a second time by somebody who did not have the first
+translation in front of them.
+
+**What nobody had opened was 12,970 bytes.** Three `LcfMapUnit` files and one
+`LcfMapTree`, in a format no vendor ever specified, which the previous
+session's database reader refuses - correctly, and in two different ways that
+turn out to be the two grammars. All four now close on their own last byte, and
+**the maps' dimensions, which no file declares, are forced**: two layer chunks
+of 600 bytes, two bytes to a cell, and event coordinates reaching x = 18 and
+y = 14 leave 20 x 15 as the only factorisation of 300 that survives.
+
+**And the two databases had never been compared.** The editor's default at
+388,574 bytes and the sample project's at 374,229: seventeen of twenty-two
+chunks are byte-identical, and the five that differ are a person at work -
+thirteen stock heroes deleted, the survivor renamed `Zack` to `Brian`, a
+starting party of four cut to one, three system sounds swapped, and the one
+window skin of four that they redrew is the one their database selects.
+
+**The object names four human beings and the editor's About box holds three of
+them**: `Jie Xin "Cy" Tan` and `Jasmin "Archeia" Toral` under *Translated by*,
+and `David "Cherry" Trapp` and Toral again under *Localized and Improved by*.
+The sample project's directory is that second handle, so the tutorial is signed
+work and not an anonymous leftover. The fourth is the composer of twenty-one
+of the 141 MIDI files, credited in Shift-JIS as **椎葉 大翼 - Daisuke Shiiba** -
+beside the sixty-two that still carry `(C)2000 by ASCII Corp./Y.Kitagami` on
+the previous product's bytes.
+
+**And `Enterbrain` is finally in the bytes.** The chain ASCII to Enterbrain to
+Kadokawa was outside every previous object; here a licence block in six files
+names *Enterbrain Inc* as the owner of the code the third-party patch is
+integrated into, and one file of 737 - `ultimate_eb.dll` - carries the registry
+key `Software\Enterbrain\RPG2003` with the same value name the installer
+writes under `Software\KADOKAWA\rpg2003`. **One setting, two vendors' keys, in
+one product.**
