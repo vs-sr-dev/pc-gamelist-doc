@@ -427,6 +427,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**RPG Maker 95+**](https://github.com/vs-sr-dev/pc-rpgmaker95-doc) | 1999 | ASCII Corporation / Don Miguel (translation) | RPG Maker | Not a game but the tool that makes them: one ZIP, and 94.7453 % of it is an undocumented InstallShield container that closes at residue 0 and holds a 32-bit program behind a 16-bit installer |
 | [**RPG Maker 2000 Value!**](https://github.com/vs-sr-dev/pc-rpgmaker2000-doc) | 2017 | KADOKAWA GAMES / ASCII Corporation | RPG Maker | The bought successor to the stolen one: a tool, 477 files, and an unopened quarter that was two vendor-unspecified containers - both close at residue 0, and 1,102 of its 1,104 strings are English |
 | [**RPG Maker 2003**](https://github.com/vs-sr-dev/pc-rpgmaker2003-doc) | 2017 | KADOKAWA GAMES / Enterbrain | RPG Maker | The third tool in a row, and the first that ships a playable game: 737 files, half of whose hashes are already published next door, and four map files nobody had opened |
+| [**RPG Maker XP**](https://github.com/vs-sr-dev/pc-rpgmakerxp-doc) | 2005 | Enterbrain / Degica | RPG Maker | The fourth tool in a row and the first that ships no game: 913 files, a database that is Ruby's own Marshal, and a help file that turns out to document 323 of its own 324 field names |
 
 ## The write-ups
 
@@ -5531,3 +5532,92 @@ integrated into, and one file of 737 - `ultimate_eb.dll` - carries the registry
 key `Software\Enterbrain\RPG2003` with the same value name the installer
 writes under `Software\KADOKAWA\rpg2003`. **One setting, two vendors' keys, in
 one product.**
+
+### [RPG Maker XP](https://github.com/vs-sr-dev/pc-rpgmakerxp-doc)
+
+*RPG Maker XP* (PC, Windows; Steam app 235900, published by Enterbrain and
+distributed in English by Degica) - **a live installation copied and verified
+on four criteria: 913 files, 26,915,383 bytes, 27 directories of which one is
+empty, 913 distinct hashes, and not one of them published anywhere else in this
+collection**
+
+**This is the index's fourth entry that is not a game, and the first of the
+four that ships none.** The 95 argued its way in from a manifest, the 2000 from
+a registry value, and the 2003 handed over a playable sample project. This one
+has `System\Data\`: sixteen files that describe eight actors, eight classes, a
+hundred animations, fifty tilesets, thirty-two enemies - **and one map, twenty
+by fifteen, with no events and no encounters on it.** It is not a game; it is
+the empty state of one, and the **What it is** cell says so.
+
+**The Saga cell is `RPG Maker`, like the three rows above it**, for the same
+navigational reason: it is a tool line rather than a fiction, and four entries
+across two decades of one product family are what this column exists to put
+next to each other.
+
+**The Year cell is 2005 and the object offers four candidates.**
+
+* **2013-12-11** is `RPGXP.exe`'s COFF link time and it is the wrong kind of
+  date. The same binary's version resource says `Copyright (C) 2005`, its file
+  version is `1, 0, 5, 0`, and it carries a fifth section called `.bind`,
+  562,176 bytes at 7.9978 bits per byte, opening with code that compares
+  against `MZ` and `PE\0\0`. **Something re-linked the whole image after the
+  product was built; dating the product by it would date the shop.**
+* **2004-06-17** is `System\Game.exe`'s link time - the runtime player,
+  `FileDescription` *RGSS Player*, version `1, 0, 0, 1`. A component, a year
+  older than the editor.
+* **1417293** is the Steam build id, which is a counter and not a date.
+* **2005** is what the object says about itself twice, in structures written by
+  different tools: the editor's `LegalCopyright`, and the help file's own
+  compile clock at **2005-08-30**. Two independent witnesses inside the object
+  agree on the year, and it is the same evidence - a `.chm`'s `/#SYSTEM` clock
+  - that settled the two rows above.
+
+**The interesting 40 % of it was a table and not a format.** `coverage.py`
+reported 40.7430 % of the object unidentified; two thirds of that was two
+hundred Ogg files and fifty-nine JPEG, in formats this box has read for years,
+which nobody had told the classifier about. Three magics moved the figure from
+57.9669 % to **98.7100 %** and not one reader was written to do it. **The gap
+was in the equipment, not in the object.**
+
+**What genuinely had no reader was 503,787 bytes, and it is Ruby.** Sixteen
+`.rxdata` files, every one beginning `04 08` - `Marshal`, major 4 minor 8 - in
+which **the names of the classes and of their fields are written in the clear**.
+A walk closes on the last byte 16 of 16 and finds **28 classes and 227 field
+names**; a raw sweep for `RPG::` finds 26, missing `Table` and `Color`, which
+between them hold 2,023 of the object's 18,657 values. One file,
+`Scripts.rxdata`, holds **ninety Deflate streams that inflate to 538,811 bytes
+of commented English Ruby** - and a scan for the two-byte Deflate header finds
+ninety-two, of which two are coincidences inside compressed data, at named
+offsets inside two named scripts.
+
+**And then the help file turned out to be the specification.** `RPGXP.chm` had
+been walked by three previous sessions and never read, because its content is
+one LZX stream and this collection had no decoder. Written here, it produces
+**836,459 bytes at residue 0** - the figure three separate structures inside the
+container declare - and every one of the 158 files it writes is **byte-identical
+to what 7-Zip writes**. Inside are 106 pages of RGSS reference, one per class,
+and the join against the data is **28 classes of 28 documented and 323 field
+names of 324**. The one field the vendor's own manual does not mention is
+`RPG::System`'s `@_`, and its value is **0x777777**.
+
+**The same document declines, in writing, to specify something else.** Of the
+encrypted archive format its installer registers and the object does not ship:
+*"Due to its nature, the encrypted archive's internal format has not, and will
+not, been released to the public. Please refrain from analyzing it."* For an
+index whose entries are sorted by whether anybody published a format, that is
+the clearest boundary marker four objects have produced.
+
+**Nothing crosses.** 0 of 913 hashes, against the entry above's 368 of 731 -
+and both trees are published, both are live installations, both are RPG Maker.
+**A published tree next door is necessary for a crossing and is not
+sufficient**, which is the correction this object makes to the sentence the
+2003's row wrote. Not one byte survives: `.wav` became `.ogg`, LCF became Ruby
+`Marshal`, Delphi became Visual C++, and Micco's compression library - shipped
+by three consecutive products at three versions - is simply gone.
+
+**And the credits are all in sixteen-bit text.** `Kadokawa`, publisher of the
+three entries above, appears in **0 of 913 files** in either encoding.
+`Yoji Ojima` is in two copyright fields, **`Yukihiro Matsumoto` is in one
+About-box line beside `Ruby Version 1.8.1`**, and `Neil Hodgson` is beside
+`Scintilla Version 1.58` - and an eight-bit search of all 26,915,383 bytes
+finds none of the three.
