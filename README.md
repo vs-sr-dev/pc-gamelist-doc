@@ -423,6 +423,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**Moto Racer**](https://github.com/vs-sr-dev/pc-motoracer-doc) | 1997 | Delphine Software International / Electronic Arts |  | A hundred files, 78 % of them a ripped compact disc behind a proxy `winmm.dll`; LEZ1 unpacks 755 of 755, and ten loading screens turn out to say their own track names |
 | [**Karmaflow: The Rock Opera Videogame**](https://github.com/vs-sr-dev/pc-karmaflow-doc) | 2015 | Basecamp Games / Basecamp Productions |  | A Steam UDK tree never launched: LZO opens 113 packages and 38,820 texture mips, 46,074 offsets land at 100 %, and 685 subtitle cues time themselves with a Dutch comma |
 | [**Academagia: The Making of Mages**](https://github.com/vs-sr-dev/pc-academagia-doc) | 2010 | Black Chicken Studios |  | A .NET game whose entire content is a published Firebird dump: 605 bytes of MS-NRBF declare 449,320 objects, header.bin closes on that number at residue 0, and Steam is short by exactly seven files |
+| [**I am Setsuna**](https://github.com/vs-sr-dev/pc-iamsetsuna-doc) | 2016 | Tokyo RPG Factory / Square Enix |  | A Unity 5.2 JRPG never launched: 145 LZMA bundles and 290 nodes close on Unity's own integers, a CRC-16 clears 381,077 audio frames, and the box's Unity reader reports nineteen terabytes |
 
 ## The write-ups
 
@@ -5273,3 +5274,61 @@ the manifest's seven fields - and no `.fdb` anywhere. The database is there: it
 is **two gzip-compressed Firebird files embedded as resources inside
 `Storage.dll`**, 2,628,608 bytes decompressed, shipped as the empty template the
 studio's authoring tool starts a new content database from.
+
+### [I am Setsuna](https://github.com/vs-sr-dev/pc-iamsetsuna-doc)
+
+*I am Setsuna* - いけにえと雪のセツナ - (PC, Windows, Tokyo RPG Factory Co., Ltd.;
+the Steam installation, app 441830, build 1706916) - **970 files,
+1,471,268,535 bytes, 962 of them distinct, and 97.85 % of the weight is a
+container somebody else wrote**
+
+**The Year cell is the object's and not a catalogue's.** Nothing in these bytes
+states a release date. What they state is a `LegalCopyright` of **2016** in
+`SETSUNA.exe`'s version resource - the only year the object asserts about the
+game - beside an engine linked on 3 November 2015 and the studio's own two
+managed assemblies compiled on 17 March 2017, five seconds apart. A copyright
+year is not a release date and the repository's clocks chapter says so; 2016 is
+what the object claims and the rest is what surrounds it.
+
+**This is the index's first Unity object with real neighbours, and the
+neighbours share a Mono configuration file and nothing else.** Ten of this
+object's 962 distinct hashes cross the collection, and all ten are under
+`SETSUNA_Data\Mono\etc\mono\` - a browser-capability database, two WSDL help
+generators, two `machine.config`. Unity ships the whole of Mono's `etc/` into
+every game and nobody deletes it. Not one game file, not one asset, not one
+byte the studio wrote.
+
+**The free coverage started at 31,655,234 bytes of 1,471,268,535 - the lowest
+this collection has ever begun from - and ended at all of it.** Six readers
+were written, and each closes on an integer the vendor wrote rather than on one
+of ours: a version-15 SerializedFile reader that accounts for every byte of all
+35 files in five buckets at residue 0; a `UnityWeb` reader with four closures on
+145 of 145 whose decompressed payloads are 290 further version-15 files that
+close as well, 123,315 Unity objects in total and not one negative class ID; a
+CRI `@UTF` reader with three closures on 279 tables, which also opens both
+`CPK ` archives at residue 0; an `HCA` reader that clears a **CRC-16 on 381,077
+frames of 381,077**; and a Lua 5.2 disassembler that consumes **392 files of
+392 exactly**.
+
+**One thing is refused and costed rather than done.** 318,497,117 bytes are HCA
+samples whose framing is verified frame by frame and whose audio is not
+decoded, because the inverse quantiser needs four constant tables that no audio
+stream contains. Two of the four were located inside the object, by byte
+pattern, in `cri_ware_unity.dll`; writing the other two from memory would have
+produced a tool that runs, emits a wave file and is wrong.
+
+**Which is the same defect the index's own toolbox brought with it.**
+`unityfs.py`, written four years of engine version away for
+*The Murder of Sonic the Hedgehog*, runs on this object, exits 0, and reports
+19,361,497,355,137 bytes for one class in a 1.47-gigabyte tree - because a
+version-15 object record carries five bytes that version 21 does not. It also
+files ten of the object's thirty-five SerializedFiles under *"not serialized
+files"*.
+
+**And the whole script of the game is one part in a thousand of the bytes.**
+392 compiled Lua chunks, 1,286,380 bytes, four chapters and eight side-quest
+groups: 474 functions, 200,325 instructions, 338 named calls into the engine,
+and 93.3 % of the instructions are *read a global, load a constant, call it*.
+Sixteen of Lua's forty opcodes never appear, including all four loop
+instructions. The studio's entire executable contribution to a 1.47-gigabyte
+object is 3,482,348 bytes.
