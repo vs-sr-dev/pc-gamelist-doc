@@ -431,6 +431,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**RPG Maker VX Ace**](https://github.com/vs-sr-dev/pc-rpgmakervxace-doc) | 2012 | Enterbrain / Degica | RPG Maker | The fifth tool in a row and the first anybody has used: 2,026 files, a shop's total short by exactly the two its owner added, and 12,720 strings of a tile vocabulary nobody had read |
 | [**RPG Maker MV**](https://github.com/vs-sr-dev/pc-rpgmakermv-doc) | 2015 | KADOKAWA / Degica | RPG Maker | The sixth tool in a row and the last of the line: 9,641 files that stop hiding - the engine is JavaScript and the database JSON - and the opaque quarter turns out to be Chromium's, not the publisher's |
 | [**Il grande gioco di Tangentopoli**](https://github.com/vs-sr-dev/pc-ilgrandegiocoditangentopoli-doc) | 1996 | Duccoli, Piazzolla, Ferrara, Barbieri |  | The first game here in seven rows: an anonymous DOS satire on Tangentopoli whose 89.52 % opaque format opens to 23 painted screens, and whose four authors are named only in pixels and a 104-byte XOR |
+| [**Rovescino**](https://github.com/vs-sr-dev/pc-rovescino-doc) | 1992 | Paolo Grasso |  | The second game in a row, and the row above's opposite where that one was weakest: seven 1992 mtimes over eleven weeks against its one. Four politicians play to lose; the fourth seat is yours |
 
 ## The write-ups
 
@@ -5883,4 +5884,76 @@ Both were then corroborated against the pixels and neither was derived from the
 recollection. The section that records it is marked as testimony and kept apart
 from every count in the repository. **The route is still unknown; that the game
 was distributed is no longer an assumption.**
+
+### [Rovescino](https://github.com/vs-sr-dev/pc-rovescino-doc)
+
+*Rovescino* — *tressette a perdere* (MS-DOS, Italian, VGA mode 12h) — **nine
+files, 331,123 bytes, one flat folder, nine distinct hashes, and the second
+game in this index in two rows.** Four players sit at a green baize table at a
+game whose object is to take as few points as possible. Three of them are
+Bettino Craxi, Francesco Cossiga and Achille Occhetto, all three in office on
+the day it was compiled. It was finished on **11 April 1992**, eight weeks
+after Mani Pulite began and seventeen days before Cossiga resigned.
+
+**The Year cell is 1992 and the argument took two lines, and that is worth
+saying beside the row above it.** *Il grande gioco di Tangentopoli* had to
+carry 1996 on a **single file system timestamp** — twenty-six files sharing one
+mtime to the second — and this index recorded it as the weakest witness it had
+ever accepted. **This row is that row's counter-example on the same cell.**
+Seven of nine files carry 1992 mtimes spread over eleven weeks in the order the
+work was done, the executable is stamped 1992-04-11 00:28:02, and the cast list
+dates itself: those three men were in those offices in April 1992 and two of
+them were out of them by June. The two rows are the same question with opposite
+evidence, and the index now holds both ends of it.
+
+**The eighth mtime is an antivirus's and is three years later**, which is the
+other half of the same discipline: seven timestamps are the program's and one
+is not, and *"the game is from 1992"* and *"every file is from 1992"* are
+different claims.
+
+**It opened at 10.6296 % identified — a fifth of a point above the row above's
+record — and closed at 57.0486 % specified plus 39.0429 % derived.** The two
+figures are kept apart because the warrants are different: `SFONDO.LBM` is
+**EA IFF 85 / ILBM**, published by Electronic Arts in January 1985, and the
+credit for reading it belongs to whoever wrote that down; `CARTE.IMG` has no
+magic number, no vendor and no producer, and the only warrant for the forty
+cards it opens to is 129,280 ÷ 40 = 3,232 at residue zero and four planes of
+64 × 101. The box had **no ILBM reader over 572 files** and now has one.
+
+**PKLITE names itself in the header padding, in the same fifty-two bytes where
+the game in the row above typed a joke** — *(Perche' guardi qua dentro?)* — and
+that one field is the whole difference between the two objects. PKWARE never
+published the bit grammar, so it came out of the **582-byte decompressor the
+packer staples to the front**, disassembled at 99.8282 % coverage under a
+disassembler that stops on any opcode it does not know. The unpacked image is
+200,176 bytes and the bit stream plus the relocation table end **exactly** on
+the byte the MZ header declares: residue +0.
+
+**And 43.9732 % of that executable is past the end of the program.** The
+loader never reads it; it is a linker's symbol table, 244 NUL-terminated C
+names in the author's own Italian — `_MESCOLA_MAZZO`, `_ORDINA_CARTE`,
+`_RISCHIO` for the opponents' evaluation function, `_TOPO` five times for the
+mouse, and the four Italian suits. It declares **four `says` functions**:
+`_DICE_CRAXI`, `_DICE_COSSIGA`, `_DICE_OCCHETTO` and **`_DICE_IL_GOBBO`**. The
+strings the program puts on screen name four players: `CRAXI`, `COSSIGA`,
+`OCCHETTO` and **`ESSERE UMANO`**. Three of the four coincide; `ANDREOTTI`
+occurs nowhere in the 200,176-byte image; and the one figure drawn at the table
+without cards in his hand is the one with the ears. **The fourth player is you,
+in Andreotti's chair, and the program never says so.**
+
+**The object names its author and this index names him: `PROGRAMMA DI PUBLIC
+DOMAIN by Paolo Grasso`**, with `Nino Porcino` and `Francesco Grasso` credited
+for the card art and the credits signed `PISA 1992` — while the postal address
+in the same screen is in Reggio Calabria, and `PISA` is drawn by hand into the
+banner of the ace of coins where a printed Neapolitan deck carries its maker's
+imprint. The repository publishes the names, the town and the postcode and
+**redacts the street and house number**, by program, with the count checked,
+and states the decision before the evidence rather than after it.
+
+**Fifty-four bytes of Microsoft Anti-Virus bookkeeping from March 1995 name two
+files that are not in the folder**: `SCOPA.EXE`, 223,673 bytes, stamped 24 July
+1992 — *scopa* being the other Italian card game — and `VBRUN100.DLL`, the
+Visual Basic 1.0 runtime. The record layout was derived and then confirmed by a
+date it was not fitted to: decoding it gives **10 May 1991** for the VB runtime,
+which is when Visual Basic 1.0 shipped.
 
