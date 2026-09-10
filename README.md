@@ -429,6 +429,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**RPG Maker 2003**](https://github.com/vs-sr-dev/pc-rpgmaker2003-doc) | 2017 | KADOKAWA GAMES / Enterbrain | RPG Maker | The third tool in a row, and the first that ships a playable game: 737 files, half of whose hashes are already published next door, and four map files nobody had opened |
 | [**RPG Maker XP**](https://github.com/vs-sr-dev/pc-rpgmakerxp-doc) | 2005 | Enterbrain / Degica | RPG Maker | The fourth tool in a row and the first that ships no game: 913 files, a database that is Ruby's own Marshal, and a help file that turns out to document 323 of its own 324 field names |
 | [**RPG Maker VX Ace**](https://github.com/vs-sr-dev/pc-rpgmakervxace-doc) | 2012 | Enterbrain / Degica | RPG Maker | The fifth tool in a row and the first anybody has used: 2,026 files, a shop's total short by exactly the two its owner added, and 12,720 strings of a tile vocabulary nobody had read |
+| [**RPG Maker MV**](https://github.com/vs-sr-dev/pc-rpgmakermv-doc) | 2015 | KADOKAWA / Degica | RPG Maker | The sixth tool in a row and the last of the line: 9,641 files that stop hiding - the engine is JavaScript and the database JSON - and the opaque quarter turns out to be Chromium's, not the publisher's |
 
 ## The write-ups
 
@@ -5728,3 +5729,80 @@ became `Load`, `044-Chest01` became `Chest`, `078-Small05` became `Crow`. The
 numbering scheme four consecutive products used is gone. **The rate is 26 of
 1,935 against the previous step's 0 of 913 and the one before's 368 of 731**,
 and what it measures is a re-use decision rather than a family resemblance.
+
+### [RPG Maker MV](https://github.com/vs-sr-dev/pc-rpgmakermv-doc)
+
+*RPG Maker MV* (PC, Windows, with players for Linux and macOS; Steam app
+363890, published by KADOKAWA CORPORATION and distributed in English by Degica)
+- **a live installation copied and verified on four criteria: 9,641 files,
+2,925,489,709 bytes, 406 directories of which ten are empty, 7,417 distinct
+hashes - and the sixth and last tool of one product line in this index.**
+
+**This is the index's sixth entry that is not a game, and the first whose
+vendor publishes its own engine.** The five before it hid something: an
+InstallShield container, two LCF databases, two Ruby `Marshal` databases, an
+ITSF help file that four sessions between them learned to open. **This one
+ships six JavaScript files with their comments intact - 943,098 bytes, 34,205
+lines, 153 class names - and a database that is JSON.** What four sessions
+worked to recover, this object hands over, and the interesting question stops
+being *can it be read*.
+
+**The coverage figure went DOWN and that is the finding.** 71.7834 % specified
+on arrival against the previous entry's closing 98.0644 %, and **none of the
+missing quarter is the publisher's.** 190 of the opaque files were a defect
+this pipeline's own classifier shipped one week earlier - a UTF-8 probe that
+rejects a byte-order mark, refusing 190 files of 190 on one character - and the
+rest is Chromium, Qt, ICU, Apple and Google. After a one-line repair and five
+magics the object is **95.2373 % specified and 3.0649 % decoded, with 35 files
+opaque**, and every one of the 35 belongs to a third party. **A coverage
+percentage measures who assembled an object, not who published it**, and 27.3 %
+of this one is a browser somebody else built.
+
+**Every one of its 1,341 recordings is shipped twice and nobody had paired
+them.** 684,463,713 bytes of Ogg Vorbis and 473,279,531 of MPEG-4 AAC, the
+stems joining at residue 0 in both directions, the aggregates differing by
+106.119 seconds. Paired one by one, **the MPEG-4 side is longer in 1,341 of
+1,341** - and the overshoot is not vague: `m4a_samples == ceil((ogg_samples +
+2112) / 1024) * 1024` holds **exactly on 1,069 of the 1,075 pairs whose two
+sides share a sample rate**, 2,112 being the AAC encoder's priming delay and
+1,024 the frame. The predicted band is [2112, 3136) and the measured extremes
+are 2,112 and 3,135. **And three files of the 1,341 were written by a different
+program**, which four independent measurements agree on: a different brand, a
+different timescale, a truncated last frame, and two clocks that disagree.
+
+**The smallest depot in this collection is sixteen bytes and it is eight
+files.** Depot 363896 declares 16; no file in the tree is sixteen bytes long;
+there are **eight files of two bytes, every one named `Locale` and every one
+containing `en`**, and 8 x 2 = 16 at residue 0 by walking. **And the shop's
+total is short by 2,243**, which decomposes twice over into two Chromium log
+files and a cloud stub less the 213 bytes - three lines of 71 - that Steam
+shipped in one of the logs thirteen days before it published the update.
+
+**The oldest claim in this pipeline does not survive it.** Four objects had
+confirmed that a delivery mechanism which verifies the bytes destroys the
+dates. **This one has seventeen mtime waves, fifteen of them Steam's, spread
+over six years and three months** - because the four that confirmed the claim
+had each been installed once and never patched, and this one was patched
+fourteen times. The corrected claim is about installations and not about Steam.
+
+**Two hundred and eighty-one files survive from the entry above and 266 keep
+their names.** The previous step renamed 26 of 26 and abandoned a four-product
+numbering scheme; this one keeps the scheme and increments fifteen files.
+**Twenty-one byte strings are in three objects at once - the XP, the VX Ace and
+this - which had never happened**, and they are a subset of the twenty-six the
+VX Ace shared with the XP. `078-Small05.ogg` became `Crow.ogg` in 2011 and is
+still `Crow.ogg` in 2015, byte for byte. **The five that dropped out are all
+still here under other bytes**, re-encoded, which is the boundary of what a
+hash crossing can see. **And not one picture crosses**: pointing a chunk-level
+PNG comparer across the object boundary for the first time gives the reason as
+a number - **576 x 384 against 384 x 256, exactly three halves in both
+dimensions, which is 48 pixels against 32.**
+
+**The Year cell is 2015 and the argument is a different kind from the three
+above it.** Those were settled by a compiled help file's clock agreeing with a
+copyright field. **There is no help file: the manual is 139 loose HTML pages.**
+The copyright field says 2015, nothing confirms it and nothing contradicts it,
+and the cell is an attribution rather than a derivation - which matters more
+than the number. **The five-specimen ITSF thread that settled the other three
+ends here without closing**, and the measurement that would close it is written
+down in the repository for somebody who has a sixth specimen.
