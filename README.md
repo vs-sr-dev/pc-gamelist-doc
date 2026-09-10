@@ -432,6 +432,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**RPG Maker MV**](https://github.com/vs-sr-dev/pc-rpgmakermv-doc) | 2015 | KADOKAWA / Degica | RPG Maker | The sixth tool in a row and the last of the line: 9,641 files that stop hiding - the engine is JavaScript and the database JSON - and the opaque quarter turns out to be Chromium's, not the publisher's |
 | [**Il grande gioco di Tangentopoli**](https://github.com/vs-sr-dev/pc-ilgrandegiocoditangentopoli-doc) | 1996 | Duccoli, Piazzolla, Ferrara, Barbieri |  | The first game here in seven rows: an anonymous DOS satire on Tangentopoli whose 89.52 % opaque format opens to 23 painted screens, and whose four authors are named only in pixels and a 104-byte XOR |
 | [**Rovescino**](https://github.com/vs-sr-dev/pc-rovescino-doc) | 1992 | Paolo Grasso |  | The second game in a row, and the row above's opposite where that one was weakest: seven 1992 mtimes over eleven weeks against its one. Four politicians play to lose; the fourth seat is yours |
+| [**Hexxagon**](https://github.com/vs-sr-dev/pc-hexxagon-doc) | 1993 | Argo Games / Software Creations |  | The third game in a row and the first with a company in this cell: a 61-hex Ataxx, ASP shareware that shipped its whole legal department, dated by a DOS stamp inside a ZIP not a file system |
 
 ## The write-ups
 
@@ -5957,3 +5958,109 @@ Visual Basic 1.0 runtime. The record layout was derived and then confirmed by a
 date it was not fitted to: decoding it gives **10 May 1991** for the VB runtime,
 which is when Visual Basic 1.0 shipped.
 
+
+### [Hexxagon](https://github.com/vs-sr-dev/pc-hexxagon-doc)
+
+*HEXXAGON — The Animated Strategy Game* (Argo Games / Software Creations,
+MS-DOS, VGA, 1993, English) — **twenty files, 1,297,836 bytes, one flat folder,
+sixteen distinct hashes, and the third game in this index in three rows.** An
+Ataxx on a hexagon of sixty-one cells: move one space and your piece
+duplicates, move two and it jumps, and every enemy piece next to where you land
+becomes yours. The pieces are a red jewel and a drop of liquid chrome, and the
+manual explains that turning one into the other requires lightning. The
+computer opponent is a light bulb called **CRANIAC**, who puts on spectacles at
+MEDIUM and a bow tie at HARD, and who on the two higher detail settings shows
+you the moves he is considering in flashing green and yellow before he picks
+one.
+
+**The Studio cell holds an organisation for the first time in three rows, and
+that is the point of the row.** The two above it carry a list of surnames and
+`*(none named)*`; this one carries a company with a street address, a voice
+line, a fax line and a 43-line BBS, because HEXXAGON is **ASP shareware** and
+shipped its entire commercial apparatus inside the archive: a licence, a vendor
+agreement, an order form with a price and a card-minimum, a sysop recruitment
+note, an Association of Shareware Professionals ombudsman statement, a BBS
+description file, and **a packing list with byte counts**. Eight of the twenty
+files are prose. The object is half documentation, which is a different
+sentence from *better documented*.
+
+**The Year cell is 1993 and this is the strongest date argument the index has
+accepted.** *Il grande gioco di Tangentopoli* carried 1996 on **one file system
+timestamp** and was recorded as the weakest witness here; *Rovescino* answered
+with **seven mtimes over eleven weeks**; this row answers with a **DOS
+timestamp written by a packer into a ZIP central directory**, which has no
+timezone and is independent of any file system a copy has ever sat on.
+Thirteen of them, agreeing with each other and with the loose files — and
+disagreeing with the file system by **exactly one hour, on twelve of the
+thirteen**, which is a fact about the machine that unpacked it and not about
+1993. The thirteenth is the one file Windows rewrote in 2005.
+
+**It is the first object in this collection whose contents can be VERIFIED
+rather than merely counted.** It carries three independent accounts of itself:
+a manifest the authors wrote, the PKZIP self-extractor it shipped as with a
+**CRC-32 per member**, and the files on disk. Twelve of the thirteen members
+are byte-identical to what shipped, including a 626,424-byte art file.
+**And the manifest is wrong about two of the twelve files it lists** — it is
+short by 32,076 bytes on the art file and long by two on the BBS description —
+and the archive sides with the disk on both. A figure written down by the
+authors is a claim, not a measurement.
+
+**A thirteenth member is in the archive and in no manifest**: `COME.SEE`, an
+advertisement for *Rusty n Edie's BBS* of Boardman, Ohio, drawn in cp437 frames
+with four modem numbers and a Minitel code, dated a week after everything else.
+Member 2 of the same archive is the licence, which says the program may be
+distributed *"as long as there are no files added to or removed form the
+original compressed file package."* **The archive breaks the licence it
+contains, and the breach is datable to the following week.** The row two above
+this one ends by saying the route by which that game reached anybody is
+unknown; this one arrives with the phone numbers.
+
+**`GRAPHICS.HXG` is 48.2668 % of the object and it is open.** Its directory
+closes twice at zero — 452 records of fourteen bytes, the directory ending on
+the byte the data begins on, offset plus length chaining on **451 of 451**
+links, and the last member ending on the last byte of the file. Both of its
+compressors were then derived from the bytes: a run encoder read off a
+nineteen-byte member that makes 768, and an **LZ77** whose framing was read off
+one member and then consumed exactly the declared length on **335 of 335**
+before a single output byte was produced. **All 452 members decode to exactly
+their declared size, totalling 1,542,014 bytes at residue zero** — which
+independently checks the `FILE_ID.DIZ` boast of *"Over a MEG of animated 256
+color VGA graphics."* The check that matters is one the decoder was never told:
+ten members of 768 bytes come out as **legal 6-bit VGA palettes**, 7,680 bytes
+with no value above 0x3F.
+
+**The author explains his own compressor in the user manual, and it is still
+not a specification.** `HEXXAGON.DOC` has a section headed TECH-WEENIE STUFF in
+which the programmer names four tools he wrote and describes one as using *"a
+vaguely LZSS-like method"* — two named compressors, and the directory has two
+compressed kinds, which is a hypothesis with a count attached. The file refuses
+it: **forty-three frames of one animation split 29 and 14 across the two
+kinds**, and the palettes split across all three. `kind` records which method
+came out smaller on that member, not which program wrote it. Prose about a
+format written by the person who wrote the format is evidence; a document an
+implementer can work from is a warrant; and the difference is exactly one
+coverage bucket.
+
+**Six files were written not by the publisher but by the program, in August
+2005, while somebody played it.** They are in no manifest and no archive, and
+one of them contains the game: `BOARD1.HXG` is 169 records of ten bytes, of
+which 108 carry an off-board sentinel, leaving **61 — the number of hexes on a
+Hexxagon board.** Read as coordinates, those 61 cells are nine columns holding
+**5, 6, 7, 8, 9, 8, 7, 6, 5**, which sums to 61 and is a hexagon of side five;
+the columns are 33 pixels apart, the rows 22, alternate columns are offset by
+half a row, and the board ends at **320 by 200**, which is mode 13h. Three
+pieces a side at the six corners and three blocked cells in the middle. **All
+five saved boards are byte-identical**, which is a fact about the family that
+played it and not about the format.
+
+**Coverage opened at 51.0037 % and closed with an empty opaque bucket** —
+51.0804 % specified plus 48.9196 % derived, residue 0, **0.0000 % opaque** —
+and the two figures are kept apart because a published document and one
+session's arithmetic are not the same warrant. `HEXX.EXE` was **not** opened:
+it is under LZEXE 0.91, the third of the three DOS packers the family's shared
+checklist names and the one the box cannot unpack, and the decision rests on a
+measurement rather than on time — the file has **zero slack and zero symbols**,
+so unpacking it would yield seventy kilobytes of unlabelled 8086 with no handle
+on which routine is CRANIAC. The row above could read its opponents' evaluation
+function by name because a linker left 244 symbols behind. This one left
+nothing.
