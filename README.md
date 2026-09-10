@@ -5833,7 +5833,11 @@ requirements are all painted. The score counter says `PRATICHE DISINSABBIATE` -
 case files un-sanded, from *insabbiare un'inchiesta*, to bury an investigation -
 and the room they are buried in is floored with sand. The bribe meter is a
 mercury thermometer. Losing is not game over: it is *l'inchiesta e' archiviata*,
-the correct legal term for a case shelved without charges.
+the correct legal term for a case shelved without charges. **And the player
+character is called `Giudice De Petris`** - which is not a name that resembles
+*Di Pietro* but the Latin register of the same one, as `De Angelis` is to
+`Di Angelo`, painted into a satire published while Antonio Di Pietro was still
+running the investigation it satirises.
 
 **The object was described as naming no author, and it names four.** Neither
 place is a string, which is why every name-finding tool in the box returned zero
