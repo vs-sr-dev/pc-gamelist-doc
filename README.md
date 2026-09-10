@@ -430,6 +430,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**RPG Maker XP**](https://github.com/vs-sr-dev/pc-rpgmakerxp-doc) | 2005 | Enterbrain / Degica | RPG Maker | The fourth tool in a row and the first that ships no game: 913 files, a database that is Ruby's own Marshal, and a help file that turns out to document 323 of its own 324 field names |
 | [**RPG Maker VX Ace**](https://github.com/vs-sr-dev/pc-rpgmakervxace-doc) | 2012 | Enterbrain / Degica | RPG Maker | The fifth tool in a row and the first anybody has used: 2,026 files, a shop's total short by exactly the two its owner added, and 12,720 strings of a tile vocabulary nobody had read |
 | [**RPG Maker MV**](https://github.com/vs-sr-dev/pc-rpgmakermv-doc) | 2015 | KADOKAWA / Degica | RPG Maker | The sixth tool in a row and the last of the line: 9,641 files that stop hiding - the engine is JavaScript and the database JSON - and the opaque quarter turns out to be Chromium's, not the publisher's |
+| [**Il grande gioco di Tangentopoli**](https://github.com/vs-sr-dev/pc-ilgrandegiocoditangentopoli-doc) | 1996 | Duccoli, Piazzolla, Ferrara, Barbieri |  | The first game here in seven rows: an anonymous DOS satire on Tangentopoli whose 89.52 % opaque format opens to 23 painted screens, and whose four authors are named only in pixels and a 104-byte XOR |
 
 ## The write-ups
 
@@ -5806,3 +5807,66 @@ and the cell is an attribution rather than a derivation - which matters more
 than the number. **The five-specimen ITSF thread that settled the other three
 ends here without closing**, and the measurement that would close it is written
 down in the repository for somebody who has a sixth specimen.
+
+### [Il grande gioco di Tangentopoli](https://github.com/vs-sr-dev/pc-ilgrandegiocoditangentopoli-doc)
+
+*Il grande gioco di Tangentopoli* (MS-DOS, Italian, VGA mode 13h) - **twenty-six
+files, 461,317 bytes, one flat folder, twenty-six distinct hashes, and the first
+row in seven that is a game.** The six before it were tools that shipped no
+game; this ships nothing else.
+
+**It opened at 10.4611 % identified, which is the lowest figure any object in
+this index has started at, and closed at 99.9775 %.** The 89.5163 points in
+between are twenty-three files of a format called `PX` that has no
+specification, no vendor and no named producer: `'PX'`, a `u16` width and a
+`u16` height, then one run-length stream under `FF <count> <byte>` to the end of
+the file. It decodes to **10 + 768 + 320 x 200 = 64,778 bytes with residue 0 on
+23 of 23 files**, and the low sixteen palette entries are the canonical IBM EGA
+sixteen **in canonical order** on 23 of 23. `pc-simulman5-doc` is the precedent
+and this is that problem with the sign flipped - there a format with no magic
+number, here two letters nobody had written down.
+
+**And the twenty-three pictures are where the game keeps its writing.** There is
+not one readable Italian string in the object outside `INSTALL.BAT`, because the
+intro, the menus, the prompts, the endings, the credits and the system
+requirements are all painted. The score counter says `PRATICHE DISINSABBIATE` -
+case files un-sanded, from *insabbiare un'inchiesta*, to bury an investigation -
+and the room they are buried in is floored with sand. The bribe meter is a
+mercury thermometer. Losing is not game over: it is *l'inchiesta e' archiviata*,
+the correct legal term for a case shelved without charges.
+
+**The object was described as naming no author, and it names four.** Neither
+place is a string, which is why every name-finding tool in the box returned zero
+and kept returning it: **Guglielmo Duccoli, Roberto Piazzolla, Michele Ferrara
+and Thimoty Barbieri** are painted into a 320 x 200 credits screen, and their
+forenames are stored again in the 104-byte `HIGHSCOR.TNG` under `x ^ 0xFE` -
+**one bit from the complement that had already been tried**, with four scores of
+zero because nobody had ever played it. The key is settled by narrowing 512
+candidates in three declared stages, the last of which counts exact matches
+against the painted names and scores 3 of 4; the fourth is spelled `Thimoty` in
+the art and `TIMOTHY` in the data, and is reported as the mismatch it is.
+
+**`START.EXE` is 43,445 bytes that demand 318,704 more, and thirty countable
+packer signatures are absent - anywhere and in place.** `pc-popcorn-doc`'s
+lesson is what makes that zero worth quoting: a compressor's name lives in the
+compressor, not in its output, so three tool-only names are excluded from the
+denominator rather than padding it. The entry stub's self-move is computed
+rather than described - **file offsets 164 to 751, 588 bytes** - and 526 of
+those disassemble at **100 % coverage with 54 of 54 branch targets landing on
+instruction boundaries**, under a disassembler that stops on any opcode it does
+not know. It is an LZ77 with prefix-coded lengths and two byte tables, and its
+literal path is `lodsb; xor al, dl; stosb` - literals XORed with the live bit
+counter, which is not what any stock build does. **It was not unpacked**, and
+the reason is written down: the thing that made unpacking worth it was the
+game's text, and the game's text turned out to be in the pictures.
+
+**The Year cell is 1996 and it is the weakest witness this index has accepted.**
+Not a copyright field, not a COFF stamp, not a help file's clock: **a file
+system.** All twenty-six files carry one mtime to the second, 1996-12-24 at
+23:32, and the object has no other date about itself. It does have a date about
+its *story* - the intro says the Tangentometro must not max out *prima del
+1993* - and a requirements panel that stops at DOS 6, and both point earlier
+than the medium does. **A fiction's year is not a build's year**, so the cell
+stays on the only witness that dates the artefact, and the repository's clocks
+chapter says out loud that a directory record is a fact about a copy.
+
