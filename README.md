@@ -5870,3 +5870,13 @@ than the medium does. **A fiction's year is not a build's year**, so the cell
 stays on the only witness that dates the artefact, and the repository's clocks
 chapter says out loud that a directory record is a fact about a copy.
 
+**And this is the only entry in this index with a witness who is not a
+measurement.** The object crosses nothing, names no publisher and leaves no
+trace on either Italian cover disc in this collection, so the route by which it
+reached anybody is unknown - except that somebody in this collection played it
+as a small child and remembers the arena and a hand throwing sheets of paper.
+Both were then corroborated against the pixels and neither was derived from the
+recollection. The section that records it is marked as testimony and kept apart
+from every count in the repository. **The route is still unknown; that the game
+was distributed is no longer an assumption.**
+
