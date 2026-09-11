@@ -437,6 +437,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**OutRun**](https://github.com/vs-sr-dev/pc-outrun-doc) | 1989 | SEGA |  | The fifth game in a row and first arcade name: SEGA's OUT RUN on DOS, 85.8 % a two-depth Huffman-then-run sprite format decoded to the byte here — and three MZ-headed .PES are its engines, not sprites |
 | [**The Demon's Forge**](https://github.com/vs-sr-dev/pc-demonsforge-doc) | 1987 | Mastertronic |  | The sixth game in a row: Fargo's CGA dungeon in two files, 72.7 % a 160 KB self-booting diskette whose 120-entry directory this session opened - 75 vector rooms rendered, the engine found on the disk |
 | [**Teenagent**](https://github.com/vs-sr-dev/pc-teenagent-doc) | 1995 | Metropolis Software House |  | The seventh game in a row, inside a GOG install of which it is 16.5 %: a VGA point-and-click whose twelve .RES (16.4 %) were opened to all 1,053 members and whose packed engine gave up the words |
+| [**Polanie**](https://github.com/vs-sr-dev/pc-polanie-doc) | 1996 | *(none named)* |  | The eighth game in a row, one ZIP sold as "Slavs": a Polish DOS strategy of villages and milk, 74 % a title FLC, its engine unpacked, 18 copies of it hidden in the music, a crack that is the English |
 
 ## The write-ups
 
@@ -6273,3 +6274,49 @@ samples at 11,025 Hz, and eight drivers. The words are in none of them: 656
 messages, 4,338 words, all in the unpacked engine. A CD image the packager's
 log mounted is configured and absent; ScummVM, which also runs this game,
 was not opened to check a byte of it.
+
+### [Polanie](https://github.com/vs-sr-dev/pc-polanie-doc)
+
+*POLANIE* — `ver. 1.1  marzec 1996`, printed by its own program; no company
+named anywhere in the object; nine people credited in a text file — **90
+files, 14,957,416 bytes, 85 distinct hashes, and the eighth game in this
+index in eight rows**, delivered as one ZIP of a folder called
+`Polanie_Slavs` and sold as "the DOS base version in English" of *Slavs*.
+A top-down strategy of villages, cows and raids across tenth-century
+Poland — six building types, nine unit types a side, one resource (milk,
+capped per level), an enemy with four algorithms, twenty-eight maps of
+66 × 66 tiles — read off the designers' own legend at the end of the level
+file, not off the label the owner bought it under. Three quarters of the
+bytes are a 26-second Animator Pro FLC: a 3D camera circling the four-faced
+stone idol Światowid and ending on POLANIE carved in stone, 372 frames
+walked to residue 0, one of them damaged in the file.
+
+**The Studio cell is *(none named)*, and the object was read to the end
+to say so.** The three programs are behind a packer no table names — a
+1,415-byte self-relocating stub, disassembled whole, and `dataarea.py`
+written from the listing — and the unpacked engine prints the banner,
+the month, `polanie.exe`, and a Polish interface end to end (`Nowa gra`,
+`Chata wojów`, `Tak panie?`, *We attack the Vistulans / Veleti / Masovians /
+Pomeranians*), on a font that puts ą ę ó ź ś ć ł on the punctuation
+slots. The credits — coders Mirosław Dymek, Artur Bidziński, Lidia
+Dutkiewicz; music Marcin "Red" Adamowicz; four more names and twelve
+thanked — are in `LEVEL.INI` in the Mazovia code page, with no firm,
+address or copyright beside them.
+
+**The Year cell is 1996, on the `marzec 1996` the program prints**, the
+FLC's own stamp of 1996-02-26, and file dates of February, March, July and
+September 1996; the 66 files stamped 2096-02-28 01:00:00 are one tool's
+event with a year field of 116, the 2009 stamps the repackager's, the 1993
+the bundled FLC player's.
+
+**And the two files nobody expected anything of are the finding.** Each of
+the eighteen Scream Tracker modules is 1–12 KB of AdLib music followed by
+exactly 72,768 bytes — `SLAVS.EXE` under a 20-byte repeating additive key,
+0 mismatches on all eighteen — and `GRAF.012` carries the 18-record index
+that rebuilds the program from any of them: 94 % of the "music" is the
+engine. And `CRACK.COM`, which the batch runs before and after the game and
+which signs itself `SLAVS crack by JdA/RLX 1996`, unpacks to a table of 59
+Polish→English string pairs of identical length that the TSR writes over
+the running engine — `P O L A N I E` → `S L A V S`, `marzec` → `sept.`,
+`Pomorzan` → `Fishmen`. The English edition is the Polish game plus that
+patch; nothing in any byte is German.
