@@ -434,6 +434,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**Rovescino**](https://github.com/vs-sr-dev/pc-rovescino-doc) | 1992 | Paolo Grasso |  | The second game in a row, and the row above's opposite where that one was weakest: seven 1992 mtimes over eleven weeks against its one. Four politicians play to lose; the fourth seat is yours |
 | [**Hexxagon**](https://github.com/vs-sr-dev/pc-hexxagon-doc) | 1993 | Argo Games / Software Creations |  | The third game in a row and the first with a company in this cell: a 61-hex Ataxx, ASP shareware that shipped its whole legal department, dated by a DOS stamp inside a ZIP not a file system |
 | [**Bianco Natale**](https://github.com/vs-sr-dev/pc-bianconatale-doc) | 1994 | Tecnoart Software Development |  | The fourth game in a row and the first with no documentation at all: a four-level Christmas platformer 95 % raw pixels, a sixth to a third of which is the studio advertising its own encyclopedia |
+| [**OutRun**](https://github.com/vs-sr-dev/pc-outrun-doc) | 1989 | SEGA |  | The fifth game in a row and first arcade name: SEGA's OUT RUN on DOS, 85.8 % a two-depth Huffman-then-run sprite format decoded to the byte here — and three MZ-headed .PES are its engines, not sprites |
 
 ## The write-ups
 
@@ -6130,3 +6131,50 @@ binary whose 21,719-byte symbol slack names **four distinct enemy frame
 sequences, one per level** (`_enemy1_fr_seq`..`_enemy4_fr_seq`) beside five
 genuinely different painted backgrounds: a four-level game that stops, for a
 sixth to a third of itself, to sell you an encyclopedia.
+
+### [OutRun](https://github.com/vs-sr-dev/pc-outrun-doc)
+
+*OUT RUN* — SEGA's 1986 arcade racer in its MS-DOS conversion, English, 1989 —
+**110 files, 598,782 bytes, one flat folder, 109 distinct hashes, and the fifth
+game in this index in five rows.** You drive a red Ferrari Testarossa down a
+branching coast road against the clock, past palms and billboards, overtaking a
+Corvette, a Beetle, a BMW, a Porsche and a lorry, choosing left or right at each
+fork; the port offers four video modes — CGA/Tandy 4-colour, Tandy 16-colour,
+EGA/VGA 16-colour, Hercules — and ships its art at two colour depths, `.PES` for
+sixteen colours and `.PCS` for four. The pictures, rendered for the first time
+this session, show the *Out Run* title with a `START` banner between two palms,
+the SEGA boot logo, a dashboard radio tuned to *Passing Breeze*, a bird's-eye
+course map, and the credits: `PROGRAMMERS: PETE GARDNER with THE OLD KID`,
+`GRAPHIC ARTIST: TONY LEE`, `CONVERSION BY: USI UNLIMITED SOFTWARE INC.`
+
+**The Studio cell is SEGA, the third real organisation in three rows of
+surnames-then-companies, and the first that is an arcade house.** The
+conversion was done by Unlimited Software Inc. — named in `CREDITS.PES`, above —
+but the property, the logo, and the `SEGA COMPUTER SOFTWARE © 1989` on the boot
+screen are SEGA's, and the object is a SEGA game before it is anyone's port.
+
+**The Year cell is 1989, on three internal things.** The DOS build stamps in the
+ZIP run a dense fortnight — 93 files in February, 9 in March, and `OUTRUN.EXE`
+itself on 26 May 1989, the front-end last — corroborated by the compilers the
+binaries name (`Turbo-C (c) 1988 Borland`, `MS Run-Time Library (c) 1987`) and
+by the `© 1989` the game renders on its own boot screen. The archive's newest
+member is dated **2024**, but that is two high-score files a player re-saved,
+not the game's date, and the trap is not taken.
+
+**And 85.8 % of it is a sprite format this session opened.** The last four rows
+were a bare program, then two packers, then a repackaging, then raw pixels whose
+arithmetic had closed before the session began. This one is the opposite: the
+shapes are **compressed**, a two-stage container — canonical Huffman feeding a
+run code — and nothing closed until the decoder was written. The grammar could
+not be read off the bytes: it was read out of the game's own decompressor, which
+lives inside three `.PES` files that begin `MZ` and that the pre-briefing filed
+as "sprite sheets". They are not sprites. They are the three EXEPACK'd road
+engines — the EGA, CGA and Tandy builds — 34.8 % of the object, and `exepack.py`
+unpacked them, `dosdis.py` read the two decoders at 100 % coverage, and the new
+`pes.py` decoded all 93 shape members to the byte, closing on a shape directory
+the decoder was never shown. `OUTRUN.EXE`, the 17 KB Turbo-C thing the menu
+lives in, turned out to be a launcher that `exec`s one of the three engines —
+not the whole game, as the pre-briefing guessed. The object also bundles Phil
+Katz's 1987 `PKARC.COM`, which says the studio packed with PKARC, not that the
+game shipped as an `.ARC` — the archive is a modern re-ZIP, and the `.ARC` is
+not here to prove it.
