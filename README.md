@@ -433,6 +433,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**Il grande gioco di Tangentopoli**](https://github.com/vs-sr-dev/pc-ilgrandegiocoditangentopoli-doc) | 1996 | Duccoli, Piazzolla, Ferrara, Barbieri |  | The first game here in seven rows: an anonymous DOS satire on Tangentopoli whose 89.52 % opaque format opens to 23 painted screens, and whose four authors are named only in pixels and a 104-byte XOR |
 | [**Rovescino**](https://github.com/vs-sr-dev/pc-rovescino-doc) | 1992 | Paolo Grasso |  | The second game in a row, and the row above's opposite where that one was weakest: seven 1992 mtimes over eleven weeks against its one. Four politicians play to lose; the fourth seat is yours |
 | [**Hexxagon**](https://github.com/vs-sr-dev/pc-hexxagon-doc) | 1993 | Argo Games / Software Creations |  | The third game in a row and the first with a company in this cell: a 61-hex Ataxx, ASP shareware that shipped its whole legal department, dated by a DOS stamp inside a ZIP not a file system |
+| [**Bianco Natale**](https://github.com/vs-sr-dev/pc-bianconatale-doc) | 1994 | Tecnoart Software Development |  | The fourth game in a row and the first with no documentation at all: a four-level Christmas platformer 95 % raw pixels, a sixth to a third of which is the studio advertising its own encyclopedia |
 
 ## The write-ups
 
@@ -6064,3 +6065,68 @@ so unpacking it would yield seventy kilobytes of unlabelled 8086 with no handle
 on which routine is CRANIAC. The row above could read its opponents' evaluation
 function by name because a linker left 244 symbols behind. This one left
 nothing.
+
+### [Bianco Natale](https://github.com/vs-sr-dev/pc-bianconatale-doc)
+
+*BIANCO NATALE* (Tecnoart Software Development, Genova, MS-DOS, VGA, 1994,
+Italian) — **eighteen files, 1,436,520 bytes, one flat folder, eighteen
+distinct hashes, and the fourth game in this index in four rows.** You are
+Father Christmas; the wizard **Magoon**, jealous of your popularity, has cast a
+spell on your castle and brought the furniture to life; you go through four
+levels throwing snowballs — the move is called `Pugno !` — to fetch the
+runaway objects back. The pictures, rendered for the first time this session,
+show a snowman in a top hat on the title screen, Father Christmas asleep by a
+fire, a signpost reading `X-MAS LAND`, Magoon's castle on a crag, and a sprite
+sheet whose enemies are walking gift-boxes, melting snowmen, a pumpkin-headed
+ghoul and a red-caped skeleton.
+
+**The Studio cell is the second real organisation in a row after three rows of
+surnames, and the first with a city inside the executable.** *Hexxagon* above
+put a company there; this one puts `Tecnoart Software Development, Genova` — a
+string the authors typed into `BN.EXE`, which is also the only place the studio
+is named, because **this object has no documentation of any kind**: no manual,
+no licence, no readme, no order form, no paper credits. The object before it
+was half paperwork; this one is zero. Everything anyone knows about it is in a
+data segment the linker never meant to be read.
+
+**The Year cell is 1994, and the argument is weaker than the row above and
+stronger than three rows down.** Not thirteen packer-written stamps agreeing
+with a manifest, and not a lone file-system timestamp either, but **two
+independent things**: a DOS timestamp field inside the ZIP (no timezone, the
+only one of the container's three clocks written in 1994 — the other two are a
+repackager's UTC and the mtime `unzip` wrote in 2026) and the string `Bianco
+Natale (1994)` the authors typed. The container itself is a modern repackaging,
+zip spec 2.3 with Info-ZIP fields on every member, so it can only verify the
+extraction, not what shipped in 1994.
+
+**It is 95.1162 % pictures, and the opening coverage — 4.8838 % — is the lowest
+this collection has measured**, less than half the previous record. One MZ
+header was the whole identified content when the session began. The other 95 %
+is two undocumented formats, `.BMB` (one image) and `.BMA` (a strip of frames),
+that close on their own length at residue zero on sixteen of sixteen files —
+and closed, before the session, on a header **four bytes too long**, which two
+measurements the length cannot make (a palette's triplet alignment, and a byte
+value that never occurs in the pixels) corrected to five and seven bytes. One
+`.BMA` trailer field turned out to be a **screen position**, confirmed to the
+pixel: `COUNTRY.BMA`'s snow-over-village frame sits on its background at exactly
+the (33, 1) written in its own trailer. Coverage closes at 100 %, empty opaque
+bucket, and every one of the seventeen picture files is DERIVED — nobody
+published these formats, and the only account of them outside the folder is the
+names the linker left in the slack.
+
+**And what the game is doing is itself a measurement.** The menu has five
+entries and two are not the game: `TECNOART`, the studio's own page, and
+`InfoLibrary`, an advertisement for an encyclopedia the same studio wrote for
+the Gruppo Editoriale JCE — a labelled screenshot of a different product, drawn
+into a Christmas game. By bytes that advertisement is **13.5279 %** of the
+object outright, and **30.8596 %** if the village menu screen (which has a `TA`
+signpost and an `INFOLIB` building painted into it) is counted in: somewhere
+between a sixth and a third. A page of ad copy in the executable says
+`Infolibrary V1.0` is on issue 43 of **PCDISK Magazine** — but read the
+subject: it says where the *encyclopedia* went, not where *Bianco Natale* did,
+and this game's route is unknown. Whether the whole thing is a game or a
+studio's shop window is settled by the executable, which is an unpacked Turbo-C
+binary whose 21,719-byte symbol slack names **four distinct enemy frame
+sequences, one per level** (`_enemy1_fr_seq`..`_enemy4_fr_seq`) beside five
+genuinely different painted backgrounds: a four-level game that stops, for a
+sixth to a third of itself, to sell you an encyclopedia.
