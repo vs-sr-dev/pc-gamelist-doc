@@ -436,6 +436,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**Bianco Natale**](https://github.com/vs-sr-dev/pc-bianconatale-doc) | 1994 | Tecnoart Software Development |  | The fourth game in a row and the first with no documentation at all: a four-level Christmas platformer 95 % raw pixels, a sixth to a third of which is the studio advertising its own encyclopedia |
 | [**OutRun**](https://github.com/vs-sr-dev/pc-outrun-doc) | 1989 | SEGA |  | The fifth game in a row and first arcade name: SEGA's OUT RUN on DOS, 85.8 % a two-depth Huffman-then-run sprite format decoded to the byte here — and three MZ-headed .PES are its engines, not sprites |
 | [**The Demon's Forge**](https://github.com/vs-sr-dev/pc-demonsforge-doc) | 1987 | Mastertronic |  | The sixth game in a row: Fargo's CGA dungeon in two files, 72.7 % a 160 KB self-booting diskette whose 120-entry directory this session opened - 75 vector rooms rendered, the engine found on the disk |
+| [**Teenagent**](https://github.com/vs-sr-dev/pc-teenagent-doc) | 1995 | Metropolis Software House |  | The seventh game in a row, inside a GOG install of which it is 16.5 %: a VGA point-and-click whose twelve .RES (16.4 %) were opened to all 1,053 members and whose packed engine gave up the words |
 
 ## The write-ups
 
@@ -6227,3 +6228,48 @@ save slots are named, eight of them `PAUL 2` … `PAUL 10`, and the one called
 `Not Saved` is the only one whose bytes equal the initial state: somebody
 played this diskette and saved eight times, which is the witness the
 pre-briefing said the object did not have.
+
+### [Teenagent](https://github.com/vs-sr-dev/pc-teenagent-doc)
+
+*TEENAGENT* — Metropolis Software House's VGA point-and-click adventure for
+the IBM PC, published by Union Logic Software Publishing Inc. of Nepean,
+Ontario, `(c) 1994-1995` — **433 files, 93,184,691 bytes, 416 distinct
+hashes, and the seventh game in this index in seven rows — but the game is
+fifteen of those files and 16.5 % of the bytes**; the rest is DOSBox Staging
+0.82.2 with its source and GOG's storefront with a 38 MB configurator GOG's
+own manifest does not declare. Mark, a rookie, is sent after disappearing
+gold through 42 painted rooms — a farm, a lake, a mansion with a library and
+a vault, a *MEGABANK* — with 92 things to pick up, a hen that walks and flaps
+in 40 frames, and a script that says *Life is brutal.* and *I hope all this
+fish stuff is not a red herring.*
+
+**The Studio cell is Metropolis Software House, and the object says so four
+times, none of them readable before this session.** The engine
+`TEENAGNT.EXE` is LZEXE 0.91 with the `LZ91` marker replaced by
+`0C 0A 09 01`; its stub was disassembled whole and `lzexe.py` written from
+the listing, and the unpacked data segment holds the credit roll —
+`production / METROPOLIS SOFTWARE HOUSE / (c) 1994-1995`, programming and
+script Adrian Chmielarz, the same name that signs the eight sound drivers.
+The name is also painted in `VARIA.RES`, typed on the text-mode *Registered
+Version* exit screen beside Union Logic's, and printed by the unpacked sound
+setup as `(c) Metropolis 1994`; advert page 10 gives its address in Lubin.
+
+**The Year cell is 1995, on the `(c) 1994-1995` the program prints** and the
+*Coming spring 1995!* painted on advert page 11; the six file-system clocks
+(1994 on the drivers, 2017 and 2019 on GOG's icons, 2025 on DOSBox's source,
+the packager's two shipped logs and GOG's build, 2026 on the install) are
+none of them the game's.
+
+**And the 16.4 % that was twelve opaque containers is open.** Each `.RES` is
+a count and a table of offsets closing on its length, read exactly as the
+engine's loader reads it; behind the directory five grammars were read out
+of the engine's blitter, its animation stepper and one sound driver, and
+`res.py` names all 1,053 members by them: 54 screens with a trailing 6-bit
+palette, 586 animations, 124 sprites, 31 overlays including Mark's frames
+and the inventory, two fonts that put the Polish alphabet on the punctuation
+slots (which is why the credits spell `DOBRZY;SKI`), two exit screens, eleven
+song headers naming all 51 music samples in BCD, 144 signed 8-bit PCM
+samples at 11,025 Hz, and eight drivers. The words are in none of them: 656
+messages, 4,338 words, all in the unpacked engine. A CD image the packager's
+log mounted is configured and absent; ScummVM, which also runs this game,
+was not opened to check a byte of it.
