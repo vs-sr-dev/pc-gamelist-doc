@@ -435,6 +435,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**Hexxagon**](https://github.com/vs-sr-dev/pc-hexxagon-doc) | 1993 | Argo Games / Software Creations |  | The third game in a row and the first with a company in this cell: a 61-hex Ataxx, ASP shareware that shipped its whole legal department, dated by a DOS stamp inside a ZIP not a file system |
 | [**Bianco Natale**](https://github.com/vs-sr-dev/pc-bianconatale-doc) | 1994 | Tecnoart Software Development |  | The fourth game in a row and the first with no documentation at all: a four-level Christmas platformer 95 % raw pixels, a sixth to a third of which is the studio advertising its own encyclopedia |
 | [**OutRun**](https://github.com/vs-sr-dev/pc-outrun-doc) | 1989 | SEGA |  | The fifth game in a row and first arcade name: SEGA's OUT RUN on DOS, 85.8 % a two-depth Huffman-then-run sprite format decoded to the byte here — and three MZ-headed .PES are its engines, not sprites |
+| [**The Demon's Forge**](https://github.com/vs-sr-dev/pc-demonsforge-doc) | 1987 | Mastertronic |  | The sixth game in a row: Fargo's CGA dungeon in two files, 72.7 % a 160 KB self-booting diskette whose 120-entry directory this session opened - 75 vector rooms rendered, the engine found on the disk |
 
 ## The write-ups
 
@@ -6178,3 +6179,51 @@ not the whole game, as the pre-briefing guessed. The object also bundles Phil
 Katz's 1987 `PKARC.COM`, which says the studio packed with PKARC, not that the
 game shipped as an `.ARC` — the archive is a modern re-ZIP, and the `.ARC` is
 not here to prove it.
+
+### [The Demon's Forge](https://github.com/vs-sr-dev/pc-demonsforge-doc)
+
+*THE DEMON'S FORGE* — Mastertronic's CGA adventure for the IBM PC, designed by
+F. Brian Fargo, written by Randy Walsh and Troy Worrell, 1987 — **2 files,
+226,141 bytes, one flat folder, 2 distinct hashes, and the sixth game in this
+index in six rows.** A gladiator who killed four of the King's guards in a
+tavern brawl is spared on one condition: find the exit of the Demon's Forge,
+"an infamous dungeon network" from which no one has escaped alive. Inside are
+79 rooms with 75 pictures — two horned guards at a cave mouth, a well, a crypt,
+a throne, a forge with an anvil, a maze whose wall reads *First Left and Then
+Right Until Stop* — 28 objects from a `WAND` to a `RABBIT`, a parser of 84
+verb words and 94 noun words that takes `BURN "TORCH"`, `JUGGLE` and the two
+obscenities every Fargo parser carried, and a demon named **Anarakull**, whose
+face is room 75's picture. All of that is read off the object: the title screen
+with its credits is stored in the bytes, twice.
+
+**The Studio cell is Mastertronic, and the object says so three times.** The
+title screen prints `(c) 1987 MASTERTRONICS ltd.`, the first 49 bytes of
+`GAME.DAT` read `Demon's Forge by Mastertronic. Dos Driver by Mok.`, and no
+other company appears in either file — Interplay is not in a byte of it.
+Fargo, Walsh and Worrell are the credit line, and `Mok` is the person who
+patched the engine to run under DOS.
+
+**The Year cell is 1987, on the copyright the game renders.** There is one
+file-system clock and it reads 1999-08-23 on both files: that is the date of
+Mok's copy, the last time `GAME.DAT` was written, and not the game's. The
+game's date is the `(c) 1987` at three offsets in the two files, measured by
+`grep`, and the trap of reading the mtime as the year is the one this row
+does not take.
+
+**And 72.7 % of it is a diskette this session opened.** `GAME.DAT` is 512 +
+40 × 8 × 512 bytes: a signature sector, then a single-sided 160 KB self-booting
+diskette whose boot sector loads MZ programs off a 121-record directory
+without DOS. The pre-briefing had mapped that directory one record off — the
+name comes after the coordinates, the "type" byte is a length, the page is
+512 bytes — so every one of its 120 names was wrong, and its two "graphics
+blobs" turned out to be a 2 KB pre-loader and the 61 KB engine, which is
+`FORGE.EXE` byte for byte except 151 bytes in which Mok replaced `int 13h`
+with `int 21h`. The rooms would not render from their bytes; their grammar
+was read out of the engine's drawing interpreter with `dosdis.py` — a ninth
+x bit in the op byte, a span fill against white with 36 dither patterns — and
+the new `forgedat.py` draws all 75 rooms and 28 objects the way the engine
+does, 2,647 of 2,849 fill seeds landing on white and none leaking. The ten
+save slots are named, eight of them `PAUL 2` … `PAUL 10`, and the one called
+`Not Saved` is the only one whose bytes equal the initial state: somebody
+played this diskette and saved eight times, which is the witness the
+pre-briefing said the object did not have.
