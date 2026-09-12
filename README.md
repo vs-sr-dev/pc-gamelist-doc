@@ -438,6 +438,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**The Demon's Forge**](https://github.com/vs-sr-dev/pc-demonsforge-doc) | 1987 | Mastertronic |  | The sixth game in a row: Fargo's CGA dungeon in two files, 72.7 % a 160 KB self-booting diskette whose 120-entry directory this session opened - 75 vector rooms rendered, the engine found on the disk |
 | [**Teenagent**](https://github.com/vs-sr-dev/pc-teenagent-doc) | 1995 | Metropolis Software House |  | The seventh game in a row, inside a GOG install of which it is 16.5 %: a VGA point-and-click whose twelve .RES (16.4 %) were opened to all 1,053 members and whose packed engine gave up the words |
 | [**Polanie**](https://github.com/vs-sr-dev/pc-polanie-doc) | 1996 | *(none named)* |  | The eighth game in a row, one ZIP sold as "Slavs": a Polish DOS strategy of villages and milk, 74 % a title FLC, its engine unpacked, 18 copies of it hidden in the music, a crack that is the English |
+| [**Bumpy's Arcade Fantasy**](https://github.com/vs-sr-dev/pc-bumpy-doc) | 1992 | Loriciel |  | A French bouncing-ball arcade in a 1992 Fairlight download: program unpacked, each picture and level behind a 12-byte big-endian head read off the loader; 14 screens, 126 platforms, 2-byte crack |
 
 ## The write-ups
 
@@ -6320,3 +6321,53 @@ Polish→English string pairs of identical length that the TSR writes over
 the running engine — `P O L A N I E` → `S L A V S`, `marzec` → `sept.`,
 `Pomorzan` → `Fishmen`. The English edition is the Polish game plus that
 patch; nothing in any byte is German.
+
+### [Bumpy's Arcade Fantasy](https://github.com/vs-sr-dev/pc-bumpy-doc)
+
+*BUMPY'S ARCADE FANTASY* — `BUMPY (C) LORICIEL 1992`, printed twice by its
+own program and painted with the Loriciel panther on its presentation
+screen — **57 files, 743,759 bytes, 55 distinct hashes, and the ninth game
+in this index in nine rows**, delivered not as a ZIP but as a folder
+copied from the owner's drive: a download directory of July 1992 with
+Fairlight's NFO, the NFO's blank form, a TheDraw advert for *The Outer
+Limits BBS* (a Fairlight member board, the NFO says), Central Point
+Anti-Virus's receipt for the cracked program, a 2-byte file called
+`QUELDISK`, and three empty files that read *BIO-TECH'S WORLD*. A French
+arcade of a red ball with eyes and blue gloves bouncing across screens of
+platforms — the owner played it as a child, "the first levels, I never got
+further" — in nine worlds of fifteen or twelve platforms each.
+
+**The program is not packed and says almost nothing; the game is in the
+data, and the data is compressed.** Thirty-eight of the 57 files share a
+12-byte head whose fields are all big-endian on a PC — u32 unpacked
+length, u32 nobody reads, u16 method, u16 XOR of the rest — and the
+decompressor is an assembly module the Turbo C++ loader far-calls. Read
+with `dosdis.py` (100 % of each range): eighteen handler slots, two of
+them real, run-length behind an escape and a bit mask over the output,
+stacked up to three deep on a loop that runs while bit 15 is clear.
+`bumpack.py` closes on 38 of 38 files and on the two level files the
+release left in the clear, which are the exact shapes the others unpack
+to. Out came fourteen 32,099-byte screens — 51 bytes of zeros and DAC,
+then four EGA planes, the order settled by the first render and every
+render confirmed by the owner: the title with its apostrophe (Fairlight
+typed it without), the panther, a credits screen naming JF Streife, F
+Spada, M Winogradoff, C Perrotin, I Maury and P Jarry, nine worlds under a
+lattice of rings, the *HALL OF FAME* frame. Out came 126 platforms as
+194-byte records of three 8 × 6 grids (a floor of eight 1s, a staircase
+diagonal), 511 sprites behind a 512-entry big-endian table with 12-byte
+heads *below* the pointers, and a 7 × 8 font padded to even addresses —
+the 68000 habits of whoever made the files, measured and not turned into
+a story.
+
+**The Studio cell is Loriciel and the Year cell 1992 because the program
+prints both**, in the lines above its video and sound menus — lines the
+pre-briefing's own string dump held and did not read. The loader keys two
+floppies, `a` and `b`, on the letter in `QUELDISK`, and `z` means never
+ask: the installer's hard-disk copy. `Enter the platform number` is a
+copy protection that shows a random platform sprite and wants the
+manual's number, three tries; at cs:4219 the entered number is written
+over the expected one and a `jmp` skips the `ERROR` branch nothing else
+reaches — `88 46 FC EB 1D` where `3A 46 FC 74 1D` would compare. Two
+bytes; no disk check anywhere. The MIDI is 3,863 notes at 75 bpm on
+`xylo`, `harpsi`, `bass2`, `bells` and `pompe`; the Ad Lib bank 129
+instruments named by index. Zero of 55 hashes cross 116 repositories.
