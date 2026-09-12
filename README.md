@@ -439,6 +439,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**Teenagent**](https://github.com/vs-sr-dev/pc-teenagent-doc) | 1995 | Metropolis Software House |  | The seventh game in a row, inside a GOG install of which it is 16.5 %: a VGA point-and-click whose twelve .RES (16.4 %) were opened to all 1,053 members and whose packed engine gave up the words |
 | [**Polanie**](https://github.com/vs-sr-dev/pc-polanie-doc) | 1996 | *(none named)* |  | The eighth game in a row, one ZIP sold as "Slavs": a Polish DOS strategy of villages and milk, 74 % a title FLC, its engine unpacked, 18 copies of it hidden in the music, a crack that is the English |
 | [**Bumpy's Arcade Fantasy**](https://github.com/vs-sr-dev/pc-bumpy-doc) | 1992 | Loriciel |  | A French bouncing-ball arcade in a 1992 Fairlight download: program unpacked, each picture and level behind a 12-byte big-endian head read off the loader; 14 screens, 126 platforms, 2-byte crack |
+| [**Monstrum**](https://github.com/vs-sr-dev/pc-monstrum-doc) | 2018 | Team Junkfish |  | A Unity 5.5 build of 2018 from a Galaxy install: 19 serialized files and 2.1 GB of sidecars read whole; 825 textures closed and rendered, 2,215 FSB5 banks, 9 escape films, 3 monsters; co-op: none |
 
 ## The write-ups
 
@@ -6371,3 +6372,52 @@ reaches — `88 46 FC EB 1D` where `3A 46 FC 74 1D` would compare. Two
 bytes; no disk check anywhere. The MIDI is 3,863 notes at 75 bpm on
 `xylo`, `harpsi`, `bass2`, `bells` and `pompe`; the Ad Lib bank 129
 instruments named by index. Zero of 55 hashes cross 116 repositories.
+
+### [Monstrum](https://github.com/vs-sr-dev/pc-monstrum-doc)
+
+*MONSTRUM* — `Team Junkfish` / `Monstrum` in Unity's own `app.info`, the
+studio's mechanical angler-fish as a 571 × 475 texture — **89 files,
+2,500,176,557 bytes, 87 distinct hashes, and the tenth game in this index
+in ten rows**, delivered as the owner's GOG Galaxy installation copied
+whole: a Unity 5.5.0f3 build of 2018-11-20 (74 files inside three
+minutes), GOG's uninstaller, manifest and page cache of 2025, a crash
+folder of 2018-12-15, and the log of the owner's last evening,
+2026-01-31. A first-person hide-and-run on a container ship that
+`LevelGeneration` builds from prefabs by a seed, with one monster of
+three per run — `MonsterTypeEnum { Brute, Hunter, Fiend }` — and three
+ways off: helicopter, life raft, submersible.
+
+**Everything is in the clear, and the risk moved from forcing to reading
+well.** The box could read a Unity SerializedFile since Luminaria and its
+coverage table did not know it: 98.28 % of the object filed as opaque.
+Seven probes and a sidecar pass came first — a `.resS` has no magic and
+is filed by the `m_StreamData` records of its siblings — and the table
+went to 0 bytes opaque. Then the version-17 `Texture2D` layout was read
+from a hex dump (version 15's plus one record) and closed twice on 825 of
+825 objects, the seven `.resS` tiled to the last byte by 737 records; the
+first render went to the owner before any other reader ran, and all
+eleven were confirmed at sight: a fuse-box loading hint, the Brute's
+charred hide, the Hunter and the Fiend (tied to their `Monster02`/`03`
+sheets by the object's own mesh names), a body in a corridor, *YOU
+ESCAPED* over a red raft, the helicopter, the submersible, a crew note
+that exists only as pixels. The four `.resource` files are 2,215 FSB5
+banks laid end to end — PCM16 on 2,029, not Vorbis — matched to 2,215
+`AudioClip` records four ways; the ten `MovieTexture` are nine 1080p
+escape films of three by three, whose audio is nine clips that match them
+to the tenth of a second, and a ten-second splash.
+
+**The co-op the owner remembered is nowhere in this build**, said with
+counts on five levels: 0 of 3,015 literals, 0 of 1,510 game types, 0 of
+22,509 fields and methods, 0 imported types outside Steamworks' stats and
+API, 0 of 3,560 imported members — the metadata tables read past TypeDef
+to Field, MethodDef and MemberRef by ECMA-335, with the nuance that the
+Steamworks.NET library beside the game carries 23 lobby types the game
+never references. The Year cell is the build's, no literal or texture
+prints another; `SteamVent` in the type list is vapour. The log is the
+diary: four runs in eleven minutes, seeds and monsters printed side by
+side, a tally per monster whose rule holds 9 of 9, no escape saved — the
+owner plays to be chased and hide. The 2018 crash was the same owner's
+fifty-seventh run: a minidump of 12 streams and 110 modules puts the
+access violation at `Monstrum.exe + 0x7BEC8C`, in the Unity player, not
+the game. Twelve of 87 hashes cross 117 repositories, all GOG's or
+Mono's.
