@@ -440,6 +440,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**Polanie**](https://github.com/vs-sr-dev/pc-polanie-doc) | 1996 | *(none named)* |  | The eighth game in a row, one ZIP sold as "Slavs": a Polish DOS strategy of villages and milk, 74 % a title FLC, its engine unpacked, 18 copies of it hidden in the music, a crack that is the English |
 | [**Bumpy's Arcade Fantasy**](https://github.com/vs-sr-dev/pc-bumpy-doc) | 1992 | Loriciel |  | A French bouncing-ball arcade in a 1992 Fairlight download: program unpacked, each picture and level behind a 12-byte big-endian head read off the loader; 14 screens, 126 platforms, 2-byte crack |
 | [**Monstrum**](https://github.com/vs-sr-dev/pc-monstrum-doc) | 2018 | Team Junkfish |  | A Unity 5.5 build of 2018 from a Galaxy install: 19 serialized files and 2.1 GB of sidecars read whole; 825 textures closed and rendered, 2,215 FSB5 banks, 9 escape films, 3 monsters; co-op: none |
+| [**Lost Horizon**](https://github.com/vs-sr-dev/pc-losthorizon-doc) | 2010 | Fusionsphere Systems / Deep Silver |  | A 2010 Windows point-and-click on its own engine from a Galaxy install: six archives, contents clear, directory locked; walked by magic to 15,177 of 15,177, the English script, one chunk patched |
 
 ## The write-ups
 
@@ -6421,3 +6422,45 @@ fifty-seventh run: a minidump of 12 streams and 110 modules puts the
 access violation at `Monstrum.exe + 0x7BEC8C`, in the Unity player, not
 the game. Twelve of 87 hashes cross 117 repositories, all GOG's or
 Mono's.
+
+### [Lost Horizon](https://github.com/vs-sr-dev/pc-losthorizon-doc)
+
+*LOST HORIZON* — `Fusionsphere Systems` / `Deep Silver` / `2010-08-27` in
+the object's own Game Definition File, written six times inside a DLL —
+**42 files, 4,040,878,658 bytes, 42 distinct hashes, and the eleventh game
+in this index in eleven rows**, delivered as the owner's GOG Galaxy
+installation copied whole: a 32-bit Windows point-and-click of 2010 on the
+studio's own FSAS engine (Direct3D 9, Lua 5.0.2, Bink, Granny, DirectSound,
+and German in every resource name), GOG's uninstaller and manifest, no
+save, no log, no crash. 99.75 % of the bytes are six `SPCR` archives whose
+payloads are in the clear and whose three directory tables per archive —
+15,177 entries of 52 bytes — are 7.8–8.0 bits per byte.
+
+**The lock is on the names, not on the things, and the reading went around
+it.** The coverage table filed the six archives opaque and three UTF-16
+files as MPEG audio before a probe was added for each; the card and its one
+256 × 256 picture came out of the DLL and the owner confirmed the two leads
+before an archive was opened. Then every payload was found by its magic and
+read to its own end — Bink by its size word, Ogg to its EOS page, PNG to
+`IEND`, JPEG to `EOI`, Granny by the two 16-byte magics `granny2.dll`
+carries in its own bytes, Lua 5.0 by an undumper from `lundump.c`, and the
+engine's `SLZX` by an LZ77 read from a hex dump (flag byte, position-length-
+literal triples, a 2,048-byte sliding window, the last group written whole)
+and closed on a parse rather than a length, which is what caught its three
+wrong drafts — until all six payload regions tiled at 100.0000 % with 0
+gaps and 0 residue and **15,177 payloads matched 15,177 locked entries**.
+Out came 44 cutscenes (21.3 min), 461 silent animations, 139 music pieces
+(385 min), 6,063 speech lines (434 min, one voice cast), 2,015 PNG, 231
+JPEG backgrounds the owner recognised, 1,886 Granny models, 541 INIs of
+rooms and dialogues by chapter (Tibet, Hong Kong, Berlin, Morocco, India,
+China, Shambala), 153 tab-separated tables that are the whole script in
+**one language, English**, with 63 speakers (`fenton` 4,079 lines), 2,720
+Lua chunks to their constants, and the content speaking 71.4 % of the
+hidden names. The two patches re-ship everything to change one chunk (a
+safe in the Hong Kong office now blocks the mouse) and two lines ("Yes" →
+"Jawohl"). The directory itself failed inflate, XOR, per-column entropy and
+autocorrelation and was not forced; its price is written as a number. The
+"second engine", `fsasgame-x86.dll`, names itself `X86Runtime.dll`, exports
+`Protect`, is signed by Protect Software GmbH, is 98 % one packed section
+and is called by nothing; the engine the shop runs is the one unsigned
+binary. Four of 42 hashes cross 118 repositories, all GOG's.
