@@ -441,6 +441,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**Bumpy's Arcade Fantasy**](https://github.com/vs-sr-dev/pc-bumpy-doc) | 1992 | Loriciel |  | A French bouncing-ball arcade in a 1992 Fairlight download: program unpacked, each picture and level behind a 12-byte big-endian head read off the loader; 14 screens, 126 platforms, 2-byte crack |
 | [**Monstrum**](https://github.com/vs-sr-dev/pc-monstrum-doc) | 2018 | Team Junkfish |  | A Unity 5.5 build of 2018 from a Galaxy install: 19 serialized files and 2.1 GB of sidecars read whole; 825 textures closed and rendered, 2,215 FSB5 banks, 9 escape films, 3 monsters; co-op: none |
 | [**Lost Horizon**](https://github.com/vs-sr-dev/pc-losthorizon-doc) | 2010 | Fusionsphere Systems / Deep Silver |  | A 2010 Windows point-and-click on its own engine from a Galaxy install: six archives, contents clear, directory locked; walked by magic to 15,177 of 15,177, the English script, one chunk patched |
+| [**The Wardrobe**](https://github.com/vs-sr-dev/pc-thewardrobe-doc) | 2024 | CINIC Games |  | A Unity 6 2D point-and-click by an Italian studio from a Steam install: the script 1,207 clear XML in six languages keyed by the Italian line, read to a grammar; 17,368 sprites, 420 voice banks closed |
 
 ## The write-ups
 
@@ -6464,3 +6465,61 @@ autocorrelation and was not forced; its price is written as a number. The
 `Protect`, is signed by Protect Software GmbH, is 98 % one packed section
 and is called by nothing; the engine the shop runs is the one unsigned
 binary. Four of 42 hashes cross 118 repositories, all GOG's.
+
+### [The Wardrobe](https://github.com/vs-sr-dev/pc-thewardrobe-doc)
+
+*THE WARDROBE* — `CINIC Games` / `The Wardrobe` in Unity's own `app.info`
+and `PlayerSettings`, and no year anywhere in the bytes — **2,020 files,
+3,494,280,269 bytes, 1,987 distinct hashes, and the twelfth game in this
+index in twelve rows**, delivered as the owner's Steam installation copied
+whole: a Unity 6000.3.6f1 x64 Mono build at serialization format 22 (the
+first Unity 6 on PC here; DISSIDIA on Android came first), with FMOD Studio, Rewired,
+Resonance, Burst and Steamworks.NET, five console wrappers and an enum
+`Platform { PS4, XboxOne, Switch, Steam, DrmFree }` in a Windows build, and
+no save, no log, no crash. 70.57 % of the bytes are five streamed sidecars
+that 17,368 sprites slice; 13.09 % are 482 FMOD Studio banks; 6.36 % are 33
+films of which 31 are silent; and 0.16 % — 1,207 XML files under
+`StreamingAssets\XML\` — is the whole game in writing, in the clear, in
+six languages with the Italian line as the key of every translation.
+
+**The Year cell is the script's clock, not a release date, because the
+object carries no release date**: 1,171 of its 1,207 XML files were last
+saved 2024-09-28 and that is the oldest day the game's own content
+carries; the engine was built 2026-01-27, the studio's own Burst DLL
+2026-05-06, Steam deposited the copy 2026-06-05, and `PlayerSettings`
+holds a version `2.4.7` — a game some way into its life. Which year it
+first shipped is argued and not decided in
+[pc-thewardrobe-doc/docs/07](https://github.com/vs-sr-dev/pc-thewardrobe-doc/blob/master/docs/07-steam-the-two-generations-and-the-clocks.md).
+**The Studio cell is full from a data file**, as Theme Park's was: two
+lines of `app.info` and 51 types in a `CINIC.*` namespace, and nothing
+else names a studio.
+
+**Nothing was locked, and the difficulty went into a format version the
+box had never read and a coverage table that called a seventh of the
+object opaque.** The table was wrong twice — no probe for a RIFF whose
+form is `FEV `, and a text probe that could not see a no-break space — and
+was repaired before the first reader; two Unity readers that died on a PNG
+were taught to refuse it and to refuse format 22 by name. The Texture2D at
+22 was read from a hex dump (17's layout plus nine fields, three wrap modes
+and a 64-bit stream offset) and closed twice on 1,161 of 1,161; the Sprite
+closed on 17,368 of 17,368, every one naming a texture in its own file;
+the sidecars tiled to 229 bytes of alignment slack; the first sprite
+rendered was the skeleton hero, sent within the hour, then the menu, a PS4
+control screen in Italian, and the bedroom the game starts in. The script
+gave a command language of **52 verbs** behind a room-status guard
+(`<command>1 text -"ciccione" "…"</command>`), 3,185 lines per language,
+35 speakers (`-"me"` is the file's own character, never the hero), an
+interpreter class `Script` whose `Execute` has all 52 verbs as literals and
+errors in Italian, and a six-language diff in which the five translations
+are identical to each other and the Italian master differs by 38 commands
+of timing and 0 of text. The banks closed twice, on the `SND ` chunk and on
+a `SNDH` record that wrote the FSB5's offset down: 6,385 Vorbis samples at
+48 kHz, **Italian voice 148.3 minutes, English 134.6**, 62 banks with no
+sound, the samples named by the script's line numbers and 175 of 200 voice
+banks named for an XML file. The films carry no audio track on 31 of 33:
+the cutscene's soundtrack is one sample in its effects bank. The clocks:
+1,178 files of 2024 under 842 of 2026 written in 65 seconds, the update
+touching six XML files in six languages; 136 of 143 managed assemblies
+carry a build hash where a date would be, and the census that called them
+"impossible" was mended. Nineteen of 1,987 hashes cross 119 repositories,
+all engine furniture.
