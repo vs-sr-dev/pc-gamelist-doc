@@ -442,6 +442,7 @@ here. A convention that is only visible in the rows regenerates the rows.
 | [**Monstrum**](https://github.com/vs-sr-dev/pc-monstrum-doc) | 2018 | Team Junkfish |  | A Unity 5.5 build of 2018 from a Galaxy install: 19 serialized files and 2.1 GB of sidecars read whole; 825 textures closed and rendered, 2,215 FSB5 banks, 9 escape films, 3 monsters; co-op: none |
 | [**Lost Horizon**](https://github.com/vs-sr-dev/pc-losthorizon-doc) | 2010 | Fusionsphere Systems / Deep Silver |  | A 2010 Windows point-and-click on its own engine from a Galaxy install: six archives, contents clear, directory locked; walked by magic to 15,177 of 15,177, the English script, one chunk patched |
 | [**The Wardrobe**](https://github.com/vs-sr-dev/pc-thewardrobe-doc) | 2024 | CINIC Games |  | A Unity 6 2D point-and-click by an Italian studio from a Steam install: the script 1,207 clear XML in six languages keyed by the Italian line, read to a grammar; 17,368 sprites, 420 voice banks closed |
+| [**Cell to Singularity**](https://github.com/vs-sr-dev/pc-celltosingularity-doc) | 2023 | Computer Lunch |  | The PC Steam build of a mobile idle game on Unity 6: the text one object in 19 languages, three NRBF saves walked as structure, 1,157 Crunch heads, 45 atlases, a phone's SDK stack on Windows |
 
 ## The write-ups
 
@@ -6523,3 +6524,64 @@ touching six XML files in six languages; 136 of 143 managed assemblies
 carry a build hash where a date would be, and the census that called them
 "impossible" was mended. Nineteen of 1,987 hashes cross 119 repositories,
 all engine furniture.
+
+### [Cell to Singularity](https://github.com/vs-sr-dev/pc-celltosingularity-doc)
+
+*CELL TO SINGULARITY* — `Computer Lunch` / `Cell to Singularity` in Unity's
+`app.info` and `PlayerSettings`, and the studio naming itself in three
+terms of its own text (*we're Computer Lunch, the humans behind Cell to
+Singularity … a team of only ten people*) — **300 files, 459,664,363 bytes,
+294 distinct hashes, one generation of file times**, the owner's Steam
+installation of a mobile idle game's PC build copied whole: Unity
+6000.0.74f1 x64 Mono at serialization format 22, 27 serialized files and
+348,261 objects closing 27 of 27, and **the first live game with
+microtransactions and an anti-cheat in this index** — documented as
+structure and counts, so that everything can be re-counted and nothing
+read here alters a save, bypasses a check or lowers a price. The whole
+text is **one MonoBehaviour of 23,160,144 bytes, 10,249 terms × 19
+languages**, its layout read from a hex dump and closed on the count and
+on the last byte, 92.93 % of 194,731 cells filled, English not complete
+either (121 empty), the translators' spreadsheet colour code in its first
+five terms and the sheet's sync clock in its tail. Three ready-made saves
+in `StreamingAssets\Convention\` are .NET BinaryFormatter streams
+([MS-NRBF], published) that the coverage table had filed as **TrueType
+fonts** — the font probe stopped at `00 01 00 00` — and they walk to
+`MessageEnd` at the last byte on 3 of 3 with a reader inherited from
+Academagia and grown rather than replaced: twenty classes, seventy members,
+a root of twelve collections in four families (*main*, *dino*, *beyond*,
+*event*), and the three stages differing by exactly which are empty (0 /
+144 / 144 dinosaur items, 0 / 0 / 612 Beyond items); no member map, no
+value, no write. 1,736 textures closed twice — 579 by bits-per-pixel
+arithmetic and **1,157 by the Crunch head** (`Hx`, a header of 70 + 4 ×
+levels bytes, a data size equal to the stream record's, width, height,
+levels, format 0/2 against DXT1/DXT5Crunched: eleven equalities) — 45
+SpriteAtlas objects read from a hex dump and **3,432 of 3,432 atlas sprites
+joined to their page and rectangle by render key**; all 107 pages Crunched,
+none rendered, Crunch priced at one session and not decoded; the first
+picture a cell icon on its own DXT5 texture, sent within the hour and
+confirmed. Nine sidecars that the inherited pass had granted DERIVED on a
+32-bit read of a 64-bit offset — vacuous here and on The Wardrobe the day
+before — tile to the last byte on 7 of 9 by Texture2D + Mesh + Cubemap
+records, the other two short by 8 and 14 bytes; the pass was mended with a
+check that fails on the old code. 510 clips in four FSB5 files, 72.32
+minutes of Vorbis, closed by the box before the session began. Of 205
+managed assemblies 39 are a phone's supply chain on Windows — Google Mobile
+Ads, Firebase (seven managed, seven native, **four versions of
+`FirebaseCppApp` side by side and the second-newest bound**), AppsFlyer,
+PlayFab, AppleAuth, an anti-cheat toolkit with its example scenes,
+NSubstitute and Castle.Core, an MCP runtime DLL with not one socket in it;
+86 signed (Unity 82, Microsoft 3, Valve 1), two `Unity.Analytics` DLLs with
+a COFF stamp of **zero — a third kind, neither date nor hash**, which the
+census had printed as 1970. Five Macintosh files in a Windows depot: four
+AppleDouble headers (two entries each, closing on 4,096) and a `.DS_Store`
+whose Finder record of the game's own data folder, at a size 28 MB smaller
+than this depot's, is dated **2023-06-09** — the oldest clock in the
+object and the Year cell's witness, a folder's date on the build Mac and
+not a release; two Burst debug files name the Jenkins job on that Mac
+that builds the Windows depot. Seventeen of 294 hashes cross 120
+repositories, all engine furniture. **The Year cell is that Finder
+date**: the studio's newest clocks are 2026-08-18 (the sheet's sync) and
+2026-08-17 (its Burst DLL), Steam deposited the copy 2026-09-16, the
+version string is `49.33`, and the release year on any platform is not in
+the bytes —
+[pc-celltosingularity-doc/docs/07](https://github.com/vs-sr-dev/pc-celltosingularity-doc/blob/master/docs/07-the-supply-chain-steam-the-mac-and-the-clocks.md).
